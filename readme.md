@@ -13,6 +13,7 @@
 - [Discord Version](#version)
 - [Troubleshooting](#troubleshooting)
 - [FAQ](#faq)
+- [About anti-virus detection](#about-anti-virus-detection)
 - [Similar projects](#similar-projects)
 - [Update Discord Version](#how-to-update-to-the-latest-discord-version-)
 - [Credits](#credits)
@@ -175,9 +176,27 @@ Logging in works via the UI on first startup of the application.
 If you happen to encounter a crash or a bug, please submit a bug report via
 the projects GitHub issue tracker.
 
-# FAQ
+## FAQ
 
 In order to find answers to common questions, check out the FAQ in the [wiki](https://github.com/aiko-chan-ai/DiscordBotClient/issues/8):
+
+## About anti-virus detection
+
+Sometimes, DiscordBotClient will be flagged as malware by several anti-virus programs (Avast, AVG, Norton, McAfee, Windows Defender, etc.), this, however, is a false positive.
+
+The reason for this is that the application is not signed.
+
+If downloaded from my GitHub, the program is safe to use (I cannot give this promise if you download it from somewhere else!). 
+It is okay if you do not trust me; you can always go ahead and compile it yourself.
+
+For a tutorial on how to exclude this program from your antivirus so it can run anyway, check out these links:
+
+    Windows Defender: https://support.microsoft.com/en-us/windows/add-an-exclusion-to-windows-security-811816c0-4dfd-af4a-47e4-c301afe13b26
+    Avast: https://support.avast.com/en-ww/article/Antivirus-scan-exclusions#pc
+    AVG: https://support.avg.com/SupportArticleView?l=en&urlName=avg-antivirus-scan-exclusion
+    Norton: https://support.norton.com/sp/en/us/home/current/solutions/v3672136
+    McAfee: https://www.mcafee.com/support/?page=shell&shell=article-view&articleId=TS102056
+    For other antiviruses, try searching for "<antivirus name> add exception"
 
 ## Similar projects
 
