@@ -282,6 +282,18 @@ class DiscordBotClient {
 		this.setupIpcEvents();
 	}
 	async sessionPatch() {
+		// Disable stripe.com
+		session.defaultSession.webRequest.onBeforeRequest(
+			{
+				urls: ['https://*.stripe.com/*'],
+			},
+			(details, callback) => {
+				// Cancel all requests to stripe.com
+				callback({
+					cancel: true,
+				});
+			},
+		)
 		// Patch custom css
 		session.defaultSession.webRequest.onHeadersReceived(
 			{
@@ -324,10 +336,12 @@ class DiscordBotClient {
 				enableRemoteModule: false,
 				preload: path.join(__dirname, 'ElectronPreload.js'),
 				contextIsolation: true,
+				sandbox: false,
 			},
 			backgroundColor: '#36393f',
 			titleBarStyle: 'hidden',
 			frame: false,
+			show: true,
 			title: Constants.APP_NAME,
 			...(process.platform === 'darwin' && {
 				titleBarStyle: 'hidden',
@@ -384,24 +398,42 @@ class DiscordBotClient {
 		this.win.webContents.setWindowOpenHandler(({ url }) => {
 			this.logger.log('WindowOpenHandler', url);
 			if (
-				Constants.AllowPopups.includes(url) ||
-				url === `https://localhost:${this.port}/popout`
+				Constants.AllowPopups.map(u => u.replace('{port}', this.port)).find(
+					u => url.startsWith(u),
+				)
 			) {
 				return {
 					action: 'allow',
 					overrideBrowserWindowOptions: {
-						parent: this.win,
-						modal: true,
 						icon: Constants.icon128,
+						frame: true,
 						autoHideMenuBar: true,
-						width: 940,
-						height: 500,
+						width: 1080,
+						height: 720,
 						minWidth: 940,
 						minHeight: 500,
+						webPreferences: {
+							webSecurity: false,
+							nodeIntegration: false,
+							enableRemoteModule: false,
+							preload: path.join(__dirname, 'ElectronPreload.js'),
+							contextIsolation: true,
+							sandbox: false,
+						},
+						backgroundColor: '#36393f',
+						show: true,
+						...(process.platform === 'darwin' && {
+							titleBarStyle: 'hidden',
+							trafficLightPosition: { x: 10, y: 10 },
+						}),
 					},
 				};
 			}
-			shell.openExternal(url);
+			if (!Constants.DeclinePopups.map(u => u.replace('{port}', this.port)).find(
+				u => url.startsWith(u),
+			)) {
+				shell.openExternal(url);
+			}
 			return { action: 'deny' };
 		});
 		// Load the index.html of the app.
@@ -432,11 +464,9 @@ class DiscordBotClient {
 				} else {
 					this.win.maximize();
 				}
-				event.returnValue = true;
 			})
 			.on(IPCEvent.Close, (event) => {
 				this.win.hide();
-				event.returnValue = true;
 			})
 			.on(IPCEvent.GetBotInfo, async (event, token) => {
 				token = token.replace(/Bot/g, '').trim();

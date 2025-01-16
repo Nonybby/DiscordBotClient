@@ -11,19 +11,19 @@ This is the readme file for the repo [VencordDBC](https://github.com/aiko-chan-a
     "host_permissions": [
         "*://*.discord.com/*",
         "https://raw.githubusercontent.com/*",
-        "<all_urls>"
+        "*://localhost:*/*"
     ],
     "content_scripts": [
         {
             "run_at": "document_start",
-            "matches": ["*://*.discord.com/*", "<all_urls>"],
+            "matches": ["*://*.discord.com/*", "*://localhost:*/*"],
             "js": ["content.js"],
             "all_frames": true,
             "world": "ISOLATED"
         },
         {
             "run_at": "document_start",
-            "matches": ["*://*.discord.com/*", "<all_urls>"],
+            "matches": ["*://*.discord.com/*", "*://localhost:*/*"],
             "js": ["dist/Vencord.js"],
             "all_frames": true,
             "world": "MAIN"
@@ -32,7 +32,7 @@ This is the readme file for the repo [VencordDBC](https://github.com/aiko-chan-a
     "web_accessible_resources": [
         {
             "resources": ["dist/*", "third-party/*"],
-            "matches": ["*://*.discord.com/*", "<all_urls>"]
+            "matches": ["*://*.discord.com/*", "*://localhost:*/*"]
         }
     ],
     ```

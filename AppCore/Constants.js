@@ -22,6 +22,9 @@ module.exports = class Constants extends null {
 		'explicit-media',
 		'premium/subscriptions',
 		'/ack',
+		'/stripe',
+		'/paypal',
+		'/validate-billing-address'
 	];
 	static LatestStorageUpdate = 1735000000000;
 	static APP_NAME = 'DiscordBotClient';
@@ -111,7 +114,11 @@ aDVY0gxKUZfmbyKs2IBvXIZuKpKjhJHAXw8bxyHjS1qe2ycBGZAh9CskhacKdvkf
 	static UserDefaultPatch = UserPatch['1056491867375673424'];
 	static ChannelIdDefault = '1000000000000000000';
 	static UserIdDefault = '1056491867375673424';
-	static AllowPopups = ['about:blank'];
+	static AllowPopups = ['about:blank', 'https://localhost:{port}/popout'];
+	static DeclinePopups = [
+		'https://checkout.paypal.com/web',
+		'https://localhost:{port}/connections',
+	];
 	static PortDefault = 50000;
 	static TestVencordMode = false;
 	static CacheAssetsMode = false;

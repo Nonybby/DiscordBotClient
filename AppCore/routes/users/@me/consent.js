@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const app = Router();
 
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
 	res.send({
 		personalization: {
 			consented: false,
@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 		usage_statistics: {
 			consented: false,
 		},
-	});
+	})
 });
 
 module.exports = app;
