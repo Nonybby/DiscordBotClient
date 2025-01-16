@@ -17,13 +17,32 @@ module.exports = async function GetSystemMessage() {
 		// MessageData
 		{
 			id: '1000000000000000000',
-			type: 0,
+			type: 47, // CHANGELOG => Disable Message Forwards
 			channel_id: Constants.ChannelIdDefault,
 			author: Constants.UserDefaultPatch,
 			attachments: [],
+			/*
 			content: `## Make sure to download this application from the official GitHub!  
 ### Downloading it from untrusted sources could pose a risk to your computer and expose your private data.`,
+*/
 			embeds: [
+				{
+					type: 'rich',
+					title: `Make sure to download this application from the official GitHub!`,
+					description: `### Downloading it from untrusted sources could pose a risk to your computer and expose your private data.`,
+					color: 16750296,
+					author: {
+						name: 'Important Notice',
+						icon_url:
+							'https://i.imgur.com/P4wWwbP.png',
+						proxy_icon_url: 'https://i.imgur.com/P4wWwbP.png',
+					},
+					thumbnail: {
+						url: 'https://avatars.githubusercontent.com/u/71698422',
+						width: 128,
+						height: 128,
+					},
+				},
 				{
 					type: 'rich',
 					description: `Thank you for choosing my application!
@@ -38,22 +57,22 @@ Or, if you’d like, you can support me with a coffee on GitHub <:ElysiaHeart:11
 Warm regards, 
 <:Discord:984744331200053269> elysia.dev - <:github:889092230063734795> aiko-chan-ai`,
 					color: 16750296,
-					timestamp: '2022-11-29T16:56:00.000Z',
 					author: {
 						name: 'Thank you!',
 						icon_url:
 							'https://cdn.discordapp.com/emojis/882480441075040257.png',
+						proxy_icon_url: 'https://cdn.discordapp.com/emojis/882480441075040257.png',
 					},
+					/*
 					thumbnail: {
 						url: 'https://avatars.githubusercontent.com/u/71698422',
 						width: 128,
 						height: 128,
 					},
-					footer: {
-						text: 'Elysia',
-						icon_url:
-							'https://cdn.discordapp.com/avatars/1056491867375673424/93fb88f6b8c0a2a33c437d0fff4c6625.png',
-					},
+					*/
+				},
+				{
+					type: 'rich',
 					image: {
 						url: urlSponsors,
 						srcIsAnimated: false,
@@ -61,7 +80,14 @@ Warm regards,
 						width: result.width,
 						height: result.height,
 					},
-				},
+					color: 16750296,
+					timestamp: '2022-11-29T16:56:00.000Z',
+					footer: {
+						text: 'Elysia',
+						icon_url:
+							'https://cdn.discordapp.com/avatars/1056491867375673424/93fb88f6b8c0a2a33c437d0fff4c6625.png',
+					},
+				}
 			],
 			mentions: [],
 			mention_roles: [],

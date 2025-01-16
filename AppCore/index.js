@@ -484,7 +484,7 @@ class DiscordBotClient {
 							allShards:
 								Math.ceil(
 									parseInt(data.approximate_guild_count) /
-										100,
+									Constants.MaxGuildsPerShard,
 								) || 1,
 						});
 					})

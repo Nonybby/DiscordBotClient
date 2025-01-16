@@ -115,6 +115,7 @@ aDVY0gxKUZfmbyKs2IBvXIZuKpKjhJHAXw8bxyHjS1qe2ycBGZAh9CskhacKdvkf
 	static PortDefault = 50000;
 	static TestVencordMode = false;
 	static CacheAssetsMode = false;
+	static MaxGuildsPerShard = 100;
 	// Database
 	static DirectMessages = {
 		name: 'DMsData',
