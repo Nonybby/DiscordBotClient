@@ -10,6 +10,13 @@ Disable Bucket
 2023-03_pomelo
 */
 
+const disabledBuckets = [
+	'2023-03_pomelo_debounce_delay',
+	'2023-04_pomelo_attempt',
+	'2023-04_pomelo_suggestions',
+	'2023-03_pomelo',
+];
+
 const bucketReplacement = {
 	'2024-10_retrigger_reaction_frecency_algorithms': {
 		revision: 2,
@@ -267,23 +274,7 @@ const bucketReplacement = {
 		aaMode: true,
 		triggerDebuggingEnabled: true,
 	},
-	'2024-07_ctp_open_user_settings_everyone': {
-		revision: 2,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: true,
-		triggerDebuggingEnabled: true,
-	},
 	'2024-07_ctp_payment_flow_started_everyone': {
-		revision: 1,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: true,
-		triggerDebuggingEnabled: true,
-	},
-	'2024-06_ctp_voice_call_everyone': {
 		revision: 1,
 		population: 0,
 		bucket: 1,
@@ -315,14 +306,6 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: false,
 	},
-	'2024-11_disable_quest_decision_fallback': {
-		revision: 0,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: false,
-	},
 	'2024-03_content_inventory_memberlist_and_ranker': {
 		revision: 23,
 		population: 2,
@@ -347,13 +330,21 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: true,
 	},
-	'2024-10_golive_simulcast': {
-		revision: 5,
-		population: 3,
-		bucket: 0,
+	'2024-09_global_discovery_apps': {
+		revision: 3,
+		population: 2,
+		bucket: 1,
 		override: false,
 		aaMode: false,
-		triggerDebuggingEnabled: true,
+		triggerDebuggingEnabled: false,
+	},
+	'2024-12_global_discovery_apps_logged_out': {
+		revision: 5,
+		population: 0,
+		bucket: 1,
+		override: false,
+		aaMode: false,
+		triggerDebuggingEnabled: false,
 	},
 	'2024-04_gdm_presence': {
 		revision: 4,
@@ -507,14 +498,6 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: true,
 	},
-	'2024-11_nitro_basic_upsell': {
-		revision: 3,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
 	'2024-08_nitro_tenure_rewards_backfill': {
 		revision: 2,
 		population: 0,
@@ -563,18 +546,10 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: false,
 	},
-	'2024-07_persistent_reaction_button': {
-		revision: 3,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
 	'2023-03_pomelo': {
 		revision: 0,
 		population: 7,
-		bucket: -1, // Not eligible
+		bucket: 1,
 		override: false,
 		aaMode: false,
 		triggerDebuggingEnabled: false,
@@ -596,14 +571,6 @@ const bucketReplacement = {
 		triggerDebuggingEnabled: false,
 	},
 	'2023-10_premium_tier_2_trial_offer_expiring_notice': {
-		revision: 3,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: false,
-	},
-	'2024-10_premium_upsell_revamp_for_trial': {
 		revision: 3,
 		population: 0,
 		bucket: 1,
@@ -755,38 +722,6 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: false,
 	},
-	'2023-11_safety_hub_inapp_appeal_ingestion': {
-		revision: 1,
-		population: 6,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
-	'2024-08_safety_settings_update': {
-		revision: 3,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
-	'2024-11_seasonal_gifting': {
-		revision: 1,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
-	'2024-11_seasonal_gifting_reminder': {
-		revision: 1,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: false,
-	},
 	'2024-05_secure_frames_ui_rollout': {
 		revision: 1,
 		population: 0,
@@ -826,14 +761,6 @@ const bucketReplacement = {
 		override: false,
 		aaMode: false,
 		triggerDebuggingEnabled: false,
-	},
-	'2024-09_sky_load': {
-		revision: 4,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
 	},
 	'2024-08_soundboard_refresh': {
 		revision: 4,
@@ -923,6 +850,14 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: false,
 	},
+	'2024-12_uplift_trial_nux': {
+		revision: 0,
+		population: 0,
+		bucket: 0,
+		override: false,
+		aaMode: false,
+		triggerDebuggingEnabled: true,
+	},
 	'2024-10_system_date_formatter': {
 		revision: 5,
 		population: 3,
@@ -947,10 +882,10 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: false,
 	},
-	'2024-12_user_profile_react_reply_awareness': {
-		revision: 3,
-		population: 0,
-		bucket: 0,
+	'2024-08_user_profile_blockee_hide_mutuals': {
+		revision: 2,
+		population: 2,
+		bucket: 1,
 		override: false,
 		aaMode: false,
 		triggerDebuggingEnabled: true,
@@ -987,19 +922,12 @@ const bucketReplacement = {
 		aaMode: false,
 		triggerDebuggingEnabled: true,
 	},
-	'2024-12_winter_holiday': {
-		revision: 0,
-		population: 0,
-		bucket: 1,
-		override: false,
-		aaMode: false,
-		triggerDebuggingEnabled: true,
-	},
 };
 
 function buildUserExperiment(obj, botId) {
 	const dataFromBucket = bucketReplacement[obj.id];
 	if (!dataFromBucket) return null;
+	if (disabledBuckets.includes(obj.id)) return null;
 	const hash = v3(obj.id);
 	const revision = dataFromBucket.revision;
 	const bucket = dataFromBucket.bucket;
