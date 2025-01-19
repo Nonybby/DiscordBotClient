@@ -21,7 +21,72 @@ const Constants = require('./Constants.js');
 // Setup logger
 const log = scope(Constants.APP_NAME);
 Object.assign(console, scope('ConsoleProxy'));
-errorHandler.startCatching();
+errorHandler.startCatching({
+	onError({ createIssue, error, processType, versions }) {
+		// Handle internet connection error
+		if (error.message.includes('ENOTFOUND')) {
+			log.error('DNS lookup failed. Check the domain name or network connection.', error);
+			return false;
+		}
+		if (error.message.includes('EAI_AGAIN')) {
+			log.error('Temporary DNS resolution failure. Please try again later.', error);
+			return false;
+		}
+		if (error.message.includes('ECONNREFUSED')) {
+			log.error('Connection refused. The server may be down or the port is not open.', error);
+			return false;
+		}
+		if (error.message.includes('ETIMEDOUT')) {
+			log.error('Connection timed out. The server is not responding.', error);
+			return false;
+		}
+		if (error.message.includes('ECONNRESET')) {
+			log.error('Connection reset by the server. The server may have closed the connection abruptly.', error);
+			return false;
+		}
+		if (error.message.includes('EHOSTUNREACH')) {
+			log.error('Host unreachable. The server may be offline or the network is down.', error);
+			return false;
+		}
+		if (error.message.includes('ENETUNREACH')) {
+			log.error('Network unreachable. Check your internet connection.', error);
+			return false;
+		}
+		if (error.message.includes('UNABLE_TO_VERIFY_LEAF_SIGNATURE')) {
+			log.error('SSL certificate verification failed. The certificate may be invalid or self-signed.', error);
+			return false;
+		}
+		if (error.message.includes('CERT_HAS_EXPIRED')) {
+			log.error('SSL certificate has expired. The server certificate is no longer valid.', error);
+			return false;
+		}
+		if (error.message.includes('EPROTO')) {
+			log.error('SSL/TLS protocol error. There may be a mismatch in the protocol version.', error);
+			return false;
+		}
+		if (error.message.includes('EADDRINUSE')) {
+			log.error('Address already in use. The port is occupied by another process.', error);
+			return false;
+		}
+		if (error.message.includes('EACCES')) {
+			log.error('Permission denied. You may need elevated privileges to access the resource.', error);
+			return false;
+		}
+		if (error.message.includes('HPE_INVALID_STATUS')) {
+			log.error('Invalid HTTP status code received from the server.', error);
+			return false;
+		}
+		if (error.message.includes('HPE_HEADER_OVERFLOW')) {
+			log.error('HTTP header overflow. The server sent headers that are too large.', error);
+			return false;
+		}
+		if (error.message.includes('ESOCKETTIMEDOUT')) {
+			log.error('Socket timed out. The connection took too long to respond.', error);
+			return false;
+		}
+		return;
+	}
+});
 eventLogger.startLogging();
 
 // https://github.com/chalk/ansi-regex/blob/main/index.js
