@@ -552,6 +552,10 @@ class DiscordBotClient {
 						userId,
 					);
 					const userData = await DirectMessagesDB.get(botId);
+					if (typeof userId == 'object' && userId?.id) {
+						this.logger.warn('UserId does not match the required format (string)', userId);
+						userId = userId.id[0]; // ??? Discord feature ???
+					}
 					if (type == 'add') {
 						userData[channelId] = {
 							type: 1,

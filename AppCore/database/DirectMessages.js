@@ -15,6 +15,20 @@ module.exports = class DirectMessages extends BaseDatabase {
 					data = {}
 					await this.db.put(id, data);
 				}
+				let isFixed = false;
+				for (const key in data) {
+					// Fix error
+					if (Array.isArray(data[key]?.recipients[0]?.id)) {
+						this.log.warn(`Fixing the error for the recipients key in the Private Channel ${key} data of bot ${id}`);
+						data[key].recipients[0].id = data[key].recipients[0].id[0];
+						isFixed = true;
+					}
+				}
+				if (isFixed) {
+					// Save fixed data
+					this.log.warn(`An error was detected in the DMs channel, and the error correction data has been saved for bot ${id}`);
+					await this.db.put(id, data);
+				}
 				resolve(data);
 			} catch (error) {
 				reject(error);
