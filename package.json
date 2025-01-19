@@ -1,6 +1,6 @@
 {
 	"name": "discord-bot-client",
-	"version": "3.6.1",
+	"version": "3.6.2",
 	"description": "Discord Bot Client - login into discord with a bot token",
 	"main": "./AppCore/index.js",
 	"dependencies": {
@@ -12,7 +12,7 @@
 		"express": "^4.21.2",
 		"lambert-server": "^1.2.12",
 		"level": "^9.0.0",
-		"level-supports": "^6.1.1",
+		"level-supports": "^6.2.0",
 		"level-transcoder": "^1.0.1",
 		"lodash": "^4.17.21",
 		"morgan": "^1.10.0",
@@ -20,7 +20,7 @@
 		"murmurhash": "^2.0.1",
 		"probe-image-size": "^7.2.3",
 		"request": "^2.88.2",
-		"undici": "^7.2.0"
+		"undici": "^7.2.3"
 	},
 	"devDependencies": {
 		"electron": "^32.1.2",
