@@ -82,8 +82,6 @@ app.use(route);
 app.all('/developers/*', (req, res) => {
 	return res.redirect('/app');
 });
-// CDN proxy
-// require('./proxyServer/QuestCDN')(app);
 // Other
 app.use((req, res, next) => {
 	if (req.originalUrl.endsWith('.map')) return res.status(404).send();
@@ -95,15 +93,6 @@ app.use((req, res, next) => {
 	if (req.originalUrl.includes('/bot/api')) {
 		return req
 			.pipe(request('https://discord.com' + req.originalUrl.slice(4)))
-			.pipe(res);
-	}
-	if (req.originalUrl.includes('/cdn/')) {
-		return req
-			.pipe(
-				request(
-					'https://cdn.discordapp.com' + req.originalUrl.slice(4),
-				),
-			)
 			.pipe(res);
 	}
 	res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));

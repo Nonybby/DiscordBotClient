@@ -34,6 +34,7 @@ fetch(URL)
 				WEBAPP_ENDPOINT: "'//' + window.location.host",
 				MIGRATION_DESTINATION_ORIGIN:
 					"window.location.protocol + '//' + window.location.host",
+				// PUBLIC_PATH: '//discord.com/assets/',
 			};
 			scriptTags.forEach((scriptTag, index) => {
 				scriptTag.removeAttribute('nonce');

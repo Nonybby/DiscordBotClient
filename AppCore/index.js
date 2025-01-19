@@ -293,22 +293,47 @@ class DiscordBotClient {
 					cancel: true,
 				});
 			},
-		)
-		// Patch custom css
-		session.defaultSession.webRequest.onHeadersReceived(
+		);
+		// Patch headers
+		session.defaultSession.webRequest.onBeforeSendHeaders(
 			{
-				urls: ['https://raw.githubusercontent.com/*'],
+				urls: ['https://*.discord.com/*'],
 			},
 			(details, callback) => {
-				if (
-					details.responseHeaders['content-type'].find((_) =>
-						_.includes('text/'),
-					)
-				) {
-					details.responseHeaders['content-type'] = ['text/css'];
+				callback({
+					requestHeaders: {
+						Origin: 'https://discord.com',
+						'User-Agent': details.requestHeaders['User-Agent'],
+						Accept: '*/*',
+						Referer: 'https://discord.com',
+						'Accept-Encoding': 'gzip, deflate, br, zstd',
+						'Accept-Language': 'en-US'
+					}
+				});
+			}
+		);
+		// Intercept responses for specific URLs
+		session.defaultSession.webRequest.onHeadersReceived(
+			{ urls: ['<all_urls>'] },
+			(details, callback) => {
+				// Patch custom css
+				if (details.url.startsWith('https://raw.githubusercontent.com/')) {
+					if (
+						details.responseHeaders['content-type'].find((_) =>
+							_.includes('text/'),
+						)
+					) {
+						details.responseHeaders['content-type'] = ['text/css'];
+					}
+				}
+				if (details.responseHeaders && details.responseHeaders['access-control-allow-origin']) {
+					// Remove the CORS header
+					delete details.responseHeaders['access-control-allow-origin'];
+					// Alternatively, set it to '*' to allow all origins
+					// details.responseHeaders['access-control-allow-origin'] = ['*'];
 				}
 				callback({ responseHeaders: details.responseHeaders });
-			},
+			}
 		);
 		// Load Vencord-Web Extension
 		await session.defaultSession.loadExtension(
@@ -436,12 +461,6 @@ class DiscordBotClient {
 			}
 			return { action: 'deny' };
 		});
-		// Load the index.html of the app.
-		this.win.loadURL(
-			Constants.TestVencordMode
-				? 'https://canary.discord.com/channels/@me'
-				: `https://localhost:${this.port}`,
-		);
 		// WebContents Event
 		this.win.webContents
 			.on('did-start-loading', () => {
@@ -451,6 +470,12 @@ class DiscordBotClient {
 				this.win.setTitle(Constants.APP_NAME);
 				this.win.setProgressBar(-1);
 			});
+		// Load the index.html of the app.
+		this.win.loadURL(
+			Constants.TestVencordMode
+				? 'https://canary.discord.com/channels/@me'
+				: `https://localhost:${this.port}`,
+		);
 	}
 	setupIpcEvents() {
 		ipcMain
