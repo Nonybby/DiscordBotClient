@@ -146,6 +146,7 @@ Logging in works via the UI on first startup of the application.
 - **Voice**[^2]
 - **Nitro**[^3]
 - **Direct Message**[^4]
+- **Vencord Built-in**
 
 [^1]: If your bot is in fewer than 10 servers.
 [^2]: Except for features related to streams.
