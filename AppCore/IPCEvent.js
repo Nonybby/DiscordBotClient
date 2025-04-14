@@ -2,6 +2,7 @@ module.exports = class IPCEvent extends null {
 	static Close = 'DBC_CLOSE';
 	static Minimize = 'DBC_MINIMIZE';
 	static Maximize = 'DBC_MAXIMIZE';
+	static Focus = 'DBC_FOCUS';
 	static GetBotInfo = 'DBC_GET_BOT_INFO';
 	static GetBotInfoResponse = 'DBC_GET_BOT_INFO_RESPONSE';
 	static GetDBCVersions = 'DBC_GET_DBC_VERSIONS';

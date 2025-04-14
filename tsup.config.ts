@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-	entry: ['DiscordProtos/src/index.ts'],
+	entry: ['discord-protos/src/index.ts'],
 	external: [],
 	noExternal: [],
 	platform: 'node',
@@ -16,6 +16,5 @@ export default defineConfig({
 	dts: true,
 	sourcemap: false,
 	esbuildPlugins: [],
-	outDir: 'DiscordProtos/dist',
-    
+	outDir: 'discord-protos/dist',
 });

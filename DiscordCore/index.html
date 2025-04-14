@@ -1,5 +1,6 @@
-<!DOCTYPE html><html><head>    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1,maximum-scale=3" name="viewport">
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport">
 
     <!-- section:seometa -->
     <meta property="og:type" content="website">
@@ -10,42 +11,110 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@discord">
     <meta name="twitter:creator" content="@discord">
-    <!-- endsection --><script>window.GLOBAL_ENV = {
-      API_ENDPOINT: '//' + window.location.host + '/bot/api',
-      API_VERSION: 9,
-      GATEWAY_ENDPOINT: 'wss://gateway.discord.gg',
-      WEBAPP_ENDPOINT: '//' + window.location.host,
-      CDN_HOST: 'cdn.discordapp.com',
-      ASSET_ENDPOINT: '//discord.com',
-      MEDIA_PROXY_ENDPOINT: '//media.discordapp.net',
-      IMAGE_PROXY_ENDPOINTS: '//images-ext-1.discordapp.net,//images-ext-2.discordapp.net',
-      WIDGET_ENDPOINT: '//discord.com/widget',
-      INVITE_HOST: 'discord.gg',
-      GUILD_TEMPLATE_HOST: 'discord.new',
-      GIFT_CODE_HOST: 'discord.gift',
-      RELEASE_CHANNEL: 'stable',
-      DEVELOPERS_ENDPOINT: '//discord.com',
-      MARKETING_ENDPOINT: '//discord.com',
-      BRAINTREE_KEY: 'production_ktzp8hfp_49pp2rp4phym7387',
-      STRIPE_KEY: 'pk_live_CUQtlpQUF0vufWpnpUmQvcdi',
-      ADYEN_KEY: 'live_E3OQ33V6GVGTXOVQZEAFQJ6DJIDVG6SY',
-      NETWORKING_ENDPOINT: '//router.discordapp.net',
-      RTC_LATENCY_ENDPOINT: '//latency.discord.media/rtc',
-      ACTIVITY_APPLICATION_HOST: 'discordsays.com',
-      PROJECT_ENV: 'production',
-      REMOTE_AUTH_ENDPOINT: '//remote-auth-gateway.discord.gg',
-      SENTRY_TAGS: {"buildId":"38aca73fac288c8043e272f4fbc86786a67286cd","buildType":"normal"},
-      MIGRATION_SOURCE_ORIGIN: 'https://discordapp.com',
-      MIGRATION_DESTINATION_ORIGIN: window.location.protocol + '//' + window.location.host,
-      HTML_TIMESTAMP: Date.now(),
-      PUBLIC_PATH: '/assets/',
-      STATIC_ENDPOINT: '',
-      DEV_SESSION_KEY: 'undefined',
-    };</script><script>!function(){if(null!=window.WebSocket){if(function(n){try{var o=localStorage.getItem(n);return null==o?null:JSON.parse(o)}catch(n){return null}}("token")&&!window.__OVERLAY__){var n=null!=window.DiscordNative||null!=window.require?"etf":"json",o=window.GLOBAL_ENV.GATEWAY_ENDPOINT+"/?encoding="+n+"&v="+window.GLOBAL_ENV.API_VERSION;null!=window.DiscordNative&&void 0!==window.Uint8Array&&void 0!==window.TextDecoder?o+="&compress=zstd-stream":void 0!==window.Uint8Array&&(o+="&compress=zlib-stream"),console.log("[FAST CONNECT] "+o+", encoding: "+n+", version: "+window.GLOBAL_ENV.API_VERSION);var e=new WebSocket(o);e.binaryType="arraybuffer";var i=Date.now(),w={open:!1,identify:!1,gateway:o,messages:[]};e.onopen=function(){console.log("[FAST CONNECT] connected in "+(Date.now()-i)+"ms"),w.open=!0},e.onclose=e.onerror=function(){window._ws=null},e.onmessage=function(n){w.messages.push(n)},window._ws={ws:e,state:w}}}}()</script>    <!-- section:title -->
+    <!-- endsection -->
+
+    <script>
+        window.GLOBAL_ENV = {
+            "NODE_ENV": "production",
+            "BUILT_AT": "1744399436864",
+            "HTML_TIMESTAMP": Date.now(),
+            "BUILD_NUMBER": "389004",
+            "PROJECT_ENV": "production",
+            "RELEASE_CHANNEL": "stable",
+            "VERSION_HASH": "9e468acd9390c99cb2af3a3ace62b3b4d9b71d78",
+            "PRIMARY_DOMAIN": "discord.com",
+            "SENTRY_TAGS": {
+                "buildId": "9e468acd9390c99cb2af3a3ace62b3b4d9b71d78",
+                "buildType": "normal"
+            },
+            "SENTRY_RELEASE": "2025-04-11-9e468acd9390c99cb2af3a3ace62b3b4d9b71d78-discord_web",
+            "PUBLIC_PATH": "/assets/",
+            "LOCATION": "history",
+            "API_VERSION": 9,
+            "API_PROTOCOL": "https:",
+            "API_ENDPOINT": '//' + window.location.host + '/bot/api',
+            "GATEWAY_ENDPOINT": "wss://gateway.discord.gg",
+            "STATIC_ENDPOINT": "",
+            "ASSET_ENDPOINT": "//discord.com",
+            "MEDIA_PROXY_ENDPOINT": "//media.discordapp.net",
+            "IMAGE_PROXY_ENDPOINTS": "//images-ext-1.discordapp.net,//images-ext-2.discordapp.net",
+            "CDN_HOST": "cdn.discordapp.com",
+            "DEVELOPERS_ENDPOINT": "//discord.com",
+            "MARKETING_ENDPOINT": "//discord.com",
+            "WEBAPP_ENDPOINT": '//' + window.location.host,
+            "WIDGET_ENDPOINT": "//discord.com/widget",
+            "SEO_ENDPOINT": "undefined",
+            "NETWORKING_ENDPOINT": "//router.discordapp.net",
+            "REMOTE_AUTH_ENDPOINT": "//remote-auth-gateway.discord.gg",
+            "RTC_LATENCY_ENDPOINT": "//latency.discord.media/rtc",
+            "INVITE_HOST": "discord.gg",
+            "GUILD_TEMPLATE_HOST": "discord.new",
+            "GIFT_CODE_HOST": "discord.gift",
+            "ACTIVITY_APPLICATION_HOST": "discordsays.com",
+            "MIGRATION_SOURCE_ORIGIN": "https://discordapp.com",
+            "MIGRATION_DESTINATION_ORIGIN": window.location.protocol + '//' + window.location.host,
+            "STRIPE_KEY": "pk_live_CUQtlpQUF0vufWpnpUmQvcdi",
+            "ADYEN_KEY": "live_E3OQ33V6GVGTXOVQZEAFQJ6DJIDVG6SY",
+            "BRAINTREE_KEY": "production_ktzp8hfp_49pp2rp4phym7387",
+            "DEV_SESSION_KEY": "undefined"
+        }
+    </script>
+
+    <script>
+        ! function() {
+            if (null != window.WebSocket && function(n) {
+                    try {
+                        var o = localStorage.getItem(n);
+                        if (null == o) return null;
+                        return JSON.parse(o)
+                    } catch (e) {
+                        return null
+                    }
+                }("token") && !window.__OVERLAY__) {
+                var n = null != window.DiscordNative || null != window.require ? "etf" : "json",
+                    o = window.GLOBAL_ENV.GATEWAY_ENDPOINT + "/?encoding=" + n + "&v=" + window.GLOBAL_ENV.API_VERSION;
+                null != window.DiscordNative && void 0 !== window.Uint8Array && void 0 !== window.TextDecoder ? o += "&compress=zstd-stream" : void 0 !== window.Uint8Array && (o += "&compress=zlib-stream"), console.log("[FAST CONNECT] " + o + ", encoding: " + n + ", version: " + window.GLOBAL_ENV.API_VERSION);
+                var e = new WebSocket(o);
+                e.binaryType = "arraybuffer";
+                var i = Date.now(),
+                    r = {
+                        open: !1,
+                        identify: !1,
+                        gateway: o,
+                        messages: []
+                    };
+                e.onopen = function() {
+                    console.log("[FAST CONNECT] connected in " + (Date.now() - i) + "ms"), r.open = !0
+                }, e.onclose = e.onerror = function() {
+                    window._ws = null
+                }, e.onmessage = function(n) {
+                    r.messages.push(n)
+                }, window._ws = {
+                    ws: e,
+                    state: r
+                }
+            }
+        }();
+    </script>
+
+    <!-- section:title -->
     <title>Discord</title>
     <!-- endsection -->
-  <link rel="icon" href="/assets/favicon.ico"><link href="/assets/12633.5e6a5950157e089b0d7b.css" rel="stylesheet"></head>
-  <body>
-    <div id="app-mount"></div><script>window.__OVERLAY__=/overlay/.test(location.pathname)</script><script>window.__BILLING_STANDALONE__=/^\/billing/.test(location.pathname)</script>  
+    <script>
+        window.__OVERLAY__ = /overlay/.test(location.pathname);
+        window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
+    </script>
+    <link href="/assets/favicon.ico" rel="icon">
+    <link href="/assets/12633.4b47d0f658ccba94.css" rel="stylesheet">
+</head>
 
-<script src="/assets/web.50d9e8f71f8e4c1035d4.js" defer=""></script><script src="/assets/sentry.f52f14ab9bfb0e7f5504.js" defer=""></script></body></html>
+<body>
+    <div id="app-mount"></div>
+
+
+    <script defer="" src="/assets/web.a9c0392c9e9ca15a.js"></script>
+    <script defer="" src="/assets/sentry.864a14f4d89da2d8.js"></script>
+    
+
+
+</body></html>

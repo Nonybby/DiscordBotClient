@@ -4,7 +4,6 @@ const morgan = require('morgan');
 const { Server } = require('lambert-server');
 const path = require('path');
 const { readFileSync } = require('fs');
-const request = require('request');
 const { Writable } = require('stream');
 const { scope } = require('electron-log');
 
@@ -18,6 +17,7 @@ class CustomLogStream extends Writable {
 const logger =  new CustomLogStream();
 
 const Constants = require('./Constants');
+const proxy = require('./Proxy');
 
 const app = express();
 
@@ -91,9 +91,7 @@ app.use((req, res, next) => {
 			code: 20001,
 		});
 	if (req.originalUrl.includes('/bot/api')) {
-		return req
-			.pipe(request('https://discord.com' + req.originalUrl.slice(4)))
-			.pipe(res);
+		return proxy.web(req, res);
 	}
 	res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));
 });

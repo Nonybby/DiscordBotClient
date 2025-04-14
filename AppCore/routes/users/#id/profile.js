@@ -1,8 +1,8 @@
 const { Router } = require('express');
 const Util = require('../../../../AppAssets/Util');
 const { fetch } = require('undici');
-const request = require('request');
 const Constants = require('../../../Constants');
+const proxy = require('../../../Proxy');
 
 const app = Router();
 
@@ -21,7 +21,9 @@ app.get('/', async (req, res) => {
 					'user-agent': Constants.UserAgentDiscordBot,
 				},
 			},
-		).then((r) => r.json()).catch(() => null);
+		)
+			.then((r) => r.json())
+			.catch(() => null);
 	}
 	fetch('https://discord.com/api/v9/users/' + req.params.id, {
 		headers: {
@@ -34,7 +36,8 @@ app.get('/', async (req, res) => {
 });
 
 app.patch('/', (req, res) => {
-	return req.pipe(request('https://discord.com/api/v9/users/@me')).pipe(res);
+	req.url = '/api/v9/users/@me';
+	return proxy.web(req, res);
 });
 
 module.exports = app;

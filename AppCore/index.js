@@ -10,7 +10,13 @@ const {
 	ipcMain,
 	Notification,
 } = require('electron');
-const { scope, errorHandler, eventLogger, hooks, transports } = require('electron-log');
+const {
+	scope,
+	errorHandler,
+	eventLogger,
+	hooks,
+	transports,
+} = require('electron-log');
 const path = require('path');
 const { fetch } = require('undici');
 const os = require('os');
@@ -25,67 +31,112 @@ errorHandler.startCatching({
 	onError({ createIssue, error, processType, versions }) {
 		// Handle internet connection error
 		if (error.message.includes('ENOTFOUND')) {
-			log.error('DNS lookup failed. Check the domain name or network connection.', error);
+			log.error(
+				'DNS lookup failed. Check the domain name or network connection.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('EAI_AGAIN')) {
-			log.error('Temporary DNS resolution failure. Please try again later.', error);
+			log.error(
+				'Temporary DNS resolution failure. Please try again later.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('ECONNREFUSED')) {
-			log.error('Connection refused. The server may be down or the port is not open.', error);
+			log.error(
+				'Connection refused. The server may be down or the port is not open.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('ETIMEDOUT')) {
-			log.error('Connection timed out. The server is not responding.', error);
+			log.error(
+				'Connection timed out. The server is not responding.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('ECONNRESET')) {
-			log.error('Connection reset by the server. The server may have closed the connection abruptly.', error);
+			log.error(
+				'Connection reset by the server. The server may have closed the connection abruptly.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('EHOSTUNREACH')) {
-			log.error('Host unreachable. The server may be offline or the network is down.', error);
+			log.error(
+				'Host unreachable. The server may be offline or the network is down.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('ENETUNREACH')) {
-			log.error('Network unreachable. Check your internet connection.', error);
+			log.error(
+				'Network unreachable. Check your internet connection.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('UNABLE_TO_VERIFY_LEAF_SIGNATURE')) {
-			log.error('SSL certificate verification failed. The certificate may be invalid or self-signed.', error);
+			log.error(
+				'SSL certificate verification failed. The certificate may be invalid or self-signed.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('CERT_HAS_EXPIRED')) {
-			log.error('SSL certificate has expired. The server certificate is no longer valid.', error);
+			log.error(
+				'SSL certificate has expired. The server certificate is no longer valid.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('EPROTO')) {
-			log.error('SSL/TLS protocol error. There may be a mismatch in the protocol version.', error);
+			log.error(
+				'SSL/TLS protocol error. There may be a mismatch in the protocol version.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('EADDRINUSE')) {
-			log.error('Address already in use. The port is occupied by another process.', error);
+			log.error(
+				'Address already in use. The port is occupied by another process.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('EACCES')) {
-			log.error('Permission denied. You may need elevated privileges to access the resource.', error);
+			log.error(
+				'Permission denied. You may need elevated privileges to access the resource.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('HPE_INVALID_STATUS')) {
-			log.error('Invalid HTTP status code received from the server.', error);
+			log.error(
+				'Invalid HTTP status code received from the server.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('HPE_HEADER_OVERFLOW')) {
-			log.error('HTTP header overflow. The server sent headers that are too large.', error);
+			log.error(
+				'HTTP header overflow. The server sent headers that are too large.',
+				error,
+			);
 			return false;
 		}
 		if (error.message.includes('ESOCKETTIMEDOUT')) {
-			log.error('Socket timed out. The connection took too long to respond.', error);
+			log.error(
+				'Socket timed out. The connection took too long to respond.',
+				error,
+			);
 			return false;
 		}
 		return;
-	}
+	},
 });
 eventLogger.startLogging();
 
@@ -109,7 +160,9 @@ hooks.push((message, transport) => {
 	if (transport !== transports.file) {
 		return message;
 	}
-	message.data = message.data.map((l) => l?.toString()?.replace(RegexANSIEscape, ''));
+	message.data = message.data.map((l) =>
+		l?.toString()?.replace(RegexANSIEscape, ''),
+	);
 	return message;
 });
 
@@ -124,7 +177,7 @@ const {
 	PreloadedUserSettingsDB,
 	FrecencyUserSettingsDB,
 } = require('./database/index.js');
-const { PreloadedUserSettings } = require('../DiscordProtos');
+const { PreloadedUserSettings } = require('../discord-protos');
 const Experiments = require('../AppAssets/Experiments.js');
 const Intents = require('../AppAssets/Intents.js');
 const IPCEvent = require('./IPCEvent.js');
@@ -253,15 +306,13 @@ class DiscordBotClient {
 					{
 						label: 'Clear opened Private Channels',
 						click: () => {
-							DirectMessagesDB.deleteAll().then(
-								() => {
-									this.showNotification({
-										title: 'Opened Private Channels has been cleared',
-										body: 'This will reset all opened Private Channels.',
-										silent: false,
-									});
-								},
-							);
+							DirectMessagesDB.deleteAll().then(() => {
+								this.showNotification({
+									title: 'Opened Private Channels has been cleared',
+									body: 'This will reset all opened Private Channels.',
+									silent: false,
+								});
+							});
 						},
 					},
 				],
@@ -372,17 +423,19 @@ class DiscordBotClient {
 						Accept: '*/*',
 						Referer: 'https://discord.com',
 						'Accept-Encoding': 'gzip, deflate, br, zstd',
-						'Accept-Language': 'en-US'
-					}
+						'Accept-Language': 'en-US',
+					},
 				});
-			}
+			},
 		);
 		// Intercept responses for specific URLs
 		session.defaultSession.webRequest.onHeadersReceived(
 			{ urls: ['<all_urls>'] },
 			(details, callback) => {
 				// Patch custom css
-				if (details.url.startsWith('https://raw.githubusercontent.com/')) {
+				if (
+					details.url.startsWith('https://raw.githubusercontent.com/')
+				) {
 					if (
 						details.responseHeaders['content-type'].find((_) =>
 							_.includes('text/'),
@@ -391,14 +444,19 @@ class DiscordBotClient {
 						details.responseHeaders['content-type'] = ['text/css'];
 					}
 				}
-				if (details.responseHeaders && details.responseHeaders['access-control-allow-origin']) {
+				if (
+					details.responseHeaders &&
+					details.responseHeaders['access-control-allow-origin']
+				) {
 					// Remove the CORS header
-					delete details.responseHeaders['access-control-allow-origin'];
+					delete details.responseHeaders[
+						'access-control-allow-origin'
+					];
 					// Alternatively, set it to '*' to allow all origins
 					// details.responseHeaders['access-control-allow-origin'] = ['*'];
 				}
 				callback({ responseHeaders: details.responseHeaders });
-			}
+			},
 		);
 		// Load Vencord-Web Extension
 		await session.defaultSession.loadExtension(
@@ -488,9 +546,9 @@ class DiscordBotClient {
 		this.win.webContents.setWindowOpenHandler(({ url }) => {
 			this.logger.log('WindowOpenHandler', url);
 			if (
-				Constants.AllowPopups.map(u => u.replace('{port}', this.port)).find(
-					u => url.startsWith(u),
-				)
+				Constants.AllowPopups.map((u) =>
+					u.replace('{port}', this.port),
+				).find((u) => url.startsWith(u))
 			) {
 				return {
 					action: 'allow',
@@ -519,10 +577,25 @@ class DiscordBotClient {
 					},
 				};
 			}
-			if (!Constants.DeclinePopups.map(u => u.replace('{port}', this.port)).find(
-				u => url.startsWith(u),
-			)) {
-				shell.openExternal(url);
+			if (
+				!Constants.DeclinePopups.map((u) =>
+					u.replace('{port}', this.port),
+				).find((u) => url.startsWith(u))
+			) {
+				try {
+					var { protocol } = new URL(url);
+				} catch {
+					return { action: 'deny' };
+				}
+
+				switch (protocol) {
+					case 'http:':
+					case 'https:':
+					case 'mailto:':
+					case 'steam:':
+					case 'spotify:':
+						shell.openExternal(url);
+				}
 			}
 			return { action: 'deny' };
 		});
@@ -557,6 +630,11 @@ class DiscordBotClient {
 			})
 			.on(IPCEvent.Close, (event) => {
 				this.win.hide();
+			})
+			.on(IPCEvent.Focus, (event) => {
+				// this.win.focus();
+				this.win.show();
+				this.win.setSkipTaskbar(false);
 			})
 			.on(IPCEvent.GetBotInfo, async (event, token) => {
 				token = token.replace(/Bot/g, '').trim();
@@ -604,7 +682,7 @@ class DiscordBotClient {
 							allShards:
 								Math.ceil(
 									parseInt(data.approximate_guild_count) /
-									Constants.MaxGuildsPerShard,
+										Constants.MaxGuildsPerShard,
 								) || 1,
 						});
 					})
@@ -643,7 +721,10 @@ class DiscordBotClient {
 					);
 					const userData = await DirectMessagesDB.get(botId);
 					if (typeof userId == 'object' && userId?.id) {
-						this.logger.warn('UserId does not match the required format (string)', userId);
+						this.logger.warn(
+							'UserId does not match the required format (string)',
+							userId,
+						);
 						userId = userId.id[0]; // ??? Discord feature ???
 					}
 					if (type == 'add') {

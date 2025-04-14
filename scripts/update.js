@@ -2,6 +2,7 @@ const { fetch } = require('undici');
 const path = require('path');
 const fs = require('fs');
 const { JSDOM } = require('jsdom');
+const beautifyHTML = require('js-beautify').html;
 
 const URL = 'https://discord.com/channels/@me';
 
@@ -17,11 +18,20 @@ const HTMLPath = path.resolve(folder, 'index.html');
 
 const PatchMode = true;
 
+console.log('[Discord] Fetching HTML');
+
 fetch(URL)
 	.then((r) => r.text())
 	.then((text) => {
 		if (PatchMode) {
-			console.log('[Discord] Patching HTML');
+			console.log('[Discord] Start Patching HTML');
+			console.log('[Discord] Beautifying HTML');
+			text = beautifyHTML(text, {
+				indent_size: 4,
+				indent_with_tabs: false,
+				max_preserve_newlines: 5,
+				preserve_newlines: true,
+			});
 			const dom = new JSDOM(text);
 			// DOM
 			const window = dom.window;
@@ -52,9 +62,9 @@ fetch(URL)
 					scriptTag.textContent = scriptTag.textContent
 						.split('\n')
 						.map((s) => {
-							let k = keys.find((_) => s.trim().startsWith(_));
+							let k = keys.find((_) => s.includes(_));
 							if (k) {
-								return `      ${k}: ${replaceEnv[k]},`;
+								return `            "${k}": ${replaceEnv[k]},`;
 							} else {
 								return s;
 							}
@@ -65,11 +75,21 @@ fetch(URL)
 			});
 			text = dom.serialize();
 		}
-		const sentry = text
-			.split('\n')
-			.find((s) => s.trim().startsWith('SENTRY_TAGS'));
-		console.log('[Discord] Build', sentry.trim());
+		let temp = text.split('\n');
+		console.log(
+			'[Discord] Build:',
+
+			temp
+				.find((s) => s.includes('VERSION_HASH'))
+				.replace('VERSION_HASH', '')
+				.match(/\w+/)[0],
+			'| Release Channel:',
+			temp
+				.find((s) => s.includes('RELEASE_CHANNEL'))
+				.replace('RELEASE_CHANNEL', '')
+				.match(/\w+/)[0],
+		);
 		fs.writeFileSync(HTMLPath, text);
-		console.log('[Discord] Patched HTML', HTMLPath);
+		console.log('[Discord] Patched HTML:', HTMLPath);
 		require('./updateGuildExperiments')();
 	});

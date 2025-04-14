@@ -112,7 +112,6 @@ Open a command line and execute the following commands:
 ```shell
 git clone https://github.com/aiko-chan-ai/DiscordBotClient.git
 cd DiscordBotClient
-git clone https://github.com/aiko-chan-ai/VencordDBC.git
 npm run requirement
 npm run build
 ```
@@ -225,10 +224,6 @@ Hit me up if you have a similar project, and I'll gladly add it to the list.
 ```sh
 git clone https://github.com/aiko-chan-ai/DiscordBotClient.git
 cd DiscordBotClient
-git clone https://github.com/Vendicated/Vencord.git
-// Rename from Vencord to VencordDBC
-// Ex: Windows PowerShell
-Rename-Item -Path Vencord -NewName VencordDBC
 ```
 
 2. Install required dependencies.
@@ -241,9 +236,17 @@ npm run requirement
 npm run fetchLatestDiscordBuild
 ```
 
-4. Copy BotClient plugin from [my repo](https://github.com/aiko-chan-ai/VencordDBC)
-> Guide: [Vencord.md](https://github.com/aiko-chan-ai/DiscordBotClient/blob/electron-v3/Vencord.md)
-
+4. (Optional) Update discord-protos
+```sh
+git clone https://github.com/discord-userdoccers/discord-protos.git
+cd discord-protos
+# Delete `.git` folder
+npm install
+cd ..
+npm run proto:update
+npm run proto:build:ts
+```
+ 
 ## Credits
 
 Thanks to [ChrisEric](https://github.com/CE1CECL) for helping me create a local proxy server! (code)
@@ -253,3 +256,9 @@ This project was mainly inspired by [SamuelScheit](https://github.com/SamuelSche
 develop any further.
 
 And a big thank to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app
+
+
+## Disclaimer
+
+Discord is trademark of Discord Inc. and solely mentioned for the sake of descriptivity.
+Mention of it does not imply any affiliation with or endorsement by Discord Inc.

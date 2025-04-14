@@ -2,8 +2,8 @@ const { Router } = require('express');
 const fs = require('fs');
 const path = require('path');
 const { fetch } = require('undici');
-const request = require('request');
 const Constants = require('../../../Constants');
+const proxy = require('../../../Proxy');
 
 const staticFolder = path.resolve('.', 'AppAssets', 'assets');
 
@@ -47,9 +47,8 @@ app.get('/', async (req, res) => {
 			res.send(content);
 		}
 	} else {
-		return req
-			.pipe(request('https://discord.com/assets/' + fileName))
-			.pipe(res);
+		req.url = '/assets/' + fileName;
+		return proxy.web(req, res);
 	}
 });
 

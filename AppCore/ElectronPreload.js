@@ -80,4 +80,7 @@ contextBridge.exposeInMainWorld('BotClientNative', {
 	maximize() {
 		ipcRenderer.send(IPCEvent.Maximize);
 	},
+	focus() {
+		ipcRenderer.send(IPCEvent.Focus);
+	},
 });
