@@ -9,6 +9,7 @@ const {
 	screen,
 	ipcMain,
 	Notification,
+	net,
 } = require('electron');
 const {
 	scope,
@@ -96,6 +97,10 @@ class DiscordBotClient {
 	 * @type {number}
 	 */
 	port;
+	/**
+	 * @type {?Electron.Session}
+	 */
+	customSession;
 	constructor() {
 		this.logger.log('App starting...');
 		this.initApp();
@@ -231,6 +236,42 @@ class DiscordBotClient {
 		]);
 		this.initTray(menu);
 	}
+	interceptRequests() {
+		// Intercept requests to the custom Discord domain and redirect them to the local server
+		// Currently, it is processing very slowly, so I'll temporarily refrain from using it.
+		// https://github.com/electron/electron/issues/39709
+		// https://github.com/electron/electron/issues/38749
+		// https://github.com/electron/electron/issues/42612
+		this.session.protocol.handle('https', (request) => {
+			const parsedUrl = new URL(request.url);
+			if (
+				parsedUrl.hostname === Constants.CustomDiscordDomain &&
+				['/api', '/developers', '/app', '/'].some((path) =>
+					parsedUrl.pathname.startsWith(path),
+				)
+			) {
+				parsedUrl.hostname = 'localhost';
+				parsedUrl.port = this.port;
+				return net.fetch(parsedUrl.toString(), {
+					method: request.method,
+					headers: request.headers,
+					body: request.body,
+					duplex: 'half',
+					cache: request.cache,
+					integrity: request.integrity,
+					credentials: request.credentials,
+					referrer: request.referrer,
+					referrerPolicy: request.referrerPolicy,
+					keepalive: request.keepalive,
+					mode: request.mode,
+					redirect: request.redirect,
+					signal: request.signal,
+				});
+			} else {
+				return net.fetch(request);
+			}
+		});
+	}
 	initApp() {
 		app.setAppUserModelId(Constants.APP_NAME);
 		// Allow Localhost SSL
@@ -267,6 +308,9 @@ class DiscordBotClient {
 			app.quit();
 		} else {
 			app.whenReady().then(async () => {
+				this.logger.info('Creating session...');
+				this.customSession =
+					session.fromPartition('persist:elysia_dbc');
 				this.logger.info('Checking Database...');
 				await Promise.all([
 					DirectMessagesDB.promiseReady,
@@ -292,9 +336,16 @@ class DiscordBotClient {
 
 		this.setupIpcEvents();
 	}
+	get session() {
+		if (this.customSession) {
+			return this.customSession;
+		} else {
+			return session.defaultSession;
+		}
+	}
 	async sessionPatch() {
 		// Disable stripe.com
-		session.defaultSession.webRequest.onBeforeRequest(
+		this.session.webRequest.onBeforeRequest(
 			{
 				urls: ['https://*.stripe.com/*'],
 			},
@@ -306,7 +357,7 @@ class DiscordBotClient {
 			},
 		);
 		// Patch headers
-		session.defaultSession.webRequest.onBeforeSendHeaders(
+		this.session.webRequest.onBeforeSendHeaders(
 			{
 				urls: ['https://*.discord.com/*'],
 			},
@@ -324,7 +375,7 @@ class DiscordBotClient {
 			},
 		);
 		// Intercept responses for specific URLs
-		session.defaultSession.webRequest.onHeadersReceived(
+		this.session.webRequest.onHeadersReceived(
 			{ urls: ['<all_urls>'] },
 			(details, callback) => {
 				// Patch custom css
@@ -354,15 +405,14 @@ class DiscordBotClient {
 			},
 		);
 		// Load Vencord-Web Extension
-		await session.defaultSession.loadExtension(
-			Constants.VencordExtensionPath,
-		);
+		await this.session.loadExtension(Constants.VencordExtensionPath);
 		this.logger.info(
 			'Vencord-Web Extension loaded, version: ' + VencordVersion,
 		);
 	}
 	async createWindow() {
 		this.port = await server(Constants.PortDefault);
+		// this.interceptRequests();
 		this.setupTray();
 		const primaryDisplay = screen.getPrimaryDisplay();
 		const { width, height } = primaryDisplay.workAreaSize;
@@ -380,6 +430,7 @@ class DiscordBotClient {
 				preload: path.join(__dirname, 'ElectronPreload.js'),
 				contextIsolation: true,
 				sandbox: false,
+				session: this.session,
 			},
 			backgroundColor: '#36393f',
 			titleBarStyle: 'hidden',
@@ -417,7 +468,7 @@ class DiscordBotClient {
 		this.logger.info(`Electron UserData: ${app.getPath('userData')}`);
 		// Microphone
 		if (process.platform === 'darwin') {
-			session.defaultSession.setPermissionRequestHandler(
+			this.session.setPermissionRequestHandler(
 				async (_webContents, permission, callback, details) => {
 					let granted = true;
 					if ('mediaTypes' in details) {
@@ -440,58 +491,67 @@ class DiscordBotClient {
 		// Discord popout
 		this.win.webContents.setWindowOpenHandler(({ url }) => {
 			this.logger.log('WindowOpenHandler', url);
-			if (
-				Constants.AllowPopups.map((u) =>
-					u.replace('{port}', this.port),
-				).find((u) => url.startsWith(u))
-			) {
-				return {
-					action: 'allow',
-					overrideBrowserWindowOptions: {
-						icon: Constants.icon128,
-						frame: true,
-						autoHideMenuBar: true,
-						width: 1080,
-						height: 720,
-						minWidth: 940,
-						minHeight: 500,
-						webPreferences: {
-							webSecurity: false,
-							nodeIntegration: false,
-							enableRemoteModule: false,
-							preload: path.join(__dirname, 'ElectronPreload.js'),
-							contextIsolation: true,
-							sandbox: false,
+			switch (url) {
+				case 'about:blank':
+				case 'https://discord.com/popout':
+				case 'https://ptb.discord.com/popout':
+				case 'https://canary.discord.com/popout':
+				case `https://localhost:${this.port}/popout`:
+					return {
+						action: 'allow',
+						overrideBrowserWindowOptions: {
+							icon: Constants.icon128,
+							frame: true,
+							autoHideMenuBar: true,
+							width: 1080,
+							height: 720,
+							minWidth: 940,
+							minHeight: 500,
+							webPreferences: {
+								webSecurity: false,
+								nodeIntegration: false,
+								enableRemoteModule: false,
+								preload: path.join(
+									__dirname,
+									'ElectronPreload.js',
+								),
+								contextIsolation: true,
+								sandbox: false,
+							},
+							backgroundColor: '#36393f',
+							show: true,
+							...(process.platform === 'darwin' && {
+								titleBarStyle: 'hidden',
+								trafficLightPosition: { x: 10, y: 10 },
+							}),
 						},
-						backgroundColor: '#36393f',
-						show: true,
-						...(process.platform === 'darwin' && {
-							titleBarStyle: 'hidden',
-							trafficLightPosition: { x: 10, y: 10 },
-						}),
-					},
-				};
+					};
 			}
-			if (
-				!Constants.DeclinePopups.map((u) =>
-					u.replace('{port}', this.port),
-				).find((u) => url.startsWith(u))
-			) {
-				try {
-					var { protocol } = new URL(url);
-				} catch {
-					return { action: 'deny' };
-				}
 
-				switch (protocol) {
-					case 'http:':
-					case 'https:':
-					case 'mailto:':
-					case 'steam:':
-					case 'spotify:':
-						shell.openExternal(url);
-				}
+			switch (url) {
+				case 'https://checkout.paypal.com/web':
+				case 'https://discord.com/connections':
+				case 'https://ptb.discord.com/connections':
+				case 'https://canary.discord.com/connections':
+				case `https://localhost:${this.port}/connections`:
+					return { action: 'deny' };
 			}
+
+			try {
+				var { protocol } = new URL(url);
+			} catch {
+				return { action: 'deny' };
+			}
+
+			switch (protocol) {
+				case 'http:':
+				case 'https:':
+				case 'mailto:':
+				case 'steam:':
+				case 'spotify:':
+					shell.openExternal(url);
+			}
+
 			return { action: 'deny' };
 		});
 		// WebContents Event
@@ -503,6 +563,7 @@ class DiscordBotClient {
 				this.win.setTitle(Constants.APP_NAME);
 				this.win.setProgressBar(-1);
 			});
+		// this.win.loadURL(`https://${Constants.CustomDiscordDomain}`);
 		// Load the index.html of the app.
 		this.win.loadURL(
 			Constants.TestVencordMode

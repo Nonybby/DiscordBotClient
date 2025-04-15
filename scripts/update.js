@@ -40,7 +40,7 @@ fetch(URL)
 			const scriptTags = document.querySelectorAll('script');
 			// Replace Environment
 			const replaceEnv = {
-				API_ENDPOINT: "'//' + window.location.host + '/bot/api'",
+				API_ENDPOINT: "'//' + window.location.host + '/api'",
 				WEBAPP_ENDPOINT: "'//' + window.location.host",
 				MIGRATION_DESTINATION_ORIGIN:
 					"window.location.protocol + '//' + window.location.host",
@@ -75,7 +75,16 @@ fetch(URL)
 			});
 			text = dom.serialize();
 		}
-		let temp = text.split('\n');
+		let temp = (
+			PatchMode
+				? text
+				: beautifyHTML(text, {
+						indent_size: 4,
+						indent_with_tabs: false,
+						max_preserve_newlines: 5,
+						preserve_newlines: true,
+				  })
+		).split('\n');
 		console.log(
 			'[Discord] Build:',
 
@@ -90,6 +99,6 @@ fetch(URL)
 				.match(/\w+/)[0],
 		);
 		fs.writeFileSync(HTMLPath, text);
-		console.log('[Discord] Patched HTML:', HTMLPath);
+		console.log(`[Discord] ${PatchMode ? 'Patched' : 'Original'} HTML:`, HTMLPath);
 		require('./updateGuildExperiments')();
 	});

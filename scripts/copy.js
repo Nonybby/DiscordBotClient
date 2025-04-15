@@ -57,6 +57,7 @@ content.web_accessible_resources.forEach(o => {
 writeFileSync(manifestPath, JSON.stringify(content));
 console.info('Patched manifest.json');
 
+
 // Patch Vencord.js (final file)
 const vencordPath = path.resolve(
     finalFolder,

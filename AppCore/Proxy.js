@@ -7,6 +7,7 @@ const proxy = httpProxy.createProxyServer({
 });
 
 proxy.on('error', (err, req, res) => {
+	console.error('Proxy error:', err, req, res);
 	res.status(500).send({
 		message: 'Internal Server Error',
 		code: 500,
@@ -14,14 +15,5 @@ proxy.on('error', (err, req, res) => {
 		stack: err.stack,
 	});
 });
-
-
-proxy.on('proxyReq', (proxyReq, req) => {
-	// Remove '/bot'
-	const newPath = req.url.replace(/^\/bot/, '');
-	proxyReq.path = newPath;
-	console.log('Proxying request:', req.method, req.url);
-});
-
 
 module.exports = proxy;

@@ -26,6 +26,7 @@ module.exports = class Constants extends null {
 		'/stripe',
 		'/paypal',
 		'/validate-billing-address',
+		'auth/conditional/start', // Disable WebAuthn
 	];
 	static LatestStorageUpdate = 1735000000000;
 	static APP_NAME = 'DiscordBotClient';
@@ -74,13 +75,9 @@ module.exports = class Constants extends null {
 	static UserDefaultPatch = UserPatch['1056491867375673424'];
 	static ChannelIdDefault = '1000000000000000000';
 	static UserIdDefault = '1056491867375673424';
-	static AllowPopups = ['about:blank', 'https://localhost:{port}/popout'];
-	static DeclinePopups = [
-		'https://checkout.paypal.com/web',
-		'https://localhost:{port}/connections',
-	];
 	static PortDefault = 50000;
 	static TestVencordMode = false;
+	static CustomDiscordDomain = 'discord.com';
 	static CacheAssetsMode = false;
 	static MaxGuildsPerShard = 100;
 	// Database
