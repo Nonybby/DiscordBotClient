@@ -95,7 +95,7 @@
 		"asar": false
 	},
 	"scripts": {
-		"start": "electron --inspect=9229 AppCore\\index.js",
+		"start": "electron AppCore\\index.js",
 		"mac": "electron-builder -m",
 		"win": "electron-builder -w",
 		"linux": "electron-builder -l",

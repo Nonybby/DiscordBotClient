@@ -141,26 +141,29 @@ Logging in works via the UI on first startup of the application.
 - **View Guilds** *(Lazy load them)*
 - **Manage Guilds, Channels** 
 - **Messages** (Send, View History, Embeds, Reactions, Manage)
-- **Create a Guild**[^1]
+- **~~Create a Guild~~**[^1]
 - **Voice**[^2]
 - **Nitro**[^3]
 - **Direct Message**[^4]
 - **Vencord Built-in**
 
-[^1]: If your bot is in fewer than 10 servers.
+[^1]: See https://discord.com/developers/docs/change-log?topic=HTTP+API#deprecating-guild-creation-by-apps
 [^2]: Except for features related to streams.
-[^3]: Nitro features are reduced: Unable to use stickers everywhere, cannot send files larger than 25 MB or 10 MB (ref: https://discord.com/developers/docs/change-log#default-file-upload-limit-change), and cannot set avatar decorations.
+[^3]: Nitro features are reduced: Unable to use stickers everywhere, cannot send files larger than 10 MB, and cannot set avatar decorations.
 [^4]: Implemented with restrictions on the client.
 
 ---
 
 ## Version
 
+Currently, I will only support the latest version of this application; other versions will not receive bug fixes.
+
 | Discord Build | Hash     | Vencord | Client version           | Status  |
 |---------------|----------|---------|--------------------------|---------|
-| Stable 360320 | 38aca73  | v1.10.9 | v3.6.2                   | Latest  |
-| Stable 355624 | 8dc6074  | v1.10.9 | v3.6.0 - v3.6.1          | Deprecated |
-| Stable 331146 | fddab3e  | v1.10.3 | v3.5.0                   | Deprecated |
+| Stable 389??? | ???????  | v1.11.9 | v3.?.?                   | ~~Latest~~ Beta  |
+| Stable 360320 | 38aca73  | v1.10.9 | v3.6.2                   | ~~Deprecated~~ Latest  |
+| Stable 355624 | 8dc6074  | v1.10.9 | v3.6.0 - v3.6.1          | EOL |
+| Stable 331146 | fddab3e  | v1.10.3 | v3.5.0                   | EOL |
 | Stable 302556 | 366c746  | v1.8.9  | v3.3.0 - v3.4.1          | EOL |
 | Stable 275565 | ede2af3  | v1.7.2  | v3.2.0 - v3.2.1          | EOL |
 | Stable 263796 | 739ec78  | v1.6.7  | v3.0.0 - v3.1.3          | EOL |

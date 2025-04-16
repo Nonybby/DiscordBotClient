@@ -256,16 +256,8 @@ class DiscordBotClient {
 					method: request.method,
 					headers: request.headers,
 					body: request.body,
-					duplex: 'half',
-					cache: request.cache,
-					integrity: request.integrity,
-					credentials: request.credentials,
+					duplex: request.duplex,
 					referrer: request.referrer,
-					referrerPolicy: request.referrerPolicy,
-					keepalive: request.keepalive,
-					mode: request.mode,
-					redirect: request.redirect,
-					signal: request.signal,
 				});
 			} else {
 				return net.fetch(request);
@@ -564,12 +556,14 @@ class DiscordBotClient {
 				this.win.setProgressBar(-1);
 			});
 		// this.win.loadURL(`https://${Constants.CustomDiscordDomain}`);
+		
 		// Load the index.html of the app.
 		this.win.loadURL(
 			Constants.TestVencordMode
 				? 'https://canary.discord.com/channels/@me'
 				: `https://localhost:${this.port}`,
 		);
+		
 	}
 	setupIpcEvents() {
 		ipcMain
