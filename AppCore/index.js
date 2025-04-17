@@ -236,40 +236,17 @@ class DiscordBotClient {
 		]);
 		this.initTray(menu);
 	}
-	interceptRequests() {
-		// Intercept requests to the custom Discord domain and redirect them to the local server
-		// Currently, it is processing very slowly, so I'll temporarily refrain from using it.
-		// https://github.com/electron/electron/issues/39709
-		// https://github.com/electron/electron/issues/38749
-		// https://github.com/electron/electron/issues/42612
-		this.session.protocol.handle('https', (request) => {
-			const parsedUrl = new URL(request.url);
-			if (
-				parsedUrl.hostname === Constants.CustomDiscordDomain &&
-				['/api', '/developers', '/app', '/'].some((path) =>
-					parsedUrl.pathname.startsWith(path),
-				)
-			) {
-				parsedUrl.hostname = 'localhost';
-				parsedUrl.port = this.port;
-				return net.fetch(parsedUrl.toString(), {
-					method: request.method,
-					headers: request.headers,
-					body: request.body,
-					duplex: request.duplex,
-					referrer: request.referrer,
-				});
-			} else {
-				return net.fetch(request);
-			}
-		});
-	}
-	initApp() {
+	async initApp() {
+		this.port = await server();
 		app.setAppUserModelId(Constants.APP_NAME);
 		// Allow Localhost SSL
 		app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
 		app.commandLine.appendSwitch('ignore-certificate-errors');
 		app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors');
+		app.commandLine.appendSwitch(
+			'host-rules',
+			`MAP ${Constants.CustomDiscordDomain} 127.0.0.1:${this.port}`,
+		);
 		// App Event
 		app.on('window-all-closed', () => {
 			if (process.platform !== 'darwin') {
@@ -348,24 +325,6 @@ class DiscordBotClient {
 				});
 			},
 		);
-		// Patch headers
-		this.session.webRequest.onBeforeSendHeaders(
-			{
-				urls: ['https://*.discord.com/*'],
-			},
-			(details, callback) => {
-				callback({
-					requestHeaders: {
-						Origin: 'https://discord.com',
-						'User-Agent': details.requestHeaders['User-Agent'],
-						Accept: '*/*',
-						Referer: 'https://discord.com',
-						'Accept-Encoding': 'gzip, deflate, br, zstd',
-						'Accept-Language': 'en-US',
-					},
-				});
-			},
-		);
 		// Intercept responses for specific URLs
 		this.session.webRequest.onHeadersReceived(
 			{ urls: ['<all_urls>'] },
@@ -403,8 +362,6 @@ class DiscordBotClient {
 		);
 	}
 	async createWindow() {
-		this.port = await server(Constants.PortDefault);
-		// this.interceptRequests();
 		this.setupTray();
 		const primaryDisplay = screen.getPrimaryDisplay();
 		const { width, height } = primaryDisplay.workAreaSize;
@@ -434,14 +391,6 @@ class DiscordBotClient {
 				trafficLightPosition: { x: 10, y: 10 },
 			}),
 		});
-		// Check port
-		if (this.port !== Constants.PortDefault) {
-			this.showNotification({
-				title: 'Port In Use',
-				body: 'The default port is already in use by another application, so you will be logged out temporarily.',
-				silent: false,
-			});
-		}
 		// BrowserWindow Event
 		this.win
 			.on('close', (event) => {
@@ -555,15 +504,8 @@ class DiscordBotClient {
 				this.win.setTitle(Constants.APP_NAME);
 				this.win.setProgressBar(-1);
 			});
-		// this.win.loadURL(`https://${Constants.CustomDiscordDomain}`);
-		
-		// Load the index.html of the app.
-		this.win.loadURL(
-			Constants.TestVencordMode
-				? 'https://canary.discord.com/channels/@me'
-				: `https://localhost:${this.port}`,
-		);
-		
+
+		this.win.loadURL(`https://${Constants.CustomDiscordDomain}`);
 	}
 	setupIpcEvents() {
 		ipcMain

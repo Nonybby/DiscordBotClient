@@ -29,34 +29,33 @@ rmSync(path.resolve('.', 'Vencord', 'dist'), { recursive: true });
 console.info('Moved folder Extension to ', finalFolder);
 
 // Patching manifest.json
-const manifestPath = path.resolve(
-    finalFolder,
-    'manifest.json',
-);
-
-let content = JSON.parse(
-    readFileSync(manifestPath, 'utf-8'),
-);
-
-if (!content.host_permissions.find(v => v === '*://localhost:*/*')) {
-    content.host_permissions.push('*://localhost:*/*');
-}
-
-content.content_scripts.forEach(o => {
-    if (!o.matches.find(v => v === '*://localhost:*/*')) {
-        o.matches.push('*://localhost:*/*');
-    }
-});
-
-content.web_accessible_resources.forEach(o => {
-    if (!o.matches.find((v) => v === '*://localhost:*/*')) {
-		o.matches.push('*://localhost:*/*');
-	}
-});
-
-writeFileSync(manifestPath, JSON.stringify(content));
-console.info('Patched manifest.json');
-
+// const manifestPath = path.resolve(
+//     finalFolder,
+//     'manifest.json',
+// );
+// 
+// let content = JSON.parse(
+//     readFileSync(manifestPath, 'utf-8'),
+// );
+// 
+// if (!content.host_permissions.find(v => v === '*://localhost:*/*')) {
+//     content.host_permissions.push('*://localhost:*/*');
+// }
+// 
+// content.content_scripts.forEach(o => {
+//     if (!o.matches.find(v => v === '*://localhost:*/*')) {
+//         o.matches.push('*://localhost:*/*');
+//     }
+// });
+// 
+// content.web_accessible_resources.forEach(o => {
+//     if (!o.matches.find((v) => v === '*://localhost:*/*')) {
+// 		o.matches.push('*://localhost:*/*');
+// 	}
+// });
+// 
+// writeFileSync(manifestPath, JSON.stringify(content));
+// console.info('Patched manifest.json');
 
 // Patch Vencord.js (final file)
 const vencordPath = path.resolve(

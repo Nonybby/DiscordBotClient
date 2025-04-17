@@ -1,4 +1,7 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+
+<head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport">
 
@@ -13,26 +16,26 @@
     <meta name="twitter:creator" content="@discord">
     <!-- endsection -->
 
-    <script>
+    <script nonce="MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=">
         window.GLOBAL_ENV = {
             "NODE_ENV": "production",
-            "BUILT_AT": "1744701545607",
+            "BUILT_AT": "1744787987432",
             "HTML_TIMESTAMP": Date.now(),
-            "BUILD_NUMBER": "389893",
+            "BUILD_NUMBER": "390505",
             "PROJECT_ENV": "production",
             "RELEASE_CHANNEL": "stable",
-            "VERSION_HASH": "ed1362e34f591bfe13726b4cb312e0e7f2497ebf",
+            "VERSION_HASH": "9b68b4852aad925e78996fe1390a561b524b2532",
             "PRIMARY_DOMAIN": "discord.com",
             "SENTRY_TAGS": {
-                "buildId": "ed1362e34f591bfe13726b4cb312e0e7f2497ebf",
+                "buildId": "9b68b4852aad925e78996fe1390a561b524b2532",
                 "buildType": "normal"
             },
-            "SENTRY_RELEASE": "2025-04-15-ed1362e34f591bfe13726b4cb312e0e7f2497ebf-discord_web",
+            "SENTRY_RELEASE": "2025-04-16-9b68b4852aad925e78996fe1390a561b524b2532-discord_web",
             "PUBLIC_PATH": "/assets/",
             "LOCATION": "history",
             "API_VERSION": 9,
             "API_PROTOCOL": "https:",
-            "API_ENDPOINT": '//' + window.location.host + '/api',
+            "API_ENDPOINT": "//discord.com/api",
             "GATEWAY_ENDPOINT": "wss://gateway.discord.gg",
             "STATIC_ENDPOINT": "",
             "ASSET_ENDPOINT": "//discord.com",
@@ -41,7 +44,7 @@
             "CDN_HOST": "cdn.discordapp.com",
             "DEVELOPERS_ENDPOINT": "//discord.com",
             "MARKETING_ENDPOINT": "//discord.com",
-            "WEBAPP_ENDPOINT": '//' + window.location.host,
+            "WEBAPP_ENDPOINT": "//discord.com",
             "WIDGET_ENDPOINT": "//discord.com/widget",
             "SEO_ENDPOINT": "undefined",
             "NETWORKING_ENDPOINT": "//router.discordapp.net",
@@ -52,7 +55,7 @@
             "GIFT_CODE_HOST": "discord.gift",
             "ACTIVITY_APPLICATION_HOST": "discordsays.com",
             "MIGRATION_SOURCE_ORIGIN": "https://discordapp.com",
-            "MIGRATION_DESTINATION_ORIGIN": window.location.protocol + '//' + window.location.host,
+            "MIGRATION_DESTINATION_ORIGIN": "https://discord.com",
             "STRIPE_KEY": "pk_live_CUQtlpQUF0vufWpnpUmQvcdi",
             "ADYEN_KEY": "live_E3OQ33V6GVGTXOVQZEAFQJ6DJIDVG6SY",
             "BRAINTREE_KEY": "production_ktzp8hfp_49pp2rp4phym7387",
@@ -60,7 +63,7 @@
         }
     </script>
 
-    <script>
+    <script nonce="MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=">
         ! function() {
             if (null != window.WebSocket && function(n) {
                     try {
@@ -100,21 +103,53 @@
     <!-- section:title -->
     <title>Discord</title>
     <!-- endsection -->
-    <script>
+    <script nonce="MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=">
         window.__OVERLAY__ = /overlay/.test(location.pathname);
         window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
     </script>
     <link href="/assets/favicon.ico" rel="icon">
-    <link href="/assets/12633.f17523547b19f00f.css" rel="stylesheet">
+    <link href="/assets/12633.1acfe3c05b8d7075.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="app-mount"></div>
 
 
-    <script defer="" src="/assets/web.5cf856f9a74fd784.js"></script>
-    <script defer="" src="/assets/sentry.9e7ad1fcd64f0de7.js"></script>
-    
+    <script defer src="/assets/web.09a1cd3c330fbbe0.js"></script>
+    <script defer src="/assets/sentry.7e26ddc310f955d0.js"></script>
+    <script nonce="MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=">
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.nonce = 'MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=';
+                    d.innerHTML = "window.__CF$cv$params={r:'931cc1b03d4efcf8',t:'MTc0NDkwMTY1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='MTY3LDI0NCwxODEsMTg4LDU0LDk5LDE4OSwxMDg=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
 
-
-</body></html>
+</html>

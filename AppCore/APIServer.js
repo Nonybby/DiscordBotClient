@@ -96,8 +96,7 @@ app.use((req, res, next) => {
 	res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));
 });
 
-async function start(port = 50000 + Math.floor(Math.random() * 5000)) {
-	if (Constants.TestVencordMode) return 50000;
+module.exports = async function start() {
 	return new Promise((resolve, reject) => {
 		const callback = () => {
 			const address = server.address();
@@ -106,15 +105,6 @@ async function start(port = 50000 + Math.floor(Math.random() * 5000)) {
 				`API Server listening on https://localhost:${address.port}`,
 			);
 		};
-		// server.listen(0).once('listening', callback);
-		server
-			.listen(port)
-			.once('listening', callback)
-			.once('error', (err) => {
-				server.removeListener('listening', callback);
-				resolve(start(port + 1));
-			});
+		server.listen(0).once('listening', callback);
 	});
 }
-
-module.exports = start;

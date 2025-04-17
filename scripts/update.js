@@ -16,22 +16,22 @@ if (!fs.existsSync(folder)) {
 
 const HTMLPath = path.resolve(folder, 'index.html');
 
-const PatchMode = true;
+const PatchMode = false;
 
 console.log('[Discord] Fetching HTML');
 
 fetch(URL)
 	.then((r) => r.text())
 	.then((text) => {
+		console.log('[Discord] Beautifying HTML');
+		text = beautifyHTML(text, {
+			indent_size: 4,
+			indent_with_tabs: false,
+			max_preserve_newlines: 5,
+			preserve_newlines: true,
+		});
 		if (PatchMode) {
 			console.log('[Discord] Start Patching HTML');
-			console.log('[Discord] Beautifying HTML');
-			text = beautifyHTML(text, {
-				indent_size: 4,
-				indent_with_tabs: false,
-				max_preserve_newlines: 5,
-				preserve_newlines: true,
-			});
 			const dom = new JSDOM(text);
 			// DOM
 			const window = dom.window;
@@ -75,16 +75,7 @@ fetch(URL)
 			});
 			text = dom.serialize();
 		}
-		let temp = (
-			PatchMode
-				? text
-				: beautifyHTML(text, {
-						indent_size: 4,
-						indent_with_tabs: false,
-						max_preserve_newlines: 5,
-						preserve_newlines: true,
-				  })
-		).split('\n');
+		let temp = text.split('\n');
 		console.log(
 			'[Discord] Build:',
 
