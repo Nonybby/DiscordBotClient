@@ -22,6 +22,7 @@ const path = require('path');
 const { fetch } = require('undici');
 const os = require('os');
 const contextMenu = require('electron-context-menu');
+const { inspect } = require('util');
 
 const Constants = require('./Constants.js');
 
@@ -61,9 +62,12 @@ hooks.push((message, transport) => {
 	if (transport !== transports.file) {
 		return message;
 	}
-	message.data = message.data.map((l) =>
-		l?.toString()?.replace(RegexANSIEscape, ''),
-	);
+	message.data = message.data.map((l) => {
+		if (typeof l === 'string') {
+			return l.replace(RegexANSIEscape, '');
+		}
+		return inspect(l);
+	});
 	if (
 		app.isReady() &&
 		botClient?.win &&
