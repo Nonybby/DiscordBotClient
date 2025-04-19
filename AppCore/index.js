@@ -25,6 +25,11 @@ const contextMenu = require('electron-context-menu');
 
 const Constants = require('./Constants.js');
 
+/**
+ * @type {?DiscordBotClient}
+ */
+let botClient;
+
 // Setup logger
 const log = scope(Constants.APP_NAME);
 Object.assign(console, scope('ConsoleProxy'));
@@ -59,6 +64,19 @@ hooks.push((message, transport) => {
 	message.data = message.data.map((l) =>
 		l?.toString()?.replace(RegexANSIEscape, ''),
 	);
+	if (
+		app.isReady() &&
+		botClient?.win &&
+		!botClient?.win.isDestroyed() &&
+		botClient?.win.webContents
+	) {
+		botClient.win.webContents.send(
+			IPCEvent.LogFromMainProcess,
+			message.scope,
+			message.level,
+			...message.data,
+		);
+	}
 	return message;
 });
 
@@ -101,6 +119,10 @@ class DiscordBotClient {
 	 * @type {?Electron.Session}
 	 */
 	customSession;
+	/**
+	 * @type {Map<string, BrowserWindow>}
+	 */
+	childWindows = new Map();
 	constructor() {
 		this.logger.log('App starting...');
 		this.initApp();
@@ -346,11 +368,15 @@ class DiscordBotClient {
 					details.responseHeaders['access-control-allow-origin']
 				) {
 					// Remove the CORS header
+					/*
 					delete details.responseHeaders[
 						'access-control-allow-origin'
 					];
+					*/
 					// Alternatively, set it to '*' to allow all origins
-					// details.responseHeaders['access-control-allow-origin'] = ['*'];
+					details.responseHeaders['access-control-allow-origin'] = [
+						'*',
+					];
 				}
 				callback({ responseHeaders: details.responseHeaders });
 			},
@@ -373,23 +399,16 @@ class DiscordBotClient {
 			minHeight: 500,
 			icon: Constants.icon128,
 			webPreferences: {
-				webSecurity: false,
-				nodeIntegration: false,
 				enableRemoteModule: false,
 				preload: path.join(__dirname, 'ElectronPreload.js'),
-				contextIsolation: true,
 				sandbox: false,
 				session: this.session,
 			},
 			backgroundColor: '#36393f',
 			titleBarStyle: 'hidden',
 			frame: false,
-			show: true,
 			title: Constants.APP_NAME,
-			...(process.platform === 'darwin' && {
-				titleBarStyle: 'hidden',
-				trafficLightPosition: { x: 10, y: 10 },
-			}),
+			trafficLightPosition: { x: 10, y: 10 },
 		});
 		// BrowserWindow Event
 		this.win
@@ -434,6 +453,20 @@ class DiscordBotClient {
 			this.logger.log('WindowOpenHandler', url);
 			switch (url) {
 				case 'about:blank':
+					return {
+						action: 'allow',
+						overrideBrowserWindowOptions: {
+							icon: Constants.icon128,
+							frame: true,
+							autoHideMenuBar: true,
+							width: 1080,
+							height: 720,
+							...(process.platform === 'darwin' && {
+								titleBarStyle: 'hidden',
+								trafficLightPosition: { x: 10, y: 10 },
+							}),
+						},
+					};
 				case 'https://discord.com/popout':
 				case 'https://ptb.discord.com/popout':
 				case 'https://canary.discord.com/popout':
@@ -446,25 +479,8 @@ class DiscordBotClient {
 							autoHideMenuBar: true,
 							width: 1080,
 							height: 720,
-							minWidth: 940,
-							minHeight: 500,
-							webPreferences: {
-								webSecurity: false,
-								nodeIntegration: false,
-								enableRemoteModule: false,
-								preload: path.join(
-									__dirname,
-									'ElectronPreload.js',
-								),
-								contextIsolation: true,
-								sandbox: false,
-							},
-							backgroundColor: '#36393f',
-							show: true,
-							...(process.platform === 'darwin' && {
-								titleBarStyle: 'hidden',
-								trafficLightPosition: { x: 10, y: 10 },
-							}),
+							titleBarStyle: 'hidden',
+							trafficLightPosition: { x: 10, y: 10 },
 						},
 					};
 			}
@@ -497,6 +513,16 @@ class DiscordBotClient {
 		});
 		// WebContents Event
 		this.win.webContents
+			.on('did-create-window', (window, details) => {
+				window.show();
+				window.on('closed', () => {
+					this.childWindows.delete(details.frameName);
+				});
+				if (this.childWindows.has(details.frameName)) {
+					this.childWindows.get(details.frameName).close();
+				}
+				this.childWindows.set(details.frameName, window);
+			})
 			.on('did-start-loading', () => {
 				this.win.setProgressBar(2, { mode: 'indeterminate' });
 			})
@@ -509,24 +535,38 @@ class DiscordBotClient {
 	}
 	setupIpcEvents() {
 		ipcMain
-			.on(IPCEvent.Minimize, (event) => {
-				this.win.minimize();
-				event.returnValue = true;
+			.on(IPCEvent.Minimize, (event, frameName) => {
+				let win = frameName
+					? this.childWindows.get(frameName)
+					: undefined;
+				win ??= this.win;
+				win.minimize();
 			})
-			.on(IPCEvent.Maximize, (event) => {
-				if (this.win.isMaximized()) {
-					this.win.restore();
+			.on(IPCEvent.Maximize, (event, frameName) => {
+				let win = frameName
+					? this.childWindows.get(frameName)
+					: undefined;
+				win ??= this.win;
+				if (win.isMaximized()) {
+					win.restore();
 				} else {
-					this.win.maximize();
+					win.maximize();
 				}
 			})
-			.on(IPCEvent.Close, (event) => {
+			.on(IPCEvent.Close, (event, frameName) => {
+				if (frameName) {
+					return this.childWindows.get(frameName)?.close();
+				}
 				this.win.hide();
 			})
-			.on(IPCEvent.Focus, (event) => {
+			.on(IPCEvent.Focus, (event, frameName) => {
+				let win = frameName
+					? this.childWindows.get(frameName)
+					: undefined;
+				win ??= this.win;
 				// this.win.focus();
-				this.win.show();
-				this.win.setSkipTaskbar(false);
+				win.show();
+				win.setSkipTaskbar(false);
 			})
 			.on(IPCEvent.GetBotInfo, async (event, token) => {
 				token = token.replace(/Bot/g, '').trim();
@@ -773,4 +813,4 @@ class DiscordBotClient {
 	}
 }
 
-new DiscordBotClient();
+botClient = new DiscordBotClient();
