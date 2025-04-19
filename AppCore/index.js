@@ -489,13 +489,16 @@ class DiscordBotClient {
 					};
 			}
 
-			switch (url) {
-				case 'https://checkout.paypal.com/web':
-				case 'https://discord.com/connections':
-				case 'https://ptb.discord.com/connections':
-				case 'https://canary.discord.com/connections':
-				case `https://localhost:${this.port}/connections`:
-					return { action: 'deny' };
+			if (
+				[
+					'https://checkout.paypal.com/web',
+					'https://discord.com/connections',
+					'https://ptb.discord.com/connections',
+					'https://canary.discord.com/connections',
+					`https://localhost:${this.port}/connections`,
+				].some((e) => url.includes(e))
+			) {
+				return { action: 'deny' };
 			}
 
 			try {
