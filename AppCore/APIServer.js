@@ -90,7 +90,7 @@ app.use((req, res, next) => {
 	if (req.originalUrl.endsWith('.map')) return res.status(404).send();
 	if (Constants.BlacklistRoutes.some((_) => req.originalUrl.includes(_)))
 		return res.status(403).send({
-			message: 'Bots cannot use this endpoint (blocked by blacklist)',
+			message: 'APIServer: Bots cannot use this endpoint',
 			code: 20001,
 		});
 	// Main page
