@@ -20,7 +20,8 @@
 -   [Credits](#credits)
 -   [Disclaimer](#disclaimer)
 
-> [!WARNING] > **Third party clients are discouraged and against the Discord TOS.**
+> [!WARNING]
+> **Third party clients are discouraged and against the Discord TOS.**
 
 Discord Bot Client is a custom [Discord](https://discord.com/app) client that aims to
 support bot accounts and be aimed at power-users.
@@ -49,7 +50,8 @@ If you don't want to build the application yourself or use some kind of
 package management system, you can get the latest binaries for the three
 major systems in the release overview:
 
-> [!TIP] > <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest"><img src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/total?style=for-the-badge&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"/></a>
+> [!TIP]
+> <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest"><img src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/total?style=for-the-badge&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"/></a>
 
 <table>
   <tr>
