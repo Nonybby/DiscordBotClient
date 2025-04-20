@@ -351,37 +351,31 @@ class DiscordBotClient {
 				});
 			},
 		);
-		// Intercept responses for specific URLs
+		// Rule 1: Remove all CSP headers
 		this.session.webRequest.onHeadersReceived(
-			{ urls: ['<all_urls>'] },
+			{ urls: ['<all_urls>'], types: ['mainFrame', 'subFrame'] },
 			(details, callback) => {
-				// Patch custom css
-				if (
-					details.url.startsWith('https://raw.githubusercontent.com/')
-				) {
-					if (
-						details.responseHeaders['content-type'].find((_) =>
-							_.includes('text/'),
-						)
-					) {
-						details.responseHeaders['content-type'] = ['text/css'];
-					}
-				}
-				if (
-					details.responseHeaders &&
-					details.responseHeaders['access-control-allow-origin']
-				) {
-					// Remove the CORS header
-					/*
-					delete details.responseHeaders[
-						'access-control-allow-origin'
-					];
-					*/
-					// Alternatively, set it to '*' to allow all origins
-					details.responseHeaders['access-control-allow-origin'] = [
-						'*',
-					];
-				}
+				// Remove both CSP and CSP-report-only
+				delete details.responseHeaders['content-security-policy'];
+				delete details.responseHeaders['Content-Security-Policy'];
+				delete details.responseHeaders[
+					'content-security-policy-report-only'
+				];
+				delete details.responseHeaders[
+					'Content-Security-Policy-Report-Only'
+				];
+				callback({ responseHeaders: details.responseHeaders });
+			},
+		);
+		// Rule 2: Force CSS content-type on GitHub raw URLs
+		this.session.webRequest.onHeadersReceived(
+			{
+				urls: ['https://raw.githubusercontent.com/*'],
+				types: ['stylesheet'],
+			},
+			(details, callback) => {
+				// Override Content-Type
+				details.responseHeaders['content-type'] = ['text/css'];
 				callback({ responseHeaders: details.responseHeaders });
 			},
 		);
