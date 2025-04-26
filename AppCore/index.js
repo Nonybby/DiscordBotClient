@@ -397,6 +397,7 @@ class DiscordBotClient {
 			minHeight: 500,
 			icon: Constants.icon128,
 			webPreferences: {
+				webSecurity: false,
 				enableRemoteModule: false,
 				preload: path.join(__dirname, 'ElectronPreload.js'),
 				sandbox: false,
@@ -463,6 +464,9 @@ class DiscordBotClient {
 								titleBarStyle: 'hidden',
 								trafficLightPosition: { x: 10, y: 10 },
 							}),
+							webPreferences: {
+								webSecurity: false,
+							},
 						},
 					};
 				case 'https://discord.com/popout':
@@ -479,6 +483,9 @@ class DiscordBotClient {
 							height: 720,
 							titleBarStyle: 'hidden',
 							trafficLightPosition: { x: 10, y: 10 },
+							webPreferences: {
+								webSecurity: false,
+							},
 						},
 					};
 			}
