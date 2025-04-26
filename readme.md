@@ -21,6 +21,7 @@
 -   [Disclaimer](#disclaimer)
 
 > [!WARNING]
+>
 > **Third party clients are discouraged and against the Discord TOS.**
 
 Discord Bot Client is a custom [Discord](https://discord.com/app) client that aims to
@@ -30,7 +31,7 @@ The application only uses the official Discord API and doesn't send data to
 third parties. However, this application is not an official product by
 Discord Inc.
 
-![Demo Screenshot](https://i.imgur.com/LXCQQZC.png)
+![Demo Screenshot](https://i.imgur.com/LRj25W2.png)
 
 ---
 
@@ -51,6 +52,7 @@ package management system, you can get the latest binaries for the three
 major systems in the release overview:
 
 > [!TIP]
+>
 > <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest"><img src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/total?style=for-the-badge&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41"/></a>
 
 <table>
@@ -158,17 +160,23 @@ Logging in works via the UI on first startup of the application.
 
 ## Version
 
-- Currently, I will only support the latest version of this application; other versions will not receive bug fixes.
+-   Currently, I will only support the latest version of this application; other versions will not receive bug fixes.
 
-- The versions removed from the table were unstable and did not work properly.
+-   The versions removed from the table were unstable and did not work properly.
 
-| Discord Build | Hash    | Vencord | Client version | Status      |
-| ------------- | ------- | ------- | -------------- | ----------- |
-| Latest        | ?       | ?       | v3.7.?         | ~~Beta~~    |
-| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | Latest      |
-| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | Deprecated  |
-| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL         |
-| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]     |
+| Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
+| ------------- | ------- | ------- | -------------- | -------------- | ---------- |
+| Latest        | ?       | ?       | v3.7.?         | ~~Beta~~       | ℹ          |
+| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Latest         | ✔          |
+| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | Deprecated     | ⛔ ⚠       |
+| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
+| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
+| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
+
+-   ✔ – Fully functional and expected to be free of critical bugs.
+-   ℹ – Supports at least basic functionality, but still under development. Minor issues may occur.
+-   ⛔ – This version has major issues (e.g., related to app startup). It is not recommended for use.
+-   ⚠ – This version has reached its end of support.
 
 [^5]: _Latest version that supports Windows 7/8/8.1 is 2.4.2._
 
