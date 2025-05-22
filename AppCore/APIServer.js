@@ -94,7 +94,7 @@ app.use((req, res, next) => {
 			code: 20001,
 		});
 	// Main page
-	if (['/', '/app'].includes(req.path))
+	if (['/', '/app', '/login'].includes(req.path))
 		return res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));
 	// API routes
 	if (req.originalUrl.includes('/api/')) return proxy.web(req, res);

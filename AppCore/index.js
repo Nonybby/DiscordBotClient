@@ -77,7 +77,9 @@ hooks.push((message, transport) => {
 		botClient.win.webContents.send(
 			IPCEvent.LogFromMainProcess,
 			message.scope,
-			message.level,
+			['error', 'warn', 'log'].includes(message.level)
+				? message.level
+				: 'debug',
 			...message.data,
 		);
 	}
