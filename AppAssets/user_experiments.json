@@ -10,19 +10,8 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-01_q1_marketing_premium_card": {
-        "revision": 1,
-        "population": 1,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-03_activity_controller_icon": {
-        "revision": 1,
+        "revision": 2,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -32,13 +21,24 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_activity_notification_improvements": {
-        "revision": 0,
+    "2025-04_desktop_new_activity_badge_treatment": {
+        "revision": 4,
+        "population": 0,
+        "bucket": 2,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": true,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
+    "2025-03_activity_status_descriptive_text": {
+        "revision": 4,
         "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
-        "triggerDebuggingEnabled": true,
+        "triggerDebuggingEnabled": false,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
@@ -53,17 +53,6 @@
         "holdoutName": "2025-03_advanced_server_join_holdout",
         "holdoutRevision": 1,
         "holdoutBucket": 0
-    },
-    "2023-11_adyen_auth_without_capture": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
     },
     "2025-03_afk_timeout_default_experiment": {
         "revision": 0,
@@ -98,10 +87,21 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2025-04_app_dm_new_mute_ux": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2024-09_app_dms": {
         "revision": 1,
         "population": 0,
-        "bucket": 2,
+        "bucket": 1,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -186,6 +186,17 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2025-03_fractional_premium_boost_management": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2023-09_clips_nitro_early_access": {
         "revision": 0,
         "population": 0,
@@ -219,17 +230,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-04_concurrent_quests": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2024-12_confetti_potion": {
         "revision": 1,
         "population": 0,
@@ -237,17 +237,6 @@
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-08_content_inventory_analytics_sampling": {
-        "revision": 4,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
@@ -352,7 +341,7 @@
         "holdoutBucket": null
     },
     "2025-03_custom_status_prompts": {
-        "revision": 2,
+        "revision": 4,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -373,19 +362,19 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_dm_chat_wallpapers_viewer": {
+    "2025-04_desktop_refresh_fast_follows": {
         "revision": 1,
         "population": 0,
-        "bucket": 1,
+        "bucket": 5,
         "override": false,
         "aaMode": false,
-        "triggerDebuggingEnabled": false,
+        "triggerDebuggingEnabled": true,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-12_new_guild_profile": {
-        "revision": 2,
+    "2025-04_keyframe_on_join": {
+        "revision": 3,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -398,10 +387,21 @@
     "2024-03_content_inventory_memberlist_and_ranker": {
         "revision": 25,
         "population": 2,
-        "bucket": 13,
+        "bucket": 15,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": true,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
+    "2025-04_nvenc_hevc_blackwell": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 0,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
@@ -440,18 +440,18 @@
         "holdoutBucket": null
     },
     "2025-04_gdm_born_this_named": {
-        "revision": 2,
+        "revision": 4,
         "population": 0,
         "bucket": 1,
         "override": false,
-        "aaMode": true,
+        "aaMode": false,
         "triggerDebuggingEnabled": true,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
     },
     "2025-01_go_live_modal_refresh": {
-        "revision": 1,
+        "revision": 2,
         "population": 0,
         "bucket": 3,
         "override": false,
@@ -512,17 +512,6 @@
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-09_improved_reaction_button": {
-        "revision": 2,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": true,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
@@ -638,7 +627,7 @@
         "holdoutBucket": null
     },
     "2025-02_name_plate_experiment": {
-        "revision": 4,
+        "revision": 5,
         "population": 0,
         "bucket": 2,
         "override": false,
@@ -648,19 +637,8 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-08_new_gateway_dispatcher": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2023-11_totally_benign_and_non_controversial_notification_tweaks": {
-        "revision": 0,
+    "2025-04_network_aware_sockets": {
+        "revision": 1,
         "population": 1,
         "bucket": 1,
         "override": false,
@@ -670,8 +648,8 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2023-04_null_experiment": {
-        "revision": 3,
+    "2023-11_totally_benign_and_non_controversial_notification_tweaks": {
+        "revision": 0,
         "population": 1,
         "bucket": 1,
         "override": false,
@@ -703,9 +681,9 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-06_premium_emoji_desktop_upsell": {
-        "revision": 4,
-        "population": 0,
+    "2022-08_churro_experiment": {
+        "revision": 0,
+        "population": 1,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -714,9 +692,9 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2022-08_churro_experiment": {
+    "2025-03_fractional_premium_subscription_purchase": {
         "revision": 0,
-        "population": 1,
+        "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -737,6 +715,17 @@
         "holdoutBucket": null
     },
     "2024-07_quest_interactable_expired_crendentials": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
+    "2025-03_quests_premium_rewards_holdout": {
         "revision": 0,
         "population": 0,
         "bucket": 1,
@@ -770,8 +759,8 @@
         "holdoutBucket": null
     },
     "2024-10_quests_dismissal_survey": {
-        "revision": 1,
-        "population": 1,
+        "revision": 2,
+        "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -846,8 +835,8 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-11_soundmoji_rendering": {
-        "revision": 0,
+    "2025-01_remove_emoji_effects": {
+        "revision": 1,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -857,13 +846,13 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-09_rustadm": {
-        "revision": 16,
-        "population": 0,
+    "2025-05_reverse_trial_promotion": {
+        "revision": 0,
+        "population": 1,
         "bucket": 1,
         "override": false,
         "aaMode": false,
-        "triggerDebuggingEnabled": false,
+        "triggerDebuggingEnabled": true,
         "holdoutName": null,
         "holdoutRevision": null,
         "holdoutBucket": null
@@ -935,7 +924,7 @@
         "holdoutBucket": null
     },
     "2025-04_shop_generic_product_description": {
-        "revision": 2,
+        "revision": 3,
         "population": 2,
         "bucket": 1,
         "override": false,
@@ -967,10 +956,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_soundboard_row_limit": {
-        "revision": 2,
+    "2025-05_smaller_bentos_in_whats_new_section_experiment": {
+        "revision": 0,
         "population": 0,
-        "bucket": 1,
+        "bucket": 0,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": true,
@@ -989,164 +978,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_test_badges_existing_users": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_first_bucket_allocation": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_large_bucket_second": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_large_bucket_third": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2024-07_sidechain_compression": {
         "revision": 0,
         "population": 1,
         "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_third_bucket_allocation": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-03_test_tile_existing_users": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_apply_filter": {
-        "revision": 2,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_apply_filter_anniversaries": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_apply_filter_badges": {
-        "revision": 2,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_apply_filter_install": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_filter": {
-        "revision": 6,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_filter_badges": {
-        "revision": 2,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_test_user_auth_filter_install": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-08_tiered_tenure_badges": {
-        "revision": 6,
-        "population": 0,
-        "bucket": 2,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -1176,6 +1011,17 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2025-04_hotwheels_holdout_the_sequel": {
+        "revision": 1,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": true,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2023-09_trigger_debugging_aa": {
         "revision": 0,
         "population": 0,
@@ -1199,19 +1045,8 @@
         "holdoutBucket": null
     },
     "2025-04_unread_dm_dots_desktop": {
-        "revision": 1,
+        "revision": 2,
         "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": true,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-03_blocked_domains_libdiscore": {
-        "revision": 1,
-        "population": 1,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -1242,6 +1077,17 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2025-04_user_profile_mutual_friends_count_performance": {
+        "revision": 2,
+        "population": 0,
+        "bucket": 0,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2025-04_user_profile_performance_analytics": {
         "revision": 1,
         "population": 0,
@@ -1265,7 +1111,18 @@
         "holdoutBucket": null
     },
     "2025-03_user_profile_voice_activity_card_status": {
-        "revision": 3,
+        "revision": 4,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
+    "2025-03_user_trial_offer_ttl": {
+        "revision": 1,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -1286,8 +1143,8 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-02_voice_activity_status": {
-        "revision": 8,
+    "2025-05_virtual_currency_onboarding_experience": {
+        "revision": 0,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -1297,10 +1154,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-02_voice_call_buttons_v2": {
-        "revision": 2,
+    "2025-02_voice_activity_status": {
+        "revision": 8,
         "population": 0,
-        "bucket": 4,
+        "bucket": 1,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
