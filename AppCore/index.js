@@ -376,8 +376,11 @@ class DiscordBotClient {
 				types: ['stylesheet'],
 			},
 			(details, callback) => {
-				// Override Content-Type
-				details.responseHeaders['content-type'] = ['text/css'];
+				const url = new URL(details.url);
+				if (url.pathname.endsWith('.css')) {
+					// Override Content-Type
+					details.responseHeaders['content-type'] = ['text/css'];
+				}
 				callback({ responseHeaders: details.responseHeaders });
 			},
 		);
