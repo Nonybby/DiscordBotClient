@@ -2,9 +2,16 @@ const multer = require('multer');
 const UserFlags = require('./UserFlags');
 const UserBadges = require('./UserBadges');
 const Constants = require('../AppCore/Constants');
+const UserProfileEffects = require('./UserProfileEffects');
+
+function randomArrayElement(array) {
+	if (!array || !array.length) return null;
+	return array[Math.floor(Math.random() * array.length)];
+}
 
 module.exports = class Util {
 	static ProfilePatch(userData, guildMember, guildId) {
+		const userEffect = randomArrayElement(UserProfileEffects);
 		const flags = new UserFlags(userData.flags);
 		const badges = [];
 		flags.toArray().map((element) => {
@@ -76,7 +83,7 @@ module.exports = class Util {
 				emoji: null,
 				popout_animation_particle_type: null,
 				profile_effect: {
-					id: '1314020996856152104',
+					id: userEffect.id,
 					expires_at: null,
 				},
 				pronouns: userData.bot ? 'bot' : 'user',
