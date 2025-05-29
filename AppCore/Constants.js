@@ -25,6 +25,7 @@ module.exports = class Constants extends null {
 		'/stripe',
 		'/paypal',
 		'/validate-billing-address',
+		'/custom-call-sounds',
 		'auth/conditional/start', // Disable WebAuthn
 	];
 	static LatestStorageUpdate = 1735000000000;
