@@ -165,8 +165,9 @@ Logging in works via the UI on first startup of the application.
 | Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
 | ------------- | ------- | ------- | -------------- | -------------- | ---------- |
 | Latest        | ?       | ?       | v3.7.?         | ~~Beta~~       | ℹ          |
-| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Latest         | ✔          |
-| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | Deprecated     | ⛔ ⚠       |
+| stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Latest         | ✔          |
+| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔          |
+| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
 | Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
 | Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
 | Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
@@ -249,10 +250,10 @@ npm run fetchLatestDiscordBuild
 4. (Optional) Update discord-protos
 
 ```sh
-git clone https://github.com/discord-userdoccers/discord-protos.git
+git clone https://github.com/discord-userdoccers/discord-protos.git --depth 1
 cd discord-protos
 # Delete `.git` folder
-npm install
+npm install --verbose
 cd ..
 npm run proto:update
 npm run proto:build:ts
