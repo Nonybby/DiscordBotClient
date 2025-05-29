@@ -80,15 +80,15 @@ class PremiumMarketingComponentProperties$Type extends runtime_4.MessageType {
         return message;
     }
     internalBinaryWrite(message, writer, options) {
-        /* string content_identifier = 3; */
-        if (message.contentIdentifier !== "")
-            writer.tag(3, runtime_1.WireType.LengthDelimited).string(message.contentIdentifier);
         /* string placeholder = 1; */
         if (message.properties.oneofKind === "placeholder")
             writer.tag(1, runtime_1.WireType.LengthDelimited).string(message.properties.placeholder);
         /* discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.AnnouncementModalVariant1Properties announcement_modal_variant_1 = 2; */
         if (message.properties.oneofKind === "announcementModalVariant1")
             exports.PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties.internalBinaryWrite(message.properties.announcementModalVariant1, writer.tag(2, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* string content_identifier = 3; */
+        if (message.contentIdentifier !== "")
+            writer.tag(3, runtime_1.WireType.LengthDelimited).string(message.contentIdentifier);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -350,7 +350,7 @@ class PremiumMarketingComponentProperties_Variant1Storage$Type extends runtime_4
                 case 2:
                     val = reader.string();
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_localized_video_links_dark_theme");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_localized_video_links_dark_theme");
             }
         }
         map[key ?? ""] = val ?? "";
@@ -366,7 +366,7 @@ class PremiumMarketingComponentProperties_Variant1Storage$Type extends runtime_4
                 case 2:
                     val = reader.string();
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_localized_video_links_light_theme");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_localized_video_links_light_theme");
             }
         }
         map[key ?? ""] = val ?? "";
@@ -382,7 +382,7 @@ class PremiumMarketingComponentProperties_Variant1Storage$Type extends runtime_4
                 case 2:
                     val = reader.string();
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_video_subtitle_links");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.premium_marketing.v1.PremiumMarketingComponentProperties.Variant1Storage.hero_art_video_subtitle_links");
             }
         }
         map[key ?? ""] = val ?? "";
@@ -415,7 +415,7 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
             { no: 2, name: "subheader", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "video_link", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "help_article_id", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 5, name: "feature_cards", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => exports.PremiumMarketingComponentProperties_FeatureCard },
+            { no: 5, name: "feature_cards", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => exports.PremiumMarketingComponentProperties_FeatureCard },
             { no: 6, name: "button", kind: "message", T: () => exports.PremiumMarketingComponentProperties_SubscriptionButton },
             { no: 7, name: "dismiss_key", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 8, name: "hero_art_video_link_light_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
@@ -423,7 +423,7 @@ class PremiumMarketingComponentProperties_AnnouncementModalVariant1Properties$Ty
             { no: 10, name: "hero_art_image_link_light_theme", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 11, name: "modal_top_pill", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 12, name: "body", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 13, name: "hero_art_video_subtitles", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => exports.PremiumMarketingComponentProperties_Subtitle },
+            { no: 13, name: "hero_art_video_subtitles", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => exports.PremiumMarketingComponentProperties_Subtitle },
             { no: 14, name: "storage", kind: "message", T: () => exports.PremiumMarketingComponentProperties_Variant1Storage }
         ]);
     }

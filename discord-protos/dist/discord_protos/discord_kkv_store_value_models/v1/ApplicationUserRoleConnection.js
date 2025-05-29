@@ -64,7 +64,7 @@ class ApplicationUserRoleConnection$Type extends runtime_4.MessageType {
                 case 2:
                     val = reader.string();
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_kkv_store_value_models.v1.ApplicationUserRoleConnection.metadata");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_kkv_store_value_models.v1.ApplicationUserRoleConnection.metadata");
             }
         }
         map[key ?? ""] = val ?? "";

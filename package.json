@@ -106,7 +106,7 @@
 		"cerf": "openssl req -nodes -new -x509 -keyout ./AppCore/cert/server.key -out ./AppCore/cert/server.cert -days 3650 -subj \"/CN=localhost\"",
 		"test": "npm run vencord & npm run start",
 		"proto:update": "npx tsx discord-protos/src/load.ts",
-		"proto:build:ts": "cd discord-protos && npm run build && cd .."
+		"proto:build:ts": "cd discord-protos && npm run js && npm run build && cd .."
 	},
 	"author": {
 		"name": "aiko-chan-ai",

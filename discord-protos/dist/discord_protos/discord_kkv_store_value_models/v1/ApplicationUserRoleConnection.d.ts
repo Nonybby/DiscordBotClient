@@ -9,21 +9,21 @@ import { MessageType } from "@protobuf-ts/runtime";
  */
 export interface ApplicationUserRoleConnection {
     /**
-     * @generated from protobuf field: map<string, string> metadata = 1;
+     * @generated from protobuf field: map<string, string> metadata = 1
      */
     metadata: {
         [key: string]: string;
     };
     /**
-     * @generated from protobuf field: string platform_name = 2;
+     * @generated from protobuf field: string platform_name = 2
      */
     platformName: string;
     /**
-     * @generated from protobuf field: string platform_username = 3;
+     * @generated from protobuf field: string platform_username = 3
      */
     platformUsername: string;
     /**
-     * @generated from protobuf field: fixed64 version = 4;
+     * @generated from protobuf field: fixed64 version = 4
      */
     version: bigint;
 }

@@ -10,7 +10,7 @@ import { Timestamp } from "../../google/protobuf/timestamp";
  */
 export interface AcknowledgedApplicationDisclosures {
     /**
-     * @generated from protobuf field: repeated discord_protos.discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures.AcknowledgedApplicationDisclosure acked_disclosures = 1;
+     * @generated from protobuf field: repeated discord_protos.discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures.AcknowledgedApplicationDisclosure acked_disclosures = 1
      */
     ackedDisclosures: AcknowledgedApplicationDisclosures_AcknowledgedApplicationDisclosure[];
 }
@@ -19,11 +19,11 @@ export interface AcknowledgedApplicationDisclosures {
  */
 export interface AcknowledgedApplicationDisclosures_AcknowledgedApplicationDisclosure {
     /**
-     * @generated from protobuf field: discord_protos.discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures.ApplicationDisclosureType disclosure_type = 1;
+     * @generated from protobuf field: discord_protos.discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures.ApplicationDisclosureType disclosure_type = 1
      */
     disclosureType: AcknowledgedApplicationDisclosures_ApplicationDisclosureType;
     /**
-     * @generated from protobuf field: optional google.protobuf.Timestamp acked_at = 2;
+     * @generated from protobuf field: optional google.protobuf.Timestamp acked_at = 2
      */
     ackedAt?: Timestamp;
 }

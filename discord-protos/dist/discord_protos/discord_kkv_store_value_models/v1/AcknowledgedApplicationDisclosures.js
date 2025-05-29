@@ -32,7 +32,7 @@ var AcknowledgedApplicationDisclosures_ApplicationDisclosureType;
 class AcknowledgedApplicationDisclosures$Type extends runtime_4.MessageType {
     constructor() {
         super("discord_protos.discord_kkv_store_value_models.v1.AcknowledgedApplicationDisclosures", [
-            { no: 1, name: "acked_disclosures", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => exports.AcknowledgedApplicationDisclosures_AcknowledgedApplicationDisclosure }
+            { no: 1, name: "acked_disclosures", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => exports.AcknowledgedApplicationDisclosures_AcknowledgedApplicationDisclosure }
         ]);
     }
     create(value) {

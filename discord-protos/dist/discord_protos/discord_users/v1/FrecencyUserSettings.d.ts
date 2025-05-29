@@ -9,55 +9,55 @@ import { MessageType } from "@protobuf-ts/runtime";
  */
 export interface FrecencyUserSettings {
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.Versions versions = 1;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.Versions versions = 1
      */
     versions?: FrecencyUserSettings_Versions;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIFs favorite_gifs = 2;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIFs favorite_gifs = 2
      */
     favoriteGifs?: FrecencyUserSettings_FavoriteGIFs;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteStickers favorite_stickers = 3;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteStickers favorite_stickers = 3
      */
     favoriteStickers?: FrecencyUserSettings_FavoriteStickers;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.StickerFrecency sticker_frecency = 4;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.StickerFrecency sticker_frecency = 4
      */
     stickerFrecency?: FrecencyUserSettings_StickerFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteEmojis favorite_emojis = 5;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteEmojis favorite_emojis = 5
      */
     favoriteEmojis?: FrecencyUserSettings_FavoriteEmojis;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_frecency = 6;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_frecency = 6
      */
     emojiFrecency?: FrecencyUserSettings_EmojiFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationCommandFrecency application_command_frecency = 7;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationCommandFrecency application_command_frecency = 7
      */
     applicationCommandFrecency?: FrecencyUserSettings_ApplicationCommandFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteSoundboardSounds favorite_soundboard_sounds = 8;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteSoundboardSounds favorite_soundboard_sounds = 8
      */
     favoriteSoundboardSounds?: FrecencyUserSettings_FavoriteSoundboardSounds;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationFrecency application_frecency = 9;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationFrecency application_frecency = 9
      */
     applicationFrecency?: FrecencyUserSettings_ApplicationFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.HeardSoundFrecency heard_sound_frecency = 10;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.HeardSoundFrecency heard_sound_frecency = 10
      */
     heardSoundFrecency?: FrecencyUserSettings_HeardSoundFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.PlayedSoundFrecency played_sound_frecency = 11;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.PlayedSoundFrecency played_sound_frecency = 11
      */
     playedSoundFrecency?: FrecencyUserSettings_PlayedSoundFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.GuildAndChannelFrecency guild_and_channel_frecency = 12;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.GuildAndChannelFrecency guild_and_channel_frecency = 12
      */
     guildAndChannelFrecency?: FrecencyUserSettings_GuildAndChannelFrecency;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_reaction_frecency = 13;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency emoji_reaction_frecency = 13
      */
     emojiReactionFrecency?: FrecencyUserSettings_EmojiFrecency;
 }
@@ -66,15 +66,15 @@ export interface FrecencyUserSettings {
  */
 export interface FrecencyUserSettings_Versions {
     /**
-     * @generated from protobuf field: uint32 client_version = 1;
+     * @generated from protobuf field: uint32 client_version = 1
      */
     clientVersion: number;
     /**
-     * @generated from protobuf field: uint32 server_version = 2;
+     * @generated from protobuf field: uint32 server_version = 2
      */
     serverVersion: number;
     /**
-     * @generated from protobuf field: uint32 data_version = 3;
+     * @generated from protobuf field: uint32 data_version = 3
      */
     dataVersion: number;
 }
@@ -83,23 +83,23 @@ export interface FrecencyUserSettings_Versions {
  */
 export interface FrecencyUserSettings_FavoriteGIF {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.FrecencyUserSettings.GIFType format = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.FrecencyUserSettings.GIFType format = 1
      */
     format: FrecencyUserSettings_GIFType;
     /**
-     * @generated from protobuf field: string src = 2;
+     * @generated from protobuf field: string src = 2
      */
     src: string;
     /**
-     * @generated from protobuf field: uint32 width = 3;
+     * @generated from protobuf field: uint32 width = 3
      */
     width: number;
     /**
-     * @generated from protobuf field: uint32 height = 4;
+     * @generated from protobuf field: uint32 height = 4
      */
     height: number;
     /**
-     * @generated from protobuf field: uint32 order = 5;
+     * @generated from protobuf field: uint32 order = 5
      */
     order: number;
 }
@@ -108,13 +108,13 @@ export interface FrecencyUserSettings_FavoriteGIF {
  */
 export interface FrecencyUserSettings_FavoriteGIFs {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIF> gifs = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIF> gifs = 1
      */
     gifs: {
         [key: string]: FrecencyUserSettings_FavoriteGIF;
     };
     /**
-     * @generated from protobuf field: bool hide_tooltip = 2;
+     * @generated from protobuf field: bool hide_tooltip = 2
      */
     hideTooltip: boolean;
 }
@@ -123,7 +123,7 @@ export interface FrecencyUserSettings_FavoriteGIFs {
  */
 export interface FrecencyUserSettings_FavoriteStickers {
     /**
-     * @generated from protobuf field: repeated fixed64 sticker_ids = 1;
+     * @generated from protobuf field: repeated fixed64 sticker_ids = 1
      */
     stickerIds: bigint[];
 }
@@ -132,19 +132,19 @@ export interface FrecencyUserSettings_FavoriteStickers {
  */
 export interface FrecencyUserSettings_FrecencyItem {
     /**
-     * @generated from protobuf field: uint32 total_uses = 1;
+     * @generated from protobuf field: uint32 total_uses = 1
      */
     totalUses: number;
     /**
-     * @generated from protobuf field: repeated uint64 recent_uses = 2;
+     * @generated from protobuf field: repeated uint64 recent_uses = 2
      */
     recentUses: bigint[];
     /**
-     * @generated from protobuf field: int32 frecency = 3;
+     * @generated from protobuf field: int32 frecency = 3
      */
     frecency: number;
     /**
-     * @generated from protobuf field: int32 score = 4;
+     * @generated from protobuf field: int32 score = 4
      */
     score: number;
 }
@@ -153,7 +153,7 @@ export interface FrecencyUserSettings_FrecencyItem {
  */
 export interface FrecencyUserSettings_StickerFrecency {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> stickers = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> stickers = 1
      */
     stickers: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -164,7 +164,7 @@ export interface FrecencyUserSettings_StickerFrecency {
  */
 export interface FrecencyUserSettings_FavoriteEmojis {
     /**
-     * @generated from protobuf field: repeated string emojis = 1 [packed = false];
+     * @generated from protobuf field: repeated string emojis = 1 [packed = false]
      */
     emojis: string[];
 }
@@ -173,7 +173,7 @@ export interface FrecencyUserSettings_FavoriteEmojis {
  */
 export interface FrecencyUserSettings_EmojiFrecency {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> emojis = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> emojis = 1
      */
     emojis: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -184,7 +184,7 @@ export interface FrecencyUserSettings_EmojiFrecency {
  */
 export interface FrecencyUserSettings_ApplicationCommandFrecency {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> application_commands = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> application_commands = 1
      */
     applicationCommands: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -195,7 +195,7 @@ export interface FrecencyUserSettings_ApplicationCommandFrecency {
  */
 export interface FrecencyUserSettings_FavoriteSoundboardSounds {
     /**
-     * @generated from protobuf field: repeated fixed64 sound_ids = 1;
+     * @generated from protobuf field: repeated fixed64 sound_ids = 1
      */
     soundIds: bigint[];
 }
@@ -204,7 +204,7 @@ export interface FrecencyUserSettings_FavoriteSoundboardSounds {
  */
 export interface FrecencyUserSettings_ApplicationFrecency {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> applications = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> applications = 1
      */
     applications: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -215,7 +215,7 @@ export interface FrecencyUserSettings_ApplicationFrecency {
  */
 export interface FrecencyUserSettings_HeardSoundFrecency {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> heard_sounds = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> heard_sounds = 1
      */
     heardSounds: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -226,7 +226,7 @@ export interface FrecencyUserSettings_HeardSoundFrecency {
  */
 export interface FrecencyUserSettings_PlayedSoundFrecency {
     /**
-     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> played_sounds = 1;
+     * @generated from protobuf field: map<string, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> played_sounds = 1
      */
     playedSounds: {
         [key: string]: FrecencyUserSettings_FrecencyItem;
@@ -237,7 +237,7 @@ export interface FrecencyUserSettings_PlayedSoundFrecency {
  */
 export interface FrecencyUserSettings_GuildAndChannelFrecency {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> guild_and_channels = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.FrecencyUserSettings.FrecencyItem> guild_and_channels = 1
      */
     guildAndChannels: {
         [key: string]: FrecencyUserSettings_FrecencyItem;

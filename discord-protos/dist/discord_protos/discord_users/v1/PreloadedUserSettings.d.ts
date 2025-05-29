@@ -17,116 +17,120 @@ import { UInt64Value } from "../../google/protobuf/wrappers";
  */
 export interface PreloadedUserSettings {
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.Versions versions = 1;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.Versions versions = 1
      */
     versions?: PreloadedUserSettings_Versions;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.InboxSettings inbox = 2;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.InboxSettings inbox = 2
      */
     inbox?: PreloadedUserSettings_InboxSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings guilds = 3;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings guilds = 3
      */
     guilds?: PreloadedUserSettings_AllGuildSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.UserContentSettings user_content = 4;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.UserContentSettings user_content = 4
      */
     userContent?: PreloadedUserSettings_UserContentSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.VoiceAndVideoSettings voice_and_video = 5;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.VoiceAndVideoSettings voice_and_video = 5
      */
     voiceAndVideo?: PreloadedUserSettings_VoiceAndVideoSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings text_and_images = 6;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings text_and_images = 6
      */
     textAndImages?: PreloadedUserSettings_TextAndImagesSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings notifications = 7;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings notifications = 7
      */
     notifications?: PreloadedUserSettings_NotificationSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings privacy = 8;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings privacy = 8
      */
     privacy?: PreloadedUserSettings_PrivacySettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings debug = 9;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.DebugSettings debug = 9
      */
     debug?: PreloadedUserSettings_DebugSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GameLibrarySettings game_library = 10;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GameLibrarySettings game_library = 10
      */
     gameLibrary?: PreloadedUserSettings_GameLibrarySettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.StatusSettings status = 11;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.StatusSettings status = 11
      */
     status?: PreloadedUserSettings_StatusSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.LocalizationSettings localization = 12;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.LocalizationSettings localization = 12
      */
     localization?: PreloadedUserSettings_LocalizationSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AppearanceSettings appearance = 13;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AppearanceSettings appearance = 13
      */
     appearance?: PreloadedUserSettings_AppearanceSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolders guild_folders = 14;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolders guild_folders = 14
      */
     guildFolders?: PreloadedUserSettings_GuildFolders;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.Favorites favorites = 15;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.Favorites favorites = 15
      */
     favorites?: PreloadedUserSettings_Favorites;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings audio_context_settings = 16;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings audio_context_settings = 16
      */
     audioContextSettings?: PreloadedUserSettings_AudioSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CommunitiesSettings communities = 17;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CommunitiesSettings communities = 17
      */
     communities?: PreloadedUserSettings_CommunitiesSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.BroadcastSettings broadcast = 18;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.BroadcastSettings broadcast = 18
      */
     broadcast?: PreloadedUserSettings_BroadcastSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ClipsSettings clips = 19;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ClipsSettings clips = 19
      */
     clips?: PreloadedUserSettings_ClipsSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ForLaterSettings for_later = 20;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ForLaterSettings for_later = 20
      */
     forLater?: PreloadedUserSettings_ForLaterSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettings safety_settings = 21;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettings safety_settings = 21
      */
     safetySettings?: PreloadedUserSettings_SafetySettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ICYMISettings icymi_settings = 22;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ICYMISettings icymi_settings = 22
      */
     icymiSettings?: PreloadedUserSettings_ICYMISettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings applications = 23;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings applications = 23
      */
     applications?: PreloadedUserSettings_AllApplicationSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24
      */
     ads?: PreloadedUserSettings_AdsSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25
+     */
+    inAppFeedbackSettings?: PreloadedUserSettings_InAppFeedbackSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.Versions
  */
 export interface PreloadedUserSettings_Versions {
     /**
-     * @generated from protobuf field: uint32 client_version = 1;
+     * @generated from protobuf field: uint32 client_version = 1
      */
     clientVersion: number;
     /**
-     * @generated from protobuf field: uint32 server_version = 2;
+     * @generated from protobuf field: uint32 server_version = 2
      */
     serverVersion: number;
     /**
-     * @generated from protobuf field: uint32 data_version = 3;
+     * @generated from protobuf field: uint32 data_version = 3
      */
     dataVersion: number;
 }
@@ -135,11 +139,11 @@ export interface PreloadedUserSettings_Versions {
  */
 export interface PreloadedUserSettings_InboxSettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab current_tab = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab current_tab = 1
      */
     currentTab: PreloadedUserSettings_InboxTab;
     /**
-     * @generated from protobuf field: bool viewed_tutorial = 2;
+     * @generated from protobuf field: bool viewed_tutorial = 2
      */
     viewedTutorial: boolean;
 }
@@ -148,15 +152,15 @@ export interface PreloadedUserSettings_InboxSettings {
  */
 export interface PreloadedUserSettings_ChannelIconEmoji {
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt64Value id = 1;
+     * @generated from protobuf field: optional google.protobuf.UInt64Value id = 1
      */
     id?: UInt64Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue name = 2;
+     * @generated from protobuf field: optional google.protobuf.StringValue name = 2
      */
     name?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt64Value color = 3;
+     * @generated from protobuf field: optional google.protobuf.UInt64Value color = 3
      */
     color?: UInt64Value;
 }
@@ -165,7 +169,7 @@ export interface PreloadedUserSettings_ChannelIconEmoji {
  */
 export interface PreloadedUserSettings_CustomNotificationSoundConfig {
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue notification_sound_pack_id = 1;
+     * @generated from protobuf field: optional google.protobuf.StringValue notification_sound_pack_id = 1
      */
     notificationSoundPackId?: StringValue;
 }
@@ -174,15 +178,15 @@ export interface PreloadedUserSettings_CustomNotificationSoundConfig {
  */
 export interface PreloadedUserSettings_ChannelSettings {
     /**
-     * @generated from protobuf field: bool collapsed_in_inbox = 1;
+     * @generated from protobuf field: bool collapsed_in_inbox = 1
      */
     collapsedInInbox: boolean;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ChannelIconEmoji icon_emoji = 2;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ChannelIconEmoji icon_emoji = 2
      */
     iconEmoji?: PreloadedUserSettings_ChannelIconEmoji;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomNotificationSoundConfig custom_notification_sound_config = 3;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomNotificationSoundConfig custom_notification_sound_config = 3
      */
     customNotificationSoundConfig?: PreloadedUserSettings_CustomNotificationSoundConfig;
 }
@@ -191,11 +195,11 @@ export interface PreloadedUserSettings_ChannelSettings {
  */
 export interface PreloadedUserSettings_CustomCallSound {
     /**
-     * @generated from protobuf field: fixed64 sound_id = 1;
+     * @generated from protobuf field: fixed64 sound_id = 1
      */
     soundId: bigint;
     /**
-     * @generated from protobuf field: fixed64 guild_id = 2;
+     * @generated from protobuf field: fixed64 guild_id = 2
      */
     guildId: bigint;
 }
@@ -204,11 +208,11 @@ export interface PreloadedUserSettings_CustomCallSound {
  */
 export interface PreloadedUserSettings_ChannelListSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue layout = 1;
+     * @generated from protobuf field: optional google.protobuf.StringValue layout = 1
      */
     layout?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue message_previews = 2;
+     * @generated from protobuf field: optional google.protobuf.StringValue message_previews = 2
      */
     messagePreviews?: StringValue;
 }
@@ -217,49 +221,49 @@ export interface PreloadedUserSettings_ChannelListSettings {
  */
 export interface PreloadedUserSettings_GuildSettings {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ChannelSettings> channels = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ChannelSettings> channels = 1
      */
     channels: {
         [key: string]: PreloadedUserSettings_ChannelSettings;
     };
     /**
-     * @generated from protobuf field: uint32 hub_progress = 2;
+     * @generated from protobuf field: uint32 hub_progress = 2
      */
     hubProgress: number;
     /**
-     * @generated from protobuf field: uint32 guild_onboarding_progress = 3;
+     * @generated from protobuf field: uint32 guild_onboarding_progress = 3
      */
     guildOnboardingProgress: number;
     /**
-     * @generated from protobuf field: optional google.protobuf.Timestamp guild_recents_dismissed_at = 4;
+     * @generated from protobuf field: optional google.protobuf.Timestamp guild_recents_dismissed_at = 4
      */
     guildRecentsDismissedAt?: Timestamp;
     /**
-     * @generated from protobuf field: bytes dismissed_guild_content = 5;
+     * @generated from protobuf field: bytes dismissed_guild_content = 5
      */
     dismissedGuildContent: Uint8Array;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomCallSound join_sound = 6;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomCallSound join_sound = 6
      */
     joinSound?: PreloadedUserSettings_CustomCallSound;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ChannelListSettings mobile_redesign_channel_list_settings = 7;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ChannelListSettings mobile_redesign_channel_list_settings = 7
      */
     mobileRedesignChannelListSettings?: PreloadedUserSettings_ChannelListSettings;
     /**
-     * @generated from protobuf field: bool disable_raid_alert_push = 8;
+     * @generated from protobuf field: bool disable_raid_alert_push = 8
      */
     disableRaidAlertPush: boolean;
     /**
-     * @generated from protobuf field: bool disable_raid_alert_nag = 9;
+     * @generated from protobuf field: bool disable_raid_alert_nag = 9
      */
     disableRaidAlertNag: boolean;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomNotificationSoundConfig custom_notification_sound_config = 10;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomNotificationSoundConfig custom_notification_sound_config = 10
      */
     customNotificationSoundConfig?: PreloadedUserSettings_CustomNotificationSoundConfig;
     /**
-     * @generated from protobuf field: bool leaderboards_disabled = 11;
+     * @generated from protobuf field: bool leaderboards_disabled = 11
      */
     leaderboardsDisabled: boolean;
 }
@@ -268,7 +272,7 @@ export interface PreloadedUserSettings_GuildSettings {
  */
 export interface PreloadedUserSettings_AllGuildSettings {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings> guilds = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings> guilds = 1
      */
     guilds: {
         [key: string]: PreloadedUserSettings_GuildSettings;
@@ -279,15 +283,15 @@ export interface PreloadedUserSettings_AllGuildSettings {
  */
 export interface PreloadedUserSettings_RecurringDismissibleContentState {
     /**
-     * @generated from protobuf field: uint32 last_dismissed_version = 1;
+     * @generated from protobuf field: uint32 last_dismissed_version = 1
      */
     lastDismissedVersion: number;
     /**
-     * @generated from protobuf field: uint64 last_dismissed_at_ms = 2;
+     * @generated from protobuf field: uint64 last_dismissed_at_ms = 2
      */
     lastDismissedAtMs: bigint;
     /**
-     * @generated from protobuf field: uint64 last_dismissed_object_id = 3;
+     * @generated from protobuf field: uint64 last_dismissed_object_id = 3
      */
     lastDismissedObjectId: bigint;
 }
@@ -296,31 +300,31 @@ export interface PreloadedUserSettings_RecurringDismissibleContentState {
  */
 export interface PreloadedUserSettings_UserContentSettings {
     /**
-     * @generated from protobuf field: bytes dismissed_contents = 1;
+     * @generated from protobuf field: bytes dismissed_contents = 1
      */
     dismissedContents: Uint8Array;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue last_dismissed_outbound_promotion_start_date = 2;
+     * @generated from protobuf field: optional google.protobuf.StringValue last_dismissed_outbound_promotion_start_date = 2
      */
     lastDismissedOutboundPromotionStartDate?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.Timestamp premium_tier_0_modal_dismissed_at = 3;
+     * @generated from protobuf field: optional google.protobuf.Timestamp premium_tier_0_modal_dismissed_at = 3
      */
     premiumTier0ModalDismissedAt?: Timestamp;
     /**
-     * @generated from protobuf field: optional google.protobuf.Timestamp guild_onboarding_upsell_dismissed_at = 4;
+     * @generated from protobuf field: optional google.protobuf.Timestamp guild_onboarding_upsell_dismissed_at = 4
      */
     guildOnboardingUpsellDismissedAt?: Timestamp;
     /**
-     * @generated from protobuf field: optional google.protobuf.Timestamp safety_user_sentiment_notice_dismissed_at = 5;
+     * @generated from protobuf field: optional google.protobuf.Timestamp safety_user_sentiment_notice_dismissed_at = 5
      */
     safetyUserSentimentNoticeDismissedAt?: Timestamp;
     /**
-     * @generated from protobuf field: fixed64 last_received_changelog_id = 6;
+     * @generated from protobuf field: fixed64 last_received_changelog_id = 6
      */
     lastReceivedChangelogId: bigint;
     /**
-     * @generated from protobuf field: map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.RecurringDismissibleContentState> recurring_dismissible_content_states = 7;
+     * @generated from protobuf field: map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.RecurringDismissibleContentState> recurring_dismissible_content_states = 7
      */
     recurringDismissibleContentStates: {
         [key: number]: PreloadedUserSettings_RecurringDismissibleContentState;
@@ -331,7 +335,7 @@ export interface PreloadedUserSettings_UserContentSettings {
  */
 export interface PreloadedUserSettings_VideoFilterBackgroundBlur {
     /**
-     * @generated from protobuf field: bool use_blur = 1;
+     * @generated from protobuf field: bool use_blur = 1
      */
     useBlur: boolean;
 }
@@ -340,11 +344,11 @@ export interface PreloadedUserSettings_VideoFilterBackgroundBlur {
  */
 export interface PreloadedUserSettings_VideoFilterAsset {
     /**
-     * @generated from protobuf field: fixed64 id = 1;
+     * @generated from protobuf field: fixed64 id = 1
      */
     id: bigint;
     /**
-     * @generated from protobuf field: string asset_hash = 2;
+     * @generated from protobuf field: string asset_hash = 2
      */
     assetHash: string;
 }
@@ -353,7 +357,7 @@ export interface PreloadedUserSettings_VideoFilterAsset {
  */
 export interface PreloadedUserSettings_SoundboardSettings {
     /**
-     * @generated from protobuf field: float volume = 1;
+     * @generated from protobuf field: float volume = 1
      */
     volume: number;
 }
@@ -367,50 +371,50 @@ export interface PreloadedUserSettings_VoiceAndVideoSettings {
     videoBackgroundFilterDesktop: {
         oneofKind: "blur";
         /**
-         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur = 1;
+         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterBackgroundBlur blur = 1
          */
         blur: PreloadedUserSettings_VideoFilterBackgroundBlur;
     } | {
         oneofKind: "presetOption";
         /**
-         * @generated from protobuf field: uint32 preset_option = 2;
+         * @generated from protobuf field: uint32 preset_option = 2
          */
         presetOption: number;
     } | {
         oneofKind: "customAsset";
         /**
-         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset = 3;
+         * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.VideoFilterAsset custom_asset = 3
          */
         customAsset: PreloadedUserSettings_VideoFilterAsset;
     } | {
         oneofKind: undefined;
     };
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue always_preview_video = 5;
+     * @generated from protobuf field: optional google.protobuf.BoolValue always_preview_video = 5
      */
     alwaysPreviewVideo?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value afk_timeout = 6;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value afk_timeout = 6
      */
     afkTimeout?: UInt32Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue stream_notifications_enabled = 7;
+     * @generated from protobuf field: optional google.protobuf.BoolValue stream_notifications_enabled = 7
      */
     streamNotificationsEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue native_phone_integration_enabled = 8;
+     * @generated from protobuf field: optional google.protobuf.BoolValue native_phone_integration_enabled = 8
      */
     nativePhoneIntegrationEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SoundboardSettings soundboard_settings = 9;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.SoundboardSettings soundboard_settings = 9
      */
     soundboardSettings?: PreloadedUserSettings_SoundboardSettings;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue disable_stream_previews = 10;
+     * @generated from protobuf field: optional google.protobuf.BoolValue disable_stream_previews = 10
      */
     disableStreamPreviews?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.FloatValue soundmoji_volume = 11;
+     * @generated from protobuf field: optional google.protobuf.FloatValue soundmoji_volume = 11
      */
     soundmojiVolume?: FloatValue;
 }
@@ -419,15 +423,15 @@ export interface PreloadedUserSettings_VoiceAndVideoSettings {
  */
 export interface PreloadedUserSettings_ExplicitContentSettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_guilds = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_guilds = 1
      */
     explicitContentGuilds: PreloadedUserSettings_ExplicitContentRedaction;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_friend_dm = 2;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_friend_dm = 2
      */
     explicitContentFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_non_friend_dm = 3;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction explicit_content_non_friend_dm = 3
      */
     explicitContentNonFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
 }
@@ -436,282 +440,311 @@ export interface PreloadedUserSettings_ExplicitContentSettings {
  */
 export interface PreloadedUserSettings_KeywordFilterSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue profanity = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue profanity = 1
      */
     profanity?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue sexual_content = 2;
+     * @generated from protobuf field: optional google.protobuf.BoolValue sexual_content = 2
      */
     sexualContent?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue slurs = 3;
+     * @generated from protobuf field: optional google.protobuf.BoolValue slurs = 3
      */
     slurs?: BoolValue;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings
+ */
+export interface PreloadedUserSettings_GoreContentSettings {
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds = 1
+     */
+    goreContentGuilds: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm = 2
+     */
+    goreContentFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm = 3
+     */
+    goreContentNonFriendDm: PreloadedUserSettings_ExplicitContentRedaction;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings
  */
 export interface PreloadedUserSettings_TextAndImagesSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue diversity_surrogate = 1;
+     * @generated from protobuf field: optional google.protobuf.StringValue diversity_surrogate = 1
      */
     diversitySurrogate?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue use_rich_chat_input = 2;
+     * @generated from protobuf field: optional google.protobuf.BoolValue use_rich_chat_input = 2
      */
     useRichChatInput?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue use_thread_sidebar = 3;
+     * @generated from protobuf field: optional google.protobuf.BoolValue use_thread_sidebar = 3
      */
     useThreadSidebar?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue render_spoilers = 4;
+     * @generated from protobuf field: optional google.protobuf.StringValue render_spoilers = 4
      */
     renderSpoilers?: StringValue;
     /**
-     * @generated from protobuf field: repeated string emoji_picker_collapsed_sections = 5 [packed = false];
+     * @generated from protobuf field: repeated string emoji_picker_collapsed_sections = 5 [packed = false]
      */
     emojiPickerCollapsedSections: string[];
     /**
-     * @generated from protobuf field: repeated string sticker_picker_collapsed_sections = 6 [packed = false];
+     * @generated from protobuf field: repeated string sticker_picker_collapsed_sections = 6 [packed = false]
      */
     stickerPickerCollapsedSections: string[];
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue view_image_descriptions = 7;
+     * @generated from protobuf field: optional google.protobuf.BoolValue view_image_descriptions = 7
      */
     viewImageDescriptions?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue show_command_suggestions = 8;
+     * @generated from protobuf field: optional google.protobuf.BoolValue show_command_suggestions = 8
      */
     showCommandSuggestions?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue inline_attachment_media = 9;
+     * @generated from protobuf field: optional google.protobuf.BoolValue inline_attachment_media = 9
      */
     inlineAttachmentMedia?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue inline_embed_media = 10;
+     * @generated from protobuf field: optional google.protobuf.BoolValue inline_embed_media = 10
      */
     inlineEmbedMedia?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue gif_auto_play = 11;
+     * @generated from protobuf field: optional google.protobuf.BoolValue gif_auto_play = 11
      */
     gifAutoPlay?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue render_embeds = 12;
+     * @generated from protobuf field: optional google.protobuf.BoolValue render_embeds = 12
      */
     renderEmbeds?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue render_reactions = 13;
+     * @generated from protobuf field: optional google.protobuf.BoolValue render_reactions = 13
      */
     renderReactions?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue animate_emoji = 14;
+     * @generated from protobuf field: optional google.protobuf.BoolValue animate_emoji = 14
      */
     animateEmoji?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value animate_stickers = 15;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value animate_stickers = 15
      */
     animateStickers?: UInt32Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue enable_tts_command = 16;
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_tts_command = 16
      */
     enableTtsCommand?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue message_display_compact = 17;
+     * @generated from protobuf field: optional google.protobuf.BoolValue message_display_compact = 17
      */
     messageDisplayCompact?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value explicit_content_filter = 19;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value explicit_content_filter = 19
      */
     explicitContentFilter?: UInt32Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue view_nsfw_guilds = 20;
+     * @generated from protobuf field: optional google.protobuf.BoolValue view_nsfw_guilds = 20
      */
     viewNsfwGuilds?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue convert_emoticons = 21;
+     * @generated from protobuf field: optional google.protobuf.BoolValue convert_emoticons = 21
      */
     convertEmoticons?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue expression_suggestions_enabled = 22;
+     * @generated from protobuf field: optional google.protobuf.BoolValue expression_suggestions_enabled = 22
      */
     expressionSuggestionsEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue view_nsfw_commands = 23;
+     * @generated from protobuf field: optional google.protobuf.BoolValue view_nsfw_commands = 23
      */
     viewNsfwCommands?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue use_legacy_chat_input = 24;
+     * @generated from protobuf field: optional google.protobuf.BoolValue use_legacy_chat_input = 24
      */
     useLegacyChatInput?: BoolValue;
     /**
-     * @generated from protobuf field: repeated string soundboard_picker_collapsed_sections = 25 [packed = false];
+     * @generated from protobuf field: repeated string soundboard_picker_collapsed_sections = 25 [packed = false]
      */
     soundboardPickerCollapsedSections: string[];
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value dm_spam_filter = 26;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value dm_spam_filter = 26
      */
     dmSpamFilter?: UInt32Value;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.DmSpamFilterV2 dm_spam_filter_v2 = 27;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.DmSpamFilterV2 dm_spam_filter_v2 = 27
      */
     dmSpamFilterV2: PreloadedUserSettings_DmSpamFilterV2;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue include_stickers_in_autocomplete = 28;
+     * @generated from protobuf field: optional google.protobuf.BoolValue include_stickers_in_autocomplete = 28
      */
     includeStickersInAutocomplete?: BoolValue;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentSettings explicit_content_settings = 29;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentSettings explicit_content_settings = 29
      */
     explicitContentSettings?: PreloadedUserSettings_ExplicitContentSettings;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.KeywordFilterSettings keyword_filter_settings = 30;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.KeywordFilterSettings keyword_filter_settings = 30
      */
     keywordFilterSettings?: PreloadedUserSettings_KeywordFilterSettings;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31;
+     * @generated from protobuf field: optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31
      */
     includeSoundmojiInAutocomplete?: BoolValue;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32
+     */
+    goreContentSettings?: PreloadedUserSettings_GoreContentSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.NotificationSettings
  */
 export interface PreloadedUserSettings_NotificationSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue show_in_app_notifications = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue show_in_app_notifications = 1
      */
     showInAppNotifications?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue notify_friends_on_go_live = 2;
+     * @generated from protobuf field: optional google.protobuf.BoolValue notify_friends_on_go_live = 2
      */
     notifyFriendsOnGoLive?: BoolValue;
     /**
-     * @generated from protobuf field: fixed64 notification_center_acked_before_id = 3;
+     * @generated from protobuf field: fixed64 notification_center_acked_before_id = 3
      */
     notificationCenterAckedBeforeId: bigint;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue enable_burst_reaction_notifications = 4;
+     * @generated from protobuf field: optional google.protobuf.BoolValue enable_burst_reaction_notifications = 4
      */
     enableBurstReactionNotifications?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue quiet_mode = 5;
+     * @generated from protobuf field: optional google.protobuf.BoolValue quiet_mode = 5
      */
     quietMode?: BoolValue;
     /**
-     * @generated from protobuf field: fixed64 focus_mode_expires_at_ms = 6;
+     * @generated from protobuf field: fixed64 focus_mode_expires_at_ms = 6
      */
     focusModeExpiresAtMs: bigint;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications = 7;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications = 7
      */
     reactionNotifications: PreloadedUserSettings_ReactionNotificationType;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8
+     */
+    gameActivityNotifications: PreloadedUserSettings_GameActivityNotificationType;
+    /**
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9
+     */
+    customStatusPushNotifications: PreloadedUserSettings_CustomStatusPushNotificationType;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.PrivacySettings
  */
 export interface PreloadedUserSettings_PrivacySettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue allow_activity_party_privacy_friends = 1
      */
     allowActivityPartyPrivacyFriends?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2;
+     * @generated from protobuf field: optional google.protobuf.BoolValue allow_activity_party_privacy_voice_channel = 2
      */
     allowActivityPartyPrivacyVoiceChannel?: BoolValue;
     /**
-     * @generated from protobuf field: repeated fixed64 restricted_guild_ids = 3;
+     * @generated from protobuf field: repeated fixed64 restricted_guild_ids = 3
      */
     restrictedGuildIds: bigint[];
     /**
-     * @generated from protobuf field: bool default_guilds_restricted = 4;
+     * @generated from protobuf field: bool default_guilds_restricted = 4
      */
     defaultGuildsRestricted: boolean;
     /**
-     * @generated from protobuf field: bool allow_accessibility_detection = 7;
+     * @generated from protobuf field: bool allow_accessibility_detection = 7
      */
     allowAccessibilityDetection: boolean;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue detect_platform_accounts = 8;
+     * @generated from protobuf field: optional google.protobuf.BoolValue detect_platform_accounts = 8
      */
     detectPlatformAccounts?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue passwordless = 9;
+     * @generated from protobuf field: optional google.protobuf.BoolValue passwordless = 9
      */
     passwordless?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue contact_sync_enabled = 10;
+     * @generated from protobuf field: optional google.protobuf.BoolValue contact_sync_enabled = 10
      */
     contactSyncEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value friend_source_flags = 11;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value friend_source_flags = 11
      */
     friendSourceFlags?: UInt32Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value friend_discovery_flags = 12;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value friend_discovery_flags = 12
      */
     friendDiscoveryFlags?: UInt32Value;
     /**
-     * @generated from protobuf field: repeated fixed64 activity_restricted_guild_ids = 13;
+     * @generated from protobuf field: repeated fixed64 activity_restricted_guild_ids = 13
      */
     activityRestrictedGuildIds: bigint[];
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault default_guilds_activity_restricted = 14;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault default_guilds_activity_restricted = 14
      */
     defaultGuildsActivityRestricted: PreloadedUserSettings_GuildActivityStatusRestrictionDefault;
     /**
-     * @generated from protobuf field: repeated fixed64 activity_joining_restricted_guild_ids = 15;
+     * @generated from protobuf field: repeated fixed64 activity_joining_restricted_guild_ids = 15
      */
     activityJoiningRestrictedGuildIds: bigint[];
     /**
-     * @generated from protobuf field: repeated fixed64 message_request_restricted_guild_ids = 16;
+     * @generated from protobuf field: repeated fixed64 message_request_restricted_guild_ids = 16
      */
     messageRequestRestrictedGuildIds: bigint[];
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue default_message_request_restricted = 17;
+     * @generated from protobuf field: optional google.protobuf.BoolValue default_message_request_restricted = 17
      */
     defaultMessageRequestRestricted?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue drops_opted_out = 18;
+     * @generated from protobuf field: optional google.protobuf.BoolValue drops_opted_out = 18
      */
     dropsOptedOut?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue non_spam_retraining_opt_in = 19;
+     * @generated from protobuf field: optional google.protobuf.BoolValue non_spam_retraining_opt_in = 19
      */
     nonSpamRetrainingOptIn?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue family_center_enabled = 20;
+     * @generated from protobuf field: optional google.protobuf.BoolValue family_center_enabled = 20
      */
     familyCenterEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue family_center_enabled_v2 = 21;
+     * @generated from protobuf field: optional google.protobuf.BoolValue family_center_enabled_v2 = 21
      */
     familyCenterEnabledV2?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue hide_legacy_username = 22;
+     * @generated from protobuf field: optional google.protobuf.BoolValue hide_legacy_username = 22
      */
     hideLegacyUsername?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue inappropriate_conversation_warnings = 23;
+     * @generated from protobuf field: optional google.protobuf.BoolValue inappropriate_conversation_warnings = 23
      */
     inappropriateConversationWarnings?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue recent_games_enabled = 24;
+     * @generated from protobuf field: optional google.protobuf.BoolValue recent_games_enabled = 24
      */
     recentGamesEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildsLeaderboardOptOutDefault guilds_leaderboard_opt_out_default = 25;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.GuildsLeaderboardOptOutDefault guilds_leaderboard_opt_out_default = 25
      */
     guildsLeaderboardOptOutDefault: PreloadedUserSettings_GuildsLeaderboardOptOutDefault;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue allow_game_friend_dms_in_discord = 26;
+     * @generated from protobuf field: optional google.protobuf.BoolValue allow_game_friend_dms_in_discord = 26
      */
     allowGameFriendDmsInDiscord?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27;
+     * @generated from protobuf field: optional google.protobuf.BoolValue default_guilds_restricted_v2 = 27
      */
     defaultGuildsRestrictedV2?: BoolValue;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SlayerSDKReceiveInGameDMs slayer_sdk_receive_dms_in_game = 28
      */
     slayerSdkReceiveDmsInGame: PreloadedUserSettings_SlayerSDKReceiveInGameDMs;
 }
@@ -720,7 +753,7 @@ export interface PreloadedUserSettings_PrivacySettings {
  */
 export interface PreloadedUserSettings_DebugSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue rtc_panel_show_voice_states = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue rtc_panel_show_voice_states = 1
      */
     rtcPanelShowVoiceStates?: BoolValue;
 }
@@ -729,15 +762,15 @@ export interface PreloadedUserSettings_DebugSettings {
  */
 export interface PreloadedUserSettings_GameLibrarySettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue install_shortcut_desktop = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue install_shortcut_desktop = 1
      */
     installShortcutDesktop?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue install_shortcut_start_menu = 2;
+     * @generated from protobuf field: optional google.protobuf.BoolValue install_shortcut_start_menu = 2
      */
     installShortcutStartMenu?: BoolValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue disable_games_tab = 3;
+     * @generated from protobuf field: optional google.protobuf.BoolValue disable_games_tab = 3
      */
     disableGamesTab?: BoolValue;
 }
@@ -746,27 +779,27 @@ export interface PreloadedUserSettings_GameLibrarySettings {
  */
 export interface PreloadedUserSettings_CustomStatus {
     /**
-     * @generated from protobuf field: string text = 1;
+     * @generated from protobuf field: string text = 1
      */
     text: string;
     /**
-     * @generated from protobuf field: fixed64 emoji_id = 2;
+     * @generated from protobuf field: fixed64 emoji_id = 2
      */
     emojiId: bigint;
     /**
-     * @generated from protobuf field: string emoji_name = 3;
+     * @generated from protobuf field: string emoji_name = 3
      */
     emojiName: string;
     /**
-     * @generated from protobuf field: fixed64 expires_at_ms = 4;
+     * @generated from protobuf field: fixed64 expires_at_ms = 4
      */
     expiresAtMs: bigint;
     /**
-     * @generated from protobuf field: fixed64 created_at_ms = 5;
+     * @generated from protobuf field: fixed64 created_at_ms = 5
      */
     createdAtMs: bigint;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue label = 6;
+     * @generated from protobuf field: optional google.protobuf.StringValue label = 6
      */
     label?: StringValue;
 }
@@ -775,19 +808,19 @@ export interface PreloadedUserSettings_CustomStatus {
  */
 export interface PreloadedUserSettings_StatusSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue status = 1;
+     * @generated from protobuf field: optional google.protobuf.StringValue status = 1
      */
     status?: StringValue;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatus custom_status = 2;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatus custom_status = 2
      */
     customStatus?: PreloadedUserSettings_CustomStatus;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue show_current_game = 3;
+     * @generated from protobuf field: optional google.protobuf.BoolValue show_current_game = 3
      */
     showCurrentGame?: BoolValue;
     /**
-     * @generated from protobuf field: fixed64 status_expires_at_ms = 4;
+     * @generated from protobuf field: fixed64 status_expires_at_ms = 4
      */
     statusExpiresAtMs: bigint;
 }
@@ -796,73 +829,98 @@ export interface PreloadedUserSettings_StatusSettings {
  */
 export interface PreloadedUserSettings_LocalizationSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue locale = 1;
+     * @generated from protobuf field: optional google.protobuf.StringValue locale = 1
      */
     locale?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.Int32Value timezone_offset = 2;
+     * @generated from protobuf field: optional google.protobuf.Int32Value timezone_offset = 2
      */
     timezoneOffset?: Int32Value;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
+ */
+export interface PreloadedUserSettings_CustomUserThemeSettings {
+    /**
+     * @generated from protobuf field: repeated string colors = 1 [packed = false]
+     */
+    colors: string[];
+    /**
+     * @generated from protobuf field: repeated float gradient_color_stops = 2
+     */
+    gradientColorStops: number[];
+    /**
+     * @generated from protobuf field: int32 gradient_angle = 3
+     */
+    gradientAngle: number;
+    /**
+     * @generated from protobuf field: int32 base_mix = 4
+     */
+    baseMix: number;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings
  */
 export interface PreloadedUserSettings_ClientThemeSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt32Value background_gradient_preset_id = 2;
+     * @generated from protobuf field: optional google.protobuf.UInt32Value background_gradient_preset_id = 2
      */
     backgroundGradientPresetId?: UInt32Value;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings = 4
+     */
+    customUserThemeSettings?: PreloadedUserSettings_CustomUserThemeSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AppearanceSettings
  */
 export interface PreloadedUserSettings_AppearanceSettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.Theme theme = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.Theme theme = 1
      */
     theme: PreloadedUserSettings_Theme;
     /**
-     * @generated from protobuf field: bool developer_mode = 2;
+     * @generated from protobuf field: bool developer_mode = 2
      */
     developerMode: boolean;
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings client_theme_settings = 3;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings client_theme_settings = 3
      */
     clientThemeSettings?: PreloadedUserSettings_ClientThemeSettings;
     /**
-     * @generated from protobuf field: bool mobile_redesign_disabled = 4;
+     * @generated from protobuf field: bool mobile_redesign_disabled = 4
      */
     mobileRedesignDisabled: boolean;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue channel_list_layout = 6;
+     * @generated from protobuf field: optional google.protobuf.StringValue channel_list_layout = 6
      */
     channelListLayout?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue message_previews = 7;
+     * @generated from protobuf field: optional google.protobuf.StringValue message_previews = 7
      */
     messagePreviews?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue search_result_exact_count_enabled = 8;
+     * @generated from protobuf field: optional google.protobuf.BoolValue search_result_exact_count_enabled = 8
      */
     searchResultExactCountEnabled?: BoolValue;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.TimestampHourCycle timestamp_hour_cycle = 9;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.TimestampHourCycle timestamp_hour_cycle = 9
      */
     timestampHourCycle: PreloadedUserSettings_TimestampHourCycle;
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue happening_now_cards_disabled = 10;
+     * @generated from protobuf field: optional google.protobuf.BoolValue happening_now_cards_disabled = 10
      */
     happeningNowCardsDisabled?: BoolValue;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.LaunchPadMode launch_pad_mode = 11;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.LaunchPadMode launch_pad_mode = 11
      */
     launchPadMode: PreloadedUserSettings_LaunchPadMode;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity ui_density = 12;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.UIDensity ui_density = 12
      */
     uiDensity: PreloadedUserSettings_UIDensity;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SwipeRightToLeftMode swipe_right_to_left_mode = 13
      */
     swipeRightToLeftMode: PreloadedUserSettings_SwipeRightToLeftMode;
 }
@@ -871,19 +929,19 @@ export interface PreloadedUserSettings_AppearanceSettings {
  */
 export interface PreloadedUserSettings_GuildFolder {
     /**
-     * @generated from protobuf field: repeated fixed64 guild_ids = 1;
+     * @generated from protobuf field: repeated fixed64 guild_ids = 1
      */
     guildIds: bigint[];
     /**
-     * @generated from protobuf field: optional google.protobuf.Int64Value id = 2;
+     * @generated from protobuf field: optional google.protobuf.Int64Value id = 2
      */
     id?: Int64Value;
     /**
-     * @generated from protobuf field: optional google.protobuf.StringValue name = 3;
+     * @generated from protobuf field: optional google.protobuf.StringValue name = 3
      */
     name?: StringValue;
     /**
-     * @generated from protobuf field: optional google.protobuf.UInt64Value color = 4;
+     * @generated from protobuf field: optional google.protobuf.UInt64Value color = 4
      */
     color?: UInt64Value;
 }
@@ -892,11 +950,11 @@ export interface PreloadedUserSettings_GuildFolder {
  */
 export interface PreloadedUserSettings_GuildFolders {
     /**
-     * @generated from protobuf field: repeated discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolder folders = 1;
+     * @generated from protobuf field: repeated discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolder folders = 1
      */
     folders: PreloadedUserSettings_GuildFolder[];
     /**
-     * @generated from protobuf field: repeated fixed64 guild_positions = 2;
+     * @generated from protobuf field: repeated fixed64 guild_positions = 2
      */
     guildPositions: bigint[];
 }
@@ -905,19 +963,19 @@ export interface PreloadedUserSettings_GuildFolders {
  */
 export interface PreloadedUserSettings_FavoriteChannel {
     /**
-     * @generated from protobuf field: string nickname = 1;
+     * @generated from protobuf field: string nickname = 1
      */
     nickname: string;
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannelType type = 2;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannelType type = 2
      */
     type: PreloadedUserSettings_FavoriteChannelType;
     /**
-     * @generated from protobuf field: uint32 position = 3;
+     * @generated from protobuf field: uint32 position = 3
      */
     position: number;
     /**
-     * @generated from protobuf field: fixed64 parent_id = 4;
+     * @generated from protobuf field: fixed64 parent_id = 4
      */
     parentId: bigint;
 }
@@ -926,13 +984,13 @@ export interface PreloadedUserSettings_FavoriteChannel {
  */
 export interface PreloadedUserSettings_Favorites {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannel> favorite_channels = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.FavoriteChannel> favorite_channels = 1
      */
     favoriteChannels: {
         [key: string]: PreloadedUserSettings_FavoriteChannel;
     };
     /**
-     * @generated from protobuf field: bool muted = 2;
+     * @generated from protobuf field: bool muted = 2
      */
     muted: boolean;
 }
@@ -941,19 +999,19 @@ export interface PreloadedUserSettings_Favorites {
  */
 export interface PreloadedUserSettings_AudioContextSetting {
     /**
-     * @generated from protobuf field: bool muted = 1;
+     * @generated from protobuf field: bool muted = 1
      */
     muted: boolean;
     /**
-     * @generated from protobuf field: float volume = 2;
+     * @generated from protobuf field: float volume = 2
      */
     volume: number;
     /**
-     * @generated from protobuf field: fixed64 modified_at = 3;
+     * @generated from protobuf field: fixed64 modified_at = 3
      */
     modifiedAt: bigint;
     /**
-     * @generated from protobuf field: bool soundboard_muted = 4;
+     * @generated from protobuf field: bool soundboard_muted = 4
      */
     soundboardMuted: boolean;
 }
@@ -962,13 +1020,13 @@ export interface PreloadedUserSettings_AudioContextSetting {
  */
 export interface PreloadedUserSettings_AudioSettings {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting> user = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting> user = 1
      */
     user: {
         [key: string]: PreloadedUserSettings_AudioContextSetting;
     };
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting> stream = 2;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.AudioContextSetting> stream = 2
      */
     stream: {
         [key: string]: PreloadedUserSettings_AudioContextSetting;
@@ -979,7 +1037,7 @@ export interface PreloadedUserSettings_AudioSettings {
  */
 export interface PreloadedUserSettings_CommunitiesSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue disable_home_auto_nav = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue disable_home_auto_nav = 1
      */
     disableHomeAutoNav?: BoolValue;
 }
@@ -988,19 +1046,19 @@ export interface PreloadedUserSettings_CommunitiesSettings {
  */
 export interface PreloadedUserSettings_BroadcastSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue allow_friends = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue allow_friends = 1
      */
     allowFriends?: BoolValue;
     /**
-     * @generated from protobuf field: repeated fixed64 allowed_guild_ids = 2;
+     * @generated from protobuf field: repeated fixed64 allowed_guild_ids = 2
      */
     allowedGuildIds: bigint[];
     /**
-     * @generated from protobuf field: repeated fixed64 allowed_user_ids = 3;
+     * @generated from protobuf field: repeated fixed64 allowed_user_ids = 3
      */
     allowedUserIds: bigint[];
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue auto_broadcast = 4;
+     * @generated from protobuf field: optional google.protobuf.BoolValue auto_broadcast = 4
      */
     autoBroadcast?: BoolValue;
 }
@@ -1009,7 +1067,7 @@ export interface PreloadedUserSettings_BroadcastSettings {
  */
 export interface PreloadedUserSettings_ClipsSettings {
     /**
-     * @generated from protobuf field: optional google.protobuf.BoolValue allow_voice_recording = 1;
+     * @generated from protobuf field: optional google.protobuf.BoolValue allow_voice_recording = 1
      */
     allowVoiceRecording?: BoolValue;
 }
@@ -1018,7 +1076,7 @@ export interface PreloadedUserSettings_ClipsSettings {
  */
 export interface PreloadedUserSettings_ForLaterSettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ForLaterTab current_tab = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.ForLaterTab current_tab = 1
      */
     currentTab: PreloadedUserSettings_ForLaterTab;
 }
@@ -1027,11 +1085,11 @@ export interface PreloadedUserSettings_ForLaterSettings {
  */
 export interface PreloadedUserSettings_SafetySettings {
     /**
-     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettingsPresetType safety_settings_preset = 1;
+     * @generated from protobuf field: discord_protos.discord_users.v1.PreloadedUserSettings.SafetySettingsPresetType safety_settings_preset = 1
      */
     safetySettingsPreset: PreloadedUserSettings_SafetySettingsPresetType;
     /**
-     * @generated from protobuf field: bool ignore_profile_speedbump_disabled = 2;
+     * @generated from protobuf field: bool ignore_profile_speedbump_disabled = 2
      */
     ignoreProfileSpeedbumpDisabled: boolean;
 }
@@ -1040,7 +1098,7 @@ export interface PreloadedUserSettings_SafetySettings {
  */
 export interface PreloadedUserSettings_ICYMISettings {
     /**
-     * @generated from protobuf field: fixed64 feed_generated_at = 1;
+     * @generated from protobuf field: fixed64 feed_generated_at = 1
      */
     feedGeneratedAt: bigint;
 }
@@ -1049,25 +1107,38 @@ export interface PreloadedUserSettings_ICYMISettings {
  */
 export interface PreloadedUserSettings_ApplicationDMSettings {
     /**
-     * @generated from protobuf field: bool allow_mobile_push = 2;
+     * @generated from protobuf field: bool allow_mobile_push = 2
      */
     allowMobilePush: boolean;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings
+ */
+export interface PreloadedUserSettings_ApplicationSharingSettings {
+    /**
+     * @generated from protobuf field: bool disable_application_activity_sharing = 1
+     */
+    disableApplicationActivitySharing: boolean;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings
  */
 export interface PreloadedUserSettings_ApplicationSettings {
     /**
-     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings = 1;
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings = 1
      */
     appDmSettings?: PreloadedUserSettings_ApplicationDMSettings;
+    /**
+     * @generated from protobuf field: optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings = 2
+     */
+    appSharingSettings?: PreloadedUserSettings_ApplicationSharingSettings;
 }
 /**
  * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings
  */
 export interface PreloadedUserSettings_AllApplicationSettings {
     /**
-     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings> app_settings = 1;
+     * @generated from protobuf field: map<fixed64, discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings> app_settings = 1
      */
     appSettings: {
         [key: string]: PreloadedUserSettings_ApplicationSettings;
@@ -1078,9 +1149,33 @@ export interface PreloadedUserSettings_AllApplicationSettings {
  */
 export interface PreloadedUserSettings_AdsSettings {
     /**
-     * @generated from protobuf field: bool always_deliver = 1;
+     * @generated from protobuf field: bool always_deliver = 1
      */
     alwaysDeliver: boolean;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState
+ */
+export interface PreloadedUserSettings_InAppFeedbackState {
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value last_impression_time = 1
+     */
+    lastImpressionTime?: UInt64Value;
+    /**
+     * @generated from protobuf field: optional google.protobuf.UInt64Value opt_out_expiry_time = 2
+     */
+    optOutExpiryTime?: UInt64Value;
+}
+/**
+ * @generated from protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
+ */
+export interface PreloadedUserSettings_InAppFeedbackSettings {
+    /**
+     * @generated from protobuf field: map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states = 1
+     */
+    inAppFeedbackStates: {
+        [key: number]: PreloadedUserSettings_InAppFeedbackState;
+    };
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.InboxTab
@@ -1177,6 +1272,44 @@ export declare enum PreloadedUserSettings_ReactionNotificationType {
      * @generated from protobuf enum value: REACTION_NOTIFICATION_TYPE_NOTIFICATIONS_DISABLED = 2;
      */
     NOTIFICATIONS_DISABLED = 2
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType
+ */
+export declare enum PreloadedUserSettings_GameActivityNotificationType {
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_UNSET = 0;
+     */
+    ACTIVITY_NOTIFICATIONS_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_DISABLED = 1;
+     */
+    ACTIVITY_NOTIFICATIONS_DISABLED = 1,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_ENABLED = 2;
+     */
+    ACTIVITY_NOTIFICATIONS_ENABLED = 2,
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
+     */
+    ONLY_GAMES_PLAYED = 3
+}
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType
+ */
+export declare enum PreloadedUserSettings_CustomStatusPushNotificationType {
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_UNSET = 0;
+     */
+    STATUS_PUSH_UNSET = 0,
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_ENABLED = 1;
+     */
+    STATUS_PUSH_ENABLED = 1,
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_DISABLED = 2;
+     */
+    STATUS_PUSH_DISABLED = 2
 }
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault
@@ -1580,6 +1713,16 @@ declare class PreloadedUserSettings_KeywordFilterSettings$Type extends MessageTy
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.KeywordFilterSettings
  */
 export declare const PreloadedUserSettings_KeywordFilterSettings: PreloadedUserSettings_KeywordFilterSettings$Type;
+declare class PreloadedUserSettings_GoreContentSettings$Type extends MessageType<PreloadedUserSettings_GoreContentSettings> {
+    constructor();
+    create(value?: PartialMessage<PreloadedUserSettings_GoreContentSettings>): PreloadedUserSettings_GoreContentSettings;
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_GoreContentSettings): PreloadedUserSettings_GoreContentSettings;
+    internalBinaryWrite(message: PreloadedUserSettings_GoreContentSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter;
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings
+ */
+export declare const PreloadedUserSettings_GoreContentSettings: PreloadedUserSettings_GoreContentSettings$Type;
 declare class PreloadedUserSettings_TextAndImagesSettings$Type extends MessageType<PreloadedUserSettings_TextAndImagesSettings> {
     constructor();
     create(value?: PartialMessage<PreloadedUserSettings_TextAndImagesSettings>): PreloadedUserSettings_TextAndImagesSettings;
@@ -1660,6 +1803,16 @@ declare class PreloadedUserSettings_LocalizationSettings$Type extends MessageTyp
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.LocalizationSettings
  */
 export declare const PreloadedUserSettings_LocalizationSettings: PreloadedUserSettings_LocalizationSettings$Type;
+declare class PreloadedUserSettings_CustomUserThemeSettings$Type extends MessageType<PreloadedUserSettings_CustomUserThemeSettings> {
+    constructor();
+    create(value?: PartialMessage<PreloadedUserSettings_CustomUserThemeSettings>): PreloadedUserSettings_CustomUserThemeSettings;
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_CustomUserThemeSettings): PreloadedUserSettings_CustomUserThemeSettings;
+    internalBinaryWrite(message: PreloadedUserSettings_CustomUserThemeSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter;
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
+ */
+export declare const PreloadedUserSettings_CustomUserThemeSettings: PreloadedUserSettings_CustomUserThemeSettings$Type;
 declare class PreloadedUserSettings_ClientThemeSettings$Type extends MessageType<PreloadedUserSettings_ClientThemeSettings> {
     constructor();
     create(value?: PartialMessage<PreloadedUserSettings_ClientThemeSettings>): PreloadedUserSettings_ClientThemeSettings;
@@ -1813,6 +1966,16 @@ declare class PreloadedUserSettings_ApplicationDMSettings$Type extends MessageTy
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings
  */
 export declare const PreloadedUserSettings_ApplicationDMSettings: PreloadedUserSettings_ApplicationDMSettings$Type;
+declare class PreloadedUserSettings_ApplicationSharingSettings$Type extends MessageType<PreloadedUserSettings_ApplicationSharingSettings> {
+    constructor();
+    create(value?: PartialMessage<PreloadedUserSettings_ApplicationSharingSettings>): PreloadedUserSettings_ApplicationSharingSettings;
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_ApplicationSharingSettings): PreloadedUserSettings_ApplicationSharingSettings;
+    internalBinaryWrite(message: PreloadedUserSettings_ApplicationSharingSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter;
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings
+ */
+export declare const PreloadedUserSettings_ApplicationSharingSettings: PreloadedUserSettings_ApplicationSharingSettings$Type;
 declare class PreloadedUserSettings_ApplicationSettings$Type extends MessageType<PreloadedUserSettings_ApplicationSettings> {
     constructor();
     create(value?: PartialMessage<PreloadedUserSettings_ApplicationSettings>): PreloadedUserSettings_ApplicationSettings;
@@ -1844,4 +2007,25 @@ declare class PreloadedUserSettings_AdsSettings$Type extends MessageType<Preload
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings
  */
 export declare const PreloadedUserSettings_AdsSettings: PreloadedUserSettings_AdsSettings$Type;
+declare class PreloadedUserSettings_InAppFeedbackState$Type extends MessageType<PreloadedUserSettings_InAppFeedbackState> {
+    constructor();
+    create(value?: PartialMessage<PreloadedUserSettings_InAppFeedbackState>): PreloadedUserSettings_InAppFeedbackState;
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_InAppFeedbackState): PreloadedUserSettings_InAppFeedbackState;
+    internalBinaryWrite(message: PreloadedUserSettings_InAppFeedbackState, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter;
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState
+ */
+export declare const PreloadedUserSettings_InAppFeedbackState: PreloadedUserSettings_InAppFeedbackState$Type;
+declare class PreloadedUserSettings_InAppFeedbackSettings$Type extends MessageType<PreloadedUserSettings_InAppFeedbackSettings> {
+    constructor();
+    create(value?: PartialMessage<PreloadedUserSettings_InAppFeedbackSettings>): PreloadedUserSettings_InAppFeedbackSettings;
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PreloadedUserSettings_InAppFeedbackSettings): PreloadedUserSettings_InAppFeedbackSettings;
+    private binaryReadMap1;
+    internalBinaryWrite(message: PreloadedUserSettings_InAppFeedbackSettings, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter;
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
+ */
+export declare const PreloadedUserSettings_InAppFeedbackSettings: PreloadedUserSettings_InAppFeedbackSettings$Type;
 export {};

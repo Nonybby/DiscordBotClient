@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PreloadedUserSettings_CommunitiesSettings = exports.PreloadedUserSettings_AudioSettings = exports.PreloadedUserSettings_AudioContextSetting = exports.PreloadedUserSettings_Favorites = exports.PreloadedUserSettings_FavoriteChannel = exports.PreloadedUserSettings_GuildFolders = exports.PreloadedUserSettings_GuildFolder = exports.PreloadedUserSettings_AppearanceSettings = exports.PreloadedUserSettings_ClientThemeSettings = exports.PreloadedUserSettings_LocalizationSettings = exports.PreloadedUserSettings_StatusSettings = exports.PreloadedUserSettings_CustomStatus = exports.PreloadedUserSettings_GameLibrarySettings = exports.PreloadedUserSettings_DebugSettings = exports.PreloadedUserSettings_PrivacySettings = exports.PreloadedUserSettings_NotificationSettings = exports.PreloadedUserSettings_TextAndImagesSettings = exports.PreloadedUserSettings_KeywordFilterSettings = exports.PreloadedUserSettings_ExplicitContentSettings = exports.PreloadedUserSettings_VoiceAndVideoSettings = exports.PreloadedUserSettings_SoundboardSettings = exports.PreloadedUserSettings_VideoFilterAsset = exports.PreloadedUserSettings_VideoFilterBackgroundBlur = exports.PreloadedUserSettings_UserContentSettings = exports.PreloadedUserSettings_RecurringDismissibleContentState = exports.PreloadedUserSettings_AllGuildSettings = exports.PreloadedUserSettings_GuildSettings = exports.PreloadedUserSettings_ChannelListSettings = exports.PreloadedUserSettings_CustomCallSound = exports.PreloadedUserSettings_ChannelSettings = exports.PreloadedUserSettings_CustomNotificationSoundConfig = exports.PreloadedUserSettings_ChannelIconEmoji = exports.PreloadedUserSettings_InboxSettings = exports.PreloadedUserSettings_Versions = exports.PreloadedUserSettings = exports.PreloadedUserSettings_SafetySettingsPresetType = exports.PreloadedUserSettings_ForLaterTab = exports.PreloadedUserSettings_FavoriteChannelType = exports.PreloadedUserSettings_SwipeRightToLeftMode = exports.PreloadedUserSettings_UIDensity = exports.PreloadedUserSettings_LaunchPadMode = exports.PreloadedUserSettings_TimestampHourCycle = exports.PreloadedUserSettings_Theme = exports.PreloadedUserSettings_SlayerSDKReceiveInGameDMs = exports.PreloadedUserSettings_GuildsLeaderboardOptOutDefault = exports.PreloadedUserSettings_GuildActivityStatusRestrictionDefault = exports.PreloadedUserSettings_ReactionNotificationType = exports.PreloadedUserSettings_ExplicitContentRedaction = exports.PreloadedUserSettings_DmSpamFilterV2 = exports.PreloadedUserSettings_InboxTab = void 0;
-exports.PreloadedUserSettings_AdsSettings = exports.PreloadedUserSettings_AllApplicationSettings = exports.PreloadedUserSettings_ApplicationSettings = exports.PreloadedUserSettings_ApplicationDMSettings = exports.PreloadedUserSettings_ICYMISettings = exports.PreloadedUserSettings_SafetySettings = exports.PreloadedUserSettings_ForLaterSettings = exports.PreloadedUserSettings_ClipsSettings = exports.PreloadedUserSettings_BroadcastSettings = void 0;
+exports.PreloadedUserSettings_FavoriteChannel = exports.PreloadedUserSettings_GuildFolders = exports.PreloadedUserSettings_GuildFolder = exports.PreloadedUserSettings_AppearanceSettings = exports.PreloadedUserSettings_ClientThemeSettings = exports.PreloadedUserSettings_CustomUserThemeSettings = exports.PreloadedUserSettings_LocalizationSettings = exports.PreloadedUserSettings_StatusSettings = exports.PreloadedUserSettings_CustomStatus = exports.PreloadedUserSettings_GameLibrarySettings = exports.PreloadedUserSettings_DebugSettings = exports.PreloadedUserSettings_PrivacySettings = exports.PreloadedUserSettings_NotificationSettings = exports.PreloadedUserSettings_TextAndImagesSettings = exports.PreloadedUserSettings_GoreContentSettings = exports.PreloadedUserSettings_KeywordFilterSettings = exports.PreloadedUserSettings_ExplicitContentSettings = exports.PreloadedUserSettings_VoiceAndVideoSettings = exports.PreloadedUserSettings_SoundboardSettings = exports.PreloadedUserSettings_VideoFilterAsset = exports.PreloadedUserSettings_VideoFilterBackgroundBlur = exports.PreloadedUserSettings_UserContentSettings = exports.PreloadedUserSettings_RecurringDismissibleContentState = exports.PreloadedUserSettings_AllGuildSettings = exports.PreloadedUserSettings_GuildSettings = exports.PreloadedUserSettings_ChannelListSettings = exports.PreloadedUserSettings_CustomCallSound = exports.PreloadedUserSettings_ChannelSettings = exports.PreloadedUserSettings_CustomNotificationSoundConfig = exports.PreloadedUserSettings_ChannelIconEmoji = exports.PreloadedUserSettings_InboxSettings = exports.PreloadedUserSettings_Versions = exports.PreloadedUserSettings = exports.PreloadedUserSettings_SafetySettingsPresetType = exports.PreloadedUserSettings_ForLaterTab = exports.PreloadedUserSettings_FavoriteChannelType = exports.PreloadedUserSettings_SwipeRightToLeftMode = exports.PreloadedUserSettings_UIDensity = exports.PreloadedUserSettings_LaunchPadMode = exports.PreloadedUserSettings_TimestampHourCycle = exports.PreloadedUserSettings_Theme = exports.PreloadedUserSettings_SlayerSDKReceiveInGameDMs = exports.PreloadedUserSettings_GuildsLeaderboardOptOutDefault = exports.PreloadedUserSettings_GuildActivityStatusRestrictionDefault = exports.PreloadedUserSettings_CustomStatusPushNotificationType = exports.PreloadedUserSettings_GameActivityNotificationType = exports.PreloadedUserSettings_ReactionNotificationType = exports.PreloadedUserSettings_ExplicitContentRedaction = exports.PreloadedUserSettings_DmSpamFilterV2 = exports.PreloadedUserSettings_InboxTab = void 0;
+exports.PreloadedUserSettings_InAppFeedbackSettings = exports.PreloadedUserSettings_InAppFeedbackState = exports.PreloadedUserSettings_AdsSettings = exports.PreloadedUserSettings_AllApplicationSettings = exports.PreloadedUserSettings_ApplicationSettings = exports.PreloadedUserSettings_ApplicationSharingSettings = exports.PreloadedUserSettings_ApplicationDMSettings = exports.PreloadedUserSettings_ICYMISettings = exports.PreloadedUserSettings_SafetySettings = exports.PreloadedUserSettings_ForLaterSettings = exports.PreloadedUserSettings_ClipsSettings = exports.PreloadedUserSettings_BroadcastSettings = exports.PreloadedUserSettings_CommunitiesSettings = exports.PreloadedUserSettings_AudioSettings = exports.PreloadedUserSettings_AudioContextSetting = exports.PreloadedUserSettings_Favorites = void 0;
 const runtime_1 = require("@protobuf-ts/runtime");
 const runtime_2 = require("@protobuf-ts/runtime");
 const runtime_3 = require("@protobuf-ts/runtime");
@@ -114,6 +114,46 @@ var PreloadedUserSettings_ReactionNotificationType;
      */
     PreloadedUserSettings_ReactionNotificationType[PreloadedUserSettings_ReactionNotificationType["NOTIFICATIONS_DISABLED"] = 2] = "NOTIFICATIONS_DISABLED";
 })(PreloadedUserSettings_ReactionNotificationType || (exports.PreloadedUserSettings_ReactionNotificationType = PreloadedUserSettings_ReactionNotificationType = {}));
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType
+ */
+var PreloadedUserSettings_GameActivityNotificationType;
+(function (PreloadedUserSettings_GameActivityNotificationType) {
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_UNSET = 0;
+     */
+    PreloadedUserSettings_GameActivityNotificationType[PreloadedUserSettings_GameActivityNotificationType["ACTIVITY_NOTIFICATIONS_UNSET"] = 0] = "ACTIVITY_NOTIFICATIONS_UNSET";
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_DISABLED = 1;
+     */
+    PreloadedUserSettings_GameActivityNotificationType[PreloadedUserSettings_GameActivityNotificationType["ACTIVITY_NOTIFICATIONS_DISABLED"] = 1] = "ACTIVITY_NOTIFICATIONS_DISABLED";
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ACTIVITY_NOTIFICATIONS_ENABLED = 2;
+     */
+    PreloadedUserSettings_GameActivityNotificationType[PreloadedUserSettings_GameActivityNotificationType["ACTIVITY_NOTIFICATIONS_ENABLED"] = 2] = "ACTIVITY_NOTIFICATIONS_ENABLED";
+    /**
+     * @generated from protobuf enum value: GAME_ACTIVITY_NOTIFICATION_TYPE_ONLY_GAMES_PLAYED = 3;
+     */
+    PreloadedUserSettings_GameActivityNotificationType[PreloadedUserSettings_GameActivityNotificationType["ONLY_GAMES_PLAYED"] = 3] = "ONLY_GAMES_PLAYED";
+})(PreloadedUserSettings_GameActivityNotificationType || (exports.PreloadedUserSettings_GameActivityNotificationType = PreloadedUserSettings_GameActivityNotificationType = {}));
+/**
+ * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType
+ */
+var PreloadedUserSettings_CustomStatusPushNotificationType;
+(function (PreloadedUserSettings_CustomStatusPushNotificationType) {
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_UNSET = 0;
+     */
+    PreloadedUserSettings_CustomStatusPushNotificationType[PreloadedUserSettings_CustomStatusPushNotificationType["STATUS_PUSH_UNSET"] = 0] = "STATUS_PUSH_UNSET";
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_ENABLED = 1;
+     */
+    PreloadedUserSettings_CustomStatusPushNotificationType[PreloadedUserSettings_CustomStatusPushNotificationType["STATUS_PUSH_ENABLED"] = 1] = "STATUS_PUSH_ENABLED";
+    /**
+     * @generated from protobuf enum value: CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_STATUS_PUSH_DISABLED = 2;
+     */
+    PreloadedUserSettings_CustomStatusPushNotificationType[PreloadedUserSettings_CustomStatusPushNotificationType["STATUS_PUSH_DISABLED"] = 2] = "STATUS_PUSH_DISABLED";
+})(PreloadedUserSettings_CustomStatusPushNotificationType || (exports.PreloadedUserSettings_CustomStatusPushNotificationType = PreloadedUserSettings_CustomStatusPushNotificationType = {}));
 /**
  * @generated from protobuf enum discord_protos.discord_users.v1.PreloadedUserSettings.GuildActivityStatusRestrictionDefault
  */
@@ -371,7 +411,8 @@ class PreloadedUserSettings$Type extends runtime_4.MessageType {
             { no: 21, name: "safety_settings", kind: "message", T: () => exports.PreloadedUserSettings_SafetySettings },
             { no: 22, name: "icymi_settings", kind: "message", T: () => exports.PreloadedUserSettings_ICYMISettings },
             { no: 23, name: "applications", kind: "message", T: () => exports.PreloadedUserSettings_AllApplicationSettings },
-            { no: 24, name: "ads", kind: "message", T: () => exports.PreloadedUserSettings_AdsSettings }
+            { no: 24, name: "ads", kind: "message", T: () => exports.PreloadedUserSettings_AdsSettings },
+            { no: 25, name: "in_app_feedback_settings", kind: "message", T: () => exports.PreloadedUserSettings_InAppFeedbackSettings }
         ]);
     }
     create(value) {
@@ -457,6 +498,9 @@ class PreloadedUserSettings$Type extends runtime_4.MessageType {
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads */ 24:
                     message.ads = exports.PreloadedUserSettings_AdsSettings.internalBinaryRead(reader, reader.uint32(), options, message.ads);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings */ 25:
+                    message.inAppFeedbackSettings = exports.PreloadedUserSettings_InAppFeedbackSettings.internalBinaryRead(reader, reader.uint32(), options, message.inAppFeedbackSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -541,6 +585,9 @@ class PreloadedUserSettings$Type extends runtime_4.MessageType {
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings ads = 24; */
         if (message.ads)
             exports.PreloadedUserSettings_AdsSettings.internalBinaryWrite(message.ads, writer.tag(24, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings in_app_feedback_settings = 25; */
+        if (message.inAppFeedbackSettings)
+            exports.PreloadedUserSettings_InAppFeedbackSettings.internalBinaryWrite(message.inAppFeedbackSettings, writer.tag(25, runtime_1.WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1034,7 +1081,7 @@ class PreloadedUserSettings_GuildSettings$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.PreloadedUserSettings_ChannelSettings.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings.channels");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.GuildSettings.channels");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_ChannelSettings.create();
@@ -1131,7 +1178,7 @@ class PreloadedUserSettings_AllGuildSettings$Type extends runtime_4.MessageType 
                 case 2:
                     val = exports.PreloadedUserSettings_GuildSettings.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings.guilds");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.AllGuildSettings.guilds");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_GuildSettings.create();
@@ -1287,7 +1334,7 @@ class PreloadedUserSettings_UserContentSettings$Type extends runtime_4.MessageTy
                 case 2:
                     val = exports.PreloadedUserSettings_RecurringDismissibleContentState.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.UserContentSettings.recurring_dismissible_content_states");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.UserContentSettings.recurring_dismissible_content_states");
             }
         }
         map[key ?? 0] = val ?? exports.PreloadedUserSettings_RecurringDismissibleContentState.create();
@@ -1720,6 +1767,69 @@ class PreloadedUserSettings_KeywordFilterSettings$Type extends runtime_4.Message
  */
 exports.PreloadedUserSettings_KeywordFilterSettings = new PreloadedUserSettings_KeywordFilterSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_GoreContentSettings$Type extends runtime_4.MessageType {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings", [
+            { no: 1, name: "gore_content_guilds", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 2, name: "gore_content_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] },
+            { no: 3, name: "gore_content_non_friend_dm", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction", PreloadedUserSettings_ExplicitContentRedaction, "EXPLICIT_CONTENT_REDACTION_"] }
+        ]);
+    }
+    create(value) {
+        const message = globalThis.Object.create((this.messagePrototype));
+        message.goreContentGuilds = 0;
+        message.goreContentFriendDm = 0;
+        message.goreContentNonFriendDm = 0;
+        if (value !== undefined)
+            (0, runtime_3.reflectionMergePartial)(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader, length, options, target) {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds */ 1:
+                    message.goreContentGuilds = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm */ 2:
+                    message.goreContentFriendDm = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm */ 3:
+                    message.goreContentNonFriendDm = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message, writer, options) {
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_guilds = 1; */
+        if (message.goreContentGuilds !== 0)
+            writer.tag(1, runtime_1.WireType.Varint).int32(message.goreContentGuilds);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_friend_dm = 2; */
+        if (message.goreContentFriendDm !== 0)
+            writer.tag(2, runtime_1.WireType.Varint).int32(message.goreContentFriendDm);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.ExplicitContentRedaction gore_content_non_friend_dm = 3; */
+        if (message.goreContentNonFriendDm !== 0)
+            writer.tag(3, runtime_1.WireType.Varint).int32(message.goreContentNonFriendDm);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings
+ */
+exports.PreloadedUserSettings_GoreContentSettings = new PreloadedUserSettings_GoreContentSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.MessageType {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.TextAndImagesSettings", [
@@ -1752,7 +1862,8 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.Message
             { no: 28, name: "include_stickers_in_autocomplete", kind: "message", T: () => wrappers_5.BoolValue },
             { no: 29, name: "explicit_content_settings", kind: "message", T: () => exports.PreloadedUserSettings_ExplicitContentSettings },
             { no: 30, name: "keyword_filter_settings", kind: "message", T: () => exports.PreloadedUserSettings_KeywordFilterSettings },
-            { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => wrappers_5.BoolValue }
+            { no: 31, name: "include_soundmoji_in_autocomplete", kind: "message", T: () => wrappers_5.BoolValue },
+            { no: 32, name: "gore_content_settings", kind: "message", T: () => exports.PreloadedUserSettings_GoreContentSettings }
         ]);
     }
     create(value) {
@@ -1782,10 +1893,10 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.Message
                 case /* optional google.protobuf.StringValue render_spoilers */ 4:
                     message.renderSpoilers = wrappers_6.StringValue.internalBinaryRead(reader, reader.uint32(), options, message.renderSpoilers);
                     break;
-                case /* repeated string emoji_picker_collapsed_sections = 5 [packed = false];*/ 5:
+                case /* repeated string emoji_picker_collapsed_sections = 5 [packed = false] */ 5:
                     message.emojiPickerCollapsedSections.push(reader.string());
                     break;
-                case /* repeated string sticker_picker_collapsed_sections = 6 [packed = false];*/ 6:
+                case /* repeated string sticker_picker_collapsed_sections = 6 [packed = false] */ 6:
                     message.stickerPickerCollapsedSections.push(reader.string());
                     break;
                 case /* optional google.protobuf.BoolValue view_image_descriptions */ 7:
@@ -1839,7 +1950,7 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.Message
                 case /* optional google.protobuf.BoolValue use_legacy_chat_input */ 24:
                     message.useLegacyChatInput = wrappers_5.BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.useLegacyChatInput);
                     break;
-                case /* repeated string soundboard_picker_collapsed_sections = 25 [packed = false];*/ 25:
+                case /* repeated string soundboard_picker_collapsed_sections = 25 [packed = false] */ 25:
                     message.soundboardPickerCollapsedSections.push(reader.string());
                     break;
                 case /* optional google.protobuf.UInt32Value dm_spam_filter */ 26:
@@ -1859,6 +1970,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.Message
                     break;
                 case /* optional google.protobuf.BoolValue include_soundmoji_in_autocomplete */ 31:
                     message.includeSoundmojiInAutocomplete = wrappers_5.BoolValue.internalBinaryRead(reader, reader.uint32(), options, message.includeSoundmojiInAutocomplete);
+                    break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings */ 32:
+                    message.goreContentSettings = exports.PreloadedUserSettings_GoreContentSettings.internalBinaryRead(reader, reader.uint32(), options, message.goreContentSettings);
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -1962,6 +2076,9 @@ class PreloadedUserSettings_TextAndImagesSettings$Type extends runtime_4.Message
         /* optional google.protobuf.BoolValue include_soundmoji_in_autocomplete = 31; */
         if (message.includeSoundmojiInAutocomplete)
             wrappers_5.BoolValue.internalBinaryWrite(message.includeSoundmojiInAutocomplete, writer.tag(31, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.GoreContentSettings gore_content_settings = 32; */
+        if (message.goreContentSettings)
+            exports.PreloadedUserSettings_GoreContentSettings.internalBinaryWrite(message.goreContentSettings, writer.tag(32, runtime_1.WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1982,7 +2099,9 @@ class PreloadedUserSettings_NotificationSettings$Type extends runtime_4.MessageT
             { no: 4, name: "enable_burst_reaction_notifications", kind: "message", T: () => wrappers_5.BoolValue },
             { no: 5, name: "quiet_mode", kind: "message", T: () => wrappers_5.BoolValue },
             { no: 6, name: "focus_mode_expires_at_ms", kind: "scalar", T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
-            { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] }
+            { no: 7, name: "reaction_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType", PreloadedUserSettings_ReactionNotificationType, "REACTION_NOTIFICATION_TYPE_"] },
+            { no: 8, name: "game_activity_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType", PreloadedUserSettings_GameActivityNotificationType, "GAME_ACTIVITY_NOTIFICATION_TYPE_"] },
+            { no: 9, name: "custom_status_push_notifications", kind: "enum", T: () => ["discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType", PreloadedUserSettings_CustomStatusPushNotificationType, "CUSTOM_STATUS_PUSH_NOTIFICATION_TYPE_"] }
         ]);
     }
     create(value) {
@@ -1990,6 +2109,8 @@ class PreloadedUserSettings_NotificationSettings$Type extends runtime_4.MessageT
         message.notificationCenterAckedBeforeId = 0n;
         message.focusModeExpiresAtMs = 0n;
         message.reactionNotifications = 0;
+        message.gameActivityNotifications = 0;
+        message.customStatusPushNotifications = 0;
         if (value !== undefined)
             (0, runtime_3.reflectionMergePartial)(this, message, value);
         return message;
@@ -2019,6 +2140,12 @@ class PreloadedUserSettings_NotificationSettings$Type extends runtime_4.MessageT
                     break;
                 case /* discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications */ 7:
                     message.reactionNotifications = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications */ 8:
+                    message.gameActivityNotifications = reader.int32();
+                    break;
+                case /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications */ 9:
+                    message.customStatusPushNotifications = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -2053,6 +2180,12 @@ class PreloadedUserSettings_NotificationSettings$Type extends runtime_4.MessageT
         /* discord_protos.discord_users.v1.PreloadedUserSettings.ReactionNotificationType reaction_notifications = 7; */
         if (message.reactionNotifications !== 0)
             writer.tag(7, runtime_1.WireType.Varint).int32(message.reactionNotifications);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.GameActivityNotificationType game_activity_notifications = 8; */
+        if (message.gameActivityNotifications !== 0)
+            writer.tag(8, runtime_1.WireType.Varint).int32(message.gameActivityNotifications);
+        /* discord_protos.discord_users.v1.PreloadedUserSettings.CustomStatusPushNotificationType custom_status_push_notifications = 9; */
+        if (message.customStatusPushNotifications !== 0)
+            writer.tag(9, runtime_1.WireType.Varint).int32(message.customStatusPushNotifications);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2639,10 +2772,90 @@ class PreloadedUserSettings_LocalizationSettings$Type extends runtime_4.MessageT
  */
 exports.PreloadedUserSettings_LocalizationSettings = new PreloadedUserSettings_LocalizationSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_CustomUserThemeSettings$Type extends runtime_4.MessageType {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings", [
+            { no: 1, name: "colors", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "gradient_color_stops", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 2 /*ScalarType.FLOAT*/ },
+            { no: 3, name: "gradient_angle", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
+            { no: 4, name: "base_mix", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value) {
+        const message = globalThis.Object.create((this.messagePrototype));
+        message.colors = [];
+        message.gradientColorStops = [];
+        message.gradientAngle = 0;
+        message.baseMix = 0;
+        if (value !== undefined)
+            (0, runtime_3.reflectionMergePartial)(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader, length, options, target) {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* repeated string colors = 1 [packed = false] */ 1:
+                    message.colors.push(reader.string());
+                    break;
+                case /* repeated float gradient_color_stops */ 2:
+                    if (wireType === runtime_1.WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.gradientColorStops.push(reader.float());
+                    else
+                        message.gradientColorStops.push(reader.float());
+                    break;
+                case /* int32 gradient_angle */ 3:
+                    message.gradientAngle = reader.int32();
+                    break;
+                case /* int32 base_mix */ 4:
+                    message.baseMix = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message, writer, options) {
+        /* repeated string colors = 1 [packed = false]; */
+        for (let i = 0; i < message.colors.length; i++)
+            writer.tag(1, runtime_1.WireType.LengthDelimited).string(message.colors[i]);
+        /* repeated float gradient_color_stops = 2; */
+        if (message.gradientColorStops.length) {
+            writer.tag(2, runtime_1.WireType.LengthDelimited).fork();
+            for (let i = 0; i < message.gradientColorStops.length; i++)
+                writer.float(message.gradientColorStops[i]);
+            writer.join();
+        }
+        /* int32 gradient_angle = 3; */
+        if (message.gradientAngle !== 0)
+            writer.tag(3, runtime_1.WireType.Varint).int32(message.gradientAngle);
+        /* int32 base_mix = 4; */
+        if (message.baseMix !== 0)
+            writer.tag(4, runtime_1.WireType.Varint).int32(message.baseMix);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings
+ */
+exports.PreloadedUserSettings_CustomUserThemeSettings = new PreloadedUserSettings_CustomUserThemeSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_ClientThemeSettings$Type extends runtime_4.MessageType {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ClientThemeSettings", [
-            { no: 2, name: "background_gradient_preset_id", kind: "message", T: () => wrappers_4.UInt32Value }
+            { no: 2, name: "background_gradient_preset_id", kind: "message", T: () => wrappers_4.UInt32Value },
+            { no: 4, name: "custom_user_theme_settings", kind: "message", T: () => exports.PreloadedUserSettings_CustomUserThemeSettings }
         ]);
     }
     create(value) {
@@ -2659,6 +2872,9 @@ class PreloadedUserSettings_ClientThemeSettings$Type extends runtime_4.MessageTy
                 case /* optional google.protobuf.UInt32Value background_gradient_preset_id */ 2:
                     message.backgroundGradientPresetId = wrappers_4.UInt32Value.internalBinaryRead(reader, reader.uint32(), options, message.backgroundGradientPresetId);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings */ 4:
+                    message.customUserThemeSettings = exports.PreloadedUserSettings_CustomUserThemeSettings.internalBinaryRead(reader, reader.uint32(), options, message.customUserThemeSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -2674,6 +2890,9 @@ class PreloadedUserSettings_ClientThemeSettings$Type extends runtime_4.MessageTy
         /* optional google.protobuf.UInt32Value background_gradient_preset_id = 2; */
         if (message.backgroundGradientPresetId)
             wrappers_4.UInt32Value.internalBinaryWrite(message.backgroundGradientPresetId, writer.tag(2, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.CustomUserThemeSettings custom_user_theme_settings = 4; */
+        if (message.customUserThemeSettings)
+            exports.PreloadedUserSettings_CustomUserThemeSettings.internalBinaryWrite(message.customUserThemeSettings, writer.tag(4, runtime_1.WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2894,7 +3113,7 @@ exports.PreloadedUserSettings_GuildFolder = new PreloadedUserSettings_GuildFolde
 class PreloadedUserSettings_GuildFolders$Type extends runtime_4.MessageType {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.GuildFolders", [
-            { no: 1, name: "folders", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => exports.PreloadedUserSettings_GuildFolder },
+            { no: 1, name: "folders", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => exports.PreloadedUserSettings_GuildFolder },
             { no: 2, name: "guild_positions", kind: "scalar", repeat: 1 /*RepeatType.PACKED*/, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
@@ -3073,7 +3292,7 @@ class PreloadedUserSettings_Favorites$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.PreloadedUserSettings_FavoriteChannel.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.Favorites.favorite_channels");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.Favorites.favorite_channels");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_FavoriteChannel.create();
@@ -3219,7 +3438,7 @@ class PreloadedUserSettings_AudioSettings$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.PreloadedUserSettings_AudioContextSetting.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings.user");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings.user");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_AudioContextSetting.create();
@@ -3235,7 +3454,7 @@ class PreloadedUserSettings_AudioSettings$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.PreloadedUserSettings_AudioContextSetting.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings.stream");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.AudioSettings.stream");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_AudioContextSetting.create();
@@ -3639,10 +3858,58 @@ class PreloadedUserSettings_ApplicationDMSettings$Type extends runtime_4.Message
  */
 exports.PreloadedUserSettings_ApplicationDMSettings = new PreloadedUserSettings_ApplicationDMSettings$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_ApplicationSharingSettings$Type extends runtime_4.MessageType {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings", [
+            { no: 1, name: "disable_application_activity_sharing", kind: "scalar", T: 8 /*ScalarType.BOOL*/ }
+        ]);
+    }
+    create(value) {
+        const message = globalThis.Object.create((this.messagePrototype));
+        message.disableApplicationActivitySharing = false;
+        if (value !== undefined)
+            (0, runtime_3.reflectionMergePartial)(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader, length, options, target) {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* bool disable_application_activity_sharing */ 1:
+                    message.disableApplicationActivitySharing = reader.bool();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message, writer, options) {
+        /* bool disable_application_activity_sharing = 1; */
+        if (message.disableApplicationActivitySharing !== false)
+            writer.tag(1, runtime_1.WireType.Varint).bool(message.disableApplicationActivitySharing);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings
+ */
+exports.PreloadedUserSettings_ApplicationSharingSettings = new PreloadedUserSettings_ApplicationSharingSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class PreloadedUserSettings_ApplicationSettings$Type extends runtime_4.MessageType {
     constructor() {
         super("discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSettings", [
-            { no: 1, name: "app_dm_settings", kind: "message", T: () => exports.PreloadedUserSettings_ApplicationDMSettings }
+            { no: 1, name: "app_dm_settings", kind: "message", T: () => exports.PreloadedUserSettings_ApplicationDMSettings },
+            { no: 2, name: "app_sharing_settings", kind: "message", T: () => exports.PreloadedUserSettings_ApplicationSharingSettings }
         ]);
     }
     create(value) {
@@ -3659,6 +3926,9 @@ class PreloadedUserSettings_ApplicationSettings$Type extends runtime_4.MessageTy
                 case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings */ 1:
                     message.appDmSettings = exports.PreloadedUserSettings_ApplicationDMSettings.internalBinaryRead(reader, reader.uint32(), options, message.appDmSettings);
                     break;
+                case /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings */ 2:
+                    message.appSharingSettings = exports.PreloadedUserSettings_ApplicationSharingSettings.internalBinaryRead(reader, reader.uint32(), options, message.appSharingSettings);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -3674,6 +3944,9 @@ class PreloadedUserSettings_ApplicationSettings$Type extends runtime_4.MessageTy
         /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationDMSettings app_dm_settings = 1; */
         if (message.appDmSettings)
             exports.PreloadedUserSettings_ApplicationDMSettings.internalBinaryWrite(message.appDmSettings, writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* optional discord_protos.discord_users.v1.PreloadedUserSettings.ApplicationSharingSettings app_sharing_settings = 2; */
+        if (message.appSharingSettings)
+            exports.PreloadedUserSettings_ApplicationSharingSettings.internalBinaryWrite(message.appSharingSettings, writer.tag(2, runtime_1.WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -3728,7 +4001,7 @@ class PreloadedUserSettings_AllApplicationSettings$Type extends runtime_4.Messag
                 case 2:
                     val = exports.PreloadedUserSettings_ApplicationSettings.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings.app_settings");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.AllApplicationSettings.app_settings");
             }
         }
         map[key ?? "0"] = val ?? exports.PreloadedUserSettings_ApplicationSettings.create();
@@ -3798,3 +4071,123 @@ class PreloadedUserSettings_AdsSettings$Type extends runtime_4.MessageType {
  * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.AdsSettings
  */
 exports.PreloadedUserSettings_AdsSettings = new PreloadedUserSettings_AdsSettings$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_InAppFeedbackState$Type extends runtime_4.MessageType {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState", [
+            { no: 1, name: "last_impression_time", kind: "message", T: () => wrappers_7.UInt64Value },
+            { no: 2, name: "opt_out_expiry_time", kind: "message", T: () => wrappers_7.UInt64Value }
+        ]);
+    }
+    create(value) {
+        const message = globalThis.Object.create((this.messagePrototype));
+        if (value !== undefined)
+            (0, runtime_3.reflectionMergePartial)(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader, length, options, target) {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional google.protobuf.UInt64Value last_impression_time */ 1:
+                    message.lastImpressionTime = wrappers_7.UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.lastImpressionTime);
+                    break;
+                case /* optional google.protobuf.UInt64Value opt_out_expiry_time */ 2:
+                    message.optOutExpiryTime = wrappers_7.UInt64Value.internalBinaryRead(reader, reader.uint32(), options, message.optOutExpiryTime);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message, writer, options) {
+        /* optional google.protobuf.UInt64Value last_impression_time = 1; */
+        if (message.lastImpressionTime)
+            wrappers_7.UInt64Value.internalBinaryWrite(message.lastImpressionTime, writer.tag(1, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        /* optional google.protobuf.UInt64Value opt_out_expiry_time = 2; */
+        if (message.optOutExpiryTime)
+            wrappers_7.UInt64Value.internalBinaryWrite(message.optOutExpiryTime, writer.tag(2, runtime_1.WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState
+ */
+exports.PreloadedUserSettings_InAppFeedbackState = new PreloadedUserSettings_InAppFeedbackState$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PreloadedUserSettings_InAppFeedbackSettings$Type extends runtime_4.MessageType {
+    constructor() {
+        super("discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings", [
+            { no: 1, name: "in_app_feedback_states", kind: "map", K: 5 /*ScalarType.INT32*/, V: { kind: "message", T: () => exports.PreloadedUserSettings_InAppFeedbackState } }
+        ]);
+    }
+    create(value) {
+        const message = globalThis.Object.create((this.messagePrototype));
+        message.inAppFeedbackStates = {};
+        if (value !== undefined)
+            (0, runtime_3.reflectionMergePartial)(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader, length, options, target) {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states */ 1:
+                    this.binaryReadMap1(message.inAppFeedbackStates, reader, options);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? runtime_2.UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    binaryReadMap1(map, reader, options) {
+        let len = reader.uint32(), end = reader.pos + len, key, val;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case 1:
+                    key = reader.int32();
+                    break;
+                case 2:
+                    val = exports.PreloadedUserSettings_InAppFeedbackState.internalBinaryRead(reader, reader.uint32(), options);
+                    break;
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings.in_app_feedback_states");
+            }
+        }
+        map[key ?? 0] = val ?? exports.PreloadedUserSettings_InAppFeedbackState.create();
+    }
+    internalBinaryWrite(message, writer, options) {
+        /* map<int32, discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackState> in_app_feedback_states = 1; */
+        for (let k of globalThis.Object.keys(message.inAppFeedbackStates)) {
+            writer.tag(1, runtime_1.WireType.LengthDelimited).fork().tag(1, runtime_1.WireType.Varint).int32(parseInt(k));
+            writer.tag(2, runtime_1.WireType.LengthDelimited).fork();
+            exports.PreloadedUserSettings_InAppFeedbackState.internalBinaryWrite(message.inAppFeedbackStates[k], writer, options);
+            writer.join().join();
+        }
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? runtime_2.UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message discord_protos.discord_users.v1.PreloadedUserSettings.InAppFeedbackSettings
+ */
+exports.PreloadedUserSettings_InAppFeedbackSettings = new PreloadedUserSettings_InAppFeedbackSettings$Type();

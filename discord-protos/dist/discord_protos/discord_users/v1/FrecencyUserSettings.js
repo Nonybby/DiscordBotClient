@@ -344,7 +344,7 @@ class FrecencyUserSettings_FavoriteGIFs$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.FrecencyUserSettings_FavoriteGIF.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIFs.gifs");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.FavoriteGIFs.gifs");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FavoriteGIF.create();
@@ -548,7 +548,7 @@ class FrecencyUserSettings_StickerFrecency$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.StickerFrecency.stickers");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.StickerFrecency.stickers");
             }
         }
         map[key ?? "0"] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -590,7 +590,7 @@ class FrecencyUserSettings_FavoriteEmojis$Type extends runtime_4.MessageType {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated string emojis = 1 [packed = false];*/ 1:
+                case /* repeated string emojis = 1 [packed = false] */ 1:
                     message.emojis.push(reader.string());
                     break;
                 default:
@@ -662,7 +662,7 @@ class FrecencyUserSettings_EmojiFrecency$Type extends runtime_4.MessageType {
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency.emojis");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.EmojiFrecency.emojis");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -729,7 +729,7 @@ class FrecencyUserSettings_ApplicationCommandFrecency$Type extends runtime_4.Mes
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationCommandFrecency.application_commands");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationCommandFrecency.application_commands");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -851,7 +851,7 @@ class FrecencyUserSettings_ApplicationFrecency$Type extends runtime_4.MessageTyp
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationFrecency.applications");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.ApplicationFrecency.applications");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -918,7 +918,7 @@ class FrecencyUserSettings_HeardSoundFrecency$Type extends runtime_4.MessageType
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.HeardSoundFrecency.heard_sounds");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.HeardSoundFrecency.heard_sounds");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -985,7 +985,7 @@ class FrecencyUserSettings_PlayedSoundFrecency$Type extends runtime_4.MessageTyp
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.PlayedSoundFrecency.played_sounds");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.PlayedSoundFrecency.played_sounds");
             }
         }
         map[key ?? ""] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
@@ -1052,7 +1052,7 @@ class FrecencyUserSettings_GuildAndChannelFrecency$Type extends runtime_4.Messag
                 case 2:
                     val = exports.FrecencyUserSettings_FrecencyItem.internalBinaryRead(reader, reader.uint32(), options);
                     break;
-                default: throw new globalThis.Error("unknown map entry field for field discord_protos.discord_users.v1.FrecencyUserSettings.GuildAndChannelFrecency.guild_and_channels");
+                default: throw new globalThis.Error("unknown map entry field for discord_protos.discord_users.v1.FrecencyUserSettings.GuildAndChannelFrecency.guild_and_channels");
             }
         }
         map[key ?? "0"] = val ?? exports.FrecencyUserSettings_FrecencyItem.create();
