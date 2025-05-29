@@ -78,7 +78,6 @@ fetch(URL)
 		let temp = text.split('\n');
 		console.log(
 			'[Discord] Build:',
-
 			temp
 				.find((s) => s.includes('VERSION_HASH'))
 				.replace('VERSION_HASH', '')
