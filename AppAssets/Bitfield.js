@@ -1,6 +1,6 @@
 'use strict';
 
-// Copy from Djs
+// Originally from Discord.js
 
 /**
  * Data structure that makes it easy to interact with a bitfield.
