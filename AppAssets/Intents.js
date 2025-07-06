@@ -55,7 +55,7 @@ class Intents extends BitField {
  * * `GUILD_MESSAGE_POLLS`
  * * `DIRECT_MESSAGE_POLLS`
  * @type {Object}
- * @see {@link https://discord.com/developers/docs/topics/gateway#list-of-intents}
+ * @see {@link https://discord.com/developers/docs/events/gateway#list-of-intents}
  */
 Intents.FLAGS = {
 	GUILDS: 1 << 0,
@@ -79,7 +79,6 @@ Intents.FLAGS = {
 	AUTO_MODERATION_EXECUTION: 1 << 21,
 	GUILD_MESSAGE_POLLS: 1 << 24,
 	DIRECT_MESSAGE_POLLS: 1 << 25,
-	// https://discord.com/developers/docs/topics/gateway#list-of-intents
 };
 
 module.exports = Intents;
