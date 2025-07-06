@@ -1,6 +1,6 @@
 'use strict';
 
-// Discordjs
+// Originally from Discord.js
 
 // Discord epoch (2015-01-01T00:00:00.000Z)
 const EPOCH = 1_420_070_400_000;
