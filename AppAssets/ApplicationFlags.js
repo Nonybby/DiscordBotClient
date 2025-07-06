@@ -28,6 +28,7 @@ class ApplicationFlags extends BitField {}
  * * `GROUP_DM_CREATE`
  * * `RPC_PRIVATE_BETA`
  * * `APPLICATION_AUTO_MODERATION_RULE_CREATE_BADGE`
+ * * `GAME_PROFILE_DISABLED`
  * * `ALLOW_ASSETS`
  * * `ALLOW_ACTIVITY_ACTION_SPECTATE`
  * * `ALLOW_ACTIVITY_ACTION_JOIN_REQUEST`
@@ -43,10 +44,14 @@ class ApplicationFlags extends BitField {}
  * * `EMBEDDED_FIRST_PARTY`
  * * `APPLICATION_COMMAND_BADGE`
  * * `ACTIVE`
+ * * `ACTIVE_GRACE_PERIOD`
  * * `IFRAME_MODAL`
+ * * `SOCIAL_LAYER_INTEGRATION`
+ * * `PROMOTED`
+ * * `PARTNER`
  * @type {Object}
  * @see {@link https://discord.com/developers/docs/resources/application#application-object-application-flags}
- * @see {@link https://flags.lewistehminerz.dev/}
+ * @see {@link https://flags.lewisakura.moe/}
  */
 ApplicationFlags.FLAGS = {
 	EMBEDDED_RELEASED: 1 << 1,
@@ -55,6 +60,7 @@ ApplicationFlags.FLAGS = {
 	GROUP_DM_CREATE: 1 << 4,
 	RPC_PRIVATE_BETA: 1 << 5,
 	APPLICATION_AUTO_MODERATION_RULE_CREATE_BADGE: 1 << 6,
+	GAME_PROFILE_DISABLED: 1 << 7,
 	ALLOW_ASSETS: 1 << 8,
 	ALLOW_ACTIVITY_ACTION_SPECTATE: 1 << 9,
 	ALLOW_ACTIVITY_ACTION_JOIN_REQUEST: 1 << 10,
@@ -70,7 +76,11 @@ ApplicationFlags.FLAGS = {
 	EMBEDDED_FIRST_PARTY: 1 << 20,
 	APPLICATION_COMMAND_BADGE: 1 << 23,
 	ACTIVE: 1 << 24,
+	ACTIVE_GRACE_PERIOD: 1 << 25,
 	IFRAME_MODAL: 1 << 26,
+	SOCIAL_LAYER_INTEGRATION: 1 << 27,
+	PROMOTED: 1 << 29,
+	PARTNER: 1 << 30,
 };
 
 module.exports = ApplicationFlags;
