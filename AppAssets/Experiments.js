@@ -10,7 +10,6 @@ const disabledBuckets = [
 	'2023-03_pomelo',
 ];
 
-
 function buildUserExperiment(obj, botId) {
 	const dataFromBucket = bucketReplacement[obj.id];
 	if (!dataFromBucket) return null;
