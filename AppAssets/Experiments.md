@@ -1,4 +1,4 @@
-## [User Experiment Structure](https://docs.discord.sex/topics/experiments#user-experiment-structure)
+## [User Experiment Structure](https://docs.discord.food/topics/experiments#user-experiment-structure)
 
 This object is represented as an array of the following fields:
 
@@ -30,7 +30,8 @@ required for this field. Just follow the population field as usual.
     if (window.Vencord) {
         findByProps = Vencord.Webpack.findByProps;
     } else {
-        let _mods; webpackChunkdiscord_app.push([[Symbol()],{},r=>_mods=r.c]);
+        // https://discord.com/channels/603970300668805120/1085682686607249478/1085682686607249478
+        let _mods = webpackChunkdiscord_app.push([[Symbol()],{},r=>r.c]);
         webpackChunkdiscord_app.pop();
         
         findByProps = (...props) => {
