@@ -12,4 +12,8 @@ module.exports = class IPCEvent extends null {
 	static HandlePrivateChannel = 'DBC_HANDLE_PRIVATE_CHANNEL';
 	static GetDefaultUserPatch = 'DBC_GET_DEFAULT_USER_PATCH';
 	static LogFromMainProcess = 'DBC_LOG_FROM_MAIN_PROCESS';
+	// Monaco Editor IPC Events
+	static MonacoEditorGetConfig = 'DBC_MONACO_EDITOR_GET_CONFIG';
+	static MonacoEditorGetAutoComplete = 'DBC_MONACO_EDITOR_GET_AUTO_COMPLETE';
+	static MonacoEditorSaveConfig = 'DBC_MONACO_EDITOR_SAVE_CONFIG';
 };

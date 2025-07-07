@@ -3,6 +3,7 @@ const UserFlags = require('./UserFlags');
 const UserBadges = require('./UserBadges');
 const Constants = require('../AppCore/Constants');
 const UserProfileEffects = require('./UserProfileEffects');
+const GlobalConfig = require('../AppCore/Config');
 
 function randomArrayElement(array) {
 	if (!array || !array.length) return null;
@@ -10,7 +11,7 @@ function randomArrayElement(array) {
 }
 
 module.exports = class Util {
-	static ProfilePatch(userData, guildMember, guildId) {
+	static ProfilePatch(userData, guildMember = null, guildId, bio = null) {
 		const userEffect = randomArrayElement(UserProfileEffects);
 		const flags = new UserFlags(userData.flags);
 		const badges = [];
@@ -19,7 +20,10 @@ module.exports = class Util {
 				badges.push(UserBadges[element]);
 			}
 		});
-		if (userData.id !== Constants.UserIdDefault) {
+		if (
+			userData.id !== Constants.UserIdDefault &&
+			GlobalConfig.config.generate_fake_profile
+		) {
 			if (userData.bot) {
 				badges.push(
 					UserBadges.BOT_COMMANDS,
@@ -47,31 +51,36 @@ module.exports = class Util {
 			badges.push(UserBadges.PREMIUM_TENURE(60));
 		}
 		*/
+		if (!bio && GlobalConfig.config.generate_fake_profile) {
+			bio = `<a:shiggy:1162436090775470160> Based on the cutest Discord client mod :3`;
+		}
 		return {
 			application_role_connections: [],
 			badges,
 			connected_accounts: [],
 			guild_badges: [],
 			guild_member: guildMember,
-			guild_member_profile: guildMember
-				? {
-						guild_id: guildId,
-						pronouns: '',
-						bio: '',
-						banner: guildMember.banner,
-						accent_color: null,
-						theme_colors: null,
-						popout_animation_particle_type: null,
-						emoji: null,
-						profile_effect: null,
-				  }
-				: null,
+			guild_member_profile: guildMember && {
+				guild_id: guildId,
+				pronouns: '',
+				bio: '',
+				banner: guildMember.banner,
+				accent_color: null,
+				theme_colors: null,
+				popout_animation_particle_type: null,
+				emoji: null,
+				profile_effect: null,
+			},
 			legacy_username: null,
 			mutual_friends: [],
 			mutual_friends_count: 0,
 			mutual_guilds: [],
-			premium_since: '2016-12-22T00:00:00.000000+00:00',
-			premium_guild_since: '2016-12-22T00:00:00.000000+00:00',
+			premium_since: GlobalConfig.config.generate_fake_profile
+				? '2016-12-22T00:00:00.000000+00:00'
+				: null,
+			premium_guild_since: GlobalConfig.config.generate_fake_profile
+				? '2016-12-22T00:00:00.000000+00:00'
+				: null,
 			// Force enable Nitro features (Bot)
 			premium_type: userData.bot ? 2 : userData.premium_type,
 			profile_themes_experiment_bucket: 4,
@@ -79,14 +88,16 @@ module.exports = class Util {
 			user_profile: {
 				accent_color: userData.accent_color,
 				banner: userData.banner,
-				bio: `<a:shiggy:1162436090775470160> Based on the cutest Discord client mod :3`,
+				bio,
 				emoji: null,
 				popout_animation_particle_type: null,
-				profile_effect: {
-					id: userEffect.id,
-					expires_at: null,
-				},
-				pronouns: userData.bot ? 'bot' : 'user',
+				profile_effect:
+					(GlobalConfig.config.generate_fake_profile && {
+						id: userEffect.id,
+						expires_at: null,
+					}) ||
+					null,
+				pronouns: null,
 				theme_colors: null,
 			},
 		};
@@ -97,7 +108,7 @@ module.exports = class Util {
 		return Buffer.from(token.split('.')[0], 'base64').toString();
 	}
 	static getDataFromRequest(req, res, callback) {
-		var data = '';
+		let data = '';
 		// check content-type
 		if (req.headers['content-type'] !== 'application/json') {
 			return multer().any()(req, res, function (err) {

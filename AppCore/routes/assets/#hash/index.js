@@ -4,10 +4,11 @@ const path = require('path');
 const { fetch } = require('undici');
 const Constants = require('../../../Constants');
 const proxy = require('../../../Proxy');
+const config = require('../../../Config');
 
 const staticFolder = path.resolve('.', 'AppAssets', 'assets');
 
-if (Constants.CacheAssetsMode && !fs.existsSync(staticFolder)) {
+if (!fs.existsSync(staticFolder)) {
 	fs.mkdirSync(staticFolder);
 }
 
@@ -18,7 +19,7 @@ app.get('/', async (req, res) => {
 	if (fileName.endsWith('.map')) {
 		return res.status(404).send();
 	}
-	else if (fileName.endsWith('.js') && Constants.CacheAssetsMode) {
+	else if (fileName.endsWith('.js') && config.config.cache_assets) {
 		// Readdir
 		if (fs.readdirSync(staticFolder).includes(fileName)) {
 			res.type('.js');
@@ -32,7 +33,7 @@ app.get('/', async (req, res) => {
 			res.type('.js');
 			res.send(content);
 		}
-	} else if (fileName.endsWith('.css') && Constants.CacheAssetsMode) {
+	} else if (fileName.endsWith('.css') && config.config.cache_assets) {
 		// Readdir
 		if (fs.readdirSync(staticFolder).includes(fileName)) {
 			res.type('.css');

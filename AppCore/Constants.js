@@ -76,8 +76,6 @@ module.exports = class Constants extends null {
 	static ChannelIdDefault = '1000000000000000000';
 	static UserIdDefault = '1056491867375673424';
 	static CustomDiscordDomain = 'discord.com';
-	static CacheAssetsMode = false;
-	static MaxGuildsPerShard = 100;
 	// Database
 	static DirectMessages = {
 		name: 'DMsData',
@@ -91,4 +89,13 @@ module.exports = class Constants extends null {
 		name: 'UserSettingsProto2',
 		path: 'FrecencyUserSettings',
 	};
+	// Chromium Features
+	static enableFeatures = [];
+	static disableFeatures = [
+		'CalculateNativeWinOcclusion',
+		'OutOfBlinkCors',
+		'WinRetrieveSuggestionsOnlyOnDemand',
+		'HardwareMediaKeyHandling',
+		'MediaSessionService',
+	];
 };

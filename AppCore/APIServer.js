@@ -43,7 +43,7 @@ const lambertServer = new Server({
 lambertServer.registerRoutes(path.resolve(__dirname, `routes`) + path.sep);
 lambertServer.app = app;
 
-const skipHeaders = [
+const ignoreHeaders = [
 	'cookie',
 	'x-',
 	'sec-',
@@ -56,20 +56,23 @@ const skipHeaders = [
 
 // Handle headers
 app.all('*', function (req, res, next) {
+	req.originalHeaders = req.headers;
 	const headers = {};
 	if (req.headers.authorization) {
-		headers.authorization = `Bot ${req.headers.authorization
-			.replace(/bot/gi, '')
-			.trim()}`;
-		req.headers.authorization = headers.authorization;
+		if (!req.headers.authorization.toLowerCase().startsWith('bot ')) {
+			headers.authorization = `Bot ${req.headers.authorization.trim()}`;
+		} else {
+			headers.authorization = req.headers.authorization.trim();
+		}
 		headers['user-agent'] = Constants.UserAgentDiscordBot;
 	} else {
 		headers['user-agent'] = Constants.UserAgentChrome;
 	}
-	req.originalHeaders = req.headers;
 	Object.keys(req.headers).forEach((key) => {
 		if (
-			!skipHeaders.some((prefix) => key.toLowerCase().startsWith(prefix))
+			!ignoreHeaders.some((prefix) =>
+				key.toLowerCase().startsWith(prefix),
+			)
 		) {
 			headers[key] = req.headers[key];
 		}

@@ -11,6 +11,7 @@
 		"electron-log": "^5.3.3",
 		"express": "^4.21.2",
 		"http-proxy": "^1.18.1",
+		"ini": "^5.0.0",
 		"lambert-server": "^1.2.12",
 		"level": "^9.0.0",
 		"level-supports": "^6.2.0",
@@ -36,7 +37,11 @@
 			"!scripts",
 			"!Vencord",
 			"!tsconfig.json",
-			"!tsup.config.ts"
+			"!tsup.config.ts",
+			"!DiscordProtos/.github",
+			"!DiscordProtos/discord_protos",
+			"!DiscordProtos/scripts",
+			"!DiscordProtos/src"
 		],
 		"appId": "DiscordBotClient",
 		"productName": "DiscordBotClient",
@@ -101,12 +106,13 @@
 		"linux": "electron-builder -l",
 		"build": "electron-builder",
 		"requirement": "npm install && node scripts/vencord.js",
-		"fetchLatestDiscordBuild": "node scripts/update.js",
+		"core:update": "node scripts/update.js",
 		"vencord": "cd Vencord && node --require=./scripts/suppressExperimentalWarnings.js scripts/build/buildWeb.mjs && cd .. && node scripts/copy.js",
 		"cerf": "openssl req -nodes -new -x509 -keyout ./AppCore/cert/server.key -out ./AppCore/cert/server.cert -days 3650 -subj \"/CN=localhost\"",
 		"test": "npm run vencord & npm run start",
-		"proto:update": "npx tsx discord-protos/src/load.ts",
-		"proto:build:ts": "cd discord-protos && npm run js && npm run build && cd .."
+		"proto:install": "node scripts/cloneDiscordProtos.js",
+		"proto:update": "npx tsx DiscordProtos/src/load.ts",
+		"proto:build:ts": "cd DiscordProtos && npm run js && npm run build && cd .."
 	},
 	"author": {
 		"name": "aiko-chan-ai",

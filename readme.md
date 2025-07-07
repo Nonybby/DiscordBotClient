@@ -140,6 +140,7 @@ Logging in works via the UI on first startup of the application.
 
 ## Features
 
+-   **Sharding**
 -   **View Guilds** _(Lazy load them)_
 -   **Manage Guilds, Channels**
 -   **Messages** (Send, View History, Embeds, Reactions, Manage)
@@ -228,46 +229,51 @@ Hit me up if you have a similar project, and I'll gladly add it to the list.
 
 ## How to update to the latest Discord version ?
 
-1. Clone the repository and cd into it.
+> [!TIP]
+> This is a general guide for building from source, including downloading the latest scripts from Discord, obtaining the newest versions of Vencord and VencordDBCPlugin, and optionally updating Discord-protos.
+
+1. Clone this repository and navigate into its directory (skip this step if you have already done so).
 
 ```sh
 git clone https://github.com/aiko-chan-ai/DiscordBotClient.git
 cd DiscordBotClient
 ```
 
-2. Install required dependencies.
+2. Install dependencies and fetch the latest Vencord & VencordDBCPlugin
+
+> [!NOTE]
+> If you've done this before, just run “npm install” here and “git pull” for both the Vencord and VencordDBCPlugin repositories.
 
 ```sh
 npm run requirement
 ```
 
-3. Download the latest script from Discord
+3. Generate a snapshot for the latest version of Discord Web
 
 ```sh
-npm run fetchLatestDiscordBuild
+npm run core:update
 ```
 
-4. (Optional) Update discord-protos
+4. (Optional) Update discord-protos 
+
+> [!NOTE]
+> Requires protoc to be installed on the system. If it is not installed, please refer to https://protobuf.dev/installation/ for instructions.
 
 ```sh
-git clone https://github.com/discord-userdoccers/discord-protos.git --depth 1
-cd discord-protos
-# Delete `.git` folder
-npm install --verbose
-cd ..
+npm run proto:install
 npm run proto:update
 npm run proto:build:ts
 ```
 
 ## Credits
 
-Thanks to [ChrisEric](https://github.com/CE1CECL) for helping me create a local proxy server! (code)
+Thanks to [ChrisEric](https://github.com/CE1CECL) the source code that uses a local proxy to emulate a different version of Discord.
 
 This project was mainly inspired by [SamuelScheit](https://github.com/SamuelScheit)
 [Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
 develop any further.
 
-And a big thank to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app
+And a big thank to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.
 
 ## Disclaimer
 

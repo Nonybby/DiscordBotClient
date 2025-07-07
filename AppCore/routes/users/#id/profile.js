@@ -25,6 +25,22 @@ app.get('/', async (req, res) => {
 			.then((r) => r.json())
 			.catch(() => null);
 	}
+	let bio = null;
+	if (req.params.id === Util.getIDFromToken(req.headers.authorization)) {
+		// Using bio from applications/@me
+		const applicationData = await fetch(
+			`https://discord.com/api/v9/applications/@me`,
+			{
+				headers: {
+					Authorization: req.headers.authorization,
+					'User-Agent': Constants.UserAgentDiscordBot,
+				},
+			},
+		).then((res) => {
+			return res.json();
+		});
+		bio = applicationData.description;
+	}
 	fetch('https://discord.com/api/v9/users/' + req.params.id, {
 		headers: {
 			authorization: req.headers.authorization,
@@ -32,7 +48,9 @@ app.get('/', async (req, res) => {
 		},
 	})
 		.then((r) => r.json())
-		.then((d) => res.send(Util.ProfilePatch(d, guild_member, guild_id)));
+		.then((d) =>
+			res.send(Util.ProfilePatch(d, guild_member, guild_id, bio)),
+		);
 });
 
 app.patch('/', (req, res) => {

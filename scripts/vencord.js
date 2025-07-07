@@ -20,7 +20,7 @@ const { execSync } = require('child_process');
     console.log('> Vencord clone complete.');
     console.log('> VencordDBCPlugin clone complete.');
     console.log('> Install Vencord dependencies...');
-    execSync('npm i -f', {
+    execSync('npm i -f --verbose', {
 		stdio: 'inherit',
 		cwd: cloneDir,
 	});

@@ -9,7 +9,7 @@ const {
 	screen,
 	ipcMain,
 	Notification,
-	net,
+	dialog,
 } = require('electron');
 const {
 	scope,
@@ -97,10 +97,11 @@ const {
 	PreloadedUserSettingsDB,
 	FrecencyUserSettingsDB,
 } = require('./database/index.js');
-const { PreloadedUserSettings } = require('../discord-protos');
+const { PreloadedUserSettings } = require('../DiscordProtos');
 const Experiments = require('../AppAssets/Experiments.js');
 const Intents = require('../AppAssets/Intents.js');
 const IPCEvent = require('./IPCEvent.js');
+const GlobalConfig = require('./Config.js');
 
 BigInt.prototype.toJSON = function () {
 	return this.toString();
@@ -129,6 +130,14 @@ class DiscordBotClient {
 	 * @type {Map<string, BrowserWindow>}
 	 */
 	childWindows = new Map();
+	/**
+	 * @type {?BrowserWindow}
+	 */
+	editorWindow;
+	/**
+	 * @type {GlobalConfig}
+	 */
+	config = GlobalConfig;
 	constructor() {
 		this.logger.log('App starting...');
 		this.initApp();
@@ -187,6 +196,12 @@ class DiscordBotClient {
 					app.relaunch();
 					this.#shouldQuitApp = true;
 					app.quit();
+				},
+			},
+			{
+				label: 'Settings (Config Editor)',
+				click: () => {
+					this.openConfigEditorWindow();
 				},
 			},
 			{
@@ -267,14 +282,62 @@ class DiscordBotClient {
 	async initApp() {
 		this.port = await server();
 		app.setAppUserModelId(Constants.APP_NAME);
+		const enabledFeatures = new Set(
+			app.commandLine.getSwitchValue('enable-features').split(','),
+		);
+		const disabledFeatures = new Set(
+			app.commandLine.getSwitchValue('disable-features').split(','),
+		);
 		// Allow Localhost SSL
 		app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
 		app.commandLine.appendSwitch('ignore-certificate-errors');
-		app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors');
 		app.commandLine.appendSwitch(
 			'host-rules',
 			`MAP ${Constants.CustomDiscordDomain} 127.0.0.1:${this.port}`,
 		);
+		// Vesktop
+		// Disable renderer backgrounding to prevent the app from unloading when in the background
+		// https://github.com/electron/electron/issues/2822
+		// https://github.com/GoogleChrome/chrome-launcher/blob/5a27dd574d47a75fec0fb50f7b774ebf8a9791ba/docs/chrome-flags-for-tools.md#task-throttling
+		app.commandLine.appendSwitch('disable-renderer-backgrounding');
+		app.commandLine.appendSwitch('disable-background-timer-throttling');
+		app.commandLine.appendSwitch('disable-backgrounding-occluded-windows');
+		// Enable & Disable Chromium Features
+		Constants.enableFeatures.forEach((feature) => {
+			enabledFeatures.add(feature);
+		});
+		Constants.disableFeatures.forEach((feature) => {
+			disabledFeatures.add(feature);
+		});
+		const enabledFeaturesArray = enabledFeatures
+			.values()
+			.filter(Boolean)
+			.toArray();
+		const disabledFeaturesArray = disabledFeatures
+			.values()
+			.filter(Boolean)
+			.toArray();
+		if (enabledFeaturesArray.length) {
+			app.commandLine.appendSwitch(
+				'enable-features',
+				enabledFeaturesArray.join(','),
+			);
+			this.logger.log(
+				'Enabled Chromium features:',
+				enabledFeaturesArray.join(', '),
+			);
+		}
+
+		if (disabledFeaturesArray.length) {
+			app.commandLine.appendSwitch(
+				'disable-features',
+				disabledFeaturesArray.join(','),
+			);
+			this.logger.log(
+				'Disabled Chromium features:',
+				disabledFeaturesArray.join(', '),
+			);
+		}
 		// App Event
 		app.on('window-all-closed', () => {
 			if (process.platform !== 'darwin') {
@@ -607,18 +670,34 @@ class DiscordBotClient {
 						]);
 						for (let i = 0; i < flags.length; i++) {
 							const f = flags[i];
-							if (f.includes('GATEWAY_PRESENCE')) {
+							if (
+								f.includes('GATEWAY_PRESENCE') ||
+								f.includes('GATEWAY_PRESENCE_LIMITED')
+							) {
 								skip.delete('GUILD_PRESENCES');
 							}
-							if (f.includes('GATEWAY_GUILD_MEMBERS')) {
+							if (
+								f.includes('GATEWAY_GUILD_MEMBERS') ||
+								f.includes('GATEWAY_GUILD_MEMBERS_LIMITED')
+							) {
 								skip.delete('GUILD_MEMBERS');
 							}
-							if (f.includes('GATEWAY_MESSAGE_CONTENT')) {
+							if (
+								f.includes('GATEWAY_MESSAGE_CONTENT') ||
+								f.includes('GATEWAY_MESSAGE_CONTENT_LIMITED')
+							) {
 								skip.delete('MESSAGE_CONTENT');
 							}
 						}
-						if (skip.has('MESSAGE_CONTENT')) {
-							throw new Error('MESSAGE_CONTENT is required');
+						if (
+							skip.has('MESSAGE_CONTENT') &&
+							!this.config.config.suppress_intent_warning
+						) {
+							dialog.showErrorBox(
+								'MESSAGE_CONTENT is required',
+								'You need to enable the MESSAGE_CONTENT intent in the application settings.\nIf you want to permanently suppress this warning, change the application settings (accessible from the tray menu via right-click)',
+							);
+							throw new Error('MESSAGE_CONTENT is required.');
 						}
 						event.sender.send(IPCEvent.GetBotInfoResponse, {
 							success: true,
@@ -627,7 +706,9 @@ class DiscordBotClient {
 							allShards:
 								Math.ceil(
 									parseInt(data.approximate_guild_count) /
-										Constants.MaxGuildsPerShard,
+										Number(
+											this.config.config.guilds_per_shard,
+										),
 								) || 1,
 						});
 					})
@@ -706,6 +787,28 @@ class DiscordBotClient {
 			.on(IPCEvent.GetLocationDiscordAPIHandle, (event) => {
 				event.returnValue = 'localhost:' + this.port;
 			});
+		ipcMain.handle(IPCEvent.MonacoEditorGetConfig, (event) => {
+			return this.config.toString();
+		});
+		ipcMain.handle(IPCEvent.MonacoEditorGetAutoComplete, (event) => {
+			return this.config.monacoAutoComplete();
+		});
+		ipcMain.handle(IPCEvent.MonacoEditorSaveConfig, (event, config) => {
+			// Validate and save the config
+			try {
+				this.config.loadConfig(config);
+				this.config.save();
+				this.logger.info('Config saved successfully');
+				return true;
+			} catch (e) {
+				this.logger.error('Invalid config:', e);
+				dialog.showErrorBox(
+					'Invalid Config',
+					`The provided config is invalid: ${e.message}`,
+				);
+				return false;
+			}
+		});
 	}
 	/**
 	 * Show a notification
@@ -822,6 +925,38 @@ class DiscordBotClient {
 					);
 				})
 				.finally(() => resolve(true));
+		});
+	}
+	// Editor Window
+	openConfigEditorWindow() {
+		if (this.editorWindow && !this.editorWindow.isDestroyed()) {
+			this.editorWindow.show();
+			return;
+		}
+		this.editorWindow = new BrowserWindow({
+			width: 1080,
+			height: 720,
+			minWidth: 800,
+			minHeight: 600,
+			webPreferences: {
+				webSecurity: false,
+				enableRemoteModule: false,
+				preload: path.join(__dirname, 'editor', 'preload.js'),
+				sandbox: false,
+			},
+			icon: Constants.icon128,
+			frame: true,
+			autoHideMenuBar: true,
+			...(process.platform === 'darwin' && {
+				titleBarStyle: 'hidden',
+				trafficLightPosition: { x: 10, y: 10 },
+			}),
+		});
+		this.editorWindow.loadFile(
+			path.join(__dirname, 'editor', 'index.html'),
+		);
+		this.editorWindow.on('closed', () => {
+			this.editorWindow = null;
 		});
 	}
 }
