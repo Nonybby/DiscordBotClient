@@ -5464,7 +5464,7 @@ module.exports = [
 		title: 'Aurora Dreams',
 		description: 'The perfect sky to dream under.',
 		accessibilityLabel:
-			'A glowing polar light display shimmers beautifully in the sky, blending lights in pinks, oranges, cyan, and fuschia under twinkling stars.',
+			'A glowing polar light display shimmers beautifully in the sky, blending lights in pinks, oranges, cyan, and fuchsia under twinkling stars.',
 		animationType: 2,
 		thumbnailPreviewSrc:
 			'https://cdn.discordapp.com/assets/profile_effects/effects/2024-12-08/aurora_dreams/thumbnail.png',
@@ -6769,7 +6769,7 @@ module.exports = [
 			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-01-28/heartstrings_theory_red/reduced_motion.png',
 		effects: [
 			{
-				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-02-04/heartstrings_theory_red/intro.png',
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/heartstrings_theory_red/intro.png',
 				loop: false,
 				height: 880,
 				width: 450,
@@ -6815,7 +6815,7 @@ module.exports = [
 			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-01-28/heartstrings_theory_blue/reduced_motion.png',
 		effects: [
 			{
-				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-02-04/heartstrings_theory_blue/intro.png',
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/heartstrings_theory_blue/intro.png',
 				loop: false,
 				height: 880,
 				width: 450,
@@ -9661,6 +9661,774 @@ module.exports = [
 				width: 450,
 				duration: 3000,
 				start: 5500,
+				loopDelay: 3000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1379220459110928476',
+		sku_id: '1379220459094020219',
+		title: 'Angelic Intervention',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'The White Mana symbol materializes, summoning a radiant angel wielding a longsword amid falling feathers.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/angelic_intervention/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/angelic_intervention/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/angelic_intervention/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/angelic_intervention/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 5900,
+				loopDelay: 2100,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1379220459132026900',
+		sku_id: '1379220459114991798',
+		title: 'Fae Trickery',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'A faerie materializes from the Blue Mana symbol, encapsulated in arcane energy.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/fae_trickery/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/fae_trickery/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/fae_trickery/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 4000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/fae_trickery/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 4800,
+				loopDelay: 2000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1379220459152998450',
+		sku_id: '1379220459135963257',
+		title: 'Zombie Apocalypse',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'The Black Mana symbol materializes and summons a horde of zombies, as purple-tinged embers sear and flicker in the background.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/zombie_apocalypse/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/zombie_apocalypse/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/zombie_apocalypse/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 4000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/zombie_apocalypse/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 4400,
+				loopDelay: 2000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1379220459173969992',
+		sku_id: '1379220459161128960',
+		title: "Dragon's Approach",
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'The Red Mana symbol burns into view, unleashing a fierce dragon as red lightning cracks across your profile.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/dragons_approach/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/dragons_approach/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/dragons_approach/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/dragons_approach/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 3600,
+				loopDelay: 1500,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1379220459194941550',
+		sku_id: '1379220459182096414',
+		title: 'Primal Hunger',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'The Green Mana symbol appears and summons Colossal Dreadmaw onto your profile amidst magical vinery and falling leaves.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/primal_hunger/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/primal_hunger/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/primal_hunger/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 4000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-03/primal_hunger/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3000,
+				start: 4700,
+				loopDelay: 3000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1366494385688285194',
+		sku_id: '1366494385671245826',
+		title: 'Bonsai Eternity',
+		description: 'Beautiful things take the time they take.',
+		accessibilityLabel:
+			'The leaves from cybernetic pink bonsai trees drift beautifully across your profile.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/bonsai_eternity/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/bonsai_eternity/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/bonsai_eternity/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 6083,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/bonsai_eternity/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 7000,
+				start: 8000,
+				loopDelay: 3500,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1366494385709256736',
+		sku_id: '1366494385692217495',
+		title: 'Shadow Strike',
+		description: "When you see him, it's already too late.",
+		accessibilityLabel:
+			'A mysterious samurai launches forward and releases a flurry of strikes with his katana under falling bonsai leaves.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/shadow_strike/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/shadow_strike/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/shadow_strike/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 7833,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/shadow_strike/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 4250,
+				start: 9000,
+				loopDelay: 3000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1366494385730228345',
+		sku_id: '1366494385717383198',
+		title: 'Zen Garden',
+		description: 'Find peace in the midst of chaos.',
+		accessibilityLabel:
+			'A beautiful, cybernetic Japanese garden and cityscape flicker and glitch into view under the moon.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/zen_garden/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/zen_garden/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/zen_garden/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-12/zen_garden/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 6000,
+				start: 6500,
+				loopDelay: 3000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1385050947931078696',
+		sku_id: '1385050947914305697',
+		title: 'Lots of bubbles',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'Shiny little bubbles dance and float up the profile, creating an adorable underwater paradise full of shimmer!',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/lots_of_bubbles/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/lots_of_bubbles/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/lots_of_bubbles/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/lots_of_bubbles/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 6000,
+				loopDelay: 1500,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1385050947947856073',
+		sku_id: '1385050947939602482',
+		title: 'Firefly Meadow',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'Luminous fireflies dance through the meadow around the profile, creating a nostalgic summer evening filled with gentle, twinkling lights.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/idle_0.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 5001,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/idle_1.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 6000,
+				loopDelay: 1600,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 102,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/firefly_meadow/idle_2.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 5500,
+				loopDelay: 1200,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 103,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1385050947968827573',
+		sku_id: '1385050947956248696',
+		title: 'the same duck',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'A duck dips its head underwater to greet you with his cheerful paddling and happy quacks.',
+		animationType: 1,
+		staticFrameSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/the_same_duck/static.png',
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/the_same_duck/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/the_same_duck/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/the_same_duck/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5083,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-18/the_same_duck/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 4917,
+				start: 5083,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1387888352824528988',
+		sku_id: '1387888352807747684',
+		title: 'Join the Alliance',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'Cameraman appears on the profile in a suit with a large camera head and mechanical arms, asking for your allegiance and then glitching out.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/join_the_alliance/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/join_the_alliance/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/join_the_alliance/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/join_the_alliance/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 8000,
+				loopDelay: 4000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1387888352849694730',
+		sku_id: '1387888352832913499',
+		title: 'Duchess Astro',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'A powerful female blazing warrior emerges in front of the avatar with circular fire effects and glowing embers.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/duchess_astro/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/duchess_astro/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/duchess_astro/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 4583,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/duchess_astro/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 3333,
+				start: 8000,
+				loopDelay: 4000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1387888352799363243',
+		sku_id: '1387888352782581871',
+		title: 'Critical Damage',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'A glitched face with orange glasses appears with "CRITICAL DAMAGE" text and digital distortion effects.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/critical_damage/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/critical_damage/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/critical_damage/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/critical_damage/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 8000,
+				loopDelay: 4000,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1387888352774197370',
+		sku_id: '1387888352757416128',
+		title: 'Titan vs Astro',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'A purple mech battles another machine firing lasers with glowing energy beams.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/titan_vs_astro/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/titan_vs_astro/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/titan_vs_astro/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/titan_vs_astro/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 8000,
+				loopDelay: 3500,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 101,
+				randomizedSources: [],
+			},
+		],
+	},
+	{
+		type: 1,
+		id: '1387888352874860695',
+		sku_id: '1387888352853885098',
+		title: 'Skibidi Toilets',
+		description: 'Show this effect when others view your profile.',
+		accessibilityLabel:
+			'Multiple Skibidi Toilets pop into frame around the profile with exaggerated wide grins and unsettling expressions.',
+		animationType: 2,
+		thumbnailPreviewSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/skibidi_toilets/thumbnail.png',
+		reducedMotionSrc:
+			'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/skibidi_toilets/reduced_motion.png',
+		effects: [
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/skibidi_toilets/intro.png',
+				loop: false,
+				height: 880,
+				width: 450,
+				duration: 4167,
+				start: 0,
+				loopDelay: 0,
+				position: {
+					x: 0,
+					y: 0,
+				},
+				zIndex: 100,
+				randomizedSources: [],
+			},
+			{
+				src: 'https://cdn.discordapp.com/assets/profile_effects/effects/2025-06-26/skibidi_toilets/idle.png',
+				loop: true,
+				height: 880,
+				width: 450,
+				duration: 5000,
+				start: 7000,
 				loopDelay: 3000,
 				position: {
 					x: 0,
