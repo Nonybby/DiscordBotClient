@@ -77,7 +77,12 @@ fetch(URL)
 		}
 		let temp = text.split('\n');
 		console.log(
-			'[Discord] Build:',
+			'[Discord] Build Number:',
+			temp
+				.find((s) => s.includes('BUILD_NUMBER'))
+				.replace('BUILD_NUMBER', '')
+				.match(/\w+/)[0],
+			'| Hash:',
 			temp
 				.find((s) => s.includes('VERSION_HASH'))
 				.replace('VERSION_HASH', '')

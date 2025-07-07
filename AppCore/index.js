@@ -383,7 +383,9 @@ class DiscordBotClient {
 		}
 
 		// Create context menu
-		contextMenu({
+		// I love the new Node.js version — it supports requiring ESM modules without having to use `import`
+		// https://socket.dev/blog/node-js-delivers-first-lts-with-require-esm-enabled
+		contextMenu.default({
 			showLearnSpelling: false,
 			showSearchWithGoogle: false,
 			showCopyImageAddress: true,
@@ -448,7 +450,7 @@ class DiscordBotClient {
 			},
 		);
 		// Load Vencord-Web Extension
-		await this.session.loadExtension(Constants.VencordExtensionPath);
+		await this.session.extensions.loadExtension(Constants.VencordExtensionPath);
 		this.logger.info(
 			'Vencord-Web Extension loaded, version: ' + VencordVersion,
 		);
