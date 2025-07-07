@@ -4,5 +4,4 @@ node_modules/
 yarn*
 package-lock.json
 .DS_STORE
-dist/
 *.egg-info
