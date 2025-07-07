@@ -166,7 +166,8 @@ Logging in works via the UI on first startup of the application.
 | Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
 | ------------- | ------- | ------- | -------------- | -------------- | ---------- |
 | Latest        | ?       | ?       | v3.7.?         | ~~Beta~~       | ℹ          |
-| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Latest         | ✔          |
+| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.3         | Latest         | ✔          |
+| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Deprecated     | ✔          |
 | Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔          |
 | Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
 | Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
@@ -254,7 +255,7 @@ npm run requirement
 npm run core:update
 ```
 
-4. (Optional) Update discord-protos 
+4. (Optional) Update discord-protos
 
 > [!NOTE]
 > Requires protoc to be installed on the system. If it is not installed, please refer to https://protobuf.dev/installation/ for instructions.
