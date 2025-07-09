@@ -4,9 +4,7 @@
 	"description": "Discord Bot Client - login into discord with a bot token",
 	"main": "./AppCore/index.js",
 	"dependencies": {
-		"@protobuf-ts/plugin": "^2.9.6",
-		"@protobuf-ts/protoc": "^2.9.6",
-		"@protobuf-ts/runtime": "^2.9.6",
+		"discord-protos": "^1.2.43",
 		"electron-context-menu": "^4.1.0",
 		"electron-log": "^5.4.1",
 		"express": "^4.21.2",
@@ -29,7 +27,6 @@
 		"js-beautify": "^1.15.4",
 		"jsdom": "^26.1.0",
 		"node-abi": "^3.75.0",
-		"puppeteer": "^24.6.1",
 		"tsup": "^8.5.0",
 		"typescript": "^5.8.3"
 	},

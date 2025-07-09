@@ -97,7 +97,7 @@ const {
 	PreloadedUserSettingsDB,
 	FrecencyUserSettingsDB,
 } = require('./database/index.js');
-const { PreloadedUserSettings } = require('../DiscordProtos');
+const { PreloadedUserSettings } = require('discord-protos'); // require('../DiscordProtos');
 const Experiments = require('../AppAssets/Experiments.js');
 const Intents = require('../AppAssets/Intents.js');
 const IPCEvent = require('./IPCEvent.js');

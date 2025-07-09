@@ -255,7 +255,7 @@ npm run requirement
 npm run core:update
 ```
 
-4. (Optional) Update discord-protos
+~~4. (Optional) Update discord-protos~~
 
 > [!NOTE]
 > Requires protoc to be installed on the system. If it is not installed, please refer to https://protobuf.dev/installation/ for instructions.

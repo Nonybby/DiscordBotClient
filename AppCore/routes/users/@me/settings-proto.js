@@ -2,7 +2,7 @@ const { Router } = require('express');
 const {
 	PreloadedUserSettings,
 	FrecencyUserSettings,
-} = require('../../../../DiscordProtos');
+} = require('discord-protos'); // require('../../../../DiscordProtos');
 const { PreloadedUserSettingsDB, FrecencyUserSettingsDB } = require('../../../database/index.js');
 const Util = require('../../../../AppAssets/Util');
 
