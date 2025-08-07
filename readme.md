@@ -1,6 +1,6 @@
 <h1 align="center">Discord Bot Client</h1>
 
-**Discord Bot Client** allows you to use your bot, just like any other user account, except Friends and Groups.
+**Discord Bot Client** allows you to use your bot, just like any other user account, except for Friends and Groups.
 
 ## Overview
 
@@ -107,7 +107,7 @@ higher. You can find nodejs packages at https://nodejs.org/en.
 On top of that, you need to have **git** installed. It can be found at
 https://git-scm.com/downloads.
 
-**UPDATES HAVE TO BE INSTALLED MANUALLY**
+**UPDATES MUST BE INSTALLED MANUALLY**
 
 Open a command line and execute the following commands:
 
@@ -118,7 +118,7 @@ npm run requirement
 npm run build
 ```
 
-This will create an executable called `DiscordBotClient` or `DiscordBotClient.exe` in the `dist` folder depending on whether you are using Windows or not.
+This will create an executable called `DiscordBotClient` or `DiscordBotClient.exe` in the `dist` folder, depending on whether you are using Windows or not.
 
 ---
 
@@ -132,7 +132,7 @@ Logging in works via the UI on first startup of the application.
 > Enable `MessageContent` intent, other intents are optional.
 
 > [!TIP]
-> If you want a list of members and status, enable all intents.
+> If you want a list of members and their status, enable all intents.
 
 ![image](https://i.imgur.com/VENMB1U.png)
 
@@ -175,7 +175,7 @@ Logging in works via the UI on first startup of the application.
 | Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
 
 -   ✔ – Fully functional and expected to be free of critical bugs.
--   ℹ – Supports at least basic functionality, but still under development. Minor issues may occur.
+-   ℹ – Supports at least basic functionality, but is still under development. Minor issues may occur.
 -   ⛔ – This version has major issues (e.g., related to app startup). It is not recommended for use.
 -   ⚠ – This version has reached its end of support.
 
@@ -186,7 +186,7 @@ Logging in works via the UI on first startup of the application.
 ## Troubleshooting
 
 If you happen to encounter a crash or a bug, please submit a bug report via
-the projects GitHub issue tracker.
+the project's GitHub issue tracker.
 
 ## FAQ
 
@@ -194,7 +194,7 @@ In order to find answers to common questions, check out the FAQ in the [wiki](ht
 
 ## About anti-virus detection
 
-Sometimes, DiscordBotClient will be flagged as malware by several anti-virus programs (Avast, AVG, Norton, McAfee, Windows Defender, etc.), this, however, is a false positive.
+Sometimes, DiscordBotClient will be flagged as malware by several anti-virus programs (Avast, AVG, Norton, McAfee, Windows Defender, etc.). However, this is a false positive.
 
 The reason for this is that the application is not signed.
 
@@ -268,13 +268,13 @@ npm run proto:build:ts
 
 ## Credits
 
-Thanks to [ChrisEric](https://github.com/CE1CECL) the source code that uses a local proxy to emulate a different version of Discord.
+Thanks to [ChrisEric](https://github.com/CE1CECL) for the source code that uses a local proxy to emulate a different version of Discord.
 
 This project was mainly inspired by [SamuelScheit](https://github.com/SamuelScheit)
 [Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
 develop any further.
 
-And a big thank to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.
+And a big thank you to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.
 
 ## Disclaimer
 
