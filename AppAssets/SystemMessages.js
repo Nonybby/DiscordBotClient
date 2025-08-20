@@ -55,7 +55,7 @@ Or, if you’d like, you can support me with a coffee on GitHub <:ElysiaHeart:11
 <:MarchYey:1065630282394378390> A special thanks to everyone who has sponsored me on GitHub—your support means the world!
 
 Warm regards, 
-<:Discord:984744331200053269> elysia.dev - <:github:889092230063734795> aiko-chan-ai`,
+<:Discord:984744331200053269> yuneko.dev - <:github:889092230063734795> aiko-chan-ai`,
 					color: 16750296,
 					author: {
 						name: 'Thank you!',
