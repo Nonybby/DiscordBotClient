@@ -1,3 +1,13 @@
+/*
+https://github.com/discord/discord-api-docs/discussions/3216#discussioncomment-14147090
+
+Discord officially supports the Message Search API for bots (even though it’s only in preview, it saves me from having to implement this endpoint myself).
+
+This endpoint will be reserved for now and removed in the next update.
+
+Note: The Message Search API only works in servers, it doesn’t work in DMs yet.
+*/
+
 const { Router } = require('express');
 const crypto = require('node:crypto');
 const { fetch } = require('undici');
