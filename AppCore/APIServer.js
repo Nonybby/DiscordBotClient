@@ -96,11 +96,11 @@ app.use((req, res, next) => {
 			message: 'APIServer: Bots cannot use this endpoint',
 			code: 20001,
 		});
-	// Main page
-	if (['/', '/app', '/login'].includes(req.path))
-		return res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));
 	// API routes
 	if (req.originalUrl.includes('/api/')) return proxy.web(req, res);
+	// Main page
+	if (['/', '/app', '/login', '/channels/'].includes(req.path))
+		return res.send(readFileSync(Constants.DiscordHTMLPath, 'utf8'));
 	// Other routes
 	req.headers = req.originalHeaders;
 	return proxy.web(req, res);
