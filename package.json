@@ -1,7 +1,7 @@
 {
   "name": "discord-bot-client",
   "productName": "Nekocord",
-  "version": "3.7.4",
+  "version": "3.8.0",
   "description": "Nekocord - login into discord with a bot token",
   "author": {
     "name": "aiko-chan-ai",
