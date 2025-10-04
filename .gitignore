@@ -91,8 +91,8 @@ out
 .nuxt
 /dist
 /Vencord
-test.js
-/AppAssets/assets
+/build
+/VencordExtension
 
 # Gatsby files
 .cache/

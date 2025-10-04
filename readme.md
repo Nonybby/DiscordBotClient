@@ -1,6 +1,6 @@
-<h1 align="center">Discord Bot Client</h1>
+<h1 align="center">Nekocord</h1>
 
-**Discord Bot Client** allows you to use your bot, just like any other user account, except for Friends and Groups.
+**Nekocord** allows you to use your bot, just like any other user account, except for Friends and Groups.
 
 ## Overview
 
@@ -24,7 +24,7 @@
 >
 > **Third party clients are discouraged and against the Discord TOS.**
 
-Discord Bot Client is a custom [Discord](https://discord.com/app) client that aims to
+Nekocord is a custom [Discord](https://discord.com/app) client that aims to
 support bot accounts and be aimed at power-users.
 
 The application only uses the official Discord API and doesn't send data to
@@ -39,7 +39,7 @@ Discord Inc.
 
 ### Windows
 
-Discord Bot Client can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
+Nekocord can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
 
 ```
 winget install aiko-chan-ai.DiscordBotClient
@@ -214,7 +214,7 @@ For a tutorial on how to exclude this program from your antivirus so it can run 
 
 Here is a list of similar projects:
 
--   [Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client)
+-   [Nekocord](https://github.com/SamuelScheit/discord-bot-client)
 -   [BotClient](https://github.com/DarkGuy10/BotClient)
 -   [ChrisEric1.GitHub.io](https://github.com/ChrisEric1/ChrisEric1.GitHub.io)
 -   [LiveBot](https://github.com/SebOuellette/LiveBot)
@@ -255,23 +255,12 @@ npm run requirement
 npm run core:update
 ```
 
-~~4. (Optional) Update discord-protos~~
-
-> [!NOTE]
-> Requires protoc to be installed on the system. If it is not installed, please refer to https://protobuf.dev/installation/ for instructions.
-
-```sh
-npm run proto:install
-npm run proto:update
-npm run proto:build:ts
-```
-
 ## Credits
 
 Thanks to [ChrisEric](https://github.com/CE1CECL) for the source code that uses a local proxy to emulate a different version of Discord.
 
 This project was mainly inspired by [SamuelScheit](https://github.com/SamuelScheit)
-[Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
+[Nekocord](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
 develop any further.
 
 And a big thank you to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.

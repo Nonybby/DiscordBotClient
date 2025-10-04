@@ -1,124 +1,157 @@
 {
-	"name": "discord-bot-client",
-	"version": "3.7.4",
-	"description": "Discord Bot Client - login into discord with a bot token",
-	"main": "./AppCore/index.js",
-	"dependencies": {
-		"discord-protos": "^1.2.43",
-		"electron-context-menu": "^4.1.0",
-		"electron-log": "^5.4.1",
-		"express": "^4.21.2",
-		"http-proxy": "^1.18.1",
-		"ini": "^5.0.0",
-		"lambert-server": "^1.2.12",
-		"level": "^9.0.0",
-		"level-supports": "^6.2.0",
-		"level-transcoder": "^1.0.1",
-		"morgan": "^1.10.0",
-		"multer": "^1.4.5-lts.1",
-		"murmurhash": "^2.0.1",
-		"probe-image-size": "^7.2.3",
-		"undici": "^7.11.0"
-	},
-	"devDependencies": {
-		"electron": "^37.2.0",
-		"electron-builder": "^26.0.12",
-		"git-clone": "^0.2.0",
-		"js-beautify": "^1.15.4",
-		"jsdom": "^26.1.0",
-		"node-abi": "^3.75.0",
-		"tsup": "^8.5.0",
-		"typescript": "^5.8.3"
-	},
-	"build": {
-		"files": [
-			"!scripts",
-			"!Vencord",
-			"!tsconfig.json",
-			"!tsup.config.ts",
-			"!DiscordProtos/.github",
-			"!DiscordProtos/discord_protos",
-			"!DiscordProtos/scripts",
-			"!DiscordProtos/src"
-		],
-		"appId": "DiscordBotClient",
-		"productName": "DiscordBotClient",
-		"artifactName": "${productName}-${os}-${arch}.${ext}",
-		"copyright": "Copyright © 2025 aiko-chan-ai",
-		"mac": {
-			"category": "public.app-category.social-networking",
-			"target": [
-				{
-					"target": "dmg",
-					"arch": [
-						"arm64",
-						"x64"
-					]
-				}
-			],
-			"darkModeSupport": true,
-			"icon": "./AppAssets/DiscordBotClient.png",
-			"extendInfo": {
-				"NSMicrophoneUsageDescription": "This app needs access to the microphone",
-				"com.apple.security.device.audio-input": true
-			}
-		},
-		"linux": {
-			"target": [
-				{
-					"target": "AppImage",
-					"arch": [
-						"x64"
-					]
-				}
-			],
-			"desktop": {
-				"entry": {
-					"Name": "DiscordBotClient",
-					"GenericName": "Internet Messenger",
-					"Type": "Application",
-					"Categories": "Network;InstantMessaging;Chat;",
-					"Keywords": "discord;bot;vencord;electron;chat;"
-				}
-			},
-			"category": "Network",
-			"icon": "./AppAssets/DiscordBotClient.png"
-		},
-		"win": {
-			"target": [
-				{
-					"target": "nsis",
-					"arch": [
-						"x64"
-					]
-				}
-			],
-			"icon": "./AppAssets/DiscordBotClient.png"
-		},
-		"asar": false
-	},
-	"scripts": {
-		"start": "electron AppCore\\index.js",
-		"mac": "electron-builder -m",
-		"win": "electron-builder -w",
-		"linux": "electron-builder -l",
-		"build": "electron-builder",
-		"requirement": "npm install && node scripts/vencord.js",
-		"core:update": "node scripts/update.js",
-		"vencord": "cd Vencord && node --require=./scripts/suppressExperimentalWarnings.js scripts/build/buildWeb.mjs && cd .. && node scripts/copy.js",
-		"cerf": "openssl req -nodes -new -x509 -keyout ./AppCore/cert/server.key -out ./AppCore/cert/server.cert -days 3650 -subj \"/CN=localhost\"",
-		"test": "npm run vencord & npm run start",
-		"proto:install": "node scripts/cloneDiscordProtos.js",
-		"proto:update": "npx tsx DiscordProtos/src/load.ts",
-		"proto:build:ts": "cd DiscordProtos && npm run js && npm run build && cd .."
-	},
-	"author": {
-		"name": "aiko-chan-ai",
-		"email": "Aiko@shiroko.onmicrosoft.com"
-	},
-	"repository": {
-		"url": "https://github.com/aiko-chan-ai/DiscordBotClient/"
-	},
-	"license": "ISC",
-	"productName": "Discord Bot Client"
+  "name": "discord-bot-client",
+  "productName": "Nekocord",
+  "version": "3.7.4",
+  "description": "Nekocord - login into discord with a bot token",
+  "author": {
+    "name": "aiko-chan-ai",
+    "email": "Aiko@shiroko.onmicrosoft.com"
+  },
+  "repository": {
+    "url": "https://github.com/aiko-chan-ai/DiscordBotClient/"
+  },
+  "license": "GPL-3.0",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "npm run build:ts && npm run start",
+    "test:typescript": "tsc --noEmit",
+    "build:ts": "tsc && tsc-alias",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "vencord": "tsx scripts/vencordBuild.ts",
+    "core:update": "tsx scripts/update.ts",
+    "start": "electron .",
+    "mac": "electron-builder -m",
+    "win": "electron-builder -w",
+    "linux": "electron-builder -l",
+    "build": "electron-builder",
+    "requirement": "npm install && tsx scripts/vencordClone.ts",
+    "cerf": "openssl req -nodes -new -x509 -keyout ./assets/cert/server.key -out ./assets/cert/server.cert -days 3650 -subj \"/CN=localhost\""
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/express": "^4.17.23",
+    "@types/http-proxy": "^1.17.16",
+    "@types/ini": "^4.1.1",
+    "@types/js-beautify": "^1.14.3",
+    "@types/jsdom": "^27.0.0",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.6.1",
+    "@types/probe-image-size": "^7.2.5",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "electron": "38.2.0",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-header": "^1.2.2",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "fast-glob": "^3.3.3",
+    "js-beautify": "^1.15.4",
+    "jsdom": "^27.0.0",
+    "pnpm": "^10.4.1",
+    "prettier": "^3.6.2",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.20.6",
+    "typescript": "5.8",
+    "typescript-eslint": "^8.45.0"
+  },
+  "dependencies": {
+    "@sapphire/snowflake": "^3.5.5",
+    "dexie": "^4.2.0",
+    "discord-api-types": "^0.38.26",
+    "discord-protos": "^1.2.71",
+    "electron-context-menu": "^4.1.1",
+    "electron-log": "^5.4.3",
+    "express": "^4.21.2",
+    "http-proxy": "^1.18.1",
+    "ini": "^5.0.0",
+    "lambert-server": "^1.2.12",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "murmurhash": "^2.0.1",
+    "probe-image-size": "^7.2.3",
+    "undici": "^7.16.0"
+  },
+  "build": {
+    "files": [
+      "!docs",
+      "!scripts",
+      "!Vencord",
+      "!src",
+      "!tsconfig.json",
+      "!tsup.config.ts",
+      "!.eslintrc.json",
+      "!.gitattributes",
+      "!.gitignore",
+      "!.prettierrc.json",
+      "!eslint.config.mjs",
+      "!readme.md",
+      "assets",
+      "build",
+      "VencordExtension"
+    ],
+    "appId": "DiscordBotClient",
+    "productName": "Nekocord",
+    "artifactName": "${productName}-${os}-${arch}.${ext}",
+    "copyright": "Copyright © 2025 aiko-chan-ai",
+    "mac": {
+      "category": "public.app-category.social-networking",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "darkModeSupport": true,
+      "icon": "./assets/icon.png",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "This app needs access to the microphone",
+        "com.apple.security.device.audio-input": true
+      }
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "desktop": {
+        "entry": {
+          "Name": "Nekocord",
+          "GenericName": "Internet Messenger",
+          "Type": "Application",
+          "Categories": "Network;InstantMessaging;Chat;",
+          "Keywords": "discord;bot;vencord;electron;chat;"
+        }
+      },
+      "category": "Network",
+      "icon": "./assets/icon.png"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "./assets/icon.png"
+    },
+    "asar": false
+  }
 }
