@@ -115,6 +115,8 @@ Open a command line and execute the following commands:
 git clone https://github.com/aiko-chan-ai/DiscordBotClient.git
 cd DiscordBotClient
 npm run requirement
+npm run vencord
+npm run build:ts
 npm run build
 ```
 
@@ -218,7 +220,7 @@ For a tutorial on how to exclude this program from your antivirus so it can run 
 
 Here is a list of similar projects:
 
-- [Nekocord](https://github.com/SamuelScheit/discord-bot-client)
+- [Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client)
 - [BotClient](https://github.com/DarkGuy10/BotClient)
 - [ChrisEric1.GitHub.io](https://github.com/ChrisEric1/ChrisEric1.GitHub.io)
 - [LiveBot](https://github.com/SebOuellette/LiveBot)
