@@ -1,30 +1,30 @@
-<h1 align="center">Discord Bot Client</h1>
+<h1 align="center">Nekocord</h1>
 
-**Discord Bot Client** allows you to use your bot, just like any other user account, except for Friends and Groups.
+**Nekocord** allows you to use your bot, just like any other user account, except for Friends and Groups.
 
 ## Overview
 
--   [Installation](#installation)
-    -   [Windows](#windows)
-    -   [Using prebuilt binaries](#using-prebuilt-binaries)
-    -   [Building from source](#building-from-source)
--   [Login](#login)
--   [Features](#features)
--   [Version](#version)
--   [Troubleshooting](#troubleshooting)
--   [FAQ](#faq)
--   [About anti‑virus detection](#about-anti‑virus-detection)
--   [Similar projects](#similar-projects)
--   [Star History](#star-history)
--   [How to update to the latest Discord version ?](#how-to-update-to-the-latest-discord-version-)
--   [Credits](#credits)
--   [Disclaimer](#disclaimer)
+- [Installation](#installation)
+    - [Windows](#windows)
+    - [Using prebuilt binaries](#using-prebuilt-binaries)
+    - [Building from source](#building-from-source)
+- [Login](#login)
+- [Features](#features)
+- [Version](#version)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [About anti‑virus detection](#about-anti‑virus-detection)
+- [Similar projects](#similar-projects)
+- [Star History](#star-history)
+- [How to update to the latest Discord version ?](#how-to-update-to-the-latest-discord-version-)
+- [Credits](#credits)
+- [Disclaimer](#disclaimer)
 
 > [!WARNING]
 >
 > **Third party clients are discouraged and against the Discord TOS.**
 
-Discord Bot Client is a custom [Discord](https://discord.com/app) client that aims to
+Nekocord is a custom [Discord](https://discord.com/app) client that aims to
 support bot accounts and be aimed at power-users.
 
 The application only uses the official Discord API and doesn't send data to
@@ -39,7 +39,7 @@ Discord Inc.
 
 ### Windows
 
-Discord Bot Client can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
+Nekocord can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
 
 ```
 winget install aiko-chan-ai.DiscordBotClient
@@ -75,28 +75,28 @@ major systems in the release overview:
       <code>NSIS installer</code>
     </td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-win-x64.exe">
-        <img alt="DiscordBotClient-win-x64.exe" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-win-x64.exe?style=for-the-badge&logo=windows&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-win-x64.exe">
+        <img alt="Nekocord-win-x64.exe" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-win-x64.exe?style=for-the-badge&logo=windows&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41"></a>
       </a>
     </td>
   </tr>
   <tr> <td>Linux</td>
     <td align="center"><code>.AppImage</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-linux-x86_64.AppImage"><img alt="DiscordBotClient-linux-x86_64.AppImage" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-linux-x86_64.AppImage?style=for-the-badge&logo=linux&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-linux-x86_64.AppImage"><img alt="Nekocord-linux-x86_64.AppImage" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-linux-x86_64.AppImage?style=for-the-badge&logo=linux&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
   </tr>
   <tr>
     <td>Mac arm64 (Apple Silicon)</td>
     <td align="center"><code>.dmg</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-mac-arm64.dmg"><img alt="DiscordBotClient-mac-arm64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-mac-arm64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-mac-arm64.dmg"><img alt="Nekocord-mac-arm64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-mac-arm64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
     <tr>
     <td>Mac x64 (Intel)</td>
     <td align="center"><code>.dmg</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-mac-x64.dmg"><img alt="DiscordBotClient-mac-x64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-mac-x64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-mac-x64.dmg"><img alt="Nekocord-mac-x64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-mac-x64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
   </table>
 
@@ -118,7 +118,7 @@ npm run requirement
 npm run build
 ```
 
-This will create an executable called `DiscordBotClient` or `DiscordBotClient.exe` in the `dist` folder, depending on whether you are using Windows or not.
+This will create an executable called `Nekocord` or `Nekocord.exe` in the `dist` folder, depending on whether you are using Windows or not.
 
 ---
 
@@ -140,44 +140,48 @@ Logging in works via the UI on first startup of the application.
 
 ## Features
 
--   **Sharding**
--   **View Guilds** _(Lazy load them)_
--   **Manage Guilds, Channels**
--   **Messages** (Send, View History, Embeds, Reactions, Manage)
--   **~~Create a Guild~~**[^1]
--   **Voice**[^2]
--   **Nitro**[^3]
--   **Direct Message**[^4]
--   **Vencord Built-in**
+- **Sharding**
+- **View Guilds** _(Lazy load them)_
+- **Manage Guilds, Channels**
+- **Messages** (Send, View History, Embeds, Reactions, Manage)
+- **~~Create a Guild~~**[^1]
+- **Voice**[^2]
+- **Nitro**[^3]
+- **Direct Message**[^4]
+- **Vencord Built-in**
 
 [^1]: See https://discord.com/developers/docs/change-log?topic=HTTP+API#deprecating-guild-creation-by-apps
+
 [^2]: Except for features related to streams.
+
 [^3]: Nitro features are reduced: Unable to use stickers everywhere, cannot send files larger than 10 MB, and cannot set avatar decorations.
+
 [^4]: Implemented with restrictions on the client.
 
 ---
 
 ## Version
 
--   Currently, I will only support the latest version of this application; other versions will not receive bug fixes.
+- Currently, I will only support the latest version of this application; other versions will not receive bug fixes.
 
--   The versions removed from the table were unstable and did not work properly.
+- The versions removed from the table were unstable and did not work properly.
 
 | Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
 | ------------- | ------- | ------- | -------------- | -------------- | ---------- |
-| Latest        | ?       | ?       | v3.7.?         | ~~Beta~~       | ℹ          |
-| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | Latest         | ✔          |
-| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Deprecated     | ✔          |
-| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔          |
-| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
-| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
-| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
-| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
+| Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ         |
+| Stable 453248 | 0a497ab | v1.13.1 | v3.8.0         | Latest         | ✔         |
+| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | Deprecated     | ✔         |
+| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Deprecated     | ✔         |
+| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔         |
+| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠      |
+| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠      |
+| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠      |
+| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠      |
 
--   ✔ – Fully functional and expected to be free of critical bugs.
--   ℹ – Supports at least basic functionality, but is still under development. Minor issues may occur.
--   ⛔ – This version has major issues (e.g., related to app startup). It is not recommended for use.
--   ⚠ – This version has reached its end of support.
+- ✔ – Fully functional and expected to be free of critical bugs.
+- ℹ – Supports at least basic functionality, but is still under development. Minor issues may occur.
+- ⛔ – This version has major issues (e.g., related to app startup). It is not recommended for use.
+- ⚠ – This version has reached its end of support.
 
 [^5]: _Latest version that supports Windows 7/8/8.1 is 2.4.2._
 
@@ -214,11 +218,11 @@ For a tutorial on how to exclude this program from your antivirus so it can run 
 
 Here is a list of similar projects:
 
--   [Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client)
--   [BotClient](https://github.com/DarkGuy10/BotClient)
--   [ChrisEric1.GitHub.io](https://github.com/ChrisEric1/ChrisEric1.GitHub.io)
--   [LiveBot](https://github.com/SebOuellette/LiveBot)
--   [BetterDiscordPanel](https://github.com/SanjaySunil/BetterDiscordPanel)
+- [Nekocord](https://github.com/SamuelScheit/discord-bot-client)
+- [BotClient](https://github.com/DarkGuy10/BotClient)
+- [ChrisEric1.GitHub.io](https://github.com/ChrisEric1/ChrisEric1.GitHub.io)
+- [LiveBot](https://github.com/SebOuellette/LiveBot)
+- [BetterDiscordPanel](https://github.com/SanjaySunil/BetterDiscordPanel)
 
 Hit me up if you have a similar project, and I'll gladly add it to the list.
 
@@ -255,23 +259,12 @@ npm run requirement
 npm run core:update
 ```
 
-~~4. (Optional) Update discord-protos~~
-
-> [!NOTE]
-> Requires protoc to be installed on the system. If it is not installed, please refer to https://protobuf.dev/installation/ for instructions.
-
-```sh
-npm run proto:install
-npm run proto:update
-npm run proto:build:ts
-```
-
 ## Credits
 
 Thanks to [ChrisEric](https://github.com/CE1CECL) for the source code that uses a local proxy to emulate a different version of Discord.
 
 This project was mainly inspired by [SamuelScheit](https://github.com/SamuelScheit)
-[Discord Bot Client](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
+[Nekocord](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
 develop any further.
 
 And a big thank you to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.

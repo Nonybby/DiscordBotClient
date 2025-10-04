@@ -20,24 +20,33 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
-      
-      - name: Install Python 3.13.2
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13.2'
-
-      - name: Install setuptools
-        run: |
-          python -m pip install --upgrade pip
-          pip install setuptools
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: '24.x'
+
+      - name: Install dependencies
+        run: npm run requirement
+      
+      - name: Build VencordExtension
+        run: npm run vencord
+
+      - name: Build JS Code
+        run: npm run build:ts
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Upload multiple files
+        uses: actions/upload-artifact@v4
+        with:
+          name: nekocord-build-${{ matrix.os }}
+          path: |
+            dist/*.exe
+            dist/*.AppImage
+            dist/*.dmg
+
