@@ -237,7 +237,7 @@ Hit me up if you have a similar project, and I'll gladly add it to the list.
 ## How to update to the latest Discord version ?
 
 > [!TIP]
-> This is a general guide for building from source, including downloading the latest scripts from Discord, obtaining the newest versions of Vencord and VencordDBCPlugin, and optionally updating Discord-protos.
+> This is a general guide for building from source, including downloading the latest scripts from Discord, obtaining the newest versions of Vencord and VencordDBCPlugin.
 
 1. Clone this repository and navigate into its directory (skip this step if you have already done so).
 
