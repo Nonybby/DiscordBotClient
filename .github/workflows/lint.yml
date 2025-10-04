@@ -2,10 +2,10 @@ name: Lint
 on:
   push:
     branches: 
-      - '*'
+      - electron-v3
   pull_request:
-    branches: 
-      - '*'
+    branches:
+      - electron-v3
 jobs:
   eslint:
     name: ESLint

@@ -4,9 +4,6 @@ on:
   push:
     tags:
       - v*
-  pull_request:
-    branches:
-      - electron-v3
   workflow_dispatch:
 
 jobs:
