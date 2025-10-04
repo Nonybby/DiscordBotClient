@@ -44,7 +44,7 @@ jobs:
       - name: Upload multiple files
         uses: actions/upload-artifact@v4
         with:
-          name: nekocord-build
+          name: nekocord-build-${{ matrix.os }}
           path: |
             dist/*.exe
             dist/*.AppImage
