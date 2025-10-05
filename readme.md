@@ -112,7 +112,7 @@ major systems in the release overview:
 > 
 > You can safely ignore this warning by following the instructions in this link: https://github.com/aiko-chan-ai/DiscordBotClient/issues/194#issuecomment-2555817658
 >
-> See: https://github.com/aiko-chan-ai/DiscordBotClient/blob/electron-v3/readme.md#about-anti-virus-detection for more information.
+> See: [About anti-virus detection](#about-anti-virus-detection) for more information.
 
 
 ### Building from source
