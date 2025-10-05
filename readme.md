@@ -13,7 +13,7 @@
 - [Version](#version)
 - [Troubleshooting](#troubleshooting)
 - [FAQ](#faq)
-- [About anti‑virus detection](#about-anti-virus-detection)
+- [About anti-virus detection](#about-anti-virus-detection)
 - [Similar projects](#similar-projects)
 - [Star History](#star-history)
 - [How to update to the latest Discord version ?](#how-to-update-to-the-latest-discord-version-)
