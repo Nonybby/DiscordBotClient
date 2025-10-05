@@ -13,7 +13,7 @@
 - [Version](#version)
 - [Troubleshooting](#troubleshooting)
 - [FAQ](#faq)
-- [About anti‑virus detection](#about-anti‑virus-detection)
+- [About anti‑virus detection](#about-anti-virus-detection)
 - [Similar projects](#similar-projects)
 - [Star History](#star-history)
 - [How to update to the latest Discord version ?](#how-to-update-to-the-latest-discord-version-)
@@ -103,6 +103,7 @@ major systems in the release overview:
 > [!WARNING]
 >
 > The application is not signed with a valid certificate on macOS or Windows.
+>
 > As a result, on Windows, SmartScreen or Windows Defender may be triggered — you can simply bypass or whitelist it.
 > 
 > On macOS, you may see a warning that says:
