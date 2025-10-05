@@ -100,6 +100,20 @@ major systems in the release overview:
     </td>
   </table>
 
+> [!WARNING]
+>
+> The application is not signed with a valid certificate on macOS or Windows.
+> As a result, on Windows, SmartScreen or Windows Defender may be triggered — you can simply bypass or whitelist it.
+> 
+> On macOS, you may see a warning that says:
+> 
+> > “DiscordBotClient” is damaged and can’t be opened. You should move it to the Trash.
+> 
+> You can safely ignore this warning by following the instructions in this link: https://github.com/aiko-chan-ai/DiscordBotClient/issues/194#issuecomment-2555817658
+>
+> See: https://github.com/aiko-chan-ai/DiscordBotClient/blob/electron-v3/readme.md#about-anti-virus-detection for more information.
+
+
 ### Building from source
 
 In order to execute the following commands, you need to install **NodeJS v16 or**
