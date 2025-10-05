@@ -1,28 +1,28 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 export class IPCEvent extends null {
-    static Close = "nekocord:window:close";
-    static Minimize = "nekocord:window:minimize";
-    static Maximize = "nekocord:window:maximize";
-    static Focus = "nekocord:window:focus";
+    static Close = "app:window:close";
+    static Minimize = "app:window:minimize";
+    static Maximize = "app:window:maximize";
+    static Focus = "app:window:focus";
     // Preload IPC Events
-    static GetBotInfo = "nekocord:preload:get_bot_info";
-    static GetVersion = "nekocord:preload:get_version";
-    static GetName = "nekocord:preload:get_name";
-    static GetExperiment = "nekocord:preload:get_experiment";
-    static GetDefaultUserPatch = "nekocord:preload:get_default_user_patch";
+    static GetBotInfo = "app:preload:get_bot_info";
+    static GetVersion = "app:preload:get_version";
+    static GetName = "app:preload:get_name";
+    static GetExperiment = "app:preload:get_experiment";
+    static GetDefaultUserPatch = "app:preload:get_default_user_patch";
     // Logging from Main Process
-    static LogFromMainProcess = "nekocord:main:log";
+    static LogFromMainProcess = "app:main:log";
     // Main > Renderer Events
-    static GetPreloadedUserSettings = "nekocord:preload:get_preloaded_user_settings";
-    static GetPreloadedUserSettingsResponse = "nekocord:preload:get_preloaded_user_settings_response";
-    static SetPreloadedUserSettings = "nekocord:preload:set_preloaded_user_settings";
+    static GetPreloadedUserSettings = "app:preload:get_preloaded_user_settings";
+    static GetPreloadedUserSettingsResponse = "app:preload:get_preloaded_user_settings_response";
+    static SetPreloadedUserSettings = "app:preload:set_preloaded_user_settings";
 
-    static GetFrecencyUserSettings = "nekocord:preload:get_frecency_user_settings";
-    static GetFrecencyUserSettingsResponse = "nekocord:preload:get_frecency_user_settings_response";
-    static SetFrecencyUserSettings = "nekocord:preload:set_frecency_user_settings";
+    static GetFrecencyUserSettings = "app:preload:get_frecency_user_settings";
+    static GetFrecencyUserSettingsResponse = "app:preload:get_frecency_user_settings_response";
+    static SetFrecencyUserSettings = "app:preload:set_frecency_user_settings";
     // Monaco Editor IPC Events
-    static MonacoEditorGetConfig = "nekocord:editor:get_config";
-    static MonacoEditorGetAutoComplete = "nekocord:editor:get_autocomplete";
-    static MonacoEditorSaveConfig = "nekocord:editor:save_config";
+    static MonacoEditorGetConfig = "app:editor:get_config";
+    static MonacoEditorGetAutoComplete = "app:editor:get_autocomplete";
+    static MonacoEditorSaveConfig = "app:editor:save_config";
 }

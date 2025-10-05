@@ -1,6 +1,6 @@
-<h1 align="center">Nekocord</h1>
+<h1 align="center">DiscordBotClient</h1>
 
-**Nekocord** allows you to use your bot, just like any other user account, except for Friends and Groups.
+**DiscordBotClient** allows you to use your bot, just like any other user account, except for Friends and Groups.
 
 ## Overview
 
@@ -24,7 +24,7 @@
 >
 > **Third party clients are discouraged and against the Discord TOS.**
 
-Nekocord is a custom [Discord](https://discord.com/app) client that aims to
+DiscordBotClient is a custom [Discord](https://discord.com/app) client that aims to
 support bot accounts and be aimed at power-users.
 
 The application only uses the official Discord API and doesn't send data to
@@ -39,7 +39,7 @@ Discord Inc.
 
 ### Windows
 
-Nekocord can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
+DiscordBotClient can be installed in Windows via [Winget](https://learn.microsoft.com/en-us/windows/package-manager/):
 
 ```
 winget install aiko-chan-ai.DiscordBotClient
@@ -75,28 +75,28 @@ major systems in the release overview:
       <code>NSIS installer</code>
     </td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-win-x64.exe">
-        <img alt="Nekocord-win-x64.exe" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-win-x64.exe?style=for-the-badge&logo=windows&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-win-x64.exe">
+        <img alt="DiscordBotClient-win-x64.exe" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-win-x64.exe?style=for-the-badge&logo=windows&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41"></a>
       </a>
     </td>
   </tr>
   <tr> <td>Linux</td>
     <td align="center"><code>.AppImage</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-linux-x86_64.AppImage"><img alt="Nekocord-linux-x86_64.AppImage" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-linux-x86_64.AppImage?style=for-the-badge&logo=linux&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-linux-x86_64.AppImage"><img alt="DiscordBotClient-linux-x86_64.AppImage" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-linux-x86_64.AppImage?style=for-the-badge&logo=linux&color=F5C2E7&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
   </tr>
   <tr>
     <td>Mac arm64 (Apple Silicon)</td>
     <td align="center"><code>.dmg</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-mac-arm64.dmg"><img alt="Nekocord-mac-arm64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-mac-arm64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-mac-arm64.dmg"><img alt="DiscordBotClient-mac-arm64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-mac-arm64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
     <tr>
     <td>Mac x64 (Intel)</td>
     <td align="center"><code>.dmg</code></td>
     <td>
-      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/Nekocord-mac-x64.dmg"><img alt="Nekocord-mac-x64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/Nekocord-mac-x64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
+      <a href="https://github.com/aiko-chan-ai/DiscordBotClient/releases/latest/download/DiscordBotClient-mac-x64.dmg"><img alt="DiscordBotClient-mac-x64.dmg" src="https://img.shields.io/github/downloads/aiko-chan-ai/DiscordBotClient/latest/DiscordBotClient-mac-x64.dmg?style=for-the-badge&logo=macos&color=E8A2AF&logoColor=D9E0EE&labelColor=302D41"></a>
     </td>
   </table>
 
@@ -120,7 +120,7 @@ npm run build:ts
 npm run build
 ```
 
-This will create an executable called `Nekocord` or `Nekocord.exe` in the `dist` folder, depending on whether you are using Windows or not.
+This will create an executable called `DiscordBotClient` or `DiscordBotClient.exe` in the `dist` folder, depending on whether you are using Windows or not.
 
 ---
 
@@ -171,7 +171,7 @@ Logging in works via the UI on first startup of the application.
 | Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
 | ------------- | ------- | ------- | -------------- | -------------- | ---------- |
 | Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ         |
-| Stable 453248 | 0a497ab | v1.13.1 | v3.8.0         | Latest         | ✔         |
+| Stable 453248 | 0a497ab | v1.13.1 | v3.8.1         | Latest         | ✔         |
 | Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | Deprecated     | ✔         |
 | Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Deprecated     | ✔         |
 | Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔         |
@@ -266,7 +266,7 @@ npm run core:update
 Thanks to [ChrisEric](https://github.com/CE1CECL) for the source code that uses a local proxy to emulate a different version of Discord.
 
 This project was mainly inspired by [SamuelScheit](https://github.com/SamuelScheit)
-[Nekocord](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
+[DiscordBotClient](https://github.com/SamuelScheit/discord-bot-client), which he sadly didn't
 develop any further.
 
 And a big thank you to [Vencord](https://github.com/Vendicated/Vencord) developers for making it easier for me to create this app.

@@ -1,8 +1,8 @@
 {
   "name": "discord-bot-client",
-  "productName": "Nekocord",
-  "version": "3.8.0",
-  "description": "Nekocord - login into discord with a bot token",
+  "productName": "DiscordBotClient",
+  "version": "3.8.1",
+  "description": "DiscordBotClient - login into discord with a bot token",
   "author": {
     "name": "aiko-chan-ai",
     "email": "Aiko@shiroko.onmicrosoft.com"
@@ -99,7 +99,7 @@
       "VencordExtension"
     ],
     "appId": "DiscordBotClient",
-    "productName": "Nekocord",
+    "productName": "DiscordBotClient",
     "artifactName": "${productName}-${os}-${arch}.${ext}",
     "copyright": "Copyright © 2025 aiko-chan-ai",
     "mac": {
@@ -131,7 +131,7 @@
       ],
       "desktop": {
         "entry": {
-          "Name": "Nekocord",
+          "Name": "DiscordBotClient",
           "GenericName": "Internet Messenger",
           "Type": "Application",
           "Categories": "Network;InstantMessaging;Chat;",

@@ -34,7 +34,7 @@ export default class Constants extends null {
         "auth/conditional/start", // Disable WebAuthn
     ];
     static LatestStorageUpdate = 1735000000000;
-    static AppName = "Nekocord";
+    static AppName = "DiscordBotClient";
     static AppID = "DiscordBotClient";
     static iconPath = path.join(app.getAppPath(), "assets", "icon.png");
     static icon16 = nativeImage.createFromPath(Constants.iconPath).resize({ width: 16 });

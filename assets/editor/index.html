@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Nekocord - Config Editor</title>
+		<title>DiscordBotClient - Config Editor</title>
 		<style>
 			html,
 			body,
@@ -150,10 +150,10 @@
 				);
 				editor.onDidChangeModelContent(() => {
 					if (editor.getValue() === content) {
-						document.title = 'Nekocord - Config Editor';
+						document.title = 'DiscordBotClient - Config Editor';
 					} else {
 						document.title =
-							'Nekocord - Config Editor (Unsaved Changes - Press Ctrl+S to save)';
+							'DiscordBotClient - Config Editor (Unsaved Changes - Press Ctrl+S to save)';
 					}
 				});
 				// Ctrl+S
