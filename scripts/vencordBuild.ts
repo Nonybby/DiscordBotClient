@@ -1,10 +1,4 @@
-/**
- * scripts/build-vencord.ts
- *
- * 1) Build Vencord web
- * 2) Copy & rename build artifact
- * 3) Patch Vencord.js
- */
+/* Copyright Elysia © 2025 */
 
 import { spawn } from "child_process";
 import path from "path";
