@@ -207,6 +207,10 @@ export class DiscordBotClient extends EventEmitter {
                 myWindow.show();
             }
         });
+
+        // Patch UserAgent (Switch Plan B SDP > Unified Plan)
+        app.userAgentFallback = app.userAgentFallback.replace(/Electron\/[\d.]+/, "");
+
         // Handle second instance
         const gotTheLock = app.requestSingleInstanceLock();
         if (!gotTheLock) {
@@ -343,12 +347,7 @@ export class DiscordBotClient extends EventEmitter {
         });
 
         await this.sessionPatch();
-        // Patch UserAgent (Switch Plan B SDP > Unified Plan)
-        this.win.webContents.setUserAgent(
-            this.win.webContents
-                .getUserAgent()
-                .replace(/Electron\/[\d.]+?/, `${Constants.AppName}/${app.getVersion()}`),
-        );
+
         this.logger.info(`Electron UserData: ${app.getPath("userData")}`);
         // Microphone
         if (process.platform === "darwin") {

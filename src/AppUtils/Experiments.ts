@@ -30,7 +30,7 @@ const disabledBuckets = [
 
 // id -> bucket
 const forceEnabledBuckets: Record<string, number> = {
-    "2025-06_dave_for_browser": 2, // Enable
+    // "2025-06_dave_for_browser": 2, // Enable
 };
 
 function buildUserExperiment(obj: Record<string, string>, botId: string) {

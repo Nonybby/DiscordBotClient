@@ -5,10 +5,10 @@ import express from "express";
 import { readFileSync } from "fs";
 import httpProxy from "http-proxy";
 import https from "https";
-import { Server } from "lambert-server";
 import morgan from "morgan";
 import { AddressInfo, Socket } from "net";
 import path from "path";
+import { registerRoutesSync } from "src/AppUtils/RegisterRoutes";
 
 import Constants from "./Constants";
 
@@ -25,19 +25,6 @@ app.use(
 );
 
 const server = https.createServer(Constants.HttpsOptions, app);
-
-const route = express.Router({ mergeParams: true });
-
-const lambertServer = new Server({
-    // @ts-expect-error I know what I'm doing
-    app: route,
-    server,
-    production: true,
-    errorHandler: (err, req, res, next) => {
-        next();
-    },
-    jsonBody: false,
-});
 
 const proxy = httpProxy.createProxyServer<express.Request, express.Response>({
     target: "https://discord.com",
@@ -62,17 +49,17 @@ proxy.on("error", (err, req, res) => {
     });
 });
 
-// Routes
-lambertServer.registerRoutes(path.resolve(__dirname, "routes") + path.sep);
-
-lambertServer.app = app;
-
-const ignoreHeaders = ["cookie", "x-", "sec-", "referer", "origin", "authorization", "user-agent", "host"];
+const ignoreHeaders = ["cookie", "sec-", "referer", "origin", "authorization", "host"];
 
 // Handle headers
 app.all("*", function (req, res, next) {
     req.originalHeaders = req.headers;
     const headers: typeof req.headers = {};
+    Object.keys(req.headers).forEach(key => {
+        if (!ignoreHeaders.some(prefix => key.toLowerCase().startsWith(prefix))) {
+            headers[key] = req.headers[key];
+        }
+    });
     if (req.headers.authorization) {
         if (!req.headers.authorization.toLowerCase().startsWith("bot ")) {
             headers.authorization = `Bot ${req.headers.authorization.trim()}`;
@@ -81,19 +68,12 @@ app.all("*", function (req, res, next) {
         }
         headers["user-agent"] = Constants.UserAgentDiscordBot;
     }
-    Object.keys(req.headers).forEach(key => {
-        if (!ignoreHeaders.some(prefix => key.toLowerCase().startsWith(prefix))) {
-            headers[key] = req.headers[key];
-        }
-    });
     req.headers = headers;
     next();
 });
-// Routes: v10, v9, default
-app.use("/api/v10", route);
-app.use("/api/v9", route);
-app.use("/api", route);
-app.use(route);
+
+registerRoutesSync(app, path.resolve(__dirname, "routes"), ["/api/v10", "/api/v9", "/api"]);
+
 app.all("/developers/*", (req, res) => {
     return res.redirect("/app");
 });
@@ -119,7 +99,7 @@ app.use((req, res, next) => {
     return proxy.web(req, res);
 });
 
-export default async function start(): Promise<number> {
+export default async function start (): Promise<number> {
     return new Promise((resolve, reject) => {
         const callback = () => {
             const address = server.address() as AddressInfo;

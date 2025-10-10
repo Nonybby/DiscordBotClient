@@ -73,7 +73,6 @@
     "express": "^4.21.2",
     "http-proxy": "^1.18.1",
     "ini": "^5.0.0",
-    "lambert-server": "^1.2.12",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
     "murmurhash": "^2.0.1",
