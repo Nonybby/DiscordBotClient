@@ -110,7 +110,8 @@ app.use((req, res, next) => {
     // API routes
     if (req.originalUrl.includes("/api/")) return proxy.web(req, res);
     // Main page
-    if (["/", "/app", "/login", "/channels/"].includes(req.path)) {
+    if (["/", "/app", "/login"].includes(req.path) || ["/channels/"].some(s => req.path.startsWith(s))) {
+        logger.log("Serving Discord HTML for route:", req.path);
         return res.send(readFileSync(Constants.DiscordHTMLPath, "utf8"));
     }
     // Other routes
@@ -118,7 +119,7 @@ app.use((req, res, next) => {
     return proxy.web(req, res);
 });
 
-export default async function start (): Promise<number> {
+export default async function start(): Promise<number> {
     return new Promise((resolve, reject) => {
         const callback = () => {
             const address = server.address() as AddressInfo;
