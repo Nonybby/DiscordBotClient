@@ -77,18 +77,29 @@
         "holdoutBucket": null
     },
     "2025-07_apex_aa_validation__clientside__connectionopen__simple": {
-        "revision": 9,
+        "revision": 11,
         "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": true,
         "triggerDebuggingEnabled": false,
         "holdoutName": "2025-09_apex_aa_holdout_validation__holdout",
-        "holdoutRevision": 0,
+        "holdoutRevision": 2,
         "holdoutBucket": 1
     },
     "2024-12_app_dm_report_button": {
         "revision": 0,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
+    "2025-08_audio_context_menu_refresh": {
+        "revision": 1,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -135,17 +146,6 @@
         "revision": 3,
         "population": 0,
         "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-08_churn_discount_header": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 2,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -200,17 +200,6 @@
     "2024-06_content_entry_embed": {
         "revision": 0,
         "population": 1,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-07_contextual_image_recs_user": {
-        "revision": 4,
-        "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -593,17 +582,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2023-11_midjourney_onboarding": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2022-11_mobile_account_switcher_notifications": {
         "revision": 0,
         "population": 0,
@@ -747,6 +725,17 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2025-09_promotion_endpoint_migration": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 1,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2022-08_churro_experiment": {
         "revision": 0,
         "population": 1,
@@ -857,17 +846,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-06_referral_program_dm_embed_refresh_experiment": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-08_referral_program_relaxed_banner_eligibility": {
         "revision": 0,
         "population": 0,
@@ -894,17 +872,6 @@
         "revision": 3,
         "population": 4,
         "bucket": 5,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-04_rich_presence_activity_invite_redesign": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 1,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -1088,17 +1055,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_video_capabilities_detection": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-05_video_keyboard_scrubbing": {
         "revision": 2,
         "population": 0,
@@ -1155,7 +1111,7 @@
         "holdoutBucket": null
     },
     "2025-04_wgc24h2api": {
-        "revision": 4,
+        "revision": 5,
         "population": 2,
         "bucket": 1,
         "override": false,

@@ -1,4 +1,7 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+
+<head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=3.0" name="viewport">
 
@@ -13,24 +16,24 @@
     <meta name="twitter:creator" content="@discord">
     <!-- endsection -->
 
-    <script>
+    <script nonce="MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=">
         window.GLOBAL_ENV = {
             "NODE_ENV": "production",
-            "BUILT_AT": "1759507102010",
+            "BUILT_AT": "1759994367029",
             "HTML_TIMESTAMP": Date.now(),
-            "BUILD_NUMBER": "453248",
+            "BUILD_NUMBER": "455964",
             "PROJECT_ENV": "production",
             "RELEASE_CHANNEL": "stable",
-            "VERSION_HASH": "0a497ab887e33326a9907c6b4dadf55c2fb4b14d",
+            "VERSION_HASH": "88ff0f859b7e2b036c0c963e093de66580c222be",
             "PRIMARY_DOMAIN": "discord.com",
             "SENTRY_TAGS": {
-                "buildId": "0a497ab887e33326a9907c6b4dadf55c2fb4b14d",
+                "buildId": "88ff0f859b7e2b036c0c963e093de66580c222be",
                 "buildType": "normal"
             },
-            "SENTRY_RELEASE": "2025-10-03-0a497ab887e33326a9907c6b4dadf55c2fb4b14d-discord_web",
+            "SENTRY_RELEASE": "2025-10-09-88ff0f859b7e2b036c0c963e093de66580c222be-discord_web",
             "PUBLIC_PATH": "/assets/",
             "LOCATION": "history",
-            "API_VERSION": 10,
+            "API_VERSION": 9,
             "API_PROTOCOL": "https:",
             "API_ENDPOINT": "//discord.com/api",
             "GATEWAY_ENDPOINT": "wss://gateway.discord.gg",
@@ -62,7 +65,7 @@
         }
     </script>
 
-    <script>
+    <script nonce="MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=">
         ! function() {
             if (null != window.WebSocket && function(n) {
                     try {
@@ -102,12 +105,12 @@
     <!-- section:title -->
     <title>Discord</title>
     <!-- endsection -->
-    <script>
+    <script nonce="MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=">
         window.__OVERLAY__ = /overlay/.test(location.pathname);
         window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
     </script>
     <link href="/assets/favicon.ico" rel="icon">
-    <link href="/assets/12633.cc40dc80bfcefa59.css" rel="stylesheet">
+    <link href="/assets/12633.7a12fdabaae6a944.css" rel="stylesheet">
 </head>
 
 <body>
@@ -115,10 +118,42 @@
     <div id="app-mount"></div>
 
 
-    <script defer="" src="/assets/libdiscoreWasmFetch.0c4fcae01c10d81c.js"></script>
-    <script defer="" src="/assets/sentry.62598dc9e7819ab1.js"></script>
-    <script defer="" src="/assets/web.a1bebe27deb4a672.js"></script>
-    
+    <script defer src="/assets/libdiscoreWasmFetch.0c4fcae01c10d81c.js"></script>
+    <script defer src="/assets/sentry.bb854bc86385e4bf.js"></script>
+    <script defer src="/assets/web.3eb9d7cf9f3d1a07.js"></script>
+    <script nonce="MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=">
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.nonce = 'MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=';
+                    d.innerHTML = "window.__CF$cv$params={r:'98c4b065ac7204dc',t:'MTc2MDA4NDMyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='MzgsMTksMjAwLDEzMiwyNDQsMjQ1LDIzOSwyMTk=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
 
-
-</body></html>
+</html>

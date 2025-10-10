@@ -17,7 +17,7 @@ if (!fs.existsSync(folder)) {
 }
 
 const HTMLPath = path.resolve(folder, "index.html");
-const PatchMode = true;
+const PatchMode = false;
 
 console.log("[Discord] Fetching HTML");
 
