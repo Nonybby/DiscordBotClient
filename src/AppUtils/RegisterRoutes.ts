@@ -1,5 +1,10 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
+// The source code below is taken from the Lambert-server library.
+// Credits to the original authors and contributors of Lambert-server for their work.
+// Some parts may have been modified or adapted to fit this project’s structure and requirements.
+// https://github.com/SamuelScheit/Lambert-server
+
 import { Express, Router } from "express";
 import fg from "fast-glob";
 import fs from "fs";
