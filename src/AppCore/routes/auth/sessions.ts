@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
                 id_hash: Buffer.from("aiko-chan-ai/DiscordBotClient", "utf8").toString("base64"),
                 approx_last_used_time: new Date().toISOString(),
                 client_info: {
-                    os: "Windows",
+                    os: process.platform === "win32" ? "Windows" : process.platform === "darwin" ? "macOS" : "Linux",
                     platform: "Chrome",
                     location: "Aedes Elysiae",
                 },
