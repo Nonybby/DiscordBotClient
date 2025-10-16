@@ -6,7 +6,6 @@
 // https://github.com/SamuelScheit/Lambert-server
 
 import { Express, Router } from "express";
-import fg from "fast-glob";
 import fs from "fs";
 import { resolve } from "path";
 
@@ -20,12 +19,13 @@ export interface TraverseDirectoryOptions {
 const DEFAULT_EXCLUDE_DIR = /^\./;
 const DEFAULT_FILTER = /^([^.].*)(?<!\.d)\.(ts|js)$/;
 
-export function traverseDirectorySync<T>(options: TraverseDirectoryOptions, action: (path: string) => T): T[] {
+export function traverseDirectorySync(options: TraverseDirectoryOptions): string[] {
+    if (!options.dirname.endsWith("/")) options.dirname += "/";
     if (!options.filter) options.filter = DEFAULT_FILTER;
     if (!options.excludeDirs) options.excludeDirs = DEFAULT_EXCLUDE_DIR;
 
     const routes = fs.readdirSync(options.dirname);
-    const result: T[] = [];
+    const result: string[] = [];
 
     for (const file of routes.sort((a, b) => (a.startsWith("#") ? 1 : -1))) {
         const path = options.dirname + file;
@@ -33,9 +33,9 @@ export function traverseDirectorySync<T>(options: TraverseDirectoryOptions, acti
         if (path.match(options.excludeDirs)) continue;
 
         if (path.match(options.filter) && stat.isFile()) {
-            result.push(action(path));
+            result.push(path);
         } else if (options.recursive && stat.isDirectory()) {
-            result.push(...traverseDirectorySync({ ...options, dirname: path + "/" }, action));
+            result.push(...traverseDirectorySync({ ...options, dirname: path + "/" }));
         }
     }
 
@@ -44,15 +44,18 @@ export function traverseDirectorySync<T>(options: TraverseDirectoryOptions, acti
 
 export function registerRoutesSync(app: Express, path: string, autoPrefix: string[] = []) {
     const route = Router({ mergeParams: true });
-    const files = fg.sync(["**/*.js"], { cwd: path });
+    const root = resolve(path);
+    const files = traverseDirectorySync({
+        dirname: root,
+        recursive: true,
+    });
     console.log(`[Server] Found ${files.length} route files in ${path}`);
     const result = [];
 
-    for (const file of files) {
-        const absolutePath = resolve(path, file);
+    for (const absolutePath of files) {
         // eslint-disable-next-line
         const module = require(absolutePath);
-        const res = registerRouteSync(route, file, module);
+        const res = registerRouteSync(route, root, absolutePath, module);
         if (res) result.push(res);
     }
 
@@ -67,14 +70,17 @@ export function registerRoutesSync(app: Express, path: string, autoPrefix: strin
 
 export function registerRouteSync(
     route: Router,
-    path: string,
+    root: string,
+    file: string,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     router: any,
 ): Router | undefined {
-    path = path.split(".").slice(0, -1).join(".");
+    if (root.endsWith("/") || root.endsWith("\\")) root = root.slice(0, -1); // removes slash at the end of the root dir
+    let path = file.replace(root, ""); // remove root from path and
+    path = path.split(".").slice(0, -1).join("."); // trancate .js/.ts file extension of path
     path = path.replaceAll("#", ":").replaceAll("!", "?").replaceAll("\\", "/");
-    if (path.endsWith("/index")) path = path.slice(0, -6);
-    if (!path.length) path = "/";
+    if (path.endsWith("/index")) path = path.slice(0, -6); // delete index from path
+    if (!path.length) path = "/"; // first root index.js file must have a / path
 
     try {
         if (router.router) router = router.router;
@@ -84,6 +90,7 @@ export function registerRouteSync(
         }
         if (!path.startsWith("/")) path = "/" + path;
         route.use(path, <Router>router);
+        // console.log(`[Server] Registered route ${path}`);
         return router;
     } catch (error) {
         console.error(new Error(`[Server] Failed to register route ${path}: ${error}`));
