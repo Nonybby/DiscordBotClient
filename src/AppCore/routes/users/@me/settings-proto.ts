@@ -34,32 +34,6 @@ function waitForEvent<T extends any[]>(emitter: NodeJS.EventEmitter, eventName: 
     });
 }
 
-const TOTAL_BITS = 624;
-const TOTAL_BYTES = Math.ceil(TOTAL_BITS / 8);
-
-export function createDismissArray(): Uint8Array {
-    return new Uint8Array(TOTAL_BYTES);
-}
-
-export function setDismissible(arr: Uint8Array, id: number, value: boolean) {
-    const byteIndex = id >> 3;
-    const bitIndex = id & 7;
-    if (value) arr[byteIndex] |= 1 << bitIndex;
-    else arr[byteIndex] &= ~(1 << bitIndex);
-}
-
-export function getDismissible(arr: Uint8Array, id: number): boolean {
-    const byteIndex = id >> 3;
-    const bitIndex = id & 7;
-    return (arr[byteIndex] & (1 << bitIndex)) !== 0;
-}
-
-export function fillDissmissArray(arr: Uint8Array) {
-    for (let i = 0; i < TOTAL_BITS; i++) {
-        setDismissible(arr, i, true);
-    }
-}
-
 app.all("/1", async (req, res) => {
     const uid = Util.getIDFromToken(req.headers.authorization);
     if (!uid) {
