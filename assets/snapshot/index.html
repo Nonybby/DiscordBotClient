@@ -16,21 +16,21 @@
     <meta name="twitter:creator" content="@discord">
     <!-- endsection -->
 
-    <script nonce="MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=">
+    <script nonce="MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy">
         window.GLOBAL_ENV = {
             "NODE_ENV": "production",
-            "BUILT_AT": "1759994367029",
+            "BUILT_AT": "1765354731140",
             "HTML_TIMESTAMP": Date.now(),
-            "BUILD_NUMBER": "455964",
+            "BUILD_NUMBER": "478085",
             "PROJECT_ENV": "production",
             "RELEASE_CHANNEL": "stable",
-            "VERSION_HASH": "88ff0f859b7e2b036c0c963e093de66580c222be",
+            "VERSION_HASH": "7c91506f93def30e97a004ecfded85ecc4f5b137",
             "PRIMARY_DOMAIN": "discord.com",
             "SENTRY_TAGS": {
-                "buildId": "88ff0f859b7e2b036c0c963e093de66580c222be",
+                "buildId": "7c91506f93def30e97a004ecfded85ecc4f5b137",
                 "buildType": "normal"
             },
-            "SENTRY_RELEASE": "2025-10-09-88ff0f859b7e2b036c0c963e093de66580c222be-discord_web",
+            "SENTRY_RELEASE": "2025-12-10-7c91506f93def30e97a004ecfded85ecc4f5b137-discord_web",
             "PUBLIC_PATH": "/assets/",
             "LOCATION": "history",
             "API_VERSION": 9,
@@ -47,8 +47,9 @@
             "WEBAPP_ENDPOINT": "//discord.com",
             "WIDGET_ENDPOINT": "//discord.com/widget",
             "SEO_ENDPOINT": "undefined",
+            "ADS_MANAGER_ENDPOINT": "//ads.discord.com",
             "NETWORKING_ENDPOINT": "//router.discordapp.net",
-            "REMOTE_AUTH_ENDPOINT": "//remote-auth-gateway.discord.gg",
+            "REMOTE_AUTH_ENDPOINT": "wss://remote-auth-gateway.discord.gg",
             "RTC_LATENCY_ENDPOINT": "//latency.discord.media/rtc",
             "INVITE_HOST": "discord.gg",
             "GUILD_TEMPLATE_HOST": "discord.new",
@@ -59,15 +60,15 @@
             "STRIPE_KEY": "pk_live_CUQtlpQUF0vufWpnpUmQvcdi",
             "ADYEN_KEY": "live_E3OQ33V6GVGTXOVQZEAFQJ6DJIDVG6SY",
             "BRAINTREE_KEY": "production_ktzp8hfp_49pp2rp4phym7387",
-            "SPRIG_API_KEY": "ZaQ2JuStvc",
             "MUX_ENV_KEY": "undefined",
             "DEV_SESSION_KEY": "undefined"
         }
     </script>
 
-    <script nonce="MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=">
+    <script nonce="MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy">
         ! function() {
-            if (null != window.WebSocket && function(n) {
+            if (null != window.WebSocket) {
+                var n = function(n) {
                     try {
                         var o = localStorage.getItem(n);
                         if (null == o) return null;
@@ -75,28 +76,30 @@
                     } catch (e) {
                         return null
                     }
-                }("token") && !window.__OVERLAY__) {
-                var n = null != window.DiscordNative || null != window.require ? "etf" : "json",
-                    o = window.GLOBAL_ENV.GATEWAY_ENDPOINT + "/?encoding=" + n + "&v=" + window.GLOBAL_ENV.API_VERSION;
-                null != window.DiscordNative && void 0 !== window.Uint8Array && void 0 !== window.TextDecoder ? o += "&compress=zstd-stream" : void 0 !== window.Uint8Array && (o += "&compress=zlib-stream"), console.log("[FAST CONNECT] " + o + ", encoding: " + n + ", version: " + window.GLOBAL_ENV.API_VERSION);
-                var e = new WebSocket(o);
-                e.binaryType = "arraybuffer";
-                var i = Date.now(),
-                    r = {
-                        open: !1,
-                        identify: !1,
-                        gateway: o,
-                        messages: []
-                    };
-                e.onopen = function() {
-                    console.log("[FAST CONNECT] connected in " + (Date.now() - i) + "ms"), r.open = !0
-                }, e.onclose = e.onerror = function() {
-                    window._ws = null
-                }, e.onmessage = function(n) {
-                    r.messages.push(n)
-                }, window._ws = {
-                    ws: e,
-                    state: r
+                };
+                if (n("token") && !window.__OVERLAY__) {
+                    var o = n("gateway_encoding_override") || (null != window.DiscordNative || null != window.require ? "etf" : "json"),
+                        e = window.GLOBAL_ENV.GATEWAY_ENDPOINT + "/?encoding=" + o + "&v=" + window.GLOBAL_ENV.API_VERSION;
+                    null != window.DiscordNative && void 0 !== window.Uint8Array && void 0 !== window.TextDecoder ? e += "&compress=zstd-stream" : void 0 !== window.Uint8Array && (e += "&compress=zlib-stream"), console.log("[FAST CONNECT] " + e + ", encoding: " + o + ", version: " + window.GLOBAL_ENV.API_VERSION);
+                    var i = new WebSocket(e);
+                    i.binaryType = "arraybuffer";
+                    var r = Date.now(),
+                        w = {
+                            open: !1,
+                            identify: !1,
+                            gateway: e,
+                            messages: []
+                        };
+                    i.onopen = function() {
+                        console.log("[FAST CONNECT] connected in " + (Date.now() - r) + "ms"), w.open = !0
+                    }, i.onclose = i.onerror = function() {
+                        window._ws = null
+                    }, i.onmessage = function(n) {
+                        w.messages.push(n)
+                    }, window._ws = {
+                        ws: i,
+                        state: w
+                    }
                 }
             }
         }();
@@ -105,12 +108,15 @@
     <!-- section:title -->
     <title>Discord</title>
     <!-- endsection -->
-    <script nonce="MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=">
+    <script nonce="MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy">
         window.__OVERLAY__ = /overlay/.test(location.pathname);
         window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
     </script>
+    <link rel="preload" as="script" href="/assets/libdiscoreWasmFetch.66f649fba32cc0b0.js">
+    <link rel="preload" as="script" href="/assets/sentry.0d6f3c1aa1e8f35d.js">
+    <link rel="preload" as="script" href="/assets/web.b256659fe691a144.js">
     <link href="/assets/favicon.ico" rel="icon">
-    <link href="/assets/12633.7a12fdabaae6a944.css" rel="stylesheet">
+    <link href="/assets/12633.425c82e369fbcff2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -118,17 +124,17 @@
     <div id="app-mount"></div>
 
 
-    <script defer src="/assets/libdiscoreWasmFetch.0c4fcae01c10d81c.js"></script>
-    <script defer src="/assets/sentry.bb854bc86385e4bf.js"></script>
-    <script defer src="/assets/web.3eb9d7cf9f3d1a07.js"></script>
-    <script nonce="MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=">
+    <script defer src="/assets/libdiscoreWasmFetch.66f649fba32cc0b0.js"></script>
+    <script defer src="/assets/sentry.0d6f3c1aa1e8f35d.js"></script>
+    <script defer src="/assets/web.b256659fe691a144.js"></script>
+    <script nonce="MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy">
         (function() {
             function c() {
                 var b = a.contentDocument || a.contentWindow.document;
                 if (b) {
                     var d = b.createElement('script');
-                    d.nonce = 'MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=';
-                    d.innerHTML = "window.__CF$cv$params={r:'98c560e5cb1104dc',t:'MTc2MDA5MTU1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='MjA2LDIxMCwyMjgsNjAsMTIxLDkwLDI0NSwxMjM=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    d.nonce = 'MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy';
+                    d.innerHTML = "window.__CF$cv$params={r:'9ac4fb35f9f2854a',t:'MTc2NTQ1NjEwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='MjA5LDEyOSwyNDYsNSw1MCwxMDQsMjUyLDcy';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
                     b.getElementsByTagName('head')[0].appendChild(d)
                 }
             }
