@@ -9,6 +9,11 @@ const bucketReplacement = JSON.parse(readFileSync(Constants.DiscordUserExperimen
     TUserExperiment
 >;
 
+const apexExperiment = JSON.parse(readFileSync(Constants.DiscordApexExperimentsPath, "utf8")) as {
+    evaluation_id: string;
+    assignments: number[];
+};
+
 export interface TUserExperiment {
     revision: number;
     population: number;
@@ -69,4 +74,14 @@ export function UserExperiment(allData: Record<string, string>[], botId: string)
 
 export function GuildExperiment() {
     return JSON.parse(readFileSync(Constants.DiscordGuildExperimentsPath, "utf8"));
+}
+
+export function ApexExperiment(botId: string) {
+    return {
+        assignments: {
+            "1": {
+                [botId]: apexExperiment,
+            },
+        },
+    };
 }

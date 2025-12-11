@@ -47,6 +47,7 @@ export default class Constants extends null {
     static ConfigHTMLPath = path.join(app.getAppPath(), "assets", "editor", "index.html");
     static DiscordGuildExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "guild_experiments.json");
     static DiscordUserExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "user_experiments.json");
+    static DiscordApexExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "apex_experiments.json");
     static HttpsOptions = {
         key: readFileSync(path.resolve(app.getAppPath(), "assets", "cert", "server.key")).toString("utf-8"),
         cert: readFileSync(path.resolve(app.getAppPath(), "assets", "cert", "server.cert")).toString("utf-8"),

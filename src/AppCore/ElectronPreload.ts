@@ -62,10 +62,13 @@ contextBridge.exposeInMainWorld("BotClientNative", {
         };
     },
     getUserExperiments (allData: boolean, botId: string) {
-        return ipcRenderer.sendSync(IPCEvent.GetExperiment, "user", allData, botId);
+        return ipcRenderer.sendSync(IPCEvent.GetExperiment, "user", botId, allData);
     },
     getGuildExperiments () {
         return ipcRenderer.sendSync(IPCEvent.GetExperiment, "guild");
+    },
+    getApexExperiments (botId: string) {
+        return ipcRenderer.sendSync(IPCEvent.GetExperiment, "apex", botId);
     },
     // Vesktop
     close (frameName: string) {

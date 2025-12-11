@@ -3,7 +3,7 @@
 import { APIApplication, ApplicationFlags, GatewayIntentBits } from "discord-api-types/v10";
 import { app, dialog } from "electron";
 import { ApplicationFlagsBitField, IntentsBitField } from "src/AppUtils/DiscordBitField";
-import { GuildExperiment, UserExperiment } from "src/AppUtils/Experiments";
+import { ApexExperiment, GuildExperiment, UserExperiment } from "src/AppUtils/Experiments";
 import { fetch } from "undici";
 
 import { DiscordBotClient } from ".";
@@ -109,11 +109,13 @@ export function setupIPCEvents (mainApp: DiscordBotClient) {
         .on(IPCEvent.GetName, event => {
             return (event.returnValue = app.getName());
         })
-        .on(IPCEvent.GetExperiment, (event, type, allData, botId) => {
+        .on(IPCEvent.GetExperiment, (event, type, botId, allData) => {
             if (type === "user") {
                 event.returnValue = UserExperiment(allData, botId);
             } else if (type === "guild") {
                 event.returnValue = GuildExperiment();
+            } else if (type === "apex") {
+                event.returnValue = ApexExperiment(botId);
             }
         })
         .on(IPCEvent.GetDefaultUserPatch, event => {
