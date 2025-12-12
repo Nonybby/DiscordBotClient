@@ -9,7 +9,7 @@ type LogLevel = "log" | "info" | "warn" | "error" | "debug";
 class Logger {
     _log (scope: string, level: LogLevel, color: string, args: unknown[]) {
         console[level](
-            `%c MainProcess %c %c ${scope} `,
+            `%c MainProcess %c %c ${scope || "Unknown"} `,
             `background: ${color}; color: black; font-weight: bold; border-radius: 5px;`,
             "",
             "background: #99d1db; color: black; font-weight: bold; border-radius: 5px;",
