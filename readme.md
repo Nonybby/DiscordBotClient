@@ -105,15 +105,14 @@ major systems in the release overview:
 > The application is not signed with a valid certificate on macOS or Windows.
 >
 > As a result, on Windows, SmartScreen or Windows Defender may be triggered — you can simply bypass or whitelist it.
-> 
+>
 > On macOS, you may see a warning that says:
-> 
+>
 > > “DiscordBotClient” is damaged and can’t be opened. You should move it to the Trash.
-> 
+>
 > You can safely ignore this warning by following the instructions in this link: https://github.com/aiko-chan-ai/DiscordBotClient/issues/194#issuecomment-2555817658
 >
 > See: [About anti-virus detection](#about-anti-virus-detection) for more information.
-
 
 ### Building from source
 
@@ -185,15 +184,16 @@ Logging in works via the UI on first startup of the application.
 
 | Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
 | ------------- | ------- | ------- | -------------- | -------------- | ---------- |
-| Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ         |
-| Stable 453248 | 0a497ab | v1.13.1 | v3.8.1         | Latest         | ✔         |
-| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | Deprecated     | ✔         |
-| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | Deprecated     | ✔         |
-| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | Deprecated     | ✔         |
-| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠      |
-| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠      |
-| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠      |
-| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠      |
+| Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ          |
+| Stable 479219 | 582c5bf | v1.13.8 | v3.8.2         | Latest         | ✔          |
+| Stable 453248 | 0a497ab | v1.13.1 | v3.8.1         | Deprecated     | ✔          |
+| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔          |
+| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | EOL            | ✔          |
+| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | EOL            | ✔          |
+| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
+| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
+| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
+| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
 
 - ✔ – Fully functional and expected to be free of critical bugs.
 - ℹ – Supports at least basic functionality, but is still under development. Minor issues may occur.
