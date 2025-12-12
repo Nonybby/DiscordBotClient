@@ -134,7 +134,8 @@ const ApexExperimentFlags = {
         array.push([obj.hashedName, obj.variantId, obj.isOverride ? 1 << 0 : 0 , obj.revision]);
     }
     copy(JSON.stringify({
-        evaluation_id: apexData.evaluationId,
+        // evaluation_id: apexData.evaluationId,
+        evaluation_id: crypto.randomUUID().slice(0, 8),
         assignments: array,
     }));
 })();
