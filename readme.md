@@ -187,9 +187,9 @@ Logging in works via the UI on first startup of the application.
 | Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ          |
 | Stable 479219 | 582c5bf | v1.13.8 | v3.8.2         | Latest         | ✔          |
 | Stable 453248 | 0a497ab | v1.13.1 | v3.8.1         | Deprecated     | ✔          |
-| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔          |
-| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | EOL            | ✔          |
-| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | EOL            | ✔          |
+| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔ ⚠        |
+| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | EOL            | ✔ ⚠        |
+| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | EOL            | ✔ ⚠        |
 | Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
 | Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
 | Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
