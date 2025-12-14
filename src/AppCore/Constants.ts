@@ -14,7 +14,6 @@ export default class Constants extends null {
         "science",
         "applications/public",
         "notes",
-        "roles/member-counts",
         "member-ids",
         "connections/",
         "users/@me/disable",
