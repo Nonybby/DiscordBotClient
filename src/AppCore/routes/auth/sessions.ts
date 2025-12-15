@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
                 approx_last_used_time: new Date().toISOString(),
                 client_info: {
                     os: process.platform === "win32" ? "Windows" : process.platform === "darwin" ? "macOS" : "Linux",
-                    platform: "Chrome",
+                    platform: "DiscordBotClient",
                     location: "Aedes Elysiae",
                 },
             },
