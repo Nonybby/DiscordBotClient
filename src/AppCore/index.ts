@@ -173,6 +173,8 @@ export class DiscordBotClient extends EventEmitter {
         app.commandLine.appendSwitch("disable-renderer-backgrounding");
         app.commandLine.appendSwitch("disable-background-timer-throttling");
         app.commandLine.appendSwitch("disable-backgrounding-occluded-windows");
+        // Disable proxy
+        app.commandLine.appendSwitch("no-proxy-server");
         // Enable & Disable Chromium Features
         Constants.enableFeatures.forEach(feature => {
             enabledFeatures.add(feature);
