@@ -1,14 +1,16 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
+import { lookup } from "dns";
 import { scope } from "electron-log";
 import express from "express";
 import { readFileSync } from "fs";
 import httpProxy from "http-proxy";
 import https from "https";
 import morgan from "morgan";
-import { AddressInfo, Socket } from "net";
+import { AddressInfo, isIP, Socket } from "net";
 import path from "path";
 import { registerRoutesSync } from "src/AppUtils/RegisterRoutes";
+import Util from "src/AppUtils/Utils";
 
 import Constants from "./Constants";
 
@@ -30,13 +32,34 @@ const proxy = httpProxy.createProxyServer<express.Request, express.Response>({
     target: "https://discord.com",
     secure: false,
     changeOrigin: true,
+    agent: new https.Agent({
+        lookup: (hostname, options, callback) => {
+            if (hostname === "discord.com") {
+                Util.getIpFromDoH("discord.com")
+                    .then(ip => {
+                        logger.log(`Resolved discord.com to ${ip} via DoH`);
+                        callback(null, [
+                            {
+                                address: ip,
+                                family: isIP(ip),
+                            },
+                        ]);
+                    })
+                    .catch(() => {
+                        lookup(hostname, options, callback);
+                    });
+            } else {
+                lookup(hostname, options, callback);
+            }
+        },
+    }),
 });
 
 // Make proxy globally accessible
 globalThis.proxy = proxy;
 
 proxy.on("error", (err, req, res) => {
-    logger.error("Proxy error:", err, req, res);
+    logger.error("Proxy error:", err);
     if (res instanceof Socket) {
         logger.error("Response is a socket, cannot send error response");
         return;

@@ -5,12 +5,39 @@ import { Request, Response } from "express";
 import multer from "multer";
 import GlobalConfig from "src/AppCore/Config";
 import Constants from "src/AppCore/Constants";
+import { fetch } from "undici";
 
 import { UserFlagsBitField } from "./DiscordBitField";
 import { BadgesBasedUserDataAndExtends as UserBadges } from "./UserBadges";
 
+interface DNSJSON {
+    Question: Question[];
+    Answer: Answer[];
+}
+
+interface Question {
+    name: string;
+    type: number;
+}
+
+interface Answer {
+    name: string;
+    type: number;
+    data: string;
+    TTL: number;
+}
+
+interface DnsCacheEntry {
+    ip: string;
+    expiresAt: number;
+}
+
+const dnsCache: Map<string, DnsCacheEntry> = new Map();
+
+const DNS_TTL = 60 * 60 * 1000;
+
 export default class Util {
-    static ProfilePatch (
+    static ProfilePatch(
         userData: APIUser,
         guildMember: APIGuildMember | null = null,
         guildId: string | null = null,
@@ -95,13 +122,18 @@ export default class Util {
             },
         };
     }
-    static getIDFromToken (token = "") {
+    static getIDFromToken(token = "") {
         if (!token) return null;
         token = token.replace(/^(Bot|Bearer)\s*/i, "");
         return Buffer.from(token.split(".")[0], "base64").toString();
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    static getDataFromRequest (req: Request, res: Response, callback: (rq: Request<any, any, any, any>, rs: Response) => unknown) {
+
+    static getDataFromRequest(
+        req: Request,
+        res: Response,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        callback: (rq: Request<any, any, any, any>, rs: Response) => unknown,
+    ) {
         let data = "";
         // check content-type
         if (req.headers["content-type"] !== "application/json") {
@@ -134,7 +166,7 @@ export default class Util {
      * @param {number} addYear
      * @returns
      */
-    static makeISODate (addYear = 0) {
+    static makeISODate(addYear = 0) {
         const date = new Date();
         date.setFullYear(date.getFullYear() + addYear);
         return date.toISOString().replace("Z", "000+00:00");
@@ -145,7 +177,7 @@ export default class Util {
      * @param {number} addYear
      * @returns
      */
-    static makeISODateWithoutMilliseconds (addYear = 0) {
+    static makeISODateWithoutMilliseconds(addYear = 0) {
         const date = new Date();
         date.setFullYear(date.getFullYear() + addYear);
         return date.toISOString().replace(/\.\d+Z/, "+00:00");
@@ -158,7 +190,7 @@ export default class Util {
      * @param versionB - The new version to check (e.g., "v1.3.0" or "1.3.0").
      * @returns `true` if `versionB` is newer than `versionA`, otherwise `false`.
      */
-    static isNewerVersion (versionA: string, versionB: string) {
+    static isNewerVersion(versionA: string, versionB: string) {
         const normalizeVersion = (version: string) => version.replace(/^v/, "");
 
         const parseVersion = (version: string) => {
@@ -177,5 +209,46 @@ export default class Util {
         }
 
         return false;
+    }
+    static async getIpFromDoH(domain: string): Promise<string> {
+        const now = Date.now();
+
+        if (dnsCache.has(domain)) {
+            const entry = dnsCache.get(domain)!;
+
+            if (entry.expiresAt > now) {
+                // console.log(`[DNS Cache] Hit: ${domain} -> ${entry.ip}`);
+                return entry.ip;
+            } else {
+                dnsCache.delete(domain);
+            }
+        }
+
+        const response = await fetch(`https://cloudflare-dns.com/dns-query?name=${domain}&type=A`, {
+            headers: { Accept: "application/dns-json" },
+        });
+
+        if (!response.ok) {
+            throw new Error(`DoH fetch failed: ${response.statusText}`);
+        }
+
+        const data = (await response.json()) as DNSJSON;
+
+        if (data.Answer && data.Answer.length > 0) {
+            const ip = data.Answer[0].data;
+
+            dnsCache.set(domain, {
+                ip: ip,
+                expiresAt: now + DNS_TTL,
+            });
+
+            // console.log(`[DNS Cache] Miss (Fetched): ${domain} -> ${ip}`);
+            return ip;
+        } else {
+            throw new Error("No DNS answer found");
+        }
+    }
+    static clearDnsCache() {
+        dnsCache.clear();
     }
 }
