@@ -199,6 +199,8 @@ export class DiscordBotClient extends EventEmitter {
         });
 
         app.on("before-quit", event => {
+            // MacOS: Set flag to really quit app
+            this.#shouldQuitApp = true;
             this.logger.info("App closing...");
             this.logger.info("=".repeat(50));
         });
@@ -239,7 +241,11 @@ export class DiscordBotClient extends EventEmitter {
                 this.checkingForUpdates(false);
                 this.createWindow();
                 app.on("activate", () => {
-                    if (BrowserWindow.getAllWindows().length === 0) this.createWindow();
+                    if (BrowserWindow.getAllWindows().length === 0) {
+                        this.createWindow();
+                    } else {
+                        this.win?.show();
+                    }
                 });
             });
         }
