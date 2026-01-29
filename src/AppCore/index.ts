@@ -238,6 +238,14 @@ export class DiscordBotClient extends EventEmitter {
             app.whenReady().then(async () => {
                 this.logger.info("Creating session...");
                 this.customSession = session.fromPartition("persist:elysia_dbc");
+                // Enable DoH (Cloudflare)
+                app.configureHostResolver({
+                    enableBuiltInResolver: true,
+                    secureDnsMode: "secure",
+                    enableHappyEyeballs: true,
+                    enableAdditionalDnsQueryTypes: true,
+                    secureDnsServers: ["https://cloudflare-dns.com/dns-query"],
+                });
                 this.checkingForUpdates(false);
                 this.createWindow();
                 app.on("activate", () => {
