@@ -16,13 +16,13 @@ const logger = scope("APIServer");
 
 const app = express();
 
-app.use(
+if (Constants.VerboseAPIServerLogging) { app.use(
     morgan("dev", {
         stream: {
             write: msg => logger.info(msg.replace(/\n/g, "")),
         },
     }),
-);
+); }
 
 const server = https.createServer(Constants.HttpsOptions, app);
 
