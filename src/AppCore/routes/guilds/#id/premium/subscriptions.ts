@@ -2,9 +2,9 @@
 
 import { DiscordSnowflake } from "@sapphire/snowflake";
 import { APIGuild } from "discord-api-types/v10";
+import { net } from "electron";
 import { Request, Router } from "express";
 import Constants from "src/AppCore/Constants";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -39,11 +39,11 @@ app.get(
         }>,
         res,
     ) => {
-        return fetch("https://discord.com/api/v9/guilds/" + req.params.id, {
+        return net.fetch("https://canary.discord.com/api/v9/guilds/" + req.params.id, {
             headers: {
                 authorization: req.headers.authorization,
                 "user-agent": Constants.UserAgentDiscordBot,
-            },
+            } as Record<string, string>,
         })
             .then(r => r.json() as Promise<APIGuild>)
             .then(object => {

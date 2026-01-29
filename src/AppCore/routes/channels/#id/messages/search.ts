@@ -3,9 +3,9 @@
 import crypto from "node:crypto";
 
 import { APIMessage } from "discord-api-types/v10";
+import { net } from "electron";
 import { Request, Router } from "express";
 import Constants from "src/AppCore/Constants";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -36,15 +36,15 @@ app.get(
         let messages: APIMessage[] = [];
         channel_id ??= req.params.id;
         if (channel_id) {
-            messages = await fetch(
-                "https://discord.com/api/v9/channels/" +
+            messages = await net.fetch(
+                "https://canary.discord.com/api/v9/channels/" +
                     channel_id +
                     `/messages?limit=25${max_id ? "&before=" + max_id : ""}${min_id ? "&after=" + min_id : ""}`,
                 {
                     headers: {
                         authorization: req.headers.authorization,
                         "user-agent": Constants.UserAgentDiscordBot,
-                    },
+                    } as Record<string, string>,
                 },
             )
                 .then(r => r.json() as Promise<APIMessage[]>)

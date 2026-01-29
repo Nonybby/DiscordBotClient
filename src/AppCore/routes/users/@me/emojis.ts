@@ -3,10 +3,10 @@
 // Custom API, Discord doesn't have this endpoint
 
 import { APIApplicationEmoji } from "discord-api-types/v10";
+import { net } from "electron";
 import { Router } from "express";
 import Constants from "src/AppCore/Constants";
 import Util from "src/AppUtils/Utils";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -24,11 +24,11 @@ app.get("/", (req, res) => {
     if (data && data.timeout > Date.now()) {
         return res.send(data.data);
     }
-    fetch(`https://discord.com/api/v9/applications/${id}/emojis`, {
+    net.fetch(`https://canary.discord.com/api/v9/applications/${id}/emojis`, {
         headers: {
             authorization: req.headers.authorization,
             "user-agent": Constants.UserAgentDiscordBot,
-        },
+        } as Record<string, string>,
     })
         .then(r => r.json() as Promise<{ items: APIApplicationEmoji[] }>)
         .then(r => {

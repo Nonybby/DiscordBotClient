@@ -1,10 +1,10 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIGuild, APIGuildMember } from "discord-api-types/v10";
+import { net } from "electron";
 import { Request, Response, Router } from "express";
 import Constants from "src/AppCore/Constants";
 import Util from "src/AppUtils/Utils";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -55,7 +55,7 @@ app.get(
         }>,
         res,
     ) => {
-        fetch(`https://discord.com/api/v9/guilds/${req.params.id}?with_counts=true`, {
+        net.fetch(`https://canary.discord.com/api/v9/guilds/${req.params.id}?with_counts=true`, {
             method: "GET",
             headers: req.headers as Record<string, string>,
         })
@@ -96,12 +96,12 @@ const callback = (
     if (reqCallback.body.avatar) body.avatar = reqCallback.body.avatar;
     if (reqCallback.body.banner) body.banner = reqCallback.body.banner;
     if (reqCallback.body.bio) body.bio = reqCallback.body.bio;
-    fetch(`https://discord.com/api/v10/guilds/${guildId}/members/@me`, {
+    net.fetch(`https://canary.discord.com/api/v10/guilds/${guildId}/members/@me`, {
         headers: {
             authorization: reqCallback.headers.authorization,
             "user-agent": Constants.UserAgentDiscordBot,
             "Content-Type": "application/json",
-        },
+        } as Record<string, string>,
         method: "PATCH",
         body: JSON.stringify(body),
     })

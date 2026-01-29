@@ -1,10 +1,10 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIApplication, APIGuildMember, APIUser } from "discord-api-types/v10";
+import { net } from "electron";
 import { Request, Router } from "express";
 import Constants from "src/AppCore/Constants";
 import Util from "src/AppUtils/Utils";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -12,8 +12,8 @@ app.get("/", async (req: Request<{ id: string }>, res) => {
     const { guild_id } = req.query;
     let guild_member: APIGuildMember | null = null;
     if (guild_id) {
-        guild_member = await fetch(
-            "https://discord.com/api/v9/guilds/" +
+        guild_member = await net.fetch(
+            "https://canary.discord.com/api/v9/guilds/" +
 				guild_id +
 				"/members/" +
 				req.params.id,
@@ -21,7 +21,7 @@ app.get("/", async (req: Request<{ id: string }>, res) => {
                 headers: {
                     authorization: req.headers.authorization,
                     "user-agent": Constants.UserAgentDiscordBot,
-                },
+                } as Record<string, string>,
             },
         )
             .then(r => r.json() as Promise<APIGuildMember>)
@@ -30,24 +30,24 @@ app.get("/", async (req: Request<{ id: string }>, res) => {
     let bio = null;
     if (req.params.id === Util.getIDFromToken(req.headers.authorization)) {
         // Using bio from applications/@me
-        const applicationData = await fetch(
-            "https://discord.com/api/v9/applications/@me",
+        const applicationData = await net.fetch(
+            "https://canary.discord.com/api/v9/applications/@me",
             {
                 headers: {
                     Authorization: req.headers.authorization,
                     "User-Agent": Constants.UserAgentDiscordBot,
-                },
+                } as Record<string, string>,
             },
         ).then(resF => {
             return resF.json() as Promise<APIApplication>;
         });
         bio = applicationData.description;
     }
-    fetch("https://discord.com/api/v9/users/" + req.params.id, {
+    net.fetch("https://canary.discord.com/api/v9/users/" + req.params.id, {
         headers: {
             authorization: req.headers.authorization,
             "user-agent": Constants.UserAgentDiscordBot,
-        },
+        } as Record<string, string>,
     })
         .then(r => r.json() as Promise<APIUser>)
         .then(d =>
@@ -57,7 +57,7 @@ app.get("/", async (req: Request<{ id: string }>, res) => {
 
 app.patch("/", (req, res) => {
     req.url = "/api/v9/users/@me";
-    return globalThis.proxy.web(req, res);
+    return Util.proxy(req, res);
 });
 
 export default app;

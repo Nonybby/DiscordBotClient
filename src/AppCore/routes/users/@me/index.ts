@@ -1,15 +1,15 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIUser } from "discord-api-types/v10";
+import { net } from "electron";
 import { Router } from "express";
 import Constants from "src/AppCore/Constants";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
 app.get("/", async (req, res) => {
     try {
-        const r = await fetch("https://discord.com/api/v9/users/@me", {
+        const r = await net.fetch("https://canary.discord.com/api/v9/users/@me", {
             headers: {
                 authorization: req.headers.authorization || "",
                 "user-agent": Constants.UserAgentDiscordBot,

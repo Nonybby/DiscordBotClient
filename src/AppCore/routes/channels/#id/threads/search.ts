@@ -1,9 +1,9 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIPublicThreadChannel, APIThreadList, APIThreadMember } from "discord-api-types/v10";
+import { net } from "electron";
 import { Request, Router } from "express";
 import Constants from "src/AppCore/Constants";
-import { fetch } from "undici";
 
 const app = Router({ mergeParams: true });
 
@@ -46,15 +46,15 @@ app.all("/", async (req: Request<
     const set = mapCache.get(channelId) || new Set<number>();
     const before = Array.from(set)[Math.max((parseInt(offset || "0", 10) || 0) - 1, 0)];
     if (archived === "true") {
-        const publicThread = await fetch(
-            `https://discord.com/api/v9/channels/${channelId}/threads/archived/public?limit=${parseInt(limit || "25") || 25}${
+        const publicThread = await net.fetch(
+            `https://canary.discord.com/api/v9/channels/${channelId}/threads/archived/public?limit=${parseInt(limit || "25") || 25}${
                 before ? `&before=${new Date(before).toISOString()}` : ""
             }`,
             {
                 headers: {
                     authorization: req.headers.authorization,
                     "user-agent": Constants.UserAgentDiscordBot,
-                },
+                } as Record<string, string>,
             },
         ).then(r => r.json() as Promise<APIThreadList>);
         threads = publicThread.threads as APIPublicThreadChannel[] || [];

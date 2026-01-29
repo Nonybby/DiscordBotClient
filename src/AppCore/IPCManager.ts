@@ -4,7 +4,6 @@ import { APIApplication, ApplicationFlags, GatewayIntentBits } from "discord-api
 import { app, dialog } from "electron";
 import { ApplicationFlagsBitField, IntentsBitField } from "src/AppUtils/DiscordBitField";
 import { ApexExperiment, GuildExperiment, UserExperiment } from "src/AppUtils/Experiments";
-import { fetch } from "undici";
 
 import { DiscordBotClient } from ".";
 import Constants from "./Constants";
@@ -40,7 +39,7 @@ export function setupIPCEvents (mainApp: DiscordBotClient) {
         });
     mainApp.ipcMain.handle(IPCEvent.GetBotInfo, (event, token) => {
         token = token.replace(/Bot/g, "").trim();
-        return fetch("https://discord.com/api/v9/applications/@me?with_counts=true", {
+        return mainApp.session.fetch("https://canary.discord.com/api/v9/applications/@me?with_counts=true", {
             headers: {
                 Authorization: `Bot ${token}`,
                 "User-Agent": Constants.UserAgentDiscordBot,
