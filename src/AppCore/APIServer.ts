@@ -1,13 +1,11 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
-import { lookup } from "dns";
 import { scope } from "electron-log";
 import express from "express";
 import { readFileSync } from "fs";
-import httpProxy from "http-proxy";
 import https from "https";
 import morgan from "morgan";
-import { AddressInfo, isIP, Socket } from "net";
+import { type AddressInfo } from "net";
 import path from "path";
 import { registerRoutesSync } from "src/AppUtils/RegisterRoutes";
 import Util from "src/AppUtils/Utils";
@@ -27,50 +25,6 @@ app.use(
 );
 
 const server = https.createServer(Constants.HttpsOptions, app);
-
-const proxy = httpProxy.createProxyServer<express.Request, express.Response>({
-    target: "https://discord.com",
-    secure: false,
-    changeOrigin: true,
-    agent: new https.Agent({
-        lookup: (hostname, options, callback) => {
-            if (hostname === "discord.com") {
-                Util.getIpFromDoH("discord.com")
-                    .then(ip => {
-                        logger.log(`Resolved discord.com to ${ip} via DoH`);
-                        callback(null, [
-                            {
-                                address: ip,
-                                family: isIP(ip),
-                            },
-                        ]);
-                    })
-                    .catch(() => {
-                        lookup(hostname, options, callback);
-                    });
-            } else {
-                lookup(hostname, options, callback);
-            }
-        },
-    }),
-});
-
-// Make proxy globally accessible
-globalThis.proxy = proxy;
-
-proxy.on("error", (err, req, res) => {
-    logger.error("Proxy error:", err);
-    if (res instanceof Socket) {
-        logger.error("Response is a socket, cannot send error response");
-        return;
-    }
-    res.status(500).send({
-        message: "Internal Server Error (proxy)",
-        code: 500,
-        error: err.message,
-        stack: err.stack,
-    });
-});
 
 const ignoreHeaders = ["cookie", "sec-", "referer", "origin", "authorization", "host"];
 
@@ -111,7 +65,7 @@ app.use((req, res, next) => {
         });
     }
     // API routes
-    if (req.originalUrl.includes("/api/")) return proxy.web(req, res);
+    if (req.originalUrl.includes("/api/")) return Util.proxy(req, res);
     // Main page
     if (["/", "/app", "/login"].includes(req.path) || ["/channels/"].some(s => req.path.startsWith(s))) {
         logger.log("Serving Discord HTML for route:", req.path);
@@ -119,7 +73,7 @@ app.use((req, res, next) => {
     }
     // Other routes
     req.headers = req.originalHeaders;
-    return proxy.web(req, res);
+    return Util.proxy(req, res);
 });
 
 export default async function start (): Promise<number> {

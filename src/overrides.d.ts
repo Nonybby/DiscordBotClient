@@ -21,5 +21,4 @@ declare global {
         Dexie: unknown;
     }
     var botClient: DiscordBotClient;
-    var proxy: httpProxy<Request, Response>;
 }

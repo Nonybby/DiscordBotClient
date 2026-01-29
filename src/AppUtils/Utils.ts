@@ -1,40 +1,14 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIGuildMember, APIUser } from "discord-api-types/v10";
-import { Request, Response } from "express";
+import { net } from "electron";
+import express from "express";
 import multer from "multer";
 import GlobalConfig from "src/AppCore/Config";
 import Constants from "src/AppCore/Constants";
-import { fetch } from "undici";
 
 import { UserFlagsBitField } from "./DiscordBitField";
 import { BadgesBasedUserDataAndExtends as UserBadges } from "./UserBadges";
-
-interface DNSJSON {
-    Question: Question[];
-    Answer: Answer[];
-}
-
-interface Question {
-    name: string;
-    type: number;
-}
-
-interface Answer {
-    name: string;
-    type: number;
-    data: string;
-    TTL: number;
-}
-
-interface DnsCacheEntry {
-    ip: string;
-    expiresAt: number;
-}
-
-const dnsCache: Map<string, DnsCacheEntry> = new Map();
-
-const DNS_TTL = 60 * 60 * 1000;
 
 export default class Util {
     static ProfilePatch(
@@ -129,10 +103,10 @@ export default class Util {
     }
 
     static getDataFromRequest(
-        req: Request,
-        res: Response,
+        req: express.Request,
+        res: express.Response,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        callback: (rq: Request<any, any, any, any>, rs: Response) => unknown,
+        callback: (rq: express.Request<any, any, any, any>, rs: express.Response) => unknown,
     ) {
         let data = "";
         // check content-type
@@ -210,45 +184,82 @@ export default class Util {
 
         return false;
     }
-    static async getIpFromDoH(domain: string): Promise<string> {
-        const now = Date.now();
-
-        if (dnsCache.has(domain)) {
-            const entry = dnsCache.get(domain)!;
-
-            if (entry.expiresAt > now) {
-                // console.log(`[DNS Cache] Hit: ${domain} -> ${entry.ip}`);
-                return entry.ip;
-            } else {
-                dnsCache.delete(domain);
-            }
+    static async proxy(req: express.Request, res: express.Response) {
+        if (!net.isOnline()) {
+            return res.status(503).send({ message: "chrome://dino" });
         }
 
-        const response = await fetch(`https://cloudflare-dns.com/dns-query?name=${domain}&type=A`, {
-            headers: { Accept: "application/dns-json" },
+        // 1. Create Electron request
+        const electronReq = net.request({
+            method: req.method as string,
+            url: `https://canary.discord.com${req.originalUrl}`,
+            redirect: "follow",
+            useSessionCookies: true,
         });
 
-        if (!response.ok) {
-            throw new Error(`DoH fetch failed: ${response.statusText}`);
-        }
+        // 2. Copy headers (Express -> Electron)
+        const skipHeaders = [
+            "host",
+            "connection",
+            "content-length",
+            "transfer-encoding",
+            "upgrade",
+            "origin",
+            "referer",
+        ];
 
-        const data = (await response.json()) as DNSJSON;
+        Object.entries(req.headers).forEach(([key, value]) => {
+            if (value && !skipHeaders.includes(key.toLowerCase())) {
+                try {
+                    const headerValue = Array.isArray(value) ? value.join(", ") : value;
+                    electronReq.setHeader(key, headerValue);
+                } catch {
+                    //
+                }
+            }
+        });
 
-        if (data.Answer && data.Answer.length > 0) {
-            const ip = data.Answer[0].data;
+        // 3. Origin & Referer
+        electronReq.setHeader("Origin", "https://canary.discord.com");
+        electronReq.setHeader("Referer", "https://canary.discord.com/");
 
-            dnsCache.set(domain, {
-                ip: ip,
-                expiresAt: now + DNS_TTL,
+        // 4. Electron -> Express
+        electronReq.on("response", electronRes => {
+            res.status(electronRes.statusCode);
+            const skipResHeaders = [
+                "content-encoding",
+                "content-length",
+                "transfer-encoding",
+            ];
+            Object.entries(electronRes.headers).forEach(([key, value]) => {
+                if (value && !skipResHeaders.includes(key.toLowerCase())) {
+                    try {
+                        res.setHeader(key, value);
+                    } catch {
+                        //
+                    }
+                }
             });
 
-            // console.log(`[DNS Cache] Miss (Fetched): ${domain} -> ${ip}`);
-            return ip;
+            electronRes.on("data", chunk => res.write(chunk));
+            electronRes.on("end", () => res.end());
+            electronRes.on("error", err => {
+                if (!res.headersSent) res.status(500).end();
+                throw err;
+            });
+        });
+
+        electronReq.on("error", err => {
+            if (!res.headersSent) res.status(500).send({ error: err.message });
+            throw err;
+        });
+
+        // 5. Pipe request body (Express -> Electron)
+        if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            req.pipe(electronReq as any);
         } else {
-            throw new Error("No DNS answer found");
+            electronReq.end();
         }
-    }
-    static clearDnsCache() {
-        dnsCache.clear();
     }
 }
