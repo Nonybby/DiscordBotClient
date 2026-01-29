@@ -508,9 +508,6 @@ export class DiscordBotClient extends EventEmitter {
         autoUpdater.removeAllListeners();
 
         return new Promise(resolve => {
-            autoUpdater.on("checking-for-update", () => {
-                this.logger.info("Checking for updates...");
-            });
             autoUpdater.on("update-available", info => {
                 const releaseUrl = `https://github.com/${Constants.GithubRepo}/releases/tag/v${info.version}`;
 
