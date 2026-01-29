@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
         linked_users: [],
         users: [],
         teen_audit_log: null,
+        age_group: "adult",
     });
 });
 
