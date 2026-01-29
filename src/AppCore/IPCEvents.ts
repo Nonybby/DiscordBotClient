@@ -5,6 +5,7 @@ export class IPCEvent extends null {
     static Minimize = "app:window:minimize";
     static Maximize = "app:window:maximize";
     static Focus = "app:window:focus";
+    static FlashFrame = "app:window:flash_frame";
     // Preload IPC Events
     static GetBotInfo = "app:preload:get_bot_info";
     static GetVersion = "app:preload:get_version";

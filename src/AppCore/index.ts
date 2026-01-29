@@ -361,6 +361,9 @@ export class DiscordBotClient extends EventEmitter {
                 this.win.hide();
             }
         });
+        this.win.on("focus", () => {
+            this.win.flashFrame(false);
+        });
 
         await this.sessionPatch();
 

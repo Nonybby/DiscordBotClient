@@ -36,6 +36,10 @@ export function setupIPCEvents (mainApp: DiscordBotClient) {
             // this.win.focus();
             win.show();
             win.setSkipTaskbar(false);
+        })
+        .on(IPCEvent.FlashFrame, (event, flag: boolean) => {
+            if (!mainApp.win || mainApp.win.isDestroyed() || (flag && mainApp.win.isFocused())) return;
+            mainApp.win.flashFrame(flag);
         });
     mainApp.ipcMain.handle(IPCEvent.GetBotInfo, (event, token) => {
         token = token.replace(/Bot/g, "").trim();

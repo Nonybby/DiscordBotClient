@@ -83,6 +83,9 @@ contextBridge.exposeInMainWorld("BotClientNative", {
     focus (frameName: string) {
         ipcRenderer.send(IPCEvent.Focus, frameName);
     },
+    flashFrame (flag: boolean) {
+        ipcRenderer.send(IPCEvent.FlashFrame, flag);
+    },
 });
 
 /*
