@@ -121,7 +121,7 @@ higher. You can find Node.JS packages at https://nodejs.org/en.
 On top of that, you need to have **git** installed. It can be found at
 https://git-scm.com/downloads.
 
-**UPDATES MUST BE INSTALLED MANUALLY**
+**~~UPDATES MUST BE INSTALLED MANUALLY~~**[^6]
 
 Open a command line and execute the following commands:
 
@@ -182,25 +182,28 @@ Logging in works via the UI on first startup of the application.
 
 - The versions removed from the table were unstable and did not work properly.
 
-| Discord Build | Hash    | Vencord | Client version | Release Status | App Status |
-| ------------- | ------- | ------- | -------------- | -------------- | ---------- |
-| Latest        | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ          |
-| Stable 479219 | 582c5bf | v1.13.8 | v3.8.2         | Latest         | ✔          |
-| Stable 453248 | 0a497ab | v1.13.1 | v3.8.1         | Deprecated     | ✔          |
-| Stable 415772 | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔ ⚠        |
-| Stable 403437 | fa5cfe9 | v1.12.2 | v3.7.2         | EOL            | ✔ ⚠        |
-| Stable 394055 | f598231 | v1.11.9 | v3.7.1         | EOL            | ✔ ⚠        |
-| Stable 391738 | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
-| Stable 360320 | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
-| Stable 355624 | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
-| Stable 204762 | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
+| Discord Build     | Hash    | Vencord | Client version | Release Status | App Status |
+| ----------------- | ------- | ------- | -------------- | -------------- | ---------- |
+| Latest            | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ          |
+| Stable 491153[^6] | 496afea | v1.14.1 | v3.8.3         | Latest         | ✔          |
+| Stable 479219     | 582c5bf | v1.13.8 | v3.8.2         | Deprecated     | ✔          |
+| Stable 453248     | 0a497ab | v1.13.1 | v3.8.1         | Deprecated     | ✔          |
+| Stable 415772     | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔ ⚠        |
+| Stable 403437     | fa5cfe9 | v1.12.2 | v3.7.2         | EOL            | ✔ ⚠        |
+| Stable 394055     | f598231 | v1.11.9 | v3.7.1         | EOL            | ✔ ⚠        |
+| Stable 391738     | 51404a7 | v1.11.9 | v3.7.0         | EOL            | ⛔ ⚠       |
+| Stable 360320     | 38aca73 | v1.10.9 | v3.6.2         | EOL            | ✔ ⚠        |
+| Stable 355624     | 8dc6074 | v1.10.9 | v3.6.1         | EOL            | ✔ ⚠        |
+| Stable 204762     | 78f82ba | v1.2.8  | v2.4.2         | EOL[^5]        | ✔ ⚠        |
 
 - ✔ – Fully functional and expected to be free of critical bugs.
 - ℹ – Supports at least basic functionality, but is still under development. Minor issues may occur.
 - ⛔ – This version has major issues (e.g., related to app startup). It is not recommended for use.
 - ⚠ – This version has reached its end of support.
 
-[^5]: _Latest version that supports Windows 7/8/8.1 is 2.4.2._
+[^5]: Latest version that supports Windows 7 / 8 / 8.1 is 2.4.2. However, you can build this application with an older version of Electron and Node.js, and expect it to work correctly.
+
+[^6]: Testing the automatic update feature for Windows and Linux. macOS is not supported because the application lacks a valid certificate.
 
 ---
 
