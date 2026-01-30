@@ -13,7 +13,7 @@ const app = Router({ mergeParams: true });
 
 // Ref: https://github.com/discord-userdoccers/discord-userdoccers/pull/346
 
-function convertGuildObjectToGuildProfileObject (guild: APIGuild & { code?: number }) {
+function convertGuildObjectToGuildProfileObject(guild: APIGuild & { code?: number }) {
     if (!guild.id && guild.code) {
         return {
             isError: true,
@@ -75,27 +75,119 @@ app.get(
     },
 );
 
-const callback = (
+export interface ModifyCurrentGuildProfile {
+    name: string;
+    description: string;
+    icon: string | null;
+    custom_banner: string | null;
+    // ?
+    visibility: number;
+    brand_color_primary: unknown;
+    traits: unknown[];
+    game_application_ids: unknown[];
+}
+
+const callbackEditCurrentGuild = (
     reqCallback: Request<
         {
             id: string;
         },
         unknown,
-        {
-            nick?: string;
-            avatar?: string;
-            banner?: string;
-            bio?: string;
-        }
+        ModifyCurrentGuildProfile
     >,
     resCallback: Response,
 ) => {
     const guildId = reqCallback.params.id;
-    const body: Record<string, string> = {};
-    if (reqCallback.body.nick) body.nick = reqCallback.body.nick;
-    if (reqCallback.body.avatar) body.avatar = reqCallback.body.avatar;
-    if (reqCallback.body.banner) body.banner = reqCallback.body.banner;
-    if (reqCallback.body.bio) body.bio = reqCallback.body.bio;
+    const body: Record<string, unknown> = {};
+    if ("name" in reqCallback.body) body.name = reqCallback.body.name;
+    if ("description" in reqCallback.body) body.description = reqCallback.body.description;
+    if ("icon" in reqCallback.body) body.icon = reqCallback.body.icon;
+    if ("custom_banner" in reqCallback.body) body.banner = reqCallback.body.custom_banner;
+    net.fetch(`https://canary.discord.com/api/v10/guilds/${guildId}`, {
+        headers: {
+            authorization: reqCallback.headers.authorization,
+            "user-agent": Constants.UserAgentDiscordBot,
+            "Content-Type": "application/json",
+        } as Record<string, string>,
+        method: "PATCH",
+        body: JSON.stringify(body),
+    })
+        .then(r => r.json() as Promise<APIGuild>)
+        .then(guild => {
+            const data = convertGuildObjectToGuildProfileObject(guild);
+            return resCallback.status(data.isError ? 403 : 200).send(data.data);
+        });
+};
+
+app.patch("/", async (req, res) => {
+    return Util.getDataFromRequest(req, res, callbackEditCurrentGuild);
+});
+
+export interface ModifyCurrentGuildMemberProfile {
+    /**
+     * The guild-specific nickname of the member (1-32 characters)
+     *
+     * Permission: CHANGE_NICKNAME
+     */
+    nick?: string | null;
+    /**
+     * The member's guild avatar; can only be changed for premium users and bots
+     */
+    avatar?: string | null;
+    /**
+     * The ID of the member's guild avatar decoration; can only be changed for premium users
+     */
+    avatar_decoration_id?: string | null;
+    /**
+     * The SKU ID of the member's guild avatar decoration; can only be changed for premium users
+     */
+    avatar_decoration_sku_id?: string | null;
+    /**
+     * The member's equipped collectibles; can only be changed for premium users
+     */
+    collectibles?: unknown | null;
+    /**
+     * The display name font to use; can only be changed for premium users
+     */
+    display_name_font_id?: number | null;
+    /**
+     * The display name effect to use; can only be changed for premium users
+     */
+    display_name_effect_id?: number | null;
+    /**
+     * The display name colors to use encoded as an array of integers representing hexadecimal color codes (max 2); can only be changed for premium users
+     */
+    display_name_colors?: number;
+    /**
+     * The member's guild pronouns (max 40 characters)
+     */
+    pronouns?: string | null;
+    /**
+     * The member's guild bio (max 190 characters); can only be changed for premium users and bots
+     */
+    bio?: string | null;
+    /**
+     * The member's guild banner; can only be changed for premium users and bots
+     */
+    banner?: string | null;
+}
+
+const callbackEditCurrentMember = (
+    reqCallback: Request<
+        {
+            id: string;
+        },
+        unknown,
+        ModifyCurrentGuildMemberProfile
+    >,
+    resCallback: Response,
+) => {
+    const guildId = reqCallback.params.id;
+    const body: Record<string, unknown> = {};
+    if ("nick" in reqCallback.body) body.nick = reqCallback.body.nick;
+    if ("avatar" in reqCallback.body) body.avatar = reqCallback.body.avatar;
+    if ("banner" in reqCallback.body) body.banner = reqCallback.body.banner;
+    if ("bio" in reqCallback.body) body.bio = reqCallback.body.bio;
     net.fetch(`https://canary.discord.com/api/v10/guilds/${guildId}/members/@me`, {
         headers: {
             authorization: reqCallback.headers.authorization,
@@ -122,12 +214,12 @@ const callback = (
 };
 
 app.patch("/@me", async (req, res) => {
-    return Util.getDataFromRequest(req, res, callback);
+    return Util.getDataFromRequest(req, res, callbackEditCurrentMember);
 });
 
 // ??? WTF discord ???
 app.patch("/%40me", async (req, res) => {
-    return Util.getDataFromRequest(req, res, callback);
+    return Util.getDataFromRequest(req, res, callbackEditCurrentMember);
 });
 
 export default app;
