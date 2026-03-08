@@ -93,6 +93,8 @@ out
 /Vencord
 /build
 /VencordExtension
+/discohook
+/assets/editor
 
 # Gatsby files
 .cache/

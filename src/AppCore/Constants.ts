@@ -43,7 +43,8 @@ export default class Constants extends null {
     static UserAgentDiscordBot = `DiscordBot (https://github.com/${GithubUserName}/${GithubRepoName}, v${app.getVersion()})`;
     static VencordExtensionPath = path.join(app.getAppPath(), "VencordExtension");
     static DiscordHTMLPath = path.join(app.getAppPath(), "assets", "snapshot", "index.html");
-    static ConfigHTMLPath = path.join(app.getAppPath(), "assets", "editor", "index.html");
+    static ConfigEditorHTMLPath = path.join(app.getAppPath(), "assets", "config", "index.html");
+    static EditorHTMLFolderPath = path.join(app.getAppPath(), "assets", "editor"); // Beta feature
     static DiscordGuildExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "guild_experiments.json");
     static DiscordUserExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "user_experiments.json");
     static DiscordApexExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "apex_experiments.json");

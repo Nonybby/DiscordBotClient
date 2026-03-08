@@ -26,4 +26,9 @@ export class IPCEvent extends null {
     static MonacoEditorGetConfig = "app:editor:get_config";
     static MonacoEditorGetAutoComplete = "app:editor:get_autocomplete";
     static MonacoEditorSaveConfig = "app:editor:save_config";
+    // Beta Features
+    static RequestOpenMessageEditorWindow = "app:request_open_message_editor_window";
+    static MessageEditorReactReady = "app:message_editor_ready";
+    static MessageEditorReceivePort = "app:message_editor_receive_port";
+    static MainAppReceiveEditorPort = "app:main_receive_editor_port";
 }

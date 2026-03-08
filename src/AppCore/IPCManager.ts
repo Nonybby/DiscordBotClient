@@ -105,6 +105,9 @@ export function setupIPCEvents (mainApp: DiscordBotClient) {
                 };
             });
     });
+    mainApp.ipcMain.handle(IPCEvent.RequestOpenMessageEditorWindow, () => {
+        return mainApp.openDiscordMessageEditorWindow();
+    });
     mainApp.ipcMain
         .on(IPCEvent.GetVersion, event => {
             return (event.returnValue = app.getVersion());

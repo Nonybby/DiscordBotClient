@@ -7,7 +7,7 @@ import { IPCEvent } from "./IPCEvents";
 type LogLevel = "log" | "info" | "warn" | "error" | "debug";
 
 class Logger {
-    _log (scope: string, level: LogLevel, color: string, args: unknown[]) {
+    _log(scope: string, level: LogLevel, color: string, args: unknown[]) {
         console[level](
             `%c MainProcess %c %c ${scope || "Unknown"} `,
             `background: ${color}; color: black; font-weight: bold; border-radius: 5px;`,
@@ -17,19 +17,19 @@ class Logger {
         );
     }
 
-    log (scope: string, ...args: unknown[]) {
+    log(scope: string, ...args: unknown[]) {
         this._log(scope, "log", "#a6d189", args);
     }
-    info (scope: string, ...args: unknown[]) {
+    info(scope: string, ...args: unknown[]) {
         this._log(scope, "info", "#a6d189", args);
     }
-    error (scope: string, ...args: unknown[]) {
+    error(scope: string, ...args: unknown[]) {
         this._log(scope, "error", "#e78284", args);
     }
-    warn (scope: string, ...args: unknown[]) {
+    warn(scope: string, ...args: unknown[]) {
         this._log(scope, "warn", "#e5c890", args);
     }
-    debug (scope: string, ...args: unknown[]) {
+    debug(scope: string, ...args: unknown[]) {
         this._log(scope, "debug", "#eebebe", args);
     }
 }
@@ -45,13 +45,13 @@ contextBridge.exposeInMainWorld("BotClientNative", {
     getBotInfo: (token: string) => {
         return ipcRenderer.invoke(IPCEvent.GetBotInfo, token);
     },
-    getBotClientVersion () {
+    getBotClientVersion() {
         return ipcRenderer.sendSync(IPCEvent.GetVersion);
     },
-    getBotClientName () {
+    getBotClientName() {
         return ipcRenderer.sendSync(IPCEvent.GetName);
     },
-    getPrivateChannelDefault () {
+    getPrivateChannelDefault() {
         return {
             type: 1,
             recipients: [ipcRenderer.sendSync(IPCEvent.GetDefaultUserPatch)],
@@ -61,31 +61,40 @@ contextBridge.exposeInMainWorld("BotClientNative", {
             flags: 0,
         };
     },
-    getUserExperiments (allData: boolean, botId: string) {
+    getUserExperiments(allData: boolean, botId: string) {
         return ipcRenderer.sendSync(IPCEvent.GetExperiment, "user", botId, allData);
     },
-    getGuildExperiments () {
+    getGuildExperiments() {
         return ipcRenderer.sendSync(IPCEvent.GetExperiment, "guild");
     },
-    getApexExperiments (botId: string) {
+    getApexExperiments(botId: string) {
         return ipcRenderer.sendSync(IPCEvent.GetExperiment, "apex", botId);
     },
     // Vesktop
-    close (frameName: string) {
+    close(frameName: string) {
         ipcRenderer.send(IPCEvent.Close, frameName);
     },
-    minimize (frameName: string) {
+    minimize(frameName: string) {
         ipcRenderer.send(IPCEvent.Minimize, frameName);
     },
-    maximize (frameName: string) {
+    maximize(frameName: string) {
         ipcRenderer.send(IPCEvent.Maximize, frameName);
     },
-    focus (frameName: string) {
+    focus(frameName: string) {
         ipcRenderer.send(IPCEvent.Focus, frameName);
     },
-    flashFrame (flag: boolean) {
+    flashFrame(flag: boolean) {
         ipcRenderer.send(IPCEvent.FlashFrame, flag);
     },
+    // Beta Features
+    requestOpenMessageEditorWindow() {
+        return ipcRenderer.invoke(IPCEvent.RequestOpenMessageEditorWindow);
+    },
+});
+
+ipcRenderer.on(IPCEvent.MainAppReceiveEditorPort, event => {
+    const port = event.ports[0];
+    window.postMessage("forward-editor-port", "*", [port]);
 });
 
 /*

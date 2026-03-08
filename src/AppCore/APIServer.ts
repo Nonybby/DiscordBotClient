@@ -76,7 +76,7 @@ app.use((req, res, next) => {
     return Util.proxy(req, res);
 });
 
-export default async function start (): Promise<number> {
+export default async function startAppServer (): Promise<number> {
     return new Promise((resolve, reject) => {
         const callback = () => {
             const address = server.address() as AddressInfo;

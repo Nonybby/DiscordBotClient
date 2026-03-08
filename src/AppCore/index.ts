@@ -1,11 +1,13 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
+import { randomUUID } from "crypto";
 import {
     app,
     BrowserWindow,
     dialog,
     ipcMain,
     Menu,
+    MessageChannelMain,
     Notification,
     NotificationConstructorOptions,
     protocol,
@@ -24,7 +26,9 @@ import path from "path";
 import server from "./APIServer";
 import GlobalConfig from "./Config";
 import Constants from "./Constants";
+import { IPCEvent } from "./IPCEvents";
 import { setupIPCEvents } from "./IPCManager";
+import messageEditor from "./MessageEditorServer";
 
 export class DiscordBotClient extends EventEmitter {
     logger = scope(Constants.AppName);
@@ -37,6 +41,9 @@ export class DiscordBotClient extends EventEmitter {
     editorWindow?: BrowserWindow;
     config = GlobalConfig;
     ipcMain = ipcMain;
+
+    // Beta Features
+    messageEditorPort!: number;
 
     constructor () {
         super();
@@ -157,6 +164,7 @@ export class DiscordBotClient extends EventEmitter {
     }
     async initApp () {
         this.port = await server();
+        this.messageEditorPort = await messageEditor();
         app.setAppUserModelId(Constants.AppID);
         const enabledFeatures = new Set(app.commandLine.getSwitchValue("enable-features").split(","));
         const disabledFeatures = new Set(app.commandLine.getSwitchValue("disable-features").split(","));
@@ -618,7 +626,7 @@ export class DiscordBotClient extends EventEmitter {
             minHeight: 600,
             webPreferences: {
                 webSecurity: false,
-                preload: path.join(__dirname, "EditorPreload.js"),
+                preload: path.join(__dirname, "ConfigEditorPreload.js"),
                 sandbox: false,
             },
             icon: Constants.icon128,
@@ -631,9 +639,44 @@ export class DiscordBotClient extends EventEmitter {
             }),
             */
         });
-        this.editorWindow.loadFile(Constants.ConfigHTMLPath);
+        this.editorWindow.loadFile(Constants.ConfigEditorHTMLPath);
         this.editorWindow.on("closed", () => {
             this.editorWindow = undefined;
+        });
+    }
+
+    // Beta
+    openDiscordMessageEditorWindow () {
+        const editorWindow = new BrowserWindow({
+            width: 1080,
+            height: 720,
+            minWidth: 800,
+            minHeight: 600,
+            parent: this.win,
+            modal: true,
+            webPreferences: {
+                webSecurity: false,
+                preload: path.join(__dirname, "MessageEditorPreload.js"),
+                sandbox: false,
+                partition: "temp:" + randomUUID(), // Use a temporary session for the message editor
+            },
+            icon: Constants.icon128,
+            frame: true,
+            autoHideMenuBar: true,
+            /*
+            ...(process.platform === "darwin" && {
+                titleBarStyle: "hidden",
+                trafficLightPosition: { x: 10, y: 10 },
+            }),
+            */
+        });
+        editorWindow.loadURL(`http://localhost:${this.messageEditorPort}`);
+        // Handle Message Editor Ports
+        editorWindow.webContents.ipc.once(IPCEvent.MessageEditorReactReady, () => {
+            this.logger.debug("Message Editor is ready. Setting up MessageChannel...");
+            const { port1, port2 } = new MessageChannelMain();
+            editorWindow.webContents.postMessage(IPCEvent.MessageEditorReceivePort, null, [port2]);
+            this.win.webContents.postMessage(IPCEvent.MainAppReceiveEditorPort, null, [port1]);
         });
     }
 
