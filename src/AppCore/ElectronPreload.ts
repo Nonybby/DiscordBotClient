@@ -70,6 +70,9 @@ contextBridge.exposeInMainWorld("BotClientNative", {
     getApexExperiments(botId: string) {
         return ipcRenderer.sendSync(IPCEvent.GetExperiment, "apex", botId);
     },
+    closeWindow: () => {
+        ipcRenderer.send(IPCEvent.RequestCloseWindow);
+    },
     // Vesktop
     close(frameName: string) {
         ipcRenderer.send(IPCEvent.Close, frameName);

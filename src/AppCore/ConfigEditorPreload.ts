@@ -5,13 +5,16 @@ import { contextBridge, ipcRenderer } from "electron";
 import { IPCEvent } from "./IPCEvents";
 
 contextBridge.exposeInMainWorld("settingsAPI", {
-    getCurrentSettings () {
+    getCurrentSettings() {
         return ipcRenderer.invoke(IPCEvent.MonacoEditorGetConfig);
     },
-    getAutoComplete () {
+    getAutoComplete() {
         return ipcRenderer.invoke(IPCEvent.MonacoEditorGetAutoComplete);
     },
-    saveCurrentSettings (value: string) {
+    saveCurrentSettings(value: string) {
         return ipcRenderer.invoke(IPCEvent.MonacoEditorSaveConfig, value);
+    },
+    closeWindow: () => {
+        ipcRenderer.send(IPCEvent.RequestCloseWindow);
     },
 });

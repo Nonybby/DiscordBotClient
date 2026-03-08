@@ -1,7 +1,7 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { APIApplication, ApplicationFlags, GatewayIntentBits } from "discord-api-types/v10";
-import { app, dialog } from "electron";
+import { app, BrowserWindow, dialog } from "electron";
 import { ApplicationFlagsBitField, IntentsBitField } from "src/AppUtils/DiscordBitField";
 import { ApexExperiment, GuildExperiment, UserExperiment } from "src/AppUtils/Experiments";
 
@@ -9,7 +9,7 @@ import { DiscordBotClient } from ".";
 import Constants from "./Constants";
 import { IPCEvent } from "./IPCEvents";
 
-export function setupIPCEvents (mainApp: DiscordBotClient) {
+export function setupIPCEvents(mainApp: DiscordBotClient) {
     const getWindow = (framename: string) => {
         return mainApp.childWindows.get(framename) ?? mainApp.win;
     };
@@ -40,15 +40,20 @@ export function setupIPCEvents (mainApp: DiscordBotClient) {
         .on(IPCEvent.FlashFrame, (event, flag: boolean) => {
             if (!mainApp.win || mainApp.win.isDestroyed() || (flag && mainApp.win.isFocused())) return;
             mainApp.win.flashFrame(flag);
+        })
+        .on(IPCEvent.RequestCloseWindow, event => {
+            const win = BrowserWindow.fromWebContents(event.sender);
+            win?.close();
         });
     mainApp.ipcMain.handle(IPCEvent.GetBotInfo, (event, token) => {
         token = token.replace(/Bot/g, "").trim();
-        return mainApp.session.fetch("https://canary.discord.com/api/v9/applications/@me?with_counts=true", {
-            headers: {
-                Authorization: `Bot ${token}`,
-                "User-Agent": Constants.UserAgentDiscordBot,
-            },
-        })
+        return mainApp.session
+            .fetch("https://canary.discord.com/api/v9/applications/@me?with_counts=true", {
+                headers: {
+                    Authorization: `Bot ${token}`,
+                    "User-Agent": Constants.UserAgentDiscordBot,
+                },
+            })
             .then(res => {
                 if (!res.ok) throw new Error(res.statusText);
                 return res.json() as Promise<APIApplication>;

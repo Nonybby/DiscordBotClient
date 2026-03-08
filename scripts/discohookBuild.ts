@@ -5,9 +5,9 @@ import path from "path";
 import process from "process";
 import { existsSync, renameSync, rmSync, readFileSync, writeFileSync } from "fs";
 
-function runCommand(cmd: string, args: string[], opts: { cwd?: string } = {}): Promise<void> {
+function runCommand(cmd: string, opts: { cwd?: string } = {}): Promise<void> {
     return new Promise((resolve, reject) => {
-        const child = spawn(cmd, args, {
+        const child = spawn(cmd, [], {
             cwd: opts.cwd ?? process.cwd(),
             stdio: "inherit",
             shell: true,
@@ -32,8 +32,7 @@ async function buildDist() {
 
     console.log("➡️  Building discohook ...");
     await runCommand(
-        "npm",
-        ["run", "build"],
+        "npm run build",
         {
             cwd: dir,
         },

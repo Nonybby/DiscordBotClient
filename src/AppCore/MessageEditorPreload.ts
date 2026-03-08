@@ -8,6 +8,9 @@ contextBridge.exposeInMainWorld("electronAPI", {
     reactReady: () => {
         ipcRenderer.send(IPCEvent.MessageEditorReactReady);
     },
+    closeWindow: () => {
+        ipcRenderer.send(IPCEvent.RequestCloseWindow);
+    },
 });
 
 ipcRenderer.once(IPCEvent.MessageEditorReceivePort, event => {
