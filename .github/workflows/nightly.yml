@@ -19,19 +19,37 @@ on:
 permissions: {}
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Build OS matrix
+        id: set-matrix
+        run: |
+          os_list=()
+          if [ "${{ github.event.inputs.build-ubuntu }}" == "true" ]; then
+            os_list+=("\"ubuntu-latest\"")
+          fi
+          if [ "${{ github.event.inputs.build-windows }}" == "true" ]; then
+            os_list+=("\"windows-latest\"")
+          fi
+          if [ "${{ github.event.inputs.build-mac }}" == "true" ]; then
+            os_list+=("\"macos-latest\"")
+          fi
+          joined=$(IFS=,; echo "${os_list[*]}")
+          echo "matrix={\"os\":[$joined]}" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: prepare
+    if: ${{ needs.prepare.outputs.matrix != '{"os":[]}' }}
     permissions:
       contents: read
-    if: >-
-      (github.event.inputs.build-ubuntu == 'true' && matrix.os == 'ubuntu-latest') ||
-      (github.event.inputs.build-windows == 'true' && matrix.os == 'windows-latest') ||
-      (github.event.inputs.build-mac == 'true' && matrix.os == 'macos-latest')
     runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
 
     steps:
       - name: Check out Git repository
