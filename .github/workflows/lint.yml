@@ -6,6 +6,10 @@ on:
   pull_request:
     branches:
       - electron-v3
+
+permissions:
+  contents: read
+
 jobs:
   eslint:
     name: ESLint

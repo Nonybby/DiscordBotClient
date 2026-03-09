@@ -6,8 +6,12 @@ on:
       - v*
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   release:
+    permissions:
+      contents: write
     runs-on: ${{ matrix.os }}
 
     strategy:
