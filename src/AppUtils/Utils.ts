@@ -4,6 +4,7 @@ import { APIGuildMember, APIUser } from "discord-api-types/v10";
 import { net } from "electron";
 import express from "express";
 import multer from "multer";
+import selfsigned from "selfsigned";
 import GlobalConfig from "src/AppCore/Config";
 import Constants from "src/AppCore/Constants";
 
@@ -11,7 +12,7 @@ import { UserFlagsBitField } from "./DiscordBitField";
 import { BadgesBasedUserDataAndExtends as UserBadges } from "./UserBadges";
 
 export default class Util {
-    static ProfilePatch(
+    static ProfilePatch (
         userData: APIUser,
         guildMember: APIGuildMember | null = null,
         guildId: string | null = null,
@@ -96,13 +97,22 @@ export default class Util {
             },
         };
     }
-    static getIDFromToken(token = "") {
+    static getIDFromToken (token = ""): string | null {
         if (!token) return null;
         token = token.replace(/^(Bot|Bearer)\s*/i, "");
-        return Buffer.from(token.split(".")[0], "base64").toString();
+        const parts = token.split(".");
+        if (parts.length < 2) return null; // Token must have at least 2 parts (id.secret)
+        try {
+            const decoded = Buffer.from(parts[0], "base64").toString();
+            // Discord user/bot IDs are numeric (snowflakes)
+            if (!decoded || !/^\d+$/.test(decoded)) return null;
+            return decoded;
+        } catch {
+            return null;
+        }
     }
 
-    static getDataFromRequest(
+    static getDataFromRequest (
         req: express.Request,
         res: express.Response,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -130,8 +140,8 @@ export default class Util {
                     req.body = undefined;
                     console.error("JSON Parse Error:", e);
                 }
-                callback(req, res);
             }
+            callback(req, res);
         });
     }
     /**
@@ -140,7 +150,7 @@ export default class Util {
      * @param {number} addYear
      * @returns
      */
-    static makeISODate(addYear = 0) {
+    static makeISODate (addYear = 0) {
         const date = new Date();
         date.setFullYear(date.getFullYear() + addYear);
         return date.toISOString().replace("Z", "000+00:00");
@@ -151,7 +161,7 @@ export default class Util {
      * @param {number} addYear
      * @returns
      */
-    static makeISODateWithoutMilliseconds(addYear = 0) {
+    static makeISODateWithoutMilliseconds (addYear = 0) {
         const date = new Date();
         date.setFullYear(date.getFullYear() + addYear);
         return date.toISOString().replace(/\.\d+Z/, "+00:00");
@@ -164,7 +174,7 @@ export default class Util {
      * @param versionB - The new version to check (e.g., "v1.3.0" or "1.3.0").
      * @returns `true` if `versionB` is newer than `versionA`, otherwise `false`.
      */
-    static isNewerVersion(versionA: string, versionB: string) {
+    static isNewerVersion (versionA: string, versionB: string) {
         const normalizeVersion = (version: string) => version.replace(/^v/, "");
 
         const parseVersion = (version: string) => {
@@ -184,7 +194,7 @@ export default class Util {
 
         return false;
     }
-    static async proxy(req: express.Request, res: express.Response) {
+    static async proxy (req: express.Request, res: express.Response) {
         if (!net.isOnline()) {
             return res.status(503).send({ message: "chrome://dino" });
         }
@@ -244,14 +254,14 @@ export default class Util {
             electronRes.on("data", chunk => res.write(chunk));
             electronRes.on("end", () => res.end());
             electronRes.on("error", err => {
+                console.error("Proxy response error:", err);
                 if (!res.headersSent) res.status(500).end();
-                throw err;
             });
         });
 
         electronReq.on("error", err => {
+            console.error("Proxy request error:", err);
             if (!res.headersSent) res.status(500).send({ error: err.message });
-            throw err;
         });
 
         // 5. Pipe request body (Express -> Electron)
@@ -261,5 +271,31 @@ export default class Util {
         } else {
             electronReq.end();
         }
+    }
+    static generateSelfSignedCertificate () {
+        return selfsigned.generate([{ name: "commonName", value: "localhost" }], {
+            days: 3650,
+            keySize: 2048,
+            algorithm: "sha256",
+            extensions: [
+                {
+                    name: "basicConstraints",
+                    cA: true,
+                },
+                {
+                    name: "subjectAltName",
+                    altNames: [
+                        {
+                            type: 2, // DNS
+                            value: "localhost",
+                        },
+                        {
+                            type: 7, // IP
+                            ip: "127.0.0.1",
+                        },
+                    ],
+                },
+            ],
+        });
     }
 }

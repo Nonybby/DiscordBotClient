@@ -72,8 +72,14 @@ export function UserExperiment(allData: Record<string, string>[], botId: string)
     return allData.map(obj => buildUserExperiment(obj, botId)).filter(x => x);
 }
 
+// Cache guild experiments to avoid reading file on every call
+let cachedGuildExperiments: unknown = null;
+
 export function GuildExperiment() {
-    return JSON.parse(readFileSync(Constants.DiscordGuildExperimentsPath, "utf8"));
+    if (!cachedGuildExperiments) {
+        cachedGuildExperiments = JSON.parse(readFileSync(Constants.DiscordGuildExperimentsPath, "utf8"));
+    }
+    return cachedGuildExperiments;
 }
 
 export function ApexExperiment(botId: string) {

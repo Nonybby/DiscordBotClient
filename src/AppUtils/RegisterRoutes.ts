@@ -27,7 +27,14 @@ export function traverseDirectorySync(options: TraverseDirectoryOptions): string
     const routes = fs.readdirSync(options.dirname);
     const result: string[] = [];
 
-    for (const file of routes.sort((a, b) => (a.startsWith("#") ? 1 : -1))) {
+    for (const file of routes.sort((a, b) => {
+        const aIsParam = a.startsWith("#");
+        const bIsParam = b.startsWith("#");
+        // Static routes first, parameterized routes (#id) last
+        if (aIsParam && !bIsParam) return 1;
+        if (!aIsParam && bIsParam) return -1;
+        return a.localeCompare(b);
+    })) {
         const path = options.dirname + file;
         const stat = fs.lstatSync(path);
         if (path.match(options.excludeDirs)) continue;

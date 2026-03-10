@@ -7,7 +7,10 @@ import { JSDOM } from "jsdom";
 import beautifyHTML from "js-beautify";
 import updateGuildExperiments from "./updateGuildExperiments";
 
-const URL = "https://discord.com/channels/@me";
+const FetchCanary = false;
+
+const URL = `https://${FetchCanary ? "canary." : ""}discord.com/channels/@me`;
+
 const folder = path.resolve(".", "assets", "snapshot");
 
 if (!fs.existsSync(folder)) {

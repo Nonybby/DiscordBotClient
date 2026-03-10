@@ -4,8 +4,11 @@ import { Router } from "express";
 
 const app = Router({ mergeParams: true });
 
-app.all("*", (req, res) => {
-    res.status(204).end();
+app.get("/", (req, res) => {
+    res.send({
+        promotional_sku_ids: [],
+        promotion_end_datetime: null,
+    });
 });
 
 export default app;

@@ -7,9 +7,32 @@ import Constants from "src/AppCore/Constants";
 
 const app = Router({ mergeParams: true });
 
-const mapCache = new Map<string, Set<number>>();
+const CACHE_MAX_SIZE = 200;
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
-// channel_id, new Set([Date.now()]);
+interface ThreadCacheEntry {
+    timestamps: Set<number>;
+    createdAt: number;
+}
+
+const mapCache = new Map<string, ThreadCacheEntry>();
+
+function getOrCreateCacheEntry (channelId: string): Set<number> {
+    const existing = mapCache.get(channelId);
+    if (existing && (Date.now() - existing.createdAt) < CACHE_TTL_MS) {
+        return existing.timestamps;
+    }
+    // Evict expired entry or create new
+    mapCache.delete(channelId);
+    // Evict oldest entries if cache is full
+    if (mapCache.size >= CACHE_MAX_SIZE) {
+        const oldestKey = mapCache.keys().next().value;
+        if (oldestKey) mapCache.delete(oldestKey);
+    }
+    const entry: ThreadCacheEntry = { timestamps: new Set<number>(), createdAt: Date.now() };
+    mapCache.set(channelId, entry);
+    return entry.timestamps;
+}
 
 app.all("/", async (req: Request<
 	{
@@ -43,7 +66,7 @@ app.all("/", async (req: Request<
     let members: APIThreadMember[] = [];
     const first_messages: unknown[] = [];
     const public_has_more = false;
-    const set = mapCache.get(channelId) || new Set<number>();
+    const set = getOrCreateCacheEntry(channelId);
     const before = Array.from(set)[Math.max((parseInt(offset || "0", 10) || 0) - 1, 0)];
     if (archived === "true") {
         const publicThread = await net.fetch(
@@ -109,7 +132,6 @@ app.all("/", async (req: Request<
         total_results: set.size,
         first_messages,
     };
-    mapCache.set(channelId, set);
     res.send(finalData);
 });
 

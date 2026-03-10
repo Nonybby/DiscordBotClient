@@ -29,7 +29,7 @@ app.post("/", (req, res) => {
                 owner: null;
             }
         > = {};
-        reqCallback.body?.thread_ids.map(threadId => {
+        reqCallback.body?.thread_ids?.map(threadId => {
             threads[threadId] = {
                 first_message: null,
                 owner: null,

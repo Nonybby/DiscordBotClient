@@ -65,11 +65,10 @@ app.get(
                 return res.status(data.isError ? 403 : 200).send(data.data);
             })
             .catch(err => {
+                console.error("Error in /guilds/:id/profile GET:", err);
                 res.status(500).send({
                     message: "Internal Server Error (/guilds/:id/profile)",
                     code: 500,
-                    error: err.message,
-                    stack: err.stack,
                 });
             });
     },
@@ -116,6 +115,10 @@ const callbackEditCurrentGuild = (
         .then(guild => {
             const data = convertGuildObjectToGuildProfileObject(guild);
             return resCallback.status(data.isError ? 403 : 200).send(data.data);
+        })
+        .catch(err => {
+            console.error("Error in /guilds/:id/profile PATCH (guild):", err);
+            if (!resCallback.headersSent) resCallback.status(500).send({ message: "Internal Server Error", code: 500 });
         });
 };
 
@@ -210,7 +213,11 @@ const callbackEditCurrentMember = (
                 emoji: null,
                 profile_effect: null,
             }),
-        );
+        )
+        .catch(err => {
+            console.error("Error in /guilds/:id/profile PATCH (member):", err);
+            if (!resCallback.headersSent) resCallback.status(500).send({ message: "Internal Server Error", code: 500 });
+        });
 };
 
 app.patch("/@me", async (req, res) => {

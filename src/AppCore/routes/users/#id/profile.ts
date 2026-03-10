@@ -51,8 +51,12 @@ app.get("/", async (req: Request<{ id: string }>, res) => {
     })
         .then(r => r.json() as Promise<APIUser>)
         .then(d =>
-            res.send(Util.ProfilePatch(d, guild_member, guild_id as string, bio)),
-        );
+            res.send(Util.ProfilePatch(d, guild_member, (guild_id as string) ?? null, bio)),
+        )
+        .catch(err => {
+            console.error("Error fetching user profile (/:id):", err);
+            if (!res.headersSent) res.status(500).send({ message: "Internal Server Error" });
+        });
 });
 
 app.patch("/", (req, res) => {

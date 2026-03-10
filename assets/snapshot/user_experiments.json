@@ -10,28 +10,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-06_dave_for_browser": {
-        "revision": 6,
-        "population": 0,
-        "bucket": 3,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2023-08_secure_frames_encryption": {
-        "revision": 5,
-        "population": 2,
-        "bucket": 11,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2023-07_announcement_views": {
         "revision": 0,
         "population": 3,
@@ -45,17 +23,6 @@
     },
     "2024-12_app_dm_report_button": {
         "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-08_back_forward": {
-        "revision": 3,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -98,17 +65,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2023-09_clips_nitro_early_access": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2024-06_content_entry_embed": {
         "revision": 0,
         "population": 1,
@@ -135,17 +91,6 @@
         "revision": 3,
         "population": 0,
         "bucket": 3,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-03_custom_status_prompts": {
-        "revision": 4,
-        "population": 0,
-        "bucket": 1,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -186,51 +131,7 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-03_fast_travel": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": true,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-04_fetch_quests_on_postconnectionopen": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-06_message_bookmarks": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-10_client_meaningfully_online_timer_rollout": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2023-06_guild_boosting_legacy_pricing_fix_experiment": {
         "revision": 0,
         "population": 0,
         "bucket": 1,
@@ -274,54 +175,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-07_message_search_thread_filter": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 1,
-        "override": true,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2022-11_mobile_account_switcher_notifications": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-04_network_aware_sockets": {
-        "revision": 3,
-        "population": 1,
+        "revision": 4,
+        "population": 0,
         "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-08_new_gateway_dispatcher": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 0,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-07_notifications_platform_holdout_h2": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 2,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -362,28 +219,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2023-03_pomelo": {
-        "revision": 0,
-        "population": 7,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-05_priority_vad": {
-        "revision": 1,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2022-08_churro_experiment": {
         "revision": 0,
         "population": 1,
@@ -417,6 +252,17 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
+    "2024-04_quest_preview_tool": {
+        "revision": 0,
+        "population": 0,
+        "bucket": 2,
+        "override": false,
+        "aaMode": false,
+        "triggerDebuggingEnabled": false,
+        "holdoutName": null,
+        "holdoutRevision": null,
+        "holdoutBucket": null
+    },
     "2023-12_quests": {
         "revision": 0,
         "population": 1,
@@ -439,32 +285,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2021-08_regional_payment_methods": {
-        "revision": 0,
-        "population": 7,
-        "bucket": 9,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2025-08_resumable_attachment_uploads_v2": {
         "revision": 5,
         "population": 0,
         "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2021-07_role_popout": {
-        "revision": 0,
-        "population": 2,
-        "bucket": 1,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -505,31 +329,9 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-11_invite_friend_members": {
-        "revision": 0,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2023-09_show_server_sub_in_server_shop": {
         "revision": 0,
         "population": 1,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2023-03_store_latest_message_data": {
-        "revision": 0,
-        "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -606,39 +408,6 @@
     },
     "2025-01_virtual_currency_rollout": {
         "revision": 2,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-02_voice_activity_status": {
-        "revision": 8,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-12_direct_message_status_indicators": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-10_word_frequency_store_rollout": {
-        "revision": 1,
         "population": 0,
         "bucket": 1,
         "override": false,

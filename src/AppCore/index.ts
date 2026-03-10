@@ -170,7 +170,7 @@ export class DiscordBotClient extends EventEmitter {
         const disabledFeatures = new Set(app.commandLine.getSwitchValue("disable-features").split(","));
         // Allow Localhost SSL
         app.commandLine.appendSwitch("allow-insecure-localhost", "true");
-        app.commandLine.appendSwitch("ignore-certificate-errors");
+        // app.commandLine.appendSwitch("ignore-certificate-errors");
         app.commandLine.appendSwitch("host-rules", `MAP ${Constants.CustomDiscordDomain} 127.0.0.1:${this.port}`);
         // Vesktop
         // Disable renderer backgrounding to prevent the app from unloading when in the background
@@ -350,8 +350,8 @@ export class DiscordBotClient extends EventEmitter {
             icon: Constants.icon128,
             webPreferences: {
                 webSecurity: false,
-                preload: path.join(__dirname, "ElectronPreload.js"),
                 sandbox: false,
+                preload: path.join(__dirname, "ElectronPreload.js"),
                 session: this.session,
             },
             backgroundColor: "#36393f",
@@ -626,8 +626,8 @@ export class DiscordBotClient extends EventEmitter {
             minHeight: 600,
             webPreferences: {
                 webSecurity: false,
-                preload: path.join(__dirname, "ConfigEditorPreload.js"),
                 sandbox: false,
+                preload: path.join(__dirname, "ConfigEditorPreload.js"),
             },
             icon: Constants.icon128,
             frame: true,
@@ -656,8 +656,8 @@ export class DiscordBotClient extends EventEmitter {
             modal: true,
             webPreferences: {
                 webSecurity: false,
-                preload: path.join(__dirname, "MessageEditorPreload.js"),
                 sandbox: false,
+                preload: path.join(__dirname, "MessageEditorPreload.js"),
                 partition: "temp:" + randomUUID(), // Use a temporary session for the message editor
             },
             icon: Constants.icon128,

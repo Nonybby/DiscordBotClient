@@ -1,7 +1,6 @@
 /* Copyright Elysia © 2025. All rights reserved */
 
 import { app, nativeImage } from "electron";
-import { readFileSync } from "fs";
 import path from "path";
 import UserPatch from "src/AppUtils/UserPatch";
 
@@ -48,10 +47,6 @@ export default class Constants extends null {
     static DiscordGuildExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "guild_experiments.json");
     static DiscordUserExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "user_experiments.json");
     static DiscordApexExperimentsPath = path.join(app.getAppPath(), "assets", "snapshot", "apex_experiments.json");
-    static HttpsOptions = {
-        key: readFileSync(path.resolve(app.getAppPath(), "assets", "cert", "server.key")).toString("utf-8"),
-        cert: readFileSync(path.resolve(app.getAppPath(), "assets", "cert", "server.cert")).toString("utf-8"),
-    };
     static UserDefaultPatch = UserPatch["1056491867375673424"];
     static ChannelIdDefault = "1000000000000000000";
     static UserIdDefault = "1056491867375673424";

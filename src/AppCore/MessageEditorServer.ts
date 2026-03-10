@@ -31,5 +31,6 @@ export default async function startEditor (): Promise<number> {
             resolve(port);
             logger.log(`API Server listening on http://localhost:${port}`);
         });
+        server.on("error", reject);
     });
 }

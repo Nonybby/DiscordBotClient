@@ -24,7 +24,12 @@ if (Constants.VerboseAPIServerLogging) { app.use(
     }),
 ); }
 
-const server = https.createServer(Constants.HttpsOptions, app);
+const HttpsOptions = Util.generateSelfSignedCertificate();
+
+const server = https.createServer({
+    key: HttpsOptions.private,
+    cert: HttpsOptions.cert,
+}, app);
 
 const ignoreHeaders = ["cookie", "sec-", "referer", "origin", "authorization", "host"];
 
@@ -84,5 +89,6 @@ export default async function startAppServer (): Promise<number> {
             logger.log(`API Server listening on https://localhost:${address.port}`);
         };
         server.listen(0).once("listening", callback);
+        server.on("error", reject);
     });
 }

@@ -13,7 +13,12 @@ app.get(
         }>,
         res,
     ) => {
-        res.send(NitroData[req.params.id]);
+        const data = NitroData[req.params.id];
+        if (data) {
+            res.send(data);
+        } else {
+            res.send([]);
+        }
     },
 );
 

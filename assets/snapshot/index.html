@@ -23,21 +23,21 @@
     <!-- section:title -->
     <title>Discord</title>
     <!-- endsection -->
-    <script nonce="MTUxLDE4MCwyMywxMTQsNzcsMTE2LDEyLDk2">
+    <script nonce="MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=">
         window.GLOBAL_ENV = {
             "NODE_ENV": "production",
-            "BUILT_AT": "1769712360298",
+            "BUILT_AT": "1773041083995",
             "HTML_TIMESTAMP": Date.now(),
-            "BUILD_NUMBER": "491153",
+            "BUILD_NUMBER": "507841",
             "PROJECT_ENV": "production",
             "RELEASE_CHANNEL": "stable",
-            "VERSION_HASH": "496afea02c48235252834520aaadb3e9974379cf",
+            "VERSION_HASH": "9fcfc7472dd5ecc7070b96b97d1300c7f1f263e3",
             "PRIMARY_DOMAIN": "discord.com",
             "SENTRY_TAGS": {
-                "buildId": "496afea02c48235252834520aaadb3e9974379cf",
+                "buildId": "9fcfc7472dd5ecc7070b96b97d1300c7f1f263e3",
                 "buildType": "normal"
             },
-            "SENTRY_RELEASE": "2026-01-29-496afea02c48235252834520aaadb3e9974379cf-discord_web",
+            "SENTRY_RELEASE": "2026-03-09-9fcfc7472dd5ecc7070b96b97d1300c7f1f263e3-discord_web",
             "PUBLIC_PATH": "/assets/",
             "LOCATION": "history",
             "API_VERSION": 9,
@@ -68,19 +68,20 @@
             "ADYEN_KEY": "live_E3OQ33V6GVGTXOVQZEAFQJ6DJIDVG6SY",
             "BRAINTREE_KEY": "production_ktzp8hfp_49pp2rp4phym7387",
             "MUX_ENV_KEY": "undefined",
-            "DEV_SESSION_KEY": "undefined"
+            "DEV_SESSION_KEY": "undefined",
+            "WEBAUTHN_ORIGIN": "discord.com"
         }
     </script>
-    <script nonce="MTUxLDE4MCwyMywxMTQsNzcsMTE2LDEyLDk2">
+    <script nonce="MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=">
         window.__OVERLAY__ = /overlay/.test(location.pathname);
         window.__BILLING_STANDALONE__ = /^\/billing/.test(location.pathname);
     </script>
-    <link as="script" href="/assets/web.53987025b3f6fd96.js" rel="preload">
-    <link as="script" href="/assets/sentry.f7a23042bceb1262.js" rel="preload">
-    <link as="script" href="/assets/fast-connect.628076da8bfec442.js" rel="preload">
-    <link as="script" href="/assets/libdiscore-wasm-fetch.426beed44fdfa2f0.js" rel="preload">
+    <link as="script" href="/assets/web.28e963a98a0f0e51.js" rel="preload">
+    <link as="script" href="/assets/sentry.65aeaabe92d06a81.js" rel="preload">
+    <link as="script" href="/assets/fast-connect.1da12817eafc4e92.js" rel="preload">
+    <link as="script" href="/assets/libdiscore-wasm-fetch.eb7ad6a5a94e6237.js" rel="preload">
     <link href="/assets/favicon.ico" rel="icon">
-    <script nonce="MTUxLDE4MCwyMywxMTQsNzcsMTE2LDEyLDk2">
+    <script nonce="MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=">
         ! function() {
             if (null != window.WebSocket) {
                 var n = function(n) {
@@ -119,11 +120,11 @@
             }
         }();
     </script>
-    <script defer src="/assets/libdiscore-wasm-fetch.426beed44fdfa2f0.js"></script>
-    <script defer src="/assets/fast-connect.628076da8bfec442.js"></script>
-    <script defer src="/assets/sentry.f7a23042bceb1262.js"></script>
-    <script defer src="/assets/web.53987025b3f6fd96.js"></script>
-    <link href="/assets/web.71d472b8cdf4029a.css" rel="stylesheet">
+    <script defer src="/assets/libdiscore-wasm-fetch.eb7ad6a5a94e6237.js"></script>
+    <script defer src="/assets/fast-connect.1da12817eafc4e92.js"></script>
+    <script defer src="/assets/sentry.65aeaabe92d06a81.js"></script>
+    <script defer src="/assets/web.28e963a98a0f0e51.js"></script>
+    <link href="/assets/web.7a78f0853a0dd1ab.css" rel="stylesheet">
 </head>
 
 <body>
@@ -131,6 +132,39 @@
     <div id="app-mount"></div>
 
 
+    <script nonce="MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=">
+        (function() {
+            function c() {
+                var b = a.contentDocument || a.contentWindow.document;
+                if (b) {
+                    var d = b.createElement('script');
+                    d.nonce = 'MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=';
+                    d.innerHTML = "window.__CF$cv$params={r:'9da1f0ef6b5e385d',t:'MTc3MzE0MTc0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='MTIxLDEyMywxODEsNDAsMTAyLDE2MCwxODYsNTE=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d)
+                }
+            }
+            if (document.body) {
+                var a = document.createElement('iframe');
+                a.height = 1;
+                a.width = 1;
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+                document.body.appendChild(a);
+                if ('loading' !== document.readyState) c();
+                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                else {
+                    var e = document.onreadystatechange || function() {};
+                    document.onreadystatechange = function(b) {
+                        e(b);
+                        'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    }
+                }
+            }
+        })();
+    </script>
 </body>
 
 </html>
