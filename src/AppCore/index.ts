@@ -170,7 +170,7 @@ export class DiscordBotClient extends EventEmitter {
         const disabledFeatures = new Set(app.commandLine.getSwitchValue("disable-features").split(","));
         // Allow Localhost SSL
         app.commandLine.appendSwitch("allow-insecure-localhost", "true");
-        // app.commandLine.appendSwitch("ignore-certificate-errors");
+        app.commandLine.appendSwitch("ignore-certificate-errors");
         app.commandLine.appendSwitch("host-rules", `MAP ${Constants.CustomDiscordDomain} 127.0.0.1:${this.port}`);
         // Vesktop
         // Disable renderer backgrounding to prevent the app from unloading when in the background
