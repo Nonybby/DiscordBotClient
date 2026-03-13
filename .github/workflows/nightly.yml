@@ -63,15 +63,6 @@ jobs:
       - name: Install dependencies
         run: npm run requirement
 
-      - name: Build VencordExtension
-        run: npm run vencord
-
-      - name: Build Discohook Editor
-        run: npm run discohook
-
-      - name: Build JS Code
-        run: npm run build:ts
-
       - name: Build Electron app
         uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
