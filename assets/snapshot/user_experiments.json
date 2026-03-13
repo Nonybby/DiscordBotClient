@@ -65,32 +65,10 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2024-06_content_entry_embed": {
-        "revision": 0,
-        "population": 1,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2023-01_creator_monetization_nag_activate_users": {
         "revision": 1,
         "population": 0,
         "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-07_cuda_cache_management": {
-        "revision": 3,
-        "population": 0,
-        "bucket": 3,
         "override": false,
         "aaMode": false,
         "triggerDebuggingEnabled": false,
@@ -166,17 +144,6 @@
     },
     "2021-12_inferno_spam_redaction": {
         "revision": 3,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-04_network_aware_sockets": {
-        "revision": 4,
         "population": 0,
         "bucket": 1,
         "override": false,
@@ -285,17 +252,6 @@
         "holdoutRevision": null,
         "holdoutBucket": null
     },
-    "2025-08_resumable_attachment_uploads_v2": {
-        "revision": 5,
-        "population": 0,
-        "bucket": 2,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2023-09_iar_user_reporting": {
         "revision": 0,
         "population": 2,
@@ -375,17 +331,6 @@
     },
     "2025-04_user_profile_performance_analytics": {
         "revision": 1,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-03_user_profile_voice_activity_card_status": {
-        "revision": 4,
         "population": 0,
         "bucket": 1,
         "override": false,
