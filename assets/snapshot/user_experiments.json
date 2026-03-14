@@ -1,15 +1,4 @@
 {
-    "2025-03_activity_status_descriptive_text": {
-        "revision": 4,
-        "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
     "2023-07_announcement_views": {
         "revision": 0,
         "population": 3,
@@ -68,17 +57,6 @@
     "2023-01_creator_monetization_nag_activate_users": {
         "revision": 1,
         "population": 0,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2024-02_desktop_animated_icons": {
-        "revision": 0,
-        "population": 2,
         "bucket": 1,
         "override": false,
         "aaMode": false,
@@ -321,17 +299,6 @@
     "2024-12_user_profile_modal_recent_activity": {
         "revision": 6,
         "population": 1,
-        "bucket": 1,
-        "override": false,
-        "aaMode": false,
-        "triggerDebuggingEnabled": false,
-        "holdoutName": null,
-        "holdoutRevision": null,
-        "holdoutBucket": null
-    },
-    "2025-04_user_profile_performance_analytics": {
-        "revision": 1,
-        "population": 0,
         "bucket": 1,
         "override": false,
         "aaMode": false,
