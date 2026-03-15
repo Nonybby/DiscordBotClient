@@ -159,7 +159,7 @@ Logging in works via the UI on first startup of the application.
 - **Sharding**
 - **View Guilds** _(Lazy load them)_
 - **Manage Guilds, Channels**
-- **Messages** (Send, View History, Embeds, Reactions, Manage)
+- **Messages** (Send, View History, Embeds, Components (V2)[^7], Reactions, Manage, Create Poll)
 - **~~Create a Guild~~**[^1]
 - **Voice**[^2]
 - **Nitro**[^3]
@@ -184,8 +184,9 @@ Logging in works via the UI on first startup of the application.
 
 | Discord Build     | Hash    | Vencord | Client version | Release Status | App Status |
 | ----------------- | ------- | ------- | -------------- | -------------- | ---------- |
-| Latest            | ?       | ?       | v3.8.?         | ~~Beta~~       | ℹ          |
-| Stable 491153[^6] | 496afea | v1.14.1 | v3.8.3         | Latest         | ✔          |
+| Latest            | ?       | ?       | v3.9.?         | ~~Beta~~       | ℹ          |
+| Stable 510733[^7] | 2fcef2a | v1.14.5 | v3.9.0         | Latest         | ✔          |
+| Stable 491153[^6] | 496afea | v1.14.1 | v3.8.3         | Deprecated     | ✔          |
 | Stable 479219     | 582c5bf | v1.13.8 | v3.8.2         | Deprecated     | ✔          |
 | Stable 453248     | 0a497ab | v1.13.1 | v3.8.1         | Deprecated     | ✔          |
 | Stable 415772     | 0c81c46 | v1.12.5 | v3.7.4         | EOL            | ✔ ⚠        |
@@ -204,6 +205,8 @@ Logging in works via the UI on first startup of the application.
 [^5]: Latest version that supports Windows 7 / 8 / 8.1 is 2.4.2. However, you can build this application with an older version of Electron and Node.js, and expect it to work correctly.
 
 [^6]: Testing the automatic update feature for Windows and Linux. macOS is not supported because the application lacks a valid certificate.
+
+[^7]: The first version that supports the advanced message editor (beta), including support for Embeds and Components V1 & V2. Note: Support for interactive components is outside the scope of this project.
 
 ---
 
