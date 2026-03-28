@@ -31,8 +31,7 @@
     "build:bin": "electron-builder",
     "build": "npm run build:deps && npm run build:ts && npm run build:bin",
     "build:deps": "npm run vencord && npm run discohook",
-    "requirement": "npm install && tsx scripts/vencordClone.ts && tsx scripts/discohookClone.ts",
-    "cerf": "openssl req -nodes -new -x509 -keyout ./assets/cert/server.key -out ./assets/cert/server.cert -days 3650 -subj \"/CN=localhost\""
+    "requirement": "npm install && tsx scripts/vencordClone.ts && tsx scripts/discohookClone.ts"
   },
   "keywords": [],
   "devDependencies": {
