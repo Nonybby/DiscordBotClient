@@ -99,7 +99,16 @@ export function setupIPCEvents(mainApp: DiscordBotClient) {
                     intents: IntentsBitField.getIntents(...Array.from(skipIntents)),
                     allShards:
                         Math.ceil(
-                            (data.approximate_guild_count ?? 0) / Number(mainApp.config.config.guilds_per_shard),
+                            ((
+                                data as APIApplication & {
+                                    // New field, it reflects the number of guilds that have actually added this application as a bot profile
+                                    // @undocumented
+                                    bot_approximate_guild_count?: number;
+                                }
+                            ).bot_approximate_guild_count ??
+                                // Old field, it reflects the number of guilds that have added this application as an intergration
+                                data.approximate_guild_count ??
+                                0) / Number(mainApp.config.config.guilds_per_shard),
                         ) || 1,
                 };
             })
