@@ -23,7 +23,7 @@ This object is represented as an array of the following fields:
     is present and the population bucket is set to None (-1), the experiment has been disabled by the holdout. As user experiments are opaque, no client handling is
     required for this field. Just follow the population field as usual.
 
-## Snippets (Get User Experiments)
+## Snippets (Get User Experiments) - Not working
 
 ```js
 (() => {
@@ -60,6 +60,8 @@ This object is represented as an array of the following fields:
     const experimentData = {};
     for (const experiment of experiments) {
     	try {
+            const data = experimentModule.getUserExperimentDescriptor(experiment.id);
+            if (!data) continue;
         	experimentData[experiment.id] = JSON.parse(JSON.stringify(experimentModule.getUserExperimentDescriptor(experiment.id)));
         	delete experimentData[experiment.id].type
         	delete experimentData[experiment.id].hashResult
@@ -101,7 +103,6 @@ const ApexExperimentFlags = {
 ```
 
 ## Snippets (Get Apex Experiments)
-
 
 ```js
 (() => {
